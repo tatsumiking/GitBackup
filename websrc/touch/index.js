@@ -18,6 +18,12 @@ var m_dLimit = 5;
 var m_startDate;
 var m_stopDate;
 
+var m_sdSuccess;
+var m_sdMiss;
+var m_nSuccess = false;
+var m_nMiss = false;
+
+
 function fncInit()
 {
     var fontsize;
@@ -57,7 +63,13 @@ function fncInit()
     
     m_nCrtQestIdx = -1;
     m_txtInfo.value = "開始ボタンを押してください。";
-
+    m_sdSuccess = new Audio();
+    m_sdMiss = new Audio();
+    m_sdSuccess.src = "success.mp3";
+    m_sdMiss.src = "miss.mp3";
+    m_nSuccess = false;
+    m_nMiss = false;
+    
     m_aryTouchBox = new Array();
      sx = 0; sy = 0;
     for(y = 0; y < 5; y++){
@@ -157,24 +169,33 @@ function fncCmdExec(event, dx, dy)
     var clsTB = m_aryTouchBox[clsCS.idx];
     var str = clsCS.str;
     if(event == SETEVENT){
+        if(m_nMiss == true){
+            m_sdMiss.pause();
+            m_nMiss = false;
+        }
+        if(m_nSuccess == true){
+            m_sdSuccess.pause();
+            m_nSuccess = false;
+        }
         fncCmdDebugPos(dx, dy);
-        var sound = new Audio();
-        if(clsTB.sx <= dx && clsTB.ex
-        && clsTB.sy <= dy && clsTB.ey){
+        if(clsTB.sx <= dx && dx <= clsTB.ex
+        && clsTB.sy <= dy && dy <= clsTB.ey){
             s00 = fnclibZeroPadding((m_nCrtQestIdx+1), 2);
             txtQuest = document.getElementById("txtQuest"+s00);
             txtQuest.style.background="#CFC";
             clsTB.flag = 1;
             fncDrawTouchBox(clsTB, str);
-            sound.src = "success.mp3";
-            sound.autoplay = true;
+            //m_sdSuccess.src = "success.mp3";
+            m_sdSuccess.play();
+            m_nSuccess = true;
             m_nCrtQestIdx++;
             if(m_nQuestMax == m_nCrtQestIdx){
                 fncStopTimer();
             }
         }else{
-            sound.src = "miss.mp3";
-			sound.autoplay = true;
+            //m_sdMiss.src = "miss.mp3"; 
+			m_sdMiss.play();
+            m_nMiss = true;
         }
     }
 }
