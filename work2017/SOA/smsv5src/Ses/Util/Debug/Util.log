@@ -1,0 +1,8 @@
+﻿  UtilDoc.cpp
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(191): warning C4101: 'tateyoko': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(233): warning C4101: 'jis': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(233): warning C4101: 'u16': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(233): warning C4101: 'sjis': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(340): warning C4101: 'sGJFaceName': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(341): warning C4101: 'sTategakiFaceName': ローカル変数は 1 度も使われていません。
+  Util.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\Debug\Util.exe

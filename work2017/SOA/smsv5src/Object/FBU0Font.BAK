@@ -1,0 +1,101 @@
+
+#pragma once
+
+#include "FSF1Font.h"
+
+// FTT 縦書きインデックスファイル
+// FDT 縦書きデータファイル
+// FTY 横書きインデックスファイル
+// FDY 横書きデータファイル
+// FTG 外字用インデックスファイル
+// FDG 外字用データファイル
+// FBU ユーザ登録文字（前半画像ファイル後半ベクトルデータファイル）
+
+#define	FBU0MESH		1024
+#define	FBU0ATRADD		0
+#define	FBU0XCDADD		1
+#define	FBU0YCDADD		3
+#define	FBU0SIZADD		5
+
+#define	FBU0LASTCODE	0xffff	// 
+
+#define	FBU0EORMASK		0x01
+
+typedef	struct {
+	short	len;
+	long	seekp;
+} fidxtype;
+
+class AFX_CLASS_EXPORT CESF0Font : public CObject
+{
+protected:
+	CESF0Font();
+	DECLARE_SERIAL(CESF0Font)
+public:
+	virtual void Serialize(CArchive& ar);
+private:
+	FILE		*m_fileIdx, *m_fileDat;
+	CFSF1Font*	m_pFSF1Font;
+	BYTE		m_bFBuf[FBUBUFMAX];
+	UINT		m_nDataLen;
+	int			m_nTateYoko;
+	int			m_nBold;
+	int			m_nSlope;
+	TCHAR		m_sBaseName[FNAMEMAX];
+	TCHAR		m_sIdxFileName[FNAMEMAX];
+	TCHAR		m_sDatFileName[FNAMEMAX];
+
+	DBL		m_dSX, m_dSY;
+	DBL		m_dXTime, m_dYTime;
+	DBL		m_dSin, m_dCos;
+
+public:
+	void DFileLoadSF1Trns(int datano);
+	void TrnsCopyFSF1FBuf();
+	CESF0Font(int nDummy);
+	~CESF0Font();
+	LPBYTE GetbFBufAdrs();
+	int FontMeshGet();
+	void FSF1ClassSet(CFSF1Font *pFSF1Font);
+	void FontNameSet(LPTSTR pFont);
+	void SetTateYoko(int flag);
+	int SF1TrnsDataLoad(int sjis);
+	void SF1TrnsDataSave(int sjis);
+	int DFileReadOpen(TCHAR basefname[]);
+	void DFileDataLoad(int datano);
+	void DFileClose();
+
+	int DataLoad(int sjis);
+	int UserDataSave(int sjis);
+	int UserDataExist(int sjis);
+	int UserDataDelete(int sjis);
+	int UserDataLoad(int sjis);
+	int EsysDataLoad(int sjis);
+	int UserFontWriteOpen(int sjis);
+	int UserFontOpen(int sjis);
+	int EsysFontOpen(int sjis);
+	void FontClose();
+	int UserFontNullSet(TCHAR idxfname[], TCHAR datfname[]);
+	void GetSeekPoint(int sjis, long *seekp);
+	void TateGakiTrns(int sjis);
+	void TrnsESF0ToFSF1();
+	void SetDataLen(int pp);
+	void AtrDXYGet(BYTE fBuf[], int pp, int *atr, DBL *x, DBL *y);
+	void AtrDXYSet(BYTE fBuf[], int pp, int atr, DBL x, DBL y);
+	int EorChk(BYTE fBuf[], int pp);
+	void EorOn(BYTE fBuf[], int pp);
+	int RejionChk(BYTE fBuf[], int *pp);
+	int RejionOff(BYTE fBuf[], int pp);
+	int RejionOn(BYTE fBuf[], int pp);
+
+	void DrawOut(CDC *pcDC, DBL sx, DBL sy, DBL wd, DBL hi, DBL rag);
+	void RejionDrawOut(CDC *pcDC, BYTE fbuf[], int pcnt);
+	void NoRejionDrawOut(CDC *pcDC, BYTE fbuf[], int pcnt);
+	void SetSlope(int flag);
+	void SetBold(int flag);
+	void TrnsElementInit(DBL sx, DBL sy, DBL wd, DBL hi, DBL rag);
+	int RejionEndGet(BYTE fbuf[], int pcnt, int sp);
+	void TrnsXY(DBL *x, DBL *y);
+	int PointLegal(int pcnt, int pp);
+};
+

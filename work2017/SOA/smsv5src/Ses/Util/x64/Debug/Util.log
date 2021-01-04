@@ -1,0 +1,16 @@
+﻿  stdafx.cpp
+  ChildFrm.cpp
+  MainFrm.cpp
+d:\work\work2017\soa\smsv5src\ses\util\mainfrm.cpp(189): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Util.cpp
+  UtilDoc.cpp
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(189): warning C4101: 'tateyoko': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(228): warning C4101: 'jis': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(228): warning C4101: 'u16': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(228): warning C4101: 'sjis': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(300): warning C4101: 'sGJFaceName': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\util\utildoc.cpp(301): warning C4101: 'sTategakiFaceName': ローカル変数は 1 度も使われていません。
+  UtilView.cpp
+  コードを生成中...
+     ライブラリ D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\Util.lib とオブジェクト D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\Util.exp を作成中
+  Util.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\Util.exe

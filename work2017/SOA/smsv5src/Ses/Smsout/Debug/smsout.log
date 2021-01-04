@@ -1,0 +1,6 @@
+﻿  MainFrm.cpp
+d:\work\work2017\soa\smsv5src\ses\smsout\mainfrm.cpp(165): warning C4101: 'crctfname': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\smsout\mainfrm.cpp(164): warning C4101: 'exepath': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\smsout\mainfrm.cpp(166): warning C4101: 'crctfp': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\smsout\mainfrm.cpp(547): warning C4101: 'idx': ローカル変数は 1 度も使われていません。
+  smsout.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\Debug\smsout.exe

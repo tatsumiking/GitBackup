@@ -1,0 +1,50 @@
+﻿  stdafx.cpp
+  BmpFile.cpp
+  CharLib.cpp
+  CmdBase.cpp
+  FileEps.cpp
+  ImeHndl.cpp
+  ChildFrm.cpp
+  CrctWaku.cpp
+  DialogGaijiSlct.cpp
+d:\work\work2017\soa\smsv5src\ses\sms\dialoggaijislct.cpp(172): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\corecrt_wstring.h(205): note: 'wcsncpy' の宣言を確認してください
+  DialogImageDisp.cpp
+  DialogImageSize.cpp
+  DialogInput.cpp
+  DialogListDisp.cpp
+  DialogMain.cpp
+d:\work\work2017\soa\smsv5src\ses\sms\dialogmain.cpp(100): warning C4244: '=': 'ULONGLONG' から 'long' への変換です。データが失われる可能性があります。
+  DialogSetJpgElement.cpp
+d:\work\work2017\soa\smsv5src\ses\sms\dialogsetjpgelement.cpp(239): warning C4101: 'nhndle': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\sms\dialogsetjpgelement.cpp(238): warning C4101: 'hndle': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\sms\dialogsetjpgelement.cpp(241): warning C4101: 'ret': ローカル変数は 1 度も使われていません。
+  DialogWakuSlct.cpp
+  MainFrm.cpp
+  Sms.cpp
+d:\work\work2017\soa\smsv5src\ses\sms\sms.cpp(58): warning C4996: 'CWinApp::Enable3dControls': CWinApp::Enable3dControls is no longer needed. You should remove this call.
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\atlmfc\include\afxwin.h(5229): note: 'CWinApp::Enable3dControls' の宣言を確認してください
+d:\work\work2017\soa\smsv5src\ses\sms\sms.cpp(214): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\corecrt_wstring.h(205): note: 'wcsncpy' の宣言を確認してください
+d:\work\work2017\soa\smsv5src\ses\sms\sms.cpp(216): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\corecrt_wstring.h(205): note: 'wcsncpy' の宣言を確認してください
+d:\work\work2017\soa\smsv5src\ses\sms\sms.cpp(218): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\corecrt_wstring.h(205): note: 'wcsncpy' の宣言を確認してください
+d:\work\work2017\soa\smsv5src\ses\sms\sms.cpp(266): warning C4101: 'hDevNames': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\sms\sms.cpp(269): warning C4101: 'lpDevMode': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\sms\sms.cpp(268): warning C4101: 'hDevMode': ローカル変数は 1 度も使われていません。
+  SmsDoc.cpp
+d:\work\work2017\soa\smsv5src\ses\sms\smsdoc.cpp(225): warning C4002: 関数に似たマクロ呼び出し '_T' の引数が多すぎます
+d:\work\work2017\soa\smsv5src\ses\sms\smsdoc.cpp(1577): warning C4101: 'msg': ローカル変数は 1 度も使われていません。
+  SmsView.cpp
+d:\work\work2017\soa\smsv5src\ses\sms\smsview.cpp(352): warning C4101: 'ret': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\sms\smsview.cpp(458): warning C4244: '=': 'DBL' から 'LONG' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\ses\sms\smsview.cpp(459): warning C4244: '=': 'DBL' から 'LONG' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\ses\sms\smsview.cpp(460): warning C4244: '=': 'DBL' から 'LONG' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\ses\sms\smsview.cpp(461): warning C4244: '=': 'DBL' から 'LONG' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\ses\sms\smsview.cpp(1088): warning C4101: 'y3': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\sms\smsview.cpp(1088): warning C4101: 'x3': ローカル変数は 1 度も使われていません。
+  SysEnv.cpp
+  コードを生成中...
+     ライブラリ D:\work\work2017\SOA\smsv5src\Ses\Debug\Sms.lib とオブジェクト D:\work\work2017\SOA\smsv5src\Ses\Debug\Sms.exp を作成中
+  Sms.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\Debug\Sms.exe

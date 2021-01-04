@@ -1,0 +1,100 @@
+﻿  stdafx.cpp
+  ARCFont.cpp
+d:\work\work2017\soa\smsv5src\object\arcfont.cpp(79): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\arcfont.cpp(80): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\arcfont.cpp(92): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\arcfont.cpp(408): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  ARKFont.cpp
+  BoldLib.cpp
+  ClipData.cpp
+  Data.cpp
+  DataFDib.cpp
+  DataGrup.cpp
+d:\work\work2017\soa\smsv5src\object\datagrup.cpp(703): warning C4267: '引数': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  DataList.cpp
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(478): warning C4101: 'penno': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(519): warning C4244: '=': 'DBL' から 'int' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(648): warning C4101: 'bval': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(649): warning C4101: 'nthick': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(648): warning C4101: 'rval': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(648): warning C4101: 'gval': ローカル変数は 1 度も使われていません。
+  DataLogo.cpp
+  DibCData.cpp
+d:\work\work2017\soa\smsv5src\object\dibcdata.cpp(177): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  ESF0Font.cpp
+d:\work\work2017\soa\smsv5src\object\esf0font.cpp(71): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\esf0font.cpp(72): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\esf0font.cpp(210): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  ESF1Font.cpp
+d:\work\work2017\soa\smsv5src\object\esf1font.cpp(70): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\esf1font.cpp(71): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  FBU0Font.cpp
+d:\work\work2017\soa\smsv5src\object\fbu0font.cpp(198): warning C4267: '=': 'size_t' から 'UINT' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\fbu0font.cpp(338): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+d:\work\work2017\soa\smsv5src\object\fbu0font.cpp(345): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\fbu0font.cpp(350): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  FSF1Font.cpp
+  GdiPlusEx.cpp
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(76): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(81): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(86): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(91): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(96): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(101): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(106): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(107): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(113): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(114): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(121): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(122): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(123): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(156): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(157): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(164): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(165): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(172): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(173): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(174): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(175): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+  MX2Font.cpp
+  MetaData.cpp
+  MojiVect.cpp
+d:\work\work2017\soa\smsv5src\object\mojivect.cpp(1130): warning C4101: 'pcMojiVect': ローカル変数は 1 度も使われていません。
+  MsurVect.cpp
+d:\work\work2017\soa\smsv5src\object\msurvect.cpp(103): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\msurvect.cpp(124): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\msurvect.cpp(240): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\msurvect.cpp(273): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Object.cpp
+  コードを生成中...
+d:\work\work2017\soa\smsv5src\object\mojivect.cpp(1081): warning C4700: 初期化されていないローカル変数 'mode' が使用されます
+  コンパイル中...
+  PBlock.cpp
+  PList.cpp
+  SCRFont.cpp
+  SPtnVect.cpp
+  SWakVect.cpp
+d:\work\work2017\soa\smsv5src\object\swakvect.cpp(415): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\swakvect.cpp(598): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\swakvect.cpp(691): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\swakvect.cpp(2869): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\swakvect.cpp(2945): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\swakvect.cpp(3064): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  StrgVect.cpp
+d:\work\work2017\soa\smsv5src\object\strgvect.cpp(310): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\strgvect.cpp(610): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\strgvect.cpp(680): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Vect.cpp
+  WakuVect.cpp
+d:\work\work2017\soa\smsv5src\object\wakuvect.cpp(330): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\wakuvect.cpp(469): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\wakuvect.cpp(470): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\wakuvect.cpp(499): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\wakuvect.cpp(500): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\wakuvect.cpp(534): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\object\wakuvect.cpp(633): warning C4267: '引数': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  WinTTFont.cpp
+d:\work\work2017\soa\smsv5src\object\winttfont.cpp(157): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  コードを生成中...
+     ライブラリ D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\Object.lib とオブジェクト D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\Object.exp を作成中
+  Object.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\Object.dll

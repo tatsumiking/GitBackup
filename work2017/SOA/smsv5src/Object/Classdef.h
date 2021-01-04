@@ -1,0 +1,14 @@
+class CData;
+class CVect;
+class CMojiVect;
+class CStrgVect;
+class CWakuVect;
+class CSPtnVect;
+class CSWakVect;
+class CDataList;
+class CDataGrup;
+class CDibCData;
+class CDataLogo;
+class CDataFDib;
+class CClipData;
+class CMetaData;

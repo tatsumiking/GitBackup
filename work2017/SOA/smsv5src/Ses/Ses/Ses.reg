@@ -1,0 +1,33 @@
+﻿REGEDIT
+; この .REG ファイルは SETUP プログラムで使用される可能性があります。
+;   SETUP プログラムが使用できない場合、以下のエントリは CWinApp::RegisterShellFileTypes
+;   および COleObjectFactory::UpdateRegistryAll の呼び出しで自動的に InitInstance 中に
+;   登録されます。
+
+HKEY_CLASSES_ROOT\.iti = Ses.Document
+HKEY_CLASSES_ROOT\Ses.Document\shell\open\command = Ses.EXE %1
+HKEY_CLASSES_ROOT\Ses.Document\shell\open\ddeexec = [open("%1")]
+HKEY_CLASSES_ROOT\Ses.Document\shell\open\ddeexec\application = Ses
+    ; メモ : アプリケーションは省略可能です。
+    ;  ("command" のアプリケーション名が既定値になります。)
+
+HKEY_CLASSES_ROOT\Ses.Document = Ses.Document
+
+
+HKEY_CLASSES_ROOT\Ses.Document\protocol\StdFileEditing\server = Ses.EXE
+HKEY_CLASSES_ROOT\Ses.Document\protocol\StdFileEditing\verb\0 = &Edit
+HKEY_CLASSES_ROOT\Ses.Document\Insertable =
+HKEY_CLASSES_ROOT\Ses.Document\CLSID = {d3d8f7de-cbe0-4f55-9436-692cc1b04051}
+
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051} = Ses.Document
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\DefaultIcon = Ses.EXE,1
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\LocalServer32 = Ses.EXE
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\ProgId = Ses.Document
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\MiscStatus = 32
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\AuxUserType\3 = Ses
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\AuxUserType\2 = Ses
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\Insertable =
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\verb\1 = &Open,0,2
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\verb\0 = &Edit,0,2
+HKEY_CLASSES_ROOT\CLSID\{d3d8f7de-cbe0-4f55-9436-692cc1b04051}\InprocHandler32 = ole32.dll
+

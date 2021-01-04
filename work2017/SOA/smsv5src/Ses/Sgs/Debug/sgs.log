@@ -1,0 +1,9 @@
+﻿  DialogGaijiLoad.cpp
+d:\work\work2017\soa\smsv5src\ses\sgs\dialoggaijiload.cpp(280): warning C4101: 'lImageSize': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\sgs\dialoggaijiload.cpp(279): warning C4101: 'szBuf': ローカル変数は 1 度も使われていません。
+  DialogGaijiSave.cpp
+d:\work\work2017\soa\smsv5src\ses\sgs\dialoggaijisave.cpp(304): warning C4101: 'handle': ローカル変数は 1 度も使われていません。
+  DialogMojiLoad.cpp
+  DialogMojiSave.cpp
+  コードを生成中...
+  sgs.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\Debug\sgs.exe

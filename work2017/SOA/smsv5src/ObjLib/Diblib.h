@@ -1,0 +1,15 @@
+DllExport void diblibinit();
+DllExport void diblibend();
+DllExport void diblibResetFileNo();
+DllExport void diblibRGBtoHLS(int r, int g, int b, LPDBL H, LPDBL L, LPDBL S);
+DllExport int diblibGetClrHLSLen(DBL chkH, DBL chkL, DBL chkS, DBL srcH, DBL srcL, DBL srcS);
+DllExport void diblibcreateimgfilename(LPTSTR imgfilename);
+DllExport void diblibBmpSmallPictureCreate(LPTSTR lpSrcFname, LPTSTR lpDstFname, DBL xsize, DBL ysize);
+DllExport void diblibBmpOnePlanePictureCreate(LPTSTR lpSrcFname, LPTSTR lpDstFname, COLORREF chkclr, int nlimit);
+DllExport void diblibBmpOnePlanePictureCreateES98(LPTSTR lpSrcFname, LPTSTR lpDstFname, COLORREF chkclr, int nlimit);
+DllExport void diblibBmp256PlanePictureCreate(LPTSTR lpSrcFname, LPTSTR lpDstFname, DBL xsize, DBL ysize, COLORREF chkclr);
+DllExport void diblibCmprimgToBmp(LPTSTR dotfname, LPTSTR bmpfname);
+DllExport void diblibGetDotRGB(int nbitcnt, LPRGBQUAD lpRGBQuad, LPBYTE lpLineImg, int x, int *r, int *g, int *b);
+DllExport void diblibSetDotRGB(int nbitcnt, LPRGBQUAD lpRGBQuad, LPBYTE lpLineImg, int x, int r, int g, int b);
+DllExport BOOL diblibGlobalLock();
+DllExport void diblibGlobalUnlock();

@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CB28A5C4-62CE-443A-B64A-C8B823029A0E}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>Ses</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../ses;../CmnSrc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Ses;../CmnSrc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Ses;../CmnSrc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Ses;../CmnSrc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Defenv.h" />
+    <ClInclude Include="..\..\Dlldef.h" />
+    <ClInclude Include="..\..\Stdef.h" />
+    <ClInclude Include="..\CmnSrc\BmpFile.h" />
+    <ClInclude Include="..\CmnSrc\CharLib.h" />
+    <ClInclude Include="..\CmnSrc\CmdAtr.h" />
+    <ClInclude Include="..\CmnSrc\CmdBase.h" />
+    <ClInclude Include="..\CmnSrc\CmdBaseBmp.h" />
+    <ClInclude Include="..\CmnSrc\CmdClr.h" />
+    <ClInclude Include="..\CmnSrc\CmdCrdnt.h" />
+    <ClInclude Include="..\CmnSrc\CmdDBEdit.h" />
+    <ClInclude Include="..\CmnSrc\CmdDibC.h" />
+    <ClInclude Include="..\CmnSrc\CmdEdit.h" />
+    <ClInclude Include="..\CmnSrc\CmdEFtp.h" />
+    <ClInclude Include="..\CmnSrc\CmdFigu.h" />
+    <ClInclude Include="..\CmnSrc\CmdFile.h" />
+    <ClInclude Include="..\CmnSrc\CmdFtp.h" />
+    <ClInclude Include="..\CmnSrc\CmdKamon.h" />
+    <ClInclude Include="..\CmnSrc\CmdKamonCrct.h" />
+    <ClInclude Include="..\CmnSrc\CmdLine.h" />
+    <ClInclude Include="..\CmnSrc\CmdMente.h" />
+    <ClInclude Include="..\CmnSrc\CmdMoji.h" />
+    <ClInclude Include="..\CmnSrc\CmdMsur.h" />
+    <ClInclude Include="..\CmnSrc\CmdPloter.h" />
+    <ClInclude Include="..\CmnSrc\CmdPoint.h" />
+    <ClInclude Include="..\CmnSrc\CmdSend.h" />
+    <ClInclude Include="..\CmnSrc\CmdSlct.h" />
+    <ClInclude Include="..\CmnSrc\CmdSpcl.h" />
+    <ClInclude Include="..\CmnSrc\CmdSpclStrg.h" />
+    <ClInclude Include="..\CmnSrc\CmdStrg.h" />
+    <ClInclude Include="..\CmnSrc\CmdSub.h" />
+    <ClInclude Include="..\CmnSrc\CmdSWak.h" />
+    <ClInclude Include="..\CmnSrc\CmdSystem.h" />
+    <ClInclude Include="..\CmnSrc\CmdTrns.h" />
+    <ClInclude Include="..\CmnSrc\CmdWaku.h" />
+    <ClInclude Include="..\CmnSrc\CmdZoom.h" />
+    <ClInclude Include="..\CmnSrc\CrossLib.h" />
+    <ClInclude Include="..\CmnSrc\CurveUtil.h" />
+    <ClInclude Include="..\CmnSrc\DaoDBLib.h" />
+    <ClInclude Include="..\CmnSrc\Dialog2PointSize.h" />
+    <ClInclude Include="..\CmnSrc\DialogBmpRound.h" />
+    <ClInclude Include="..\CmnSrc\DialogClrBar.h" />
+    <ClInclude Include="..\CmnSrc\DialogConerKind.h" />
+    <ClInclude Include="..\CmnSrc\DialogCptrFolder.h" />
+    <ClInclude Include="..\CmnSrc\DialogCrctDisp.h" />
+    <ClInclude Include="..\CmnSrc\DialogCrctLoad.h" />
+    <ClInclude Include="..\CmnSrc\DialogDBEdit.h" />
+    <ClInclude Include="..\CmnSrc\DialogDirSlct.h" />
+    <ClInclude Include="..\CmnSrc\DialogDivPlotOut.h" />
+    <ClInclude Include="..\CmnSrc\DialogEditBar.h" />
+    <ClInclude Include="..\CmnSrc\DialogEpsKamonLoad.h" />
+    <ClInclude Include="..\CmnSrc\DialogESKamon.h" />
+    <ClInclude Include="..\CmnSrc\DialogESKamonLoad.h" />
+    <ClInclude Include="..\CmnSrc\DialogESKamonSave.h" />
+    <ClInclude Include="..\CmnSrc\DialogFontChange.h" />
+    <ClInclude Include="..\CmnSrc\DialogGaiji.h" />
+    <ClInclude Include="..\CmnSrc\DialogGaijiSlct.h" />
+    <ClInclude Include="..\CmnSrc\DialogGradation.h" />
+    <ClInclude Include="..\CmnSrc\DialogImageSave.h" />
+    <ClInclude Include="..\CmnSrc\DialogInputNum.h" />
+    <ClInclude Include="..\CmnSrc\DialogInputNumPair.h" />
+    <ClInclude Include="..\CmnSrc\DialogKamonLoad.h" />
+    <ClInclude Include="..\CmnSrc\DialogMDBSelect.h" />
+    <ClInclude Include="..\CmnSrc\DialogMemoryEnvSet.h" />
+    <ClInclude Include="..\CmnSrc\DialogMojiFiting.h" />
+    <ClInclude Include="..\CmnSrc\DialogMojiLoad.h" />
+    <ClInclude Include="..\CmnSrc\DialogMojiMove.h" />
+    <ClInclude Include="..\CmnSrc\DialogMojiSave.h" />
+    <ClInclude Include="..\CmnSrc\DialogMojiSize.h" />
+    <ClInclude Include="..\CmnSrc\DialogMsurAtrSet.h" />
+    <ClInclude Include="..\CmnSrc\DialogOutLine.h" />
+    <ClInclude Include="..\CmnSrc\DialogPlotOut.h" />
+    <ClInclude Include="..\CmnSrc\DialogScrnClr.h" />
+    <ClInclude Include="..\CmnSrc\DialogScrnEnv.h" />
+    <ClInclude Include="..\CmnSrc\DialogSetSpace.h" />
+    <ClInclude Include="..\CmnSrc\DialogShadow.h" />
+    <ClInclude Include="..\CmnSrc\DialogSizeBoxs.h" />
+    <ClInclude Include="..\CmnSrc\DialogSizeCrcl.h" />
+    <ClInclude Include="..\CmnSrc\DialogSizeList.h" />
+    <ClInclude Include="..\CmnSrc\DialogSlctFtpAdrs.h" />
+    <ClInclude Include="..\CmnSrc\DialogSlctMailAdrs.h" />
+    <ClInclude Include="..\CmnSrc\DialogSlctStrg.h" />
+    <ClInclude Include="..\CmnSrc\DialogStrgArc.h" />
+    <ClInclude Include="..\CmnSrc\DialogStrgInput.h" />
+    <ClInclude Include="..\CmnSrc\DialogStrgInseart.h" />
+    <ClInclude Include="..\CmnSrc\DialogStrgLineup.h" />
+    <ClInclude Include="..\CmnSrc\DialogStrgVStruct.h" />
+    <ClInclude Include="..\CmnSrc\DialogTextInput.h" />
+    <ClInclude Include="..\CmnSrc\DialogTraceImage.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuAddAtr.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuAtrChange.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuBar1.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuBar2.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuBar3.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuBarSide.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuCopyTrns.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuDelete.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuEdit.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuGrup.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuInput.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuInSekiji.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuLoad.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuPaper.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuSave.h" />
+    <ClInclude Include="..\CmnSrc\DialogWakuSort.h" />
+    <ClInclude Include="..\CmnSrc\DialogWkPaperAdd.h" />
+    <ClInclude Include="..\CmnSrc\DialogWkPaperDel.h" />
+    <ClInclude Include="..\CmnSrc\DialogXLSSelect.h" />
+    <ClInclude Include="..\CmnSrc\Diblib.h" />
+    <ClInclude Include="..\CmnSrc\Excel.h" />
+    <ClInclude Include="..\CmnSrc\ExcelLib.h" />
+    <ClInclude Include="..\CmnSrc\FileArc.h" />
+    <ClInclude Include="..\CmnSrc\FileDxf.h" />
+    <ClInclude Include="..\CmnSrc\FileEps.h" />
+    <ClInclude Include="..\CmnSrc\FileVect.h" />
+    <ClInclude Include="..\CmnSrc\FontCBox.h" />
+    <ClInclude Include="..\CmnSrc\ImeHndl.h" />
+    <ClInclude Include="..\CmnSrc\Mente.h" />
+    <ClInclude Include="..\CmnSrc\MinMax.h" />
+    <ClInclude Include="..\CmnSrc\MyButton.h" />
+    <ClInclude Include="..\CmnSrc\MyDialog.h" />
+    <ClInclude Include="..\CmnSrc\MyDialogBar.h" />
+    <ClInclude Include="..\CmnSrc\MyEdit.h" />
+    <ClInclude Include="..\CmnSrc\MyFileDialog.h" />
+    <ClInclude Include="..\CmnSrc\ViewFileDialog.h" />
+    <ClInclude Include="..\CmnSrc\WakuTool.h" />
+    <ClInclude Include="..\CmnSrc\zip32.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Ses.h" />
+    <ClInclude Include="SesDoc.h" />
+    <ClInclude Include="SesView.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SysEnv.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CmnSrc\BmpFile.cpp" />
+    <ClCompile Include="..\CmnSrc\CharLib.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdAtr.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdBase.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdBaseBmp.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdClr.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdCrdnt.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdDBEdit.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdDibC.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdEdit.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdEFtp.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdFigu.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdFile.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdFtp.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdKamon.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdKamonCrct.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdLine.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdMente.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdMoji.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdMsur.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdPloter.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdPoint.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdSend.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdSlct.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdSpcl.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdSpclStrg.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdStrg.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdStrgProp.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdSub.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdSWak.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdSystem.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdTrns.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdWaku.cpp" />
+    <ClCompile Include="..\CmnSrc\CmdZoom.cpp" />
+    <ClCompile Include="..\CmnSrc\CrossLib.cpp" />
+    <ClCompile Include="..\CmnSrc\CurveUtil.cpp" />
+    <ClCompile Include="..\CmnSrc\DaoDBLib.cpp" />
+    <ClCompile Include="..\CmnSrc\Dialog2PointSize.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogBmpRound.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogClrBar.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogConerKind.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogCptrFolder.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogCrctDisp.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogCrctLoad.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogDBEdit.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogDirSlct.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogDivPlotOut.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogEditBar.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogEpsKamonLoad.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogESKamon.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogESKamonLoad.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogESKamonSave.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogFontChange.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogGaiji.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogGaijiSlct.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogGradation.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogImageSave.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogInputNum.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogInputNumPair.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogKamonLoad.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogMDBSelect.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogMemoryEnvSet.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogMojiFiting.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogMojiLoad.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogMojiMove.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogMojiSave.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogMojiSize.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogMsurAtrSet.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogOutLine.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogPlotOut.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogScrnClr.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogScrnEnv.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogSetSpace.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogShadow.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogSizeBoxs.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogSizeCrcl.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogSizeList.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogSlctFtpAdrs.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogSlctMailAdrs.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogSlctStrg.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogStrgArc.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogStrgInput.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogStrgInseart.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogStrgLineup.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogStrgVStruct.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogTextInput.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogTraceImage.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuAddAtr.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuAtrChange.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuBar1.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuBar2.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuBar3.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuBarSide.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuCopyTrns.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuDelete.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuEdit.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuGrup.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuInput.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuInSekiji.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuLoad.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuPaper.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuSave.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWakuSort.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWkPaperAdd.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogWkPaperDel.cpp" />
+    <ClCompile Include="..\CmnSrc\DialogXLSSelect.cpp" />
+    <ClCompile Include="..\CmnSrc\Diblib.cpp" />
+    <ClCompile Include="..\CmnSrc\Excel.cpp" />
+    <ClCompile Include="..\CmnSrc\ExcelLib.cpp" />
+    <ClCompile Include="..\CmnSrc\FileArc.cpp" />
+    <ClCompile Include="..\CmnSrc\FileDxf.cpp" />
+    <ClCompile Include="..\CmnSrc\FileEps.cpp" />
+    <ClCompile Include="..\CmnSrc\FileVect.cpp" />
+    <ClCompile Include="..\CmnSrc\FontCBox.cpp" />
+    <ClCompile Include="..\CmnSrc\ImeHndl.cpp" />
+    <ClCompile Include="..\CmnSrc\Mente.cpp" />
+    <ClCompile Include="..\CmnSrc\MinMax.cpp" />
+    <ClCompile Include="..\CmnSrc\MyButton.cpp" />
+    <ClCompile Include="..\CmnSrc\MyDialog.cpp" />
+    <ClCompile Include="..\CmnSrc\MyDialogBar.cpp" />
+    <ClCompile Include="..\CmnSrc\MyEdit.cpp" />
+    <ClCompile Include="..\CmnSrc\MyFileDialog.cpp" />
+    <ClCompile Include="..\CmnSrc\ViewFileDialog.cpp" />
+    <ClCompile Include="..\CmnSrc\WakuTool.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Ses.cpp" />
+    <ClCompile Include="SesDoc.cpp" />
+    <ClCompile Include="SesView.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SysEnv.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\UsbPrt.dll" />
+    <None Include="res\cursor2.cur" />
+    <None Include="res\cursor3.cur" />
+    <None Include="res\cur_zoom.cur" />
+    <None Include="res\cus_hand.cur" />
+    <None Include="res\Ses.rc2" />
+    <None Include="Ses.reg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Ses.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\cdrntool.bmp" />
+    <Image Include="res\conerct.bmp" />
+    <Image Include="res\conerlb.bmp" />
+    <Image Include="res\conerlt.bmp" />
+    <Image Include="res\conerrb.bmp" />
+    <Image Include="res\conerrt.bmp" />
+    <Image Include="res\grabtn.bmp" />
+    <Image Include="res\IToolbar.bmp" />
+    <Image Include="res\leftside.bmp" />
+    <Image Include="RES\LINETOOL.BMP" />
+    <Image Include="res\movedwn1.bmp" />
+    <Image Include="res\movedwn2.bmp" />
+    <Image Include="res\movedwn3.bmp" />
+    <Image Include="res\movelft1.bmp" />
+    <Image Include="res\movelft2.bmp" />
+    <Image Include="res\movelft3.bmp" />
+    <Image Include="res\movetgh1.bmp" />
+    <Image Include="res\movetgh2.bmp" />
+    <Image Include="res\movetgh3.bmp" />
+    <Image Include="res\moveup1.bmp" />
+    <Image Include="res\moveup2.bmp" />
+    <Image Include="res\moveup3.bmp" />
+    <Image Include="res\nextbtn.bmp" />
+    <Image Include="res\nonclrbtn.bmp" />
+    <Image Include="res\objtoolb.bmp" />
+    <Image Include="res\oleftdow.bmp" />
+    <Image Include="res\oleftup.bmp" />
+    <Image Include="res\orightdo.bmp" />
+    <Image Include="res\orightup.bmp" />
+    <Image Include="RES\POINTTOO.BMP" />
+    <Image Include="res\prebtn.bmp" />
+    <Image Include="res\Ses.ico" />
+    <Image Include="res\SesDoc.ico" />
+    <Image Include="res\sizebig1.bmp" />
+    <Image Include="res\sizebig2.bmp" />
+    <Image Include="res\sizebig3.bmp" />
+    <Image Include="res\sizerlb1.bmp" />
+    <Image Include="res\sizerlb2.bmp" />
+    <Image Include="res\sizerlb3.bmp" />
+    <Image Include="res\sizerls1.bmp" />
+    <Image Include="res\sizerls2.bmp" />
+    <Image Include="res\sizerls3.bmp" />
+    <Image Include="res\sizesml1.bmp" />
+    <Image Include="res\sizesml2.bmp" />
+    <Image Include="res\sizesml3.bmp" />
+    <Image Include="res\sizeudb1.bmp" />
+    <Image Include="res\sizeudb2.bmp" />
+    <Image Include="res\sizeudb3.bmp" />
+    <Image Include="res\sizeuds1.bmp" />
+    <Image Include="res\sizeuds2.bmp" />
+    <Image Include="res\sizeuds3.bmp" />
+    <Image Include="res\startct.bmp" />
+    <Image Include="res\startlb.bmp" />
+    <Image Include="res\startlt.bmp" />
+    <Image Include="res\startrb.bmp" />
+    <Image Include="res\startrt.bmp" />
+    <Image Include="res\strgtate.bmp" />
+    <Image Include="res\strgtyno.bmp" />
+    <Image Include="res\strgyoko.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\toolbar1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Object\Object.vcxproj">
+      <Project>{2f2136c7-b182-44d2-9c24-d9f7c87a47f0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjLib\ObjLib.vcxproj">
+      <Project>{077673d0-4513-4d18-b125-24b14c45b07a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

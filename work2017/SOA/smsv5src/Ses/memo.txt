@@ -1,0 +1,9 @@
+sgsŒŸØ‚ª•K—v
+AddKakusuList
+
+,ccs=UNICODE
+outcrect.dat
+ListBusyu.txt
+ListKakusu.txt
+Gaijitbl.lst
+

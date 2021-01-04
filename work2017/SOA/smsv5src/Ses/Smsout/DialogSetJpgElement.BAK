@@ -1,0 +1,287 @@
+// DSetJpgEle.cpp : インプリメンテーション ファイル
+//
+
+#include "stdafx.h"
+#include "CmdBase.h"
+#include "BmpFile.h"
+
+#include "DialogSetJpgElement.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CDialogSetJpgElement ダイアログ
+
+//extern "C" {
+	#include "../../ObjLib/Baselib.h"
+	#include "../../ObjLib/Scrnlib.h"
+	#include "../../ObjLib/Senvlib.h"
+	#include "../../ObjLib/Diblib.h"
+//}
+
+#define	EXTIME	3
+
+CDialogSetJpgElement::CDialogSetJpgElement(CWnd* pParent /*=NULL*/)
+	: CDialog(CDialogSetJpgElement::IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CDialogSetJpgElement)
+	m_csBaseName = _T("");
+	m_nJpgSizeX = 0;
+	m_nJpgSizeY = 0;
+	m_nJpgSX = 0;
+	m_nJpgSY = 0;
+	m_nImageSizeX = 0;
+	m_nImageSizeY = 0;
+	m_nImageSPX = 0;
+	m_nImageSPY = 0;
+	m_nChkNoWakuOut = FALSE;
+	m_nJpgQuality = 0;
+	m_nRoundRag = 0;
+	//}}AFX_DATA_INIT
+}
+
+CDialogSetJpgElement::~CDialogSetJpgElement()
+{
+}
+
+void CDialogSetJpgElement::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CDialogSetJpgElement)
+	DDX_Text(pDX, IDC_EDBASENAME, m_csBaseName);
+	DDX_Text(pDX, IDC_EDJPGSIZEX, m_nJpgSizeX);
+	DDX_Text(pDX, IDC_EDJPGSIZEY, m_nJpgSizeY);
+	DDX_Text(pDX, IDC_EDJPGSX, m_nJpgSX);
+	DDX_Text(pDX, IDC_EDJPGSY, m_nJpgSY);
+	DDX_Text(pDX, IDC_EDIMAGESIZEX, m_nImageSizeX);
+	DDX_Text(pDX, IDC_EDIMAGESIZEY, m_nImageSizeY);
+	DDX_Text(pDX, IDC_EDIMAGESPX, m_nImageSPX);
+	DDX_Text(pDX, IDC_EDIMAGESPY, m_nImageSPY);
+	DDX_Check(pDX, IDC_CHKNOWAKUOUT, m_nChkNoWakuOut);
+	DDX_Text(pDX, IDC_EDJPGQUALITY, m_nJpgQuality);
+	DDX_Text(pDX, IDC_EDJPGROUNDRAG, m_nRoundRag);
+	//}}AFX_DATA_MAP
+}
+
+
+BEGIN_MESSAGE_MAP(CDialogSetJpgElement, CDialog)
+	//{{AFX_MSG_MAP(CDialogSetJpgElement)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CDialogSetJpgElement メッセージ ハンドラ
+
+BOOL CDialogSetJpgElement::OnInitDialog() 
+{
+	TCHAR	exepath[FNAMEMAX];
+	TCHAR	filename[FNAMEMAX];
+	FILE	*fp;
+	TCHAR	buf[RECMAX];
+
+	CDialog::OnInitDialog();
+	m_csBaseName = _T("c:\\outimage");
+	m_nJpgQuality = 50;
+	m_nRoundRag = 0;
+	m_nChkNoWakuOut = 1;
+	m_nJpgSizeX = 768;
+	m_nJpgSizeY = 1024;
+	m_nJpgSX = 0;
+	m_nJpgSY = 0;
+	m_nImageSizeX = 768;
+	m_nImageSizeY = -1;
+	m_nImageSPX = 0;
+	m_nImageSPY = -1;
+	
+	senvgetexepath(exepath);
+	_stprintf_s(filename, _T("%s\\jpgout.env"), exepath);
+	_tfopen_s(&fp, filename, _T("r"));
+	if (fp != NULL) {
+		baselibCrDelFgets(buf, RECMAX, fp);
+		m_csBaseName = buf;
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nJpgQuality);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nRoundRag);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nChkNoWakuOut);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nJpgSizeX);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nJpgSizeY);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nJpgSX);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nJpgSY);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nImageSizeX);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nImageSizeY);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nImageSPX);
+		_fgetts(buf, RECMAX, fp);
+		_stscanf_s(buf, _T("%d"), &m_nImageSPY);
+		fclose(fp);
+	}
+	UpdateData(FALSE);
+	return TRUE;
+}
+
+void CDialogSetJpgElement::OnOK() 
+{
+	CDC		*pcDC;
+
+	if(m_nImageSizeX == -1 && m_nImageSizeY == -1){
+		::AfxMessageBox(_T("イメージサイズはどちらか片方は設定してください"), MB_OK);
+		return;
+	}
+	UpdateData(TRUE);
+	SaveJpgoutElement();
+
+	m_pcBmpFile = new CBmpFile(m_pcView);
+	m_pcBmpFile->InitClass();
+	m_pcBmpFile->CreateBmpInit(m_nJpgSizeX*EXTIME, m_nJpgSizeY*EXTIME);
+	m_nDotSizeX = m_pcBmpFile->m_nXDotMax;
+	m_nDotSizeY = m_pcBmpFile->m_nYDotMax;
+	pcDC = &(m_pcBmpFile->m_cdcMemCDC);
+
+	JpgOutMain(pcDC);
+	
+	m_pcBmpFile->CreateBmpEnd();
+	CDialog::OnOK();
+}
+
+void CDialogSetJpgElement::JpgOutMain(CDC *pcDC)
+{
+	POSITION pos;
+	CCrctWaku *pcCrctWaku;
+	int		nPageFirst;
+	int		nPageNo;
+	int		sx, sy;
+	CRect	rect;
+
+	nPageFirst = TRUE;
+	nPageNo = 1;
+	if (m_nInSort == 0) {
+		m_pcDoc->m_pcListCW = &(m_pcDoc->m_lstCWSort);
+	}
+	else {
+		m_pcDoc->m_pcListCW = &(m_pcDoc->m_lstCWRead);
+	}
+	pos = m_pcDoc->m_pcListCW->GetHeadPosition();
+	while (pos != NULL)
+	{
+		pcCrctWaku = m_pcDoc->m_pcListCW->GetNext(pos);
+		if (pcCrctWaku->m_csFlag == "1") {
+			if(nPageFirst == TRUE){
+				nPageFirst = FALSE;
+				sx = m_nJpgSX * EXTIME;
+				sy = m_nJpgSY * EXTIME;
+				pcDC->BitBlt(0, 0, m_nDotSizeX, m_nDotSizeY, NULL, 0, 0, WHITENESS);
+			}
+			m_pcDoc->DataAllCls();
+			m_pcDoc->WakuLoad(pcCrctWaku->m_csFileName.GetBuffer(FNAMEMAX));
+			SetFitingElement();
+			m_pcView->AllWakuSetString(pcCrctWaku->m_csStrings.GetBuffer(FNAMEMAX));
+			rect.left = sx;
+			rect.top = sy;
+			rect.right = rect.left + m_nImageFitSizeX;
+			rect.bottom = rect.top + m_nImageFitSizeY;
+			if(m_nChkNoWakuOut == 0){
+				senvsetdrawmode(PREVIEW);
+			}
+			else{
+				senvsetdrawmode(PRINTVIEW);
+			}
+			m_pcView->DrawWakuInRect(pcDC, rect);
+			sx = sx + m_nImageFitSizeX + m_nImageSPX * EXTIME;
+			if((sx + m_nImageFitSizeX) > m_nJpgSizeX * EXTIME){
+				sx = m_nJpgSX * EXTIME;
+				sy = sy + m_nImageFitSizeY + m_nImageSPY * EXTIME;
+				if((sy + m_nImageFitSizeY) > m_nJpgSizeY * EXTIME){
+					CreateJpgFile(nPageNo);
+					nPageNo++;
+					nPageFirst = TRUE;
+				}
+			}
+		}
+	}
+	if(nPageFirst == FALSE){
+		CreateJpgFile(nPageNo);
+	}
+}
+
+void CDialogSetJpgElement::SetFitingElement()
+{
+	DBL		xsize, ysize;
+
+	scrngetmmsize(&xsize, &ysize);
+	if(m_nImageSizeX == -1){
+		m_nImageFitSizeX = (int)(xsize * EXTIME * m_nImageSizeY / ysize);
+		m_nImageFitSizeY = m_nImageSizeY * EXTIME;
+	}else if(m_nImageSizeY == -1){
+		m_nImageFitSizeX = m_nImageSizeX * EXTIME;
+		m_nImageFitSizeY = (int)(ysize * EXTIME * m_nImageSizeX / xsize);
+	}else{
+		m_nImageFitSizeX = m_nImageSizeX * EXTIME;
+		m_nImageFitSizeY = m_nImageSizeY * EXTIME;
+	}
+}
+// 作り込みが必要
+void CDialogSetJpgElement::CreateJpgFile(int nPageNo)
+{
+	TCHAR	bmpfilename[FNAMEMAX];
+	TCHAR	jpgfilename[FNAMEMAX];
+	HANDLE	hndle;
+	HANDLE	nhndle;
+	int		mode;
+	int		ret;
+
+	diblibcreateimgfilename(bmpfilename);
+	m_pcBmpFile->BmpFileOutHalf(bmpfilename, m_nDotSizeX, m_nDotSizeY);
+	_stprintf_s(jpgfilename, _T("%s%d.jpg"), m_csBaseName.GetBuffer(RECMAX), nPageNo);
+
+	if(m_nRoundRag == 90){
+		mode = 1;
+	}else if(m_nRoundRag == 180){
+		mode = 0;
+	}else if(m_nRoundRag == 270){
+		mode = 2;
+	}else{
+		mode = -1;
+	}
+	if(mode == -1){
+
+	}else{
+
+	}
+}
+
+void CDialogSetJpgElement::SaveJpgoutElement()
+{
+	TCHAR	exepath[FNAMEMAX];
+	TCHAR	filename[FNAMEMAX];
+	FILE	*fp;
+
+	senvgetexepath(exepath);
+	_stprintf_s(filename, _T("%s\\jpgout.env"), exepath);
+	_tfopen_s(&fp, filename, _T("w"));
+	if (fp == NULL) {
+		return;
+	}
+	_ftprintf_s(fp, _T("%s\n"), m_csBaseName.GetBuffer(RECMAX));
+	_ftprintf_s(fp, _T("%d\n"), m_nJpgQuality);
+	_ftprintf_s(fp, _T("%d\n"), m_nRoundRag);
+	_ftprintf_s(fp, _T("%d\n"), m_nChkNoWakuOut);
+	_ftprintf_s(fp, _T("%d\n"), m_nJpgSizeX);
+	_ftprintf_s(fp, _T("%d\n"), m_nJpgSizeY);
+	_ftprintf_s(fp, _T("%d\n"), m_nJpgSX);
+	_ftprintf_s(fp, _T("%d\n"), m_nJpgSY);
+	_ftprintf_s(fp, _T("%d\n"), m_nImageSizeX);
+	_ftprintf_s(fp, _T("%d\n"), m_nImageSizeY);
+	_ftprintf_s(fp, _T("%d\n"), m_nImageSPX);
+	_ftprintf_s(fp, _T("%d\n"), m_nImageSPY);
+	fclose(fp);
+}

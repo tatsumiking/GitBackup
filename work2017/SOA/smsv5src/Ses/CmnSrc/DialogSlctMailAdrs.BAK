@@ -1,0 +1,91 @@
+// DSlctMAdrs.cpp : インプリメンテーション ファイル
+//
+
+#include "stdafx.h"
+#include "DialogSlctMailAdrs.h"
+
+//extern "C" {
+#include "../../ObjLib/Baselib.h"
+#include "../../ObjLib/Senvlib.h"
+//}
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CDialogSlctMailAdrs ダイアログ
+
+CDialogSlctMailAdrs::CDialogSlctMailAdrs(CWnd* pParent /*=NULL*/)
+	: CDialog(CDialogSlctMailAdrs::IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CDialogSlctMailAdrs)
+	m_csSubject = _T("");
+	m_csMailAdrs = _T("");
+	//}}AFX_DATA_INIT
+}
+
+
+void CDialogSlctMailAdrs::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CDialogSlctMailAdrs)
+	DDX_Control(pDX, IDC_CMBMAILADRS, m_cmbMailAdrs);
+	DDX_Text(pDX, IDC_EDSUBJECT, m_csSubject);
+	DDX_CBString(pDX, IDC_CMBMAILADRS, m_csMailAdrs);
+	//}}AFX_DATA_MAP
+}
+
+
+BEGIN_MESSAGE_MAP(CDialogSlctMailAdrs, CDialog)
+	//{{AFX_MSG_MAP(CDialogSlctMailAdrs)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CDialogSlctMailAdrs メッセージ ハンドラ
+
+BOOL CDialogSlctMailAdrs::OnInitDialog() 
+{
+	CDialog::OnInitDialog();
+	InitCmbMailAdrs();	
+	return TRUE;
+}
+
+void CDialogSlctMailAdrs::InitCmbMailAdrs()
+{
+	TCHAR	exepath[FNAMEMAX];
+	TCHAR	szSendEnvFile[FNAMEMAX];
+	FILE	*fp;
+	TCHAR	szMailAdrs[RECMAX];
+
+	m_cmbMailAdrs.ResetContent();
+	senvgetexepath(exepath);
+	_stprintf_s(szSendEnvFile, _T("%s\\SendMail.env"), exepath);
+	_tfopen_s(&fp, szSendEnvFile, _T("r"));
+	if(fp == NULL){
+		_tcscpy_s(szMailAdrs, _T("モバイル用アドレス<mobile@c-alfo.com>"));
+		m_cmbMailAdrs.AddString(szMailAdrs);
+	}else{
+		while(1){
+			if(baselibCrDelFgets(szMailAdrs, RECMAX, fp) == NULL){
+				break;
+			}
+			szMailAdrs[_tcslen(szMailAdrs)-1] = _T('\0');
+			m_cmbMailAdrs.AddString(szMailAdrs);
+		}
+		fclose(fp);
+	}
+}
+
+void CDialogSlctMailAdrs::OnOK() 
+{
+	int		spos, epos;
+	CString	csStr;
+
+	UpdateData(TRUE);
+	spos = m_csMailAdrs.FindOneOf(_T("<"));
+	epos = m_csMailAdrs.FindOneOf(_T(">"));
+	m_csAdrs = m_csMailAdrs.Mid(spos+1, epos-spos-1);
+	CDialog::OnOK();
+}

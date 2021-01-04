@@ -1,0 +1,15 @@
+void diblibinit();
+void diblibend();
+void diblibResetFileNo();
+void diblibRGBtoHLS(int r, int g, int b, LPDBL H, LPDBL L, LPDBL S);
+int diblibGetClrHLSLen(DBL chkH, DBL chkL, DBL chkS, DBL srcH, DBL srcL, DBL srcS);
+void diblibcreatebmpfile(LPTSTR bmpfilename);
+void diblibBmpSmallPictureCreate(LPTSTR lpSrcFname, LPTSTR lpDstFname, DBL xsize, DBL ysize);
+void diblibBmpOnePlanePictureCreate(LPTSTR lpSrcFname, LPTSTR lpDstFname, COLORREF chkclr, int nlimit);
+void diblibBmpOnePlanePictureCreateES98(LPTSTR lpSrcFname, LPTSTR lpDstFname, COLORREF chkclr, int nlimit);
+void diblibBmp256PlanePictureCreate(LPTSTR lpSrcFname, LPTSTR lpDstFname, DBL xsize, DBL ysize, COLORREF chkclr);
+void diblibCmprimgToBmp(LPTSTR dotfname, LPTSTR bmpfname);
+void diblibGetDotRGB(int nbitcnt, LPRGBQUAD lpRGBQuad, LPBYTE lpLineImg, int x, int *r, int *g, int *b);
+void diblibSetDotRGB(int nbitcnt, LPRGBQUAD lpRGBQuad, LPBYTE lpLineImg, int x, int r, int g, int b);
+BOOL diblibGlobalLock();
+void diblibGlobalUnlock();

@@ -1,0 +1,165 @@
+﻿  stdafx.cpp
+  _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+  Baselib.cpp
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(22): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(55): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(67): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(93): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(279): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(295): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(533): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(534): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(546): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(547): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(557): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(609): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(606): warning C4101: 'lc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(606): warning C4101: 'hc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(645): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(675): warning C4101: 'lc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(675): warning C4101: 'hc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(757): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(793): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(825): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(791): warning C4101: 'hc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(1004): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(1039): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(1057): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(1075): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(1095): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(1114): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Cmprlib.cpp
+  Crosslib.cpp
+  Curvelib.cpp
+  Diblib.cpp
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(179): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(184): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(186): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(192): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(196): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(197): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(216): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(224): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(230): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(239): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(247): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(297): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(306): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(308): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(313): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(317): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(330): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(352): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(402): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(411): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(413): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(418): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(422): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(435): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(457): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(515): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(523): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(547): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(549): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(553): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(563): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(592): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(646): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(661): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\diblib.cpp(674): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Disp.cpp
+  Dltlib.cpp
+  Epsflib.cpp
+d:\work\work2017\soa\smsv5src\objlib\epsflib.cpp(566): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\epsflib.cpp(621): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Fdxflib.cpp
+d:\work\work2017\soa\smsv5src\objlib\fdxflib.cpp(467): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Figuenv.cpp
+  Kamonlib.cpp
+  Mathlib.cpp
+  Mdfylib.cpp
+  Mojienv.cpp
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(113): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(119): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(130): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(284): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(376): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(380): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(390): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(391): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(416): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(423): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(424): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(439): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(443): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(447): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(451): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(455): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(459): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(463): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(467): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(474): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(480): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(493): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(515): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(546): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(579): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(589): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(610): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\mojienv.cpp(620): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  ObjLib.cpp
+  Outlib.cpp
+d:\work\work2017\soa\smsv5src\objlib\outlib.cpp(64): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\outlib.cpp(65): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\outlib.cpp(66): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\outlib.cpp(104): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\outlib.cpp(212): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\outlib.cpp(263): warning C4267: '=': 'size_t' から 'DWORD' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\outlib.cpp(328): warning C4267: '=': 'size_t' から 'DWORD' に変換しました。データが失われているかもしれません。
+  Outlnlib.cpp
+  Pdrwlib.cpp
+  Plgnfill.cpp
+  Plot.cpp
+  コードを生成中...
+d:\work\work2017\soa\smsv5src\objlib\baselib.cpp(574): warning C4172: ローカル変数またはテンポラリのアドレスを返します: szSafix
+  コンパイル中...
+  Pout.cpp
+d:\work\work2017\soa\smsv5src\objlib\pout.cpp(153): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\pout.cpp(164): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Protect.cpp
+  Rulelib.cpp
+d:\work\work2017\soa\smsv5src\objlib\rulelib.cpp(49): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Scrnlib.cpp
+  Senvlib.cpp
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(817): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(908): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1085): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1691): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1697): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1708): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1719): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1730): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1741): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1752): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1763): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\senvlib.cpp(1774): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Strcttrn.cpp
+  Wakuenv.cpp
+d:\work\work2017\soa\smsv5src\objlib\wakuenv.cpp(288): warning C4244: '=': 'intptr_t' から 'long' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\objlib\wakuenv.cpp(475): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wakuenv.cpp(486): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wakuenv.cpp(533): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wakuenv.cpp(839): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Wkftbl.cpp
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(53): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(58): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(88): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(115): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(149): warning C4244: '=': 'intptr_t' から 'long' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(158): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(172): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(212): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\work\work2017\soa\smsv5src\objlib\wkftbl.cpp(213): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  コードを生成中...
+     ライブラリ D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\ObjLib.lib とオブジェクト D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\ObjLib.exp を作成中
+  ObjLib.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\x64\Debug\ObjLib.dll

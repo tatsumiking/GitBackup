@@ -1,0 +1,49 @@
+﻿  BoldLib.cpp
+  ClipData.cpp
+  Data.cpp
+  DataFDib.cpp
+  DataGrup.cpp
+  DataList.cpp
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(478): warning C4101: 'penno': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(519): warning C4244: '=': 'DBL' から 'int' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(648): warning C4101: 'bval': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(649): warning C4101: 'nthick': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(648): warning C4101: 'rval': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\object\datalist.cpp(648): warning C4101: 'gval': ローカル変数は 1 度も使われていません。
+  DataLogo.cpp
+  DibCData.cpp
+  GdiPlusEx.cpp
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(76): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(81): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(86): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(91): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(96): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(101): warning C4244: '引数': 'int' から 'Gdiplus::REAL' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(106): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(107): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(113): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(114): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(121): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(122): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(123): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(156): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(157): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(164): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(165): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(172): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(173): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(174): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+d:\work\work2017\soa\smsv5src\object\gdiplusex.cpp(175): warning C4244: '=': 'DBL' から 'INT' への変換です。データが失われる可能性があります。
+  MetaData.cpp
+  MojiVect.cpp
+d:\work\work2017\soa\smsv5src\object\mojivect.cpp(1130): warning C4101: 'pcMojiVect': ローカル変数は 1 度も使われていません。
+  MsurVect.cpp
+  SPtnVect.cpp
+  SWakVect.cpp
+  StrgVect.cpp
+  Vect.cpp
+  WakuVect.cpp
+  コードを生成中...
+d:\work\work2017\soa\smsv5src\object\mojivect.cpp(1081): warning C4700: 初期化されていないローカル変数 'mode' が使用されます
+     ライブラリ D:\work\work2017\SOA\smsv5src\Ses\Debug\Object.lib とオブジェクト D:\work\work2017\SOA\smsv5src\Ses\Debug\Object.exp を作成中
+  Object.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\Debug\Object.dll

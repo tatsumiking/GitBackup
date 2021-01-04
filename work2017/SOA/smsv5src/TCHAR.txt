@@ -1,0 +1,168 @@
+
+
+#ifdef UNICODE
+#else
+#endif
+
+wakuenvgetfullpaperpath FNAMEMAX
+DaoDBLib.cpp GetFildName
+	mojienvflistopen(_T("rb"));
+	mojienvflistclose();
+
+fgets
+_fgetts
+baselibCrDelFgets(LPTSTR buf, int max, FILE *fp)
+RECMAX以外は下記に再変更
+	if(_fgetts(buf, RECMAX8, fp) == NULL){
+		break;
+	}
+	len = _tcslen(buf);
+	buf[len-1] = _T('\0');
+
+
+fputs
+_fputts
+DllExport void baselibFputs(LPTSTR buf, FILE *fp)
+
+	TCHAR	buf[RECMAX];
+	_stprintf_s(buf, _T("%d %d cus %d\n"), x, y, cus);
+	baselibFputs(buf, fp);
+
+fopen
+	_tfopen_s(&fp, fname, _T("r"));
+	if (fp != NULL) {
+
+	_tfopen_s(&fp, fname, _T("w"));
+	if (fp != NULL) {
+
+	_tfopen_s(&fp, fname, _T("r"));
+	if (fp == NULL) {
+
+	_tfopen_s(&fp, fname, _T("w"));
+	if (fp == NULL) {
+
+http://ytyaru.hatenablog.com/entry/2016/07/15/003402
+
+#define DllExport   __declspec( dllexport )
+
+extern "C" {
+//extern "C" {
+//}
+	#include "../../ObjLib/Baselib.h"
+	#include "../../ObjLib/Cmprlib.h"
+	#include "../../ObjLib/Crosslib.h"
+	#include "../../ObjLib/Curvelib.h"
+	#include "../../ObjLib/Diblib.h"
+	#include "../../ObjLib/Disp.h"
+	#include "../../ObjLib/Dltlib.h"
+	#include "../../ObjLib/Epsflib.h"
+	#include "../../ObjLib/Fdxflib.h"
+	#include "../../ObjLib/Figuenv.h"
+	#include "../../ObjLib/Kamonlib.h"
+	#include "../../ObjLib/Mathlib.h"
+	#include "../../ObjLib/Mdfylib.h"
+
+	#include "../../ObjLib/Mojienv.h"
+	#include "../../ObjLib/ObjLib.h"
+	#include "../../ObjLib/Outlnlib.h"
+	#include "../../ObjLib/Pdrwlib.h"
+	#include "../../ObjLib/Plgnfill.h"
+	#include "../../ObjLib/Plot.h"
+	#include "../../ObjLib/Pout.h"
+	#include "../../ObjLib/Protect.h"
+	#include "../../ObjLib/Rulelib.h"
+
+	#include "../../ObjLib/Scrnlib.h"
+	#include "../../ObjLib/Senvlib.h"
+	#include "../../ObjLib/Strcttrn.h"
+	#include "../../ObjLib/Wakuenv.h"
+	#include "../../ObjLib/Wkftbl.h"
+
+	void scrnsetdelpen(HDC PaintDC);
+	void scrnsetslctpen(HDC PaintDC);
+	void scrnpenend(HDC PaintDC);
+
+
+	TRY
+	{
+
+	}
+	CATCH(CException, ex)
+	{
+
+	}
+	END_CATCH
+
+../../Object/Object/
+	len = _tcslen(_T("英数"));
+	if(_tcsnccmp(_T("英数"), pFont, len) == 0){
+	else if (_tcsnccmp(_T("20"), buf, len2) == 0) {
+
+THIS_FILE
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+#include "stdafx.h"
+#include "../ses"
+#include "../CmnSrc"
+#include "../../ObjLib"
+#include "../../Object"
+
+char	TCHAR
+char*	LPTSTR // ← LPSTR
+"str"	_T("str");
+fopen	_tfopen_s(FILE, LPTSTR, LPTSTR);    // 置換X// _tcreat
+strlen	_tcslen(LPTSTR);
+sprintf	_stprintf_s(LPTSTR, int, LPTSTR, arg);
+strncmp	_tcsnccmp(LPTSTR, LPTSTR, int);
+strcmp	_tcscmp(LPTSTR, LPTSTR);
+strcpy	_tcscpy_s(LPTSTR, LPTSTR) // _tcscpy_s(LPTSTR, int, LPTSTR);
+strncpy	_tcsncpy 
+strcat	_tcscat_s(LPTSTR, int, LPTSTR)
+atoi	_ttoi(LPTSTR);
+fprintf	_ftprintf_s
+sscanf	_stscanf_s
+fgets	_fgetts
+fputs	_fputts
+_access _taccess_s   // 置換X
+_mkdir	_tmkdir   // 置換X
+_unlink	_wunlink
+_remove	_tremove
+_chdir 	_tchdir   // 置換X
+_rmdir _trmdir
+
+_finddata_t _tfinddata_t
+_findfirst _tfindfirst
+_findnext _tfindnext
+_findclose _tfindclose
+
+strlen	_tcslen		文字数の取得
+strcmp	_tcscmp		比較（大小文字区別）
+strncmp	_tcsnccmp	
+_stricmp _tcsicmp	比較（大小文字無視）
+strcoll	_tcscoll	比較
+strchr	_tcschr		検索（指定した文字が最初に見つかったindexを返す）
+strpbrk	_tcspbrk	検索（指定した文字が最初に見つかったポインタを返す）	
+atoi	_ttoi		変換（文字列→整数(int)）
+atof	_ttof		変換（文字列→少数(float)）
+strtod	_ttod		変換（文字列→少数(double)）
+itoa	_itot		変換（整数(int)→文字列）
+ftoa	_ftot		変換（少数(float)→文字列）
+dtostr	_dtot		変換（少数(double)→文字列）
+_strlwr	_tcslwr_s		変換（大文字→小文字）
+_strupr	_tcsupr_s		変換（小文字→大文字）
+strcpy	_tcscpy_s
+strcat	_tcsncat
+sprintf	_stprintf_s
+sscanf	_stscanf_s
+printf	_tprintf
+scanf	_tscanf
+fprintf	_ftprintf_s
+fscanf	_ftscanf_s
+fgets	_fgetts
+
+../Sms;../CmnSrc;
+../Ses;../CmnSrc;
+
+	

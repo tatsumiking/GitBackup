@@ -1,0 +1,234 @@
+﻿  stdafx.cpp
+  BmpFile.cpp
+  CharLib.cpp
+  CmdAtr.cpp
+  CmdBase.cpp
+  CmdBaseBmp.cpp
+  CmdClr.cpp
+  CmdCrdnt.cpp
+  CmdDBEdit.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogmdbselect.h(22): warning C4995: 'CDaoDatabase': 名前が非推奨の #pragma として記述されています。
+  CmdDibC.cpp
+  CmdEFtp.cpp
+  CmdEdit.cpp
+  CmdFigu.cpp
+  CmdFile.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdfile.cpp(1283): warning C4101: 'len': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdfile.cpp(1327): warning C4101: 'len': ローカル変数は 1 度も使われていません。
+  CmdFtp.cpp
+  CmdKamon.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdkamon.cpp(123): warning C4553: '==': 式の結果が使用されていません。'=' を意図していますか?
+  CmdKamonCrct.cpp
+  CmdLine.cpp
+  CmdMente.cpp
+  CmdMoji.cpp
+  CmdMsur.cpp
+  コードを生成中...
+  コンパイル中...
+  CmdPloter.cpp
+  CmdPoint.cpp
+  CmdSWak.cpp
+  CmdSend.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(124): warning C4101: 'szMsg': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(127): warning C4101: 'lpfnSendMail': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(117): warning C4101: 'szBuf': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(227): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 'strcpy' の宣言を確認してください
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(231): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 'strcpy' の宣言を確認してください
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(284): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 'strcpy' の宣言を確認してください
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(286): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 'strcpy' の宣言を確認してください
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(215): warning C4101: 'szFileNameBmp': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(372): warning C4101: 'x': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(465): warning C4101: 'x': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdsend.cpp(627): warning C4101: 'x': ローカル変数は 1 度も使われていません。
+  CmdSlct.cpp
+  CmdSpcl.cpp
+  CmdSpclStrg.cpp
+  CmdStrg.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdstrg.cpp(1238): warning C4101: 'hc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdstrg.cpp(1433): warning C4101: 'hc': ローカル変数は 1 度も使われていません。
+  CmdStrgProp.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\cmdstrgprop.cpp(125): warning C4101: 'lc': ローカル変数は 1 度も使われていません。
+  CmdSub.cpp
+  CmdSystem.cpp
+  CmdTrns.cpp
+  CmdWaku.cpp
+  CmdZoom.cpp
+  CrossLib.cpp
+  CurveUtil.cpp
+  DaoDBLib.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.h(28): warning C4995: 'CDaoRecordset': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.h(29): warning C4995: 'CDaoDatabase': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.h(30): warning C4995: 'CDaoTableDef': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.h(31): warning C4995: 'CDaoQueryDef': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(72): warning C4995: 'CDaoDatabase': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(75): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(84): warning C4995: 'CDaoDatabase': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(87): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(144): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(156): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(175): warning C4995: 'CDaoFieldInfo': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(207): warning C4995: 'CDaoTableDef': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(211): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(227): warning C4995: 'CDaoQueryDef': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(231): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(275): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(287): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(326): warning C4995: 'CDaoRecordset': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(329): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(372): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(383): warning C4995: 'CDaoFieldInfo': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(407): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(420): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(473): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.cpp(516): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+  Dialog2PointSize.cpp
+  DialogBmpRound.cpp
+  DialogClrBar.cpp
+  コードを生成中...
+  コンパイル中...
+  DialogConerKind.cpp
+  DialogCptrFolder.cpp
+  DialogCrctDisp.cpp
+  DialogCrctLoad.cpp
+  DialogDBEdit.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.h(28): warning C4995: 'CDaoRecordset': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.h(29): warning C4995: 'CDaoDatabase': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.h(30): warning C4995: 'CDaoTableDef': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\daodblib.h(31): warning C4995: 'CDaoQueryDef': 名前が非推奨の #pragma として記述されています。
+  DialogDirSlct.cpp
+  DialogDivPlotOut.cpp
+  DialogESKamon.cpp
+  DialogESKamonLoad.cpp
+  DialogESKamonSave.cpp
+  DialogEditBar.cpp
+  DialogEpsKamonLoad.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogepskamonload.cpp(73): warning C4101: 'len': ローカル変数は 1 度も使われていません。
+  DialogFontChange.cpp
+  DialogGaiji.cpp
+  DialogGaijiSlct.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialoggaijislct.cpp(444): warning C4101: 'lc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialoggaijislct.cpp(444): warning C4101: 'hc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialoggaijislct.cpp(496): warning C4101: 'lc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialoggaijislct.cpp(496): warning C4101: 'hc': ローカル変数は 1 度も使われていません。
+  DialogGradation.cpp
+  DialogImageSave.cpp
+  DialogInputNum.cpp
+  DialogInputNumPair.cpp
+  DialogKamonLoad.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogkamonload.cpp(70): warning C4101: 'len': ローカル変数は 1 度も使われていません。
+  コードを生成中...
+  コンパイル中...
+  DialogMDBSelect.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogmdbselect.h(22): warning C4995: 'CDaoDatabase': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogmdbselect.cpp(90): warning C4995: 'CDaoTableDefInfo': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogmdbselect.cpp(91): warning C4995: 'CDaoQueryDefInfo': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogmdbselect.cpp(94): warning C4995: 'CDaoDatabase': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogmdbselect.cpp(97): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogmdbselect.cpp(123): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogmdbselect.cpp(131): warning C4995: 'CDaoException': 名前が非推奨の #pragma として記述されています。
+  DialogMemoryEnvSet.cpp
+  DialogMojiFiting.cpp
+  DialogMojiLoad.cpp
+  DialogMojiMove.cpp
+  DialogMojiSave.cpp
+  DialogMojiSize.cpp
+  DialogMsurAtrSet.cpp
+  DialogOutLine.cpp
+  DialogPlotOut.cpp
+  DialogScrnClr.cpp
+  DialogScrnEnv.cpp
+  DialogSetSpace.cpp
+  DialogShadow.cpp
+  DialogSizeBoxs.cpp
+  DialogSizeCrcl.cpp
+  DialogSizeList.cpp
+  DialogSlctFtpAdrs.cpp
+  DialogSlctMailAdrs.cpp
+  DialogSlctStrg.cpp
+  コードを生成中...
+  コンパイル中...
+  DialogStrgArc.cpp
+  DialogStrgInput.cpp
+  DialogStrgInseart.cpp
+  DialogStrgLineup.cpp
+  DialogStrgVStruct.cpp
+  DialogTextInput.cpp
+  DialogTraceImage.cpp
+  DialogWakuAddAtr.cpp
+  DialogWakuAtrChange.cpp
+  DialogWakuBar1.cpp
+  DialogWakuBar2.cpp
+  DialogWakuBar3.cpp
+  DialogWakuBarSide.cpp
+  DialogWakuCopyTrns.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogwakucopytrns.cpp(269): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  DialogWakuDelete.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogwakudelete.cpp(247): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  DialogWakuEdit.cpp
+  DialogWakuGrup.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogwakugrup.cpp(27): warning C4101: 'len': ローカル変数は 1 度も使われていません。
+  DialogWakuInSekiji.cpp
+  DialogWakuInput.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogwakuinput.cpp(683): warning C4101: 'recbuf': ローカル変数は 1 度も使われていません。
+  DialogWakuLoad.cpp
+  コードを生成中...
+  コンパイル中...
+  DialogWakuPaper.cpp
+  DialogWakuSave.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogwakusave.cpp(260): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  DialogWakuSort.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogwakusort.cpp(259): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  DialogWkPaperAdd.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\dialogwkpaperadd.cpp(149): warning C4101: 'hc': ローカル変数は 1 度も使われていません。
+  DialogWkPaperDel.cpp
+  DialogXLSSelect.cpp
+  Diblib.cpp
+  Excel.cpp
+  ExcelLib.cpp
+  FileArc.cpp
+  FileDxf.cpp
+  FileEps.cpp
+  FileVect.cpp
+  FontCBox.cpp
+  ImeHndl.cpp
+  Mente.cpp
+  MinMax.cpp
+  MyButton.cpp
+  MyDialog.cpp
+  MyDialogBar.cpp
+  コードを生成中...
+  コンパイル中...
+  MyEdit.cpp
+  MyFileDialog.cpp
+  ViewFileDialog.cpp
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\viewfiledialog.cpp(200): warning C4101: 'len': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\cmnsrc\viewfiledialog.cpp(223): warning C4101: 'len': ローカル変数は 1 度も使われていません。
+  WakuTool.cpp
+  ChildFrm.cpp
+  Command.cpp
+  MainFrm.cpp
+  Ses.cpp
+  SesDoc.cpp
+  SesView.cpp
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2525): warning C4101: 'szBtpPath': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2534): warning C4101: 'mmxsize': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2534): warning C4101: 'mmysize': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2531): warning C4101: 'cnt': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2526): warning C4101: 'szFname': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2532): warning C4101: 'cntstr': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2527): warning C4101: 'szBmpFname': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2533): warning C4101: 'cntstr2': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2530): warning C4101: 'pcDibCData': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2529): warning C4101: 'pcDoc': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2531): warning C4101: 'ret': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(2528): warning C4101: 'szBasename': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(4370): warning C4101: 'szBackPapaerYSize': ローカル変数は 1 度も使われていません。
+d:\work\work2017\soa\smsv5src\ses\ses\sesview.cpp(4370): warning C4101: 'szBackPapaerXSize': ローカル変数は 1 度も使われていません。
+  SysEnv.cpp
+  コードを生成中...
+     ライブラリ D:\work\work2017\SOA\smsv5src\Ses\Debug\Ses.lib とオブジェクト D:\work\work2017\SOA\smsv5src\Ses\Debug\Ses.exp を作成中
+  Ses.vcxproj -> D:\work\work2017\SOA\smsv5src\Ses\Debug\Ses.exe
