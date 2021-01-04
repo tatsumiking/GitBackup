@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="リハビリ,無料,訓練,脳卒中,反射神経">
+<link rel="shortcut icon" href="touch.ico" />
+<title>Touch</title>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name='robots' content="none">
+<meta name='robots' content="noindex,nofollow">
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="index.css" rel="stylesheet" type="text/css" />
+<style>
+	.cScreenArea{
+		position: absolute;
+		width:100vw;
+		height:90vh;
+	}
+	.deffont,body,select,input,button{
+		font-size:2.0vw; /* 50文字を横に並べることが可能 */
+	}
+	.cDivMsg{
+		height:6vw;
+	}
+	.cSizeVW85{
+		width:85vw;
+	}
+	.cTxtMsg{
+		width:80vw;
+		height:4vw;
+		font-size:3vw;
+
+		margin: 1vw;
+	}
+	.cTxtUser{
+		width:5em;
+	}
+	.cDivMenu{
+		height:4.5em;
+	}
+	.cDivQuest{
+		height:4.5em;
+	}
+	.cTxtQuest{
+		width: 2.5em;
+		height:1.5em;
+		padding: 0em;
+		margin: 0.25em;
+		text-align: center;
+	}
+	.cDivEditArea{
+		width:100vw;
+	}
+	.cCnvsEditArea{
+		width:calc(100vw - 1em);
+		height:calc(90vh - 11em);
+		margin: 0.5em;
+	}
+	.cDivInfo{
+		height:2em;
+		padding: 0em;
+		margin: 0em;
+	}
+	.cTxtInfo{
+		padding: 0em;
+		margin: 0.2em;
+		width:80vw;
+	}
+	.cVSpace {
+		height:0.5em;
+	}
+	.cVSpace1em {
+		height:1em;
+	}
+	.cSize5 {
+		width:5em;
+	}
+	.cClrFDD { background-color:#FDD; }
+	.cClrDFD { background-color:#DFD; }
+	.cClrDDF { background-color:#DDF; }
+</style>
+<script language="javascript" src="ajax.js"></script>
+<script language="javascript" src="fncLib.js"></script>
+<script language="javascript" src="fncCanvas.js"></script>
+<script language="javascript" src="classdef.js"></script>
+<script language="javascript" src="index.js"></script>
+<script language="javascript" src="mouseevent.js"></script>
+<script language="JavaScript">
+</script>
+</head>
+<body onload="fncInit()">
+	<div class="cScreenArea cClrDFD cFlexVertical">
+		<div class="cFlexHorizontal">
+			<div class="cDivMsg cSizeVW85 cClrFDD">
+				<input class="cTxtMsg" id="txtInfo">
+			</div>
+			<div class="cFlexVertical">
+				<div class="cVSpace"></div>
+				<div>
+					<label class="cBold">ユーザー名</label>
+				</div>
+				<div class="cFlexHorizontal">
+					<input type="text" class="cTxtUser" id="txtUser" value="user">
+					<button>▼</button>
+				</div>
+			</div>
+		</div>
+		<div class="cDivMenu cFlexVertical">
+			<div class="cFlexHorizontal">
+				<div class="cDivQuest cSizeVW85 cClrFDD cFlexVertical">
+					<div class="cFlexHorizontal">
+						<input type="text" class="cTxtQuest" id="txtQuest01" value="01">
+						<input type="text" class="cTxtQuest" id="txtQuest02" value="02">
+						<input type="text" class="cTxtQuest" id="txtQuest03" value="03">
+						<input type="text" class="cTxtQuest" id="txtQuest04" value="04">
+						<input type="text" class="cTxtQuest" id="txtQuest05" value="05">
+						<input type="text" class="cTxtQuest" id="txtQuest06" value="06">
+						<input type="text" class="cTxtQuest" id="txtQuest07" value="07">
+						<input type="text" class="cTxtQuest" id="txtQuest08" value="08">
+						<input type="text" class="cTxtQuest" id="txtQuest09" value="09">
+						<input type="text" class="cTxtQuest" id="txtQuest10" value="10">
+						<input type="text" class="cTxtQuest" id="txtQuest11" value="11">
+						<input type="text" class="cTxtQuest" id="txtQuest12" value="12">
+						<input type="text" class="cTxtQuest" id="txtQuest13" value="13">
+					</div>
+					<div class="cFlexHorizontal">
+						<input type="text" class="cTxtQuest" id="txtQuest14" value="14">
+						<input type="text" class="cTxtQuest" id="txtQuest15" value="15">
+						<input type="text" class="cTxtQuest" id="txtQuest16" value="16">
+						<input type="text" class="cTxtQuest" id="txtQuest17" value="17">
+						<input type="text" class="cTxtQuest" id="txtQuest18" value="18">
+						<input type="text" class="cTxtQuest" id="txtQuest19" value="19">
+						<input type="text" class="cTxtQuest" id="txtQuest20" value="20">
+						<input type="text" class="cTxtQuest" id="txtQuest21" value="21">
+						<input type="text" class="cTxtQuest" id="txtQuest22" value="22">
+						<input type="text" class="cTxtQuest" id="txtQuest23" value="23">
+						<input type="text" class="cTxtQuest" id="txtQuest24" value="24">
+						<input type="text" class="cTxtQuest" id="txtQuest25" value="25">
+					</div>
+				</div>
+				<div class="cSize1"></div>
+				<div class="cDivBtnArea cFlexVertical">
+					<div class="cVSpace1em"></div>
+					<div>
+						<button class="imgPinkbtn cSize5" id="btnStart">開始</button>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cDivEditArea cClrDDF" id="divEditArea">
+			<canvas class="cCnvsEditArea" id="cnvsEditArea">
+			</canvas>
+		</div>
+		<div class="cDivInfo">
+			<input class="cTxtInfo" id="txtInfo">
+		</div>
+	</div>
+</body>
+</html>

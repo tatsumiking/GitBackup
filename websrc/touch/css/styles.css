@@ -1,0 +1,57 @@
+html {
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	width:100%;
+	height:100%;
+	display: block;
+	margin: 0px;
+}
+option{
+    height: 0.0em;
+}
+.cBold{
+	font-weight:bold;
+}
+.cFlexHorizontal {
+	display: flex;
+	flex-direction: row;
+}
+.cFlexVertical {
+	display: flex;
+	flex-direction: column;
+}
+.cFlexWrap {
+	flex-wrap: wrap;
+}
+.imgPinkbtn{
+	background-image:url("../img/pinkbtnU.png");
+	background-repeat:round;
+	background-size:8.5em;
+	border-radius: 3em;
+	font-weight:bold;
+	padding: 0.5em;
+}
+.imgPinkbtn:active {
+	background-image:url("../img/pinkbtnD.png");
+}
+.imgPinkbtn:hover {
+	background-image:url("../img/pinkbtnD.png");
+}
+.imgBluebtn{
+	background-image:url("../img/bluebtnU.png");
+	background-repeat:round;
+	background-size:8.5em;
+	border-radius: 3em;
+	padding: 0.5em;
+}
+.imgBluebtn:active {
+	background-image:url("../img/bluebtnD.png");
+}
+.imgBluebtn:hover {
+	background-image:url("../img/bluebtnD.png");
+}
+.cSize1{
+	width:1em;
+}
