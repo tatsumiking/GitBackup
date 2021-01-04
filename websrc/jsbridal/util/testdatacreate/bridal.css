@@ -1,0 +1,58 @@
+/* Bridal�p���i */
+body{
+	background-image: url("img/back.jpg");
+	background-size: cover;
+}
+
+button{
+	border-radius: 5px;
+}
+button:active {
+	-ms-transform: translate(2px,2px);
+	-webkit-transform: translate(2px,2px);
+	transform: translate(2px, 2px);/*���ɓ���*/
+	border-bottom: none;/*��������*/
+}
+.imgPinkbtn{
+	background-image:url("img/pinkbtnU.png");
+	background-repeat:round;
+	background-size:8.5em;
+	border-radius: 3em;
+	padding: 0.5em;
+}
+.imgPinkbtn:active {
+	background-image:url("img/pinkbtnD.png");
+}
+.imgPinkbtn:hover {
+	background-image:url("img/pinkbtnD.png");
+}
+.imgBluebtn{
+	background-image:url("img/bluebtnU.png");
+	background-repeat:round;
+	background-size:8.5em;
+	border-radius: 3em;
+	padding: 0.5em;
+}
+.imgBluebtn:active {
+	background-image:url("img/bluebtnD.png");
+}
+.imgBluebtn:hover {
+	background-image:url("img/bluebtnD.png");
+}
+input::placeholder {
+	color: red;
+}
+.cFileBtn{
+	padding: 0.05em 0.5em 0.05em 0.5em;
+	border: 2px #000 solid;
+	border-radius: 0.25em;
+}
+.cABtn{
+	padding: 0.05em 0.5em 0.05em 0.5em;
+	border: 2px #000 solid;
+	border-radius: 0.25em;
+	text-decoration: none;
+	color:black;
+}
+.cClrDDD { background-color:#EEE; }
+

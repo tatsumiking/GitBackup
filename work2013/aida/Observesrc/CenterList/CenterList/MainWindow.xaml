@@ -1,0 +1,33 @@
+﻿<!--
+    ORG
+        Height = 
+        Height="1080" Width="1920"
+        <Canvas x:Name="cnvsTitle"  Margin="0,0,0,1026">
+        <Grid x:Name="gridList" Margin="0,24,0,0">
+    TEST
+        Height="540" Width="810" 
+        <Canvas x:Name="cnvsTitle"  Margin="0,0,0,485">
+        <Grid x:Name="gridList" Margin="0,12,0,0">
+
+    -->
+
+<Window x:Name="wndMain" x:Class="CenterList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x ="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" 
+        Left="0" Top="0" 
+        Height="1080" Width="1920"
+        Loaded="Window_Loaded" 
+        PreviewMouseDown="Window_PreviewMouseDown" Icon="CenterList.ico" Closing="wndMain_Closing">
+    <Grid x:Name="gridBlock" Margin="0">
+        <Canvas x:Name="cnvsTitle"  Margin="0,0,0,1026">
+        </Canvas>
+        <Grid x:Name="gridList" Margin="0,24,0,0">
+            <ScrollViewer x:Name="scrlList"
+                HorizontalScrollBarVisibility="Disabled" 
+                VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Canvas x:Name="cnvsList" Margin="0"/>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>

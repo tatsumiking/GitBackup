@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bridal</title>
+<link rel="shortcut icon" href="img/Bridal.ico" />
+<meta charset="utf-8">
+<meta http-equiv='X-UA-Compatible' content='IE=11'>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="bridal.css" rel="stylesheet" type="text/css" />
+<link href="04tablelayout.css" rel="stylesheet" type="text/css" />
+<style>
+     .cSize44ex{ width:44.0em; }
+     .cSize48ex{ width:48.0em; }
+</style>
+<script language="javascript" src="jslib/ajax.js"></script>
+<script language="javascript" src="jslib/fnclib.js"></script>
+<script language="javascript" src="jslib/classdef.js"></script>
+<script language="javascript" src="04tablelayout.js"></script>
+</head>
+
+<body onload="fncInit()">
+<div class="cScrnArea cFlexVertical">
+    <div class="cFlexHorizontal TopSpace">
+        <div class="cSize2"></div>
+        <div >
+            <label id="txtKonrei" class="cSize36"></label>
+        </div>
+    </div> 
+    <div class="cFlexHorizontal">
+        <div class="cSize8"></div>
+        <canvas id = "cnvsPaper" class="cHSize29ex cVSize21ex cClrFFF">
+        </canvas>
+    </div>
+    <div class="cFlexHorizontal">
+        <div class="cSize8"></div>
+        <div class="cFlexHorizontal cHSize30ex">
+            <div class="cSize05ex"></div>
+            <div>
+                <div align="center">1列目</div>
+                <button class="cSize4" id="btnAdd1">追加</button>
+                <br>
+                <button class="cSize4" id="btnDel1">削除</button>
+            </div>        
+            <div class="cSize1"></div>
+            <div>
+                <div align="center">2列目</div>
+                <button class="cSize4" id="btnAdd2">追加</button>
+                <br>
+                <button class="cSize4" id="btnDel2">削除</button>
+            </div>        
+            <div class="cSize1"></div>
+            <div>
+                <div align="center">3列目</div>
+                <button class="cSize4" id="btnAdd3">追加</button>
+                <br>
+                <button class="cSize4" id="btnDel3">削除</button>
+            </div>        
+            <div class="cSize1"></div>
+            <div>
+                <div align="center">4列目</div>
+                <button class="cSize4" id="btnAdd4">追加</button>
+                <br>
+                <button class="cSize4" id="btnDel4">削除</button>
+            </div>        
+            <div class="cSize1"></div>
+            <div>
+                <div align="center">5列目</div>
+                <button class="cSize4" id="btnAdd5">追加</button>
+                <br>
+                <button class="cSize4" id="btnDel5">削除</button>
+            </div>        
+            <div class="cSize1"></div>
+            <div>
+                <div align="center">6列目</div>
+                <button class="cSize4" id="btnAdd6">追加</button>
+                <br>
+                <button class="cSize4" id="btnDel6">削除</button>
+            </div>        
+         </div>
+    </div>
+    <div class="cVSpace"></div>
+    <div>
+        <label class="cBold cSize6">　左下文章</label>
+        <input id="txtStr1" type="text" class="cSize40">
+    </div>
+    <div>
+        <label class="cBold cSize6">　右下文章</label>
+        <input id="txtStr2" type="text" class="cSize40">
+    </div>
+    <div class="cFlexHorizontal">
+        <div class="cFlexVertical cSize48ex">
+            <div class="cFlexHorizontal">
+                <div class="cSize1"></div>
+                <div>
+                    <div align="center" class="cBold">用紙方向</div>
+                    <select id="cmbPaperLocate" class="cSize5">
+                    </select>
+                </div>
+                <div class="cSize05ex"></div>
+                <div>
+                    <div align="center" class="cBold">用紙サイズ</div>
+                    <select id="cmbPaperSize" class="cSize5">
+                    </select>
+                </div>
+                <div class="cSize05ex"></div>
+                <div>
+                    <div align="center" class="cBold">両家名種類</div>
+                    <select id="cmbRyoukeKind" class="cSize13">
+                     </select>
+                </div>
+                <div class="cSize05ex"></div>
+                <div>
+                    <div align="center" class="cBold">テーブル種類</div>
+                    <select id="cmbTableKind" class="cSize8">
+                    </select>
+                </div>
+            </div>
+            <div class="cFlexHorizontal">
+                <div class="cSize1"></div>
+                <div>
+                    <input id="txtInfoMsg" type="text" class="cSize44ex"> 
+                 </div>
+           </div>
+        </div>
+        <div class="cSize8">
+            <div class="cSize2"></div>
+			<button class="imgPinkbtn cSize5" id="btnReturn">戻る</button>
+       </div>
+     </div>
+</div>
+</body>
+</html>

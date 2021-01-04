@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Bridal</title>
+<link rel="shortcut icon" href="img/Bridal.ico" />
+<meta charset="utf-8">
+<meta http-equiv='X-UA-Compatible' content='IE=11'>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="bridal.css" rel="stylesheet" type="text/css" />
+<link href="index.css" rel="stylesheet" type="text/css" />
+<style>
+.cTitle{
+	font-weight:bold;
+	float:left;
+	margin-left: 0.5em;
+	width:8em;
+}
+.cListTable{
+	width:37.0em;
+	overflow-x : auto;
+}
+.cSizeLt{
+	width:0.5em;	
+}
+</style>
+<script language="javascript" src="jslib/ajax.js"></script>
+<script language="javascript" src="jslib/fnclib.js"></script>
+<script language="javascript" src="index.js"></script>
+<script language="javascript" src="asbridal.js"></script>
+<script language="JavaScript">
+
+</script>
+</head>
+<body onload="fncInit()">
+	<div class="cScrnArea cFlexHorizontal">
+		<div class="cSize40 cFlexVertical">
+			<div class="cVSpace10"></div>
+			<div class="cFlexHorizontal">
+				<label class="cTitle">婚礼管理番号</label>
+				<input id="txtKanriNo" type="text" class="cSize5" 
+						maxlengdiv="8" placeholder="000000" > 
+				<div class="cSize2"></div>
+				<div class="cSize7">
+					<div class="cVSpaceEx"></div>
+					<label class="cSize6 cClrDDD cFileBtn">CSV読込
+						<input type = "file" id="btnCsvLoad" style="display:none"></input>
+					</label>
+				</div>
+			</div>
+			<div class="cVSpace10"></div>
+			<div >
+				<label class="cTitle">データベース名</label>
+				<select id="cmbDatabaseName" class="cSize28"></select>
+			</div>
+			<div class="cVSpace10"></div>
+			<div >
+				<label class="cTitle">テーブル名</label>
+				<select id="cmbTableName" class="cSize28"></select>
+			</div>
+			<div class="cVSpace10"></div>
+			<div class="cFlexHorizontal">
+				<div class="cSizeLt"></div>
+				<div >
+					<select size="20" id="lstTableData" class="cListTable">
+					</select>
+				</div>
+			</div>
+		</div>
+		<div  class="cFlexVertical ">
+			<BR>
+			<div >
+				<button class="imgBluebtn cSize8" id="btnTestDataCreate">婚礼DB初期化</button>
+			</div>
+			<BR>
+			<div >
+				<button class="imgBluebtn cSize8" id="btnTableList">テーブル表示</button>
+			</div>
+			<BR>
+			<div >
+				<button class="imgBluebtn cSize8" id="btnReturn">戻る</button>
+			</div>
+			</div >
+	</div>
+</body>
+</html>

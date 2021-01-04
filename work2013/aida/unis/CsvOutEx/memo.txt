@@ -1,0 +1,46 @@
+CsvEx作成手順
+　copyex.bat　実行
+　プロジェクト→CsvOutのプロパティ→アプリケーションタグ→ICONを変更
+　Windows.xaml　のTitle　Icon　Background 変更
+　修正終了後　Version情報更新
+　ReleEx でビルド
+　csvex.exe F:\system2013\CsvExProgにコピー
+　F:\system2013\CsvExMj　CsvEx.slnでインストールイメージ作成
+　F:\system2013\CsvExVc　CsvEx.slnでインストールイメージ作成
+
+CsvOut作成手順
+　copyout.bat　実行
+　プロジェクト→CsvOutのプロパティ→アプリケーションタグ→ICONを変更
+　Windows.xaml　のTitle　Icon　Background 変更
+　修正終了後　Version情報更新
+　Relese でビルド
+　csvout.exe F:\system2013\CsvOutProgにコピー
+　F:\system2013\CsvOutMj　CsvOut.slnでインストールイメージ作成
+　F:\system2013\CsvOutVc　CsvOut.slnでインストールイメージ作成
+
+// 時間の計測
+            System.Diagnostics.Stopwatch sw;
+            TimeSpan ts;
+            string str;
+                sw = new System.Diagnostics.Stopwatch();
+                sw.Start();
+                sw.Stop();
+                sw.Restart();
+                sw.Stop();
+                ts = sw.Elapsed;
+                str = ts.ToString();
+
+// プロセス切替
+        public void DoDispatch()
+        {
+            DispatcherFrame frame = new DispatcherFrame();
+            Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, new DispatcherOperationCallback(ExitFrames), frame);
+            Dispatcher.PushFrame(frame);
+            System.Threading.Thread.Sleep(50);
+        }
+        public object ExitFrames(object frames)
+        {
+            ((DispatcherFrame)frames).Continue = false;
+            return null;
+        }
+

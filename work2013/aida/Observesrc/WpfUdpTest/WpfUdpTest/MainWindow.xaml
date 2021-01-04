@@ -1,0 +1,20 @@
+﻿<Window x:Name="windowMain" x:Class="WpfUdpTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UDP送受信テスト" Height="420" Width="650" Closing="Window_Closing" Loaded="Window_Loaded" Icon="WpfUdpTest.ico">
+    <Grid>
+        <TextBox x:Name="txtMessage" Height="230" Margin="10,10,0,0"  Width="590" Text="TextBox" HorizontalAlignment="Left" VerticalAlignment="Top" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+        <Label x:Name="lblIpAddress" Content="IPアドレス" Margin="10,245,0,0" Width="77" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtIpAddress" Text="192.168.1.20" Margin="90,247,0,0"  Width="120" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="lblPort" Content="ポート番号" Margin="210,245,0,0" Width="77" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPort" Text="12345" Margin="290,247,0,0"  Width="60" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="自分のIPアドレス" Margin="360,245,0,0" Width="115" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbSelfIpAddress" Margin="480,245,0,0" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdoSend" Content="UDP送信" Margin="10,285,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" GroupName="groupUdpMode" IsChecked="True" Click="rdoSend_Click"/>
+        <RadioButton x:Name="rdoReceive" Content="UDP受信" Margin="100,285,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" GroupName="groupUdpMode" Click="rdoReceive_Click"/>
+        <Button x:Name="btnUdpStart" Content="送信開始" Width="100" Height="30" Margin="380,285,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnUdpStart_Click" />
+        <Button x:Name="btnUdpStop" Content="送信停止" Width="100" Height="30" Margin="500,285,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnUdpStop_Click" />
+        <Label x:Name="lblInformation" Content="" Margin="10,330,0,0" Width="470" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="btnExit" Content="終了" Width="100" Height="30" Margin="500,330,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnExit_Click" />
+    </Grid>
+</Window>
