@@ -1,7 +1,15 @@
+
 function fncKonreiCopy()
 {
-	var dbnm = "bridal";
-	var tble = "bridaluser";
+	var dbnm = "";
+	var tble = "";
+	var fild = "";
+	var where = "";
+	var data = "";
+	var fnc = fncKCGetKonreiDataCallback;
+
+	dbnm = "bridal";
+	tble = "bridaluser";
 	fild = "tablelayout";
 	fild = fild + ",kyosiki,hirouen,kaijyou,mukotori";
 	fild = fild + ",sinrozoku,sinroname1,sinroname2";
@@ -10,20 +18,26 @@ function fncKonreiCopy()
 	fild = fild + ",paperlocate,papersize,ryoukekind,tablekind";
 	fild = fild + ",textsize,takasagokind,nametype,flag1";
 
-	var where = "WHERE (username="+m_sKonreiNo+") LIMIT 1";
-	var data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&where="+where;
-	var fnc = fncKCGetKonreiDataCallback;
+	where = "WHERE (username="+m_sKonreiNo+") LIMIT 1";
+	data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&where="+where;
+
 	sendRequest("POST","php/getdata.php",data,false,fnc);
 }
 function fncKCGetKonreiDataCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var a = data.split(',');
+	var data = "";
+	var a = new Array();
+	var dbnm = "";
+	var sSql = "";
+	var fnc = fncKCUpdateKonreiCallback;
+
+	data = xmlhttp.responseText;
+	a = data.split(',');
 	if(a[0] == "0"){
 		return;
 	}
-	var dbnm = m_szHotelDB;
-	var sSql = "UPDATE "+m_szKonreiTable+" SET ";
+	dbnm = m_szHotelDB;
+	sSql = "UPDATE "+m_szKonreiTable+" SET ";
 	sSql = sSql+"tablelayout='"+a[0]+"'";
 	sSql = sSql+",kyosiki='"+a[1]+"',hirouen='"+a[2]+"'";
 	sSql = sSql+",kaijyou='"+a[3]+"',mukotori="+a[4];
@@ -36,37 +50,50 @@ function fncKCGetKonreiDataCallback(xmlhttp)
 	sSql = sSql+",textsize='"+a[19]+"',takasagokind='"+a[20]+"'";
 	sSql = sSql+",nametype='"+a[21]+"'";
 	sSql = sSql+" WHERE (id="+m_nKonreiId+");";
-	var data = "dbnm="+dbnm+"&sql="+sSql;
-	var fnc = fncKCUpdateKonreiCallback;
+	data = "dbnm="+dbnm+"&sql="+sSql;
 	sendRequest("POST","php/execsql.php",data,false,fnc);
 }
 function fncKCUpdateKonreiCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+	var dbnm = "";
+	var tble = "";
+	var fild = "";
+	var fnc = fncKCGetGestListCallback;
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] == "0"){
 		return;
 	}
-	var dbnm = "bridal";
-	var tble = "ge"+m_sKonreiNo;
-	var fild = "id,tno,sno,name1,name2,sama,kind,skind,yomi,id";
-	var data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&termsql=";
-	var fnc = fncKCGetGestListCallback;
+	dbnm = "bridal";
+	tble = "ge"+m_sKonreiNo;
+	fild = "id,tno,sno,name1,name2,sama,kind,skind,yomi,id";
+	data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&termsql=";
 	sendRequest("POST","php/getlist.php",data,false,fnc);
 
 }
 function fncKCGetGestListCallback(xmlhttp)
 {
-	var idx;
+	var data = "";
+	var a = new Array();
+	var aryRec = new Array();
+	var datasql = "";
+	var max = 0;
+	var idx = 0;
+	var dbnm = "";
+	var sSql = "";
+	var fnc = fncKCInsertGestListCallback;
 
-	var data = xmlhttp.responseText;
-	var a = data.split(',');
+	data = xmlhttp.responseText;
+	a = data.split(',');
 	if(a[0] == "0"){
 		return;
 	}
 	datasql = "";
-	var aryRec = data.split(';');
-	var max = aryRec.length-1;
+	aryRec = data.split(';');
+	max = aryRec.length-1;
 	for(idx = 0; idx < max; idx++){
 		a = aryRec[idx].split(',');
 		if(idx == 0){
@@ -77,34 +104,50 @@ function fncKCGetGestListCallback(xmlhttp)
 		datasql = datasql + a[1] + "," + a[2] + ",'" + a[3] + "','" + a[4] + "'";
 		datasql = datasql + ",'" + a[5] + "','" + a[6] + "','" + a[7] + "','" + a[8] + "')";
 	}
-	var sSql="INSERT INTO ge"+m_sKonreiNo+" (";
+	dbnm = m_szHotelDB;
+	sSql="INSERT INTO ge"+m_sKonreiNo+" (";
 	sSql=sSql+"tno,sno";
 	sSql=sSql+",name1,name2,sama";
 	sSql=sSql+",kind,skind,yomi)";
 	sSql=sSql+" VALUES "+datasql+";";
-	var data = "dbnm="+m_szHotelDB+"&sql="+sSql;
-	var fnc = fncKCInsertGestListCallback;
+	data = "dbnm="+dbnm+"&sql="+sSql;
 	sendRequest("POST","php/execsql.php",data,false,fnc);
 }
 function fncKCInsertGestListCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+	var dbnm = "";
+	var tble = "";
+	var fild = "";
+	var fnc = fncKCGetLayoutListCallback;
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] == "0"){
 		return;
 	}
 
-	var dbnm = "bridal";
-	var tble = "tb"+m_sKonreiNo;
-	var fild = "dx,dy,id";
-	var data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&termsql=";
-	var fnc = fncKCGetLayoutListCallback;
+	dbnm = "bridal";
+	tble = "tb"+m_sKonreiNo;
+	fild = "dx,dy,id";
+	data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&termsql=";
 	sendRequest("POST","php/getlist.php",data,false,fnc);
 }
 function fncKCGetLayoutListCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var a = data.split(',');
+	var data = "";
+	var a = new Array();
+	var aryRec = new Array();
+	var tableposition = "";
+	var max = 0;
+	var idx = 0;
+	var dbnm = "";
+	var sSql = "";
+	var fnc = fncKCUpdateLayoutCallback;
+
+	data = xmlhttp.responseText;
+	a = data.split(',');
 	if(a[0] == "0"){
 		if(a[1] != "0"){
 			fncKCGetString();
@@ -112,8 +155,8 @@ function fncKCGetLayoutListCallback(xmlhttp)
 		return;
 	}
 	tableposition = "";
-	var aryRec = data.split(';');
-	var max = aryRec.length;
+	aryRec = data.split(';');
+	max = aryRec.length;
 	for(idx = 0; idx < max; idx++){
 		a = aryRec[idx].split(',');
 		if(a[0] == "0" && a[1] == "0")
@@ -127,19 +170,21 @@ function fncKCGetLayoutListCallback(xmlhttp)
 		}
 		tableposition = tableposition + a[0] + "x" + a[1];
 	}
-	var dbnm = m_szHotelDB;
-	var sSql = "UPDATE "+m_szKonreiTable+" SET ";
+	dbnm = m_szHotelDB;
+	sSql = "UPDATE "+m_szKonreiTable+" SET ";
 	sSql = sSql+"tableposition='"+tableposition+"'";
 	sSql = sSql+" WHERE (id="+m_nKonreiId+");";
-	var data = "dbnm="+dbnm+"&sql="+sSql;
-	var fnc = fncKCUpdateLayoutCallback;
+	data = "dbnm="+dbnm+"&sql="+sSql;
 	sendRequest("POST","php/execsql.php",data,false,fnc);
 
 }
 function fncKCUpdateLayoutCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] == "0"){
 		return;
 	}
@@ -147,18 +192,29 @@ function fncKCUpdateLayoutCallback(xmlhttp)
 }
 function fncKCGetString()
 {
-	var dbnm = "bridal";
-	var tble = "ss"+m_sKonreiNo;
-	var fild = "id,leftstr,rightstr,id";
-	var data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&termsql=";
+	var dbnm = "";
+	var tble = "";
+	var fild = "";
+	var data = "";
 	var fnc = fncKCGetStringCallback;
+
+	dbnm = "bridal";
+	tble = "ss"+m_sKonreiNo;
+	fild = "id,leftstr,rightstr,id";
+	data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&termsql=";
 	sendRequest("POST","php/getlist.php",data,false,fnc);
 }
 
 function fncKCGetStringCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var a = data.split(',');
+	var data = "";
+	var a = new Array();
+	var dbnm = "";
+	var sSql = "";
+	var fnc = fncKCUpdateStringCallback;
+
+	data = xmlhttp.responseText;
+	a = data.split(',');
 	if(a[0] == "0"){
 		fnclibAlert("文字列以外の婚礼管理番号"+m_sKonreiNo+"の移行が完了しました");
 		fncGetKonreiData();	
@@ -169,18 +225,20 @@ function fncKCGetStringCallback(xmlhttp)
 		return;
 	}
 
-	var dbnm = m_szHotelDB;
-	var sSql = "UPDATE "+m_szKonreiTable+" SET ";
+	dbnm = m_szHotelDB;
+	sSql = "UPDATE "+m_szKonreiTable+" SET ";
 	sSql = sSql+"lefttext='"+a[1]+"',righttext='"+a[2]+"'";
 	sSql = sSql+" WHERE (id="+m_nKonreiId+");";
-	var data = "dbnm="+dbnm+"&sql="+sSql;
-	var fnc = fncKCUpdateStringCallback;
+	data = "dbnm="+dbnm+"&sql="+sSql;
 	sendRequest("POST","php/execsql.php",data,false,fnc);
 }
-function fncKCGetStringCallback(xmlhttp)
+function fncKCUpdateStringCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] == "0"){
 		return;
 	}

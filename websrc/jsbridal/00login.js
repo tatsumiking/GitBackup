@@ -1,13 +1,17 @@
 // 	</div>
-var m_szHotelName;
-var m_szHotelDB;
-var m_szKonreiTable;
-var m_strID;
-var m_strNO;
-var m_strPW;
+var m_szHotelNam = "";
+var m_szHotelDB = "";
+var m_szKonreiTable = "";
+var m_strID = "";
+var m_strNO = "";
+var m_strPW = "";
 
 function fncInit()
 {
+	var inputNo = document.getElementById("userno");
+	var inputPw = document.getElementById("password");
+	var btnLogin = document.getElementById("btnLogin");
+
 	m_szHotelName = "ホテルソア";
 	m_szHotelDB = "jsbridal";
 	m_szKonreiTable = "bridaluser";
@@ -15,19 +19,17 @@ function fncInit()
 	localStorage.setItem("HotelDB", m_szHotelDB);
 	localStorage.setItem("KonreiTable", m_szKonreiTable);
 
-	var inputNo = document.getElementById("userno");
-	var inputPw = document.getElementById("password");
 	//inputNo.value = "000001";
 	//inputPw.value = "496721";
 	inputNo.value = "0000";
 	inputPw.value = "0000";
-	var btnLogin = document.getElementById("btnLogin");
 	btnLogin.onclick = fncLoginOnClick;
 }
 function fncLoginOnClick()
 {
 	var inputNo = document.getElementById("userno");
 	var inputPw = document.getElementById("password");
+	var fnc = fncCheckNOPWCallback;
 
 	m_strID = 0;
 	m_strNO = inputNo.value;
@@ -39,13 +41,16 @@ function fncLoginOnClick()
 		return;
 	}
 	var data = "com="+m_strNO+","+m_strPW+",";
-	var fnc = fncCheckNOPWCallback;
+
 	sendRequest("POST","php/checkidpw.php",data,false,fnc);
 }
 function fncCheckNOPWCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 
 	localStorage.setItem("UserKind", ary[1]);
 	if(ary[0] == "1"){
@@ -56,16 +61,23 @@ function fncCheckNOPWCallback(xmlhttp)
 }
 function fncCheckKonrei(strNO, strPW)
 {
-	var dbnm = m_szHotelDB;
-	var krtbl = m_szKonreiTable;
-	var data = "dbnm="+dbnm+"&krtbl="+krtbl+"&krno="+strNO+"&krpw="+strPW;
+	var dbnm = "";
+	var krtbl = "";
+	var data = "";
 	var fnc = fncCheckKonreiCallBack;
+
+	dbnm = m_szHotelDB;
+	krtbl = m_szKonreiTable;
+	data = "dbnm="+dbnm+"&krtbl="+krtbl+"&krno="+strNO+"&krpw="+strPW;
 	sendRequest("POST","php/initkonrei.php",data,false,fnc);
 }
 function fncCheckKonreiCallBack(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 
 	if(ary[0] == "1"){
 		m_strID = ary[1];
@@ -74,6 +86,8 @@ function fncCheckKonreiCallBack(xmlhttp)
 }
 function fnc01MenuCall(strID, strNO, strPW)
 {
+	var url = "";
+
 	localStorage.setItem("BridalID", strID);
 	localStorage.setItem("BridalNO", strNO);
 	localStorage.setItem("BridalPW", strPW);
@@ -86,6 +100,6 @@ function fnc01MenuCall(strID, strNO, strPW)
 		localStorage.setItem("KonreiId", nID);
 		localStorage.setItem("KonreiNo", strNO);
 	}
-	var url = "01menu.html";
+	url = "01menu.html";
 	window.location.href = url;
 }

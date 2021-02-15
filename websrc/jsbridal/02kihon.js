@@ -1,21 +1,33 @@
 
-var m_szHotelName;
-var m_szHotelDB;
-var m_szKonreiTable;
-var m_strID; // login value;
-var m_strPW; // login value;
-var m_strUserKind;
+var m_szHotelName = "";
+var m_szHotelDB = "";
+var m_szKonreiTable = "";
+var m_strID = ""; // login value;
+var m_strPW = ""; // login value;
+var m_strUserKind = "";
 
-var m_nKonreiId; // 画面表示用一事保管
-var m_sKonreiNo; // 画面表示用一事保管
-var m_sKonreiPW;
+var m_nKonreiId = 0; // 画面表示用一事保管
+var m_sKonreiNo = ""; // 画面表示用一事保管
+var m_sKonreiPW = "";
 
-var m_strOderSql;
-var m_nDispNengo; // 0 西暦表示 1 年号表示
+var m_strOderSql = "";
+var m_nDispNengo = 0; // 0 西暦表示 1 年号表示
 
 function fncInit()
 {
-	var sId;
+	var sId = "";
+	var btnKonreiCopy = document.getElementById("btnKonreiCopy");
+	var btnPCCsvLoad = document.getElementById("btnPCCsvLoad");
+	var btnNew = document.getElementById("btnNew");
+	var btnUpdate = document.getElementById("btnUpdate");
+	var btnDelete = document.getElementById("btnDelete");
+	var divKonreiListArea = document.getElementById("divKonreiListArea");
+	var rdoNoAsc = document.getElementById("rdoNoAsc");
+	var rdoNoDesc = document.getElementById("rdoNoDesc");
+	var rdoDateAsc = document.getElementById("rdoDateAsc");
+	var rdoDateDesc = document.getElementById("rdoDateDesc");
+	var lstKonrei = document.getElementById("lstKonrei");
+	var btnReturn = document.getElementById("btnReturn");
 
 	m_szHotelName = localStorage.getItem("HotelName");
 	m_szHotelDB = localStorage.getItem("HotelDB");
@@ -30,16 +42,12 @@ function fncInit()
 
 	fncInitSinroZokugaraComboBox();
 	fncInitSinpuZokugaraComboBox();
-	var btnKonreiCopy = document.getElementById("btnKonreiCopy");
+
 	btnKonreiCopy.onclick = fncOnClickKonreiCopy;
-	var btnPCCsvLoad = document.getElementById("btnPCCsvLoad");
 	btnPCCsvLoad.onchange = fncOnChangePCCsvLoad;
-	var btnNew = document.getElementById("btnNew");
 	btnNew.onclick = fncOnClickNew;
-	var btnUpdate = document.getElementById("btnUpdate");
 	btnUpdate.onclick = fncOnClickUpdate;
-	var btnDelete = document.getElementById("btnDelete");
-	var divKonreiListArea = document.getElementById("divKonreiListArea");
+
 	if(m_strUserKind == "1")
 	{
 		btnNew.style.visibility = 'visible';
@@ -48,15 +56,11 @@ function fncInit()
 		btnDelete.onclick = fncOnClickDelete;
 		// var rdoItems = document.getElementsByName("sort");
 		// if(rdoItems[idx].checked == true) rdoItems[idx].value;
-		var rdoNoAsc = document.getElementById("rdoNoAsc");
+
 		rdoNoAsc.onclick = fncOnClickRdoNoAsc;
-		var rdoNoDesc = document.getElementById("rdoNoDesc");
 		rdoNoDesc.onclick = fncOnClickRdoNoDesc;
-		var rdoDateAsc = document.getElementById("rdoDateAsc");
 		rdoDateAsc.onclick = fncOnClickRdoDateAsc;
-		var rdoDateDesc = document.getElementById("rdoDateDesc");
 		rdoDateDesc.onclick = fncOnClickRdoDateDesc;
-		var lstKonrei = document.getElementById("lstKonrei");
 		lstKonrei.onchange = fncOnChangeKonreiList;
 
 		sId = localStorage.getItem("KonreiId");
@@ -77,69 +81,84 @@ function fncInit()
 		divKonreiListArea.style.visibility = 'hidden';
 		fncGetKonreiData();
 	}
-	var btnReturn = document.getElementById("btnReturn");
 	btnReturn.onclick = fncOnClickReturn;
 }
 function fncOnChangeKonreiList()
 {
 	var lstKonrei = document.getElementById("lstKonrei");
-	var idx = lstKonrei.selectedIndex;
+	var idx = 0;
+
+	idx = lstKonrei.selectedIndex;
 	m_nKonreiId = lstKonrei.options[idx].value;
 	fncGetKonreiData();
 }
 function fncOnClickKonreiCopy()
 {
-	txtKonreiId = document.getElementById("txtKonreiId");
+	var txtKonreiId = document.getElementById("txtKonreiId");
+	var txtKanriNo = document.getElementById("txtKanriNo");
+
 	m_nKonreiId = fnclibStringToInt(txtKonreiId.textContent);
-	txtKanriNo = document.getElementById("txtKanriNo");
 	m_sKonreiNo = txtKanriNo.value;
 	fncKonreiCopy(); // 02kihoncopy.jsで定義
 }
 function fncOnChangePCCsvLoad()
 {
+	var txtKonreiId = document.getElementById("txtKonreiId");
+	var txtKanriNo = document.getElementById("txtKanriNo");
+	var fileObj = new Array();
+	var fileReader = new FileReader();
+
 	if(this.files.length == 0){
 		fnclibAlert("アップロードファイルが選択されていません");
 		return;
 	}
-	txtKonreiId = document.getElementById("txtKonreiId");
+
 	m_nKonreiId = fnclibStringToInt(txtKonreiId.textContent);
-	txtKanriNo = document.getElementById("txtKanriNo");
 	m_sKonreiNo = txtKanriNo.value;
 	if(m_nKonreiId == 0){
 		fnclibAlert("婚礼が選択されていません");
 		return;
 	}
-	var fileObj = this.files[0];
-	var fileReader = new FileReader();
+	fileObj = this.files[0];
 	fileReader.onload = fncUploadOnPCCsvLoad;
 	fileReader.readAsDataURL(fileObj);
 }
 function fncUploadOnPCCsvLoad(e)
 {
-	var base64img;
+	var base64img = "";
+	var data = "";
 	
 	base64img = e.target.result;
-	var data = "file="+"../list/ge"+m_sKonreiNo+"/ge"+m_sKonreiNo+".csv";
+	data = "file="+"../list/ge"+m_sKonreiNo+"/ge"+m_sKonreiNo+".csv";
 	data = data + "&data="+base64img;
 	sendRequest("POST","php/uploadcsv.php",data,false,fncUploadPCCsvCallBack);
 }
 function fncUploadPCCsvCallBack(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+	var dbnm = "";
+	var krtbl = "";
+	var recid = "";
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] == "0"){
 		return;
 	}
-	var dbnm = m_szHotelDB;
-	var krtbl = m_szKonreiTable;
-	var recid = m_nKonreiId;
-	var data = "dbnm="+dbnm+"&krtbl="+krtbl+"&recid="+recid+"&krno="+m_sKonreiNo;
+	dbnm = m_szHotelDB;
+	krtbl = m_szKonreiTable;
+	recid = m_nKonreiId;
+	data = "dbnm="+dbnm+"&krtbl="+krtbl+"&recid="+recid+"&krno="+m_sKonreiNo;
 	sendRequest("POST","php/loadpccsv.php",data,false,fncLoadPCCsvCallBack);	
 }
 function fncLoadPCCsvCallBack(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] == "0"){
 		return;
 	}
@@ -149,10 +168,11 @@ function fncLoadPCCsvCallBack(xmlhttp)
 function fncOnClickNew()
 {
 	var txtKonreiId = document.getElementById("txtKonreiId");
-	m_nKonreiId = fnclibStringToInt(txtKonreiId.textContent);
 	var txtKanriNo = document.getElementById("txtKanriNo");
-	m_sKonreiNo = txtKanriNo.value;
 	var txtKanriPW = document.getElementById("txtKanriPW");
+
+	m_nKonreiId = fnclibStringToInt(txtKonreiId.textContent);
+	m_sKonreiNo = txtKanriNo.value;
 	m_sKonreiPW = txtKanriPW.value;
 
 	if(m_sKonreiNo == "")
@@ -179,52 +199,73 @@ function fncOnClickNew()
 }
 function fncCheckNOPW()
 {
-	var data = "com="+m_sKonreiNo+","+m_sKonreiPW+",";
+
+	var data = "";
 	var fnc = fncCheckNOPWCallback;
+
+	data = "com="+m_sKonreiNo+","+m_sKonreiPW+",";
 	sendRequest("POST","php/checkidpw.php",data,false,fnc);
 }
 function fncCheckNOPWCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+	var dbnm = "";
+	var tble = "";
+	var fild = "";
+	var where = "";
+	var fnc = fncExistsKonreiNoCallBack;
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] == "0"){
 		fnclibAlert("パスワードが違います");
 		return;
 	}
-	var dbnm = m_szHotelDB;
-	var tble = m_szKonreiTable;
-	var fild = "id,username";
-	var where = "WHERE (username="+m_sKonreiNo+") LIMIT 1";
-	var data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&where="+where;
-	var fnc = fncExistsKonreiNoCallBack;
+	dbnm = m_szHotelDB;
+	tble = m_szKonreiTable;
+	fild = "id,username";
+	where = "WHERE (username="+m_sKonreiNo+") LIMIT 1";
+	data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&where="+where;
+
 	sendRequest("POST","php/getdata.php",data,false,fnc);
 }
 function fncExistsKonreiNoCallBack(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+	var txtKonreiId = document.getElementById("txtKonreiId");
+	var dbnm = "";
+	var krtbl = "";
+	var krno = "";
+	var krpw = "";
+	var fnc = fncCheckKonreiCallBack;
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] != "0"){
 		fnclibAlert("ご使用の婚礼管理番号はすでに使用されています");
 		m_nKonreiId = ary[0];
-		var txtKonreiId = document.getElementById("txtKonreiId");
 		txtKonreiId.textContent = txtKonreiId;
 		fncGetKonreiData();
 		return;
 	}
 
-	var dbnm = m_szHotelDB;
-	var krtbl = m_szKonreiTable;
-	var krno = m_sKonreiNo;
-	var krpw = m_sKonreiPW;
-	var data = "dbnm="+dbnm+"&krtbl="+krtbl+"&krno="+krno+"&krpw="+krpw;
-	var fnc = fncCheckKonreiCallBack;
+	dbnm = m_szHotelDB;
+	krtbl = m_szKonreiTable;
+	krno = m_sKonreiNo;
+	krpw = m_sKonreiPW;
+	data = "dbnm="+dbnm+"&krtbl="+krtbl+"&krno="+krno+"&krpw="+krpw;
 	sendRequest("POST","php/initkonrei.php",data,false,fnc);
 }
 function fncCheckKonreiCallBack(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
 	var txtKonreiId = document.getElementById("txtKonreiId");
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(ary[0] == "0"){
 		return;
 	}
@@ -239,59 +280,90 @@ function fncCheckKonreiCallBack(xmlhttp)
 function fncOnClickUpdate()
 {
 	var txtKonreiId = document.getElementById("txtKonreiId");
-	m_nKonreiId = fnclibStringToInt(txtKonreiId.textContent);
 	var txtKanriNo = document.getElementById("txtKanriNo");
+
+	m_nKonreiId = fnclibStringToInt(txtKonreiId.textContent);
 	m_sKonreiNo = txtKanriNo.value;
 	
 	fncUpdateKonreiData();
 }
 function fncUpdateKonreiData()
 {
-	var idx;
-	var sKyosiki, sHirouen;
-	var sKaijyou, sMukotori;
-	var sSinroZoku, sSinroName1, sSinroName2;
-	var sSinpuZoku, sSinpuName1, sSinpuName2;
-	var sSinroDish, sSinpuDish;
-	var sSinroSub, sSinpuSub;
-
+	var idx = 0;
+	var sKyosiki = "";
+	var sHirouen = "";
+	var sKaijyou = "";
+	var sMukotori = "";
+	var sSinroZoku = "";
+	var sSinroName1 = "";
+	var sSinroName2 = "";
+	var sSinpuZoku = "";
+	var sSinpuName1 = "";
+	var sSinpuName2 = "";
+	var sSinroDish = "";
+	var sSinpuDish = "";
+	var sSinroSub = "";
+	var sSinpuSub = "";
+	var nGG = "";
+	var idx = 0;
+	var sNengo = "";
+	var sYY = "";
+	var sMM = "";
+	var sDD = "";
+	var sHH = "";
+	var sMN = "";
 	var cmbKyosikiNengo = document.getElementById("cmbKyosikiNengo");
 	var txtKyosikiGG = document.getElementById("txtKyosikiGG");
-	var nGG = fnclibStringToInt(txtKyosikiGG.value);
-	idx = cmbKyosikiNengo.selectedIndex;
-	var sNengo = cmbKyosikiNengo.options[idx].text;
-	var sYY = fncNengouToFullYear(nGG, sNengo);
-	txtKyosikiMM = document.getElementById("txtKyosikiMM");
-	var sMM = txtKyosikiMM.value
-	txtKyosikiDD = document.getElementById("txtKyosikiDD");
-	var sDD = txtKyosikiDD.value;
-	txtKyosikiHH = document.getElementById("txtKyosikiHH");
-	var sHH = txtKyosikiHH.value;
-	txtKyosikiMN = document.getElementById("txtKyosikiMN");
-	var sMN = txtKyosikiMN.value;
-	sKyosiki = sYY+"-"+sMM+"-"+sDD+" "+sHH+":"+sMN+":00";
-
+	var txtKyosikiMM = document.getElementById("txtKyosikiMM");
+	var txtKyosikiDD = document.getElementById("txtKyosikiDD");
+	var txtKyosikiHH = document.getElementById("txtKyosikiHH");
+	var txtKyosikiMN = document.getElementById("txtKyosikiMN");
 	var cmbHirouenNengo = document.getElementById("cmbHirouenNengo");
 	var txtHirouenGG = document.getElementById("txtHirouenGG");
-	idx = cmbHirouenNengo.selectedIndex;
-	var sNengo = cmbHirouenNengo.options[idx].text;
-	var nGG = fnclibStringToInt(txtHirouenGG.value);
-	var sNengo = cmbHirouenNengo.text;
-	var sYY = fncNengouToFullYear(nGG, sNengo);
-	txtHirouenMM = document.getElementById("txtHirouenMM");
-	var sMM = txtHirouenMM.value
-	txtHirouenDD = document.getElementById("txtHirouenDD");
-	var sDD = txtHirouenDD.value;
-	txtHirouenHH = document.getElementById("txtHirouenHH");
-	var sHH = txtHirouenHH.value;
-	txtHirouenMN = document.getElementById("txtHirouenMN");
-	var sMN = txtHirouenMN.value;
-	sHirouen = sYY+"-"+sMM+"-"+sDD+" "+sHH+":"+sMN+":00";
+	var txtHirouenMM = document.getElementById("txtHirouenMM");
+	var txtHirouenDD = document.getElementById("txtHirouenDD");
+	var txtHirouenHH = document.getElementById("txtHirouenHH");
+	var txtHirouenMN = document.getElementById("txtHirouenMN");
+	var dbnm = "";
+	var sSql = "";
+	var data = "";
+	var fnc = fncUpdateKonreiCallback;
 
 	cmbKaijyou = document.getElementById("cmbKaijyou");
-	sKaijyou = cmbKaijyou.value;
-
 	chkMukotori = document.getElementById("chkMukotori");
+	cmbSinroZokugara = document.getElementById("cmbSinroZokugara");
+	txtSinroMyouji = document.getElementById("txtSinroMyouji");
+	txtSinroNamae = document.getElementById("txtSinroNamae");
+	cmbSinpuZokugara = document.getElementById("cmbSinpuZokugara");
+	txtSinpuMyouji = document.getElementById("txtSinpuMyouji");
+	txtSinpuNamae = document.getElementById("txtSinpuNamae");
+	txtSinroRyouri = document.getElementById("txtSinroRyouri");
+	txtSinpuRyouri = document.getElementById("txtSinpuRyouri");
+	txtSinroBikou = document.getElementById("txtSinroBikou");
+	txtSinpuBikou = document.getElementById("txtSinpuBikou");
+
+	nGG = fnclibStringToInt(txtKyosikiGG.value);
+	idx = cmbKyosikiNengo.selectedIndex;
+	sNengo = cmbKyosikiNengo.options[idx].text;
+	sYY = fncNengouToFullYear(nGG, sNengo);
+	sMM = txtKyosikiMM.value
+	sDD = txtKyosikiDD.value;
+	sHH = txtKyosikiHH.value;
+	sMN = txtKyosikiMN.value;
+	sKyosiki = sYY+"-"+sMM+"-"+sDD+" "+sHH+":"+sMN+":00";
+
+	idx = cmbHirouenNengo.selectedIndex;
+	sNengo = cmbHirouenNengo.options[idx].text;
+	nGG = fnclibStringToInt(txtHirouenGG.value);
+	sNengo = cmbHirouenNengo.text;
+	sYY = fncNengouToFullYear(nGG, sNengo);
+	sMM = txtHirouenMM.value
+	sDD = txtHirouenDD.value;
+	sHH = txtHirouenHH.value;
+	sMN = txtHirouenMN.value;
+	sHirouen = sYY+"-"+sMM+"-"+sDD+" "+sHH+":"+sMN+":00";
+
+	sKaijyou = cmbKaijyou.value;
 	if(chkMukotori.checked == true)
 	{
 		sMukotori = "1";
@@ -299,30 +371,20 @@ function fncUpdateKonreiData()
 		sMukotori = "0";
 	}
 
-	cmbSinroZokugara = document.getElementById("cmbSinroZokugara");
 	sSinroZoku = cmbSinroZokugara.value;
-	txtSinroMyouji = document.getElementById("txtSinroMyouji");
 	sSinroName1 = txtSinroMyouji.value;
-	txtSinroNamae = document.getElementById("txtSinroNamae");
 	sSinroName2 = txtSinroNamae.value;
-	
-	cmbSinpuZokugara = document.getElementById("cmbSinpuZokugara");
+
 	sSinpuZoku = cmbSinpuZokugara.value;
-	txtSinpuMyouji = document.getElementById("txtSinpuMyouji");
 	sSinpuName1 = txtSinpuMyouji.value;
-	txtSinpuNamae = document.getElementById("txtSinpuNamae");
 	sSinpuName2 = txtSinpuNamae.value;
-	
-	txtSinroRyouri = document.getElementById("txtSinroRyouri");
+
 	sSinroDish = txtSinroRyouri.value;
-	txtSinpuRyouri = document.getElementById("txtSinpuRyouri");
 	sSinpuDish = txtSinpuRyouri.value;
-	txtSinroBikou = document.getElementById("txtSinroBikou");
 	sSinroSub = txtSinroBikou.value;
-	txtSinpuBikou = document.getElementById("txtSinpuBikou");
 	sSinpuSub = txtSinpuBikou.value;
 
-	var dbnm = m_szHotelDB;
+	dbnm = m_szHotelDB;
 	sSql = "UPDATE "+m_szKonreiTable+" SET ";
 	sSql = sSql+"kyosiki='"+sKyosiki+"',hirouen='"+sHirouen+"'";
 	sSql = sSql+",kaijyou='"+sKaijyou+"',mukotori="+sMukotori;
@@ -331,14 +393,16 @@ function fncUpdateKonreiData()
 	sSql = sSql+",sinrodish='"+sSinroDish+"',sinpudish='"+sSinpuDish+"'";
 	sSql = sSql+",sinrosub='"+sSinroSub+"',sinpusub='"+sSinpuSub+"'";
 	sSql = sSql+" WHERE (id="+m_nKonreiId+");";
-	var data = "dbnm="+dbnm+"&sql="+sSql;
-	var fnc = fncUpdateKonreiCallback;
+	data = "dbnm="+dbnm+"&sql="+sSql;
 	sendRequest("POST","php/execsql.php",data,false,fnc);
 }
 function fncUpdateKonreiCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
+	var data = "";
+	var ary = new Array();
+
+	data = xmlhttp.responseText;
+	ary = data.split(",");
 	if(ary[0] == "0"){
 		fnclibAlert(m_szKonreiTable+"婚礼管理番号"+m_sKonreiNo+"の婚礼レコードの更新に失敗しました");
 		return;
@@ -348,8 +412,14 @@ function fncUpdateKonreiCallback(xmlhttp)
 function fncOnClickDelete()
 {
 	var txtKonreiId = document.getElementById("txtKonreiId");
-	m_nKonreiId = fnclibStringToInt(txtKonreiId.textContent);
 	var txtKanriNo = document.getElementById("txtKanriNo");
+	var ret = "";
+	var sGestTableName = "";
+	var sSql = "";
+	var data = "";
+	var fnc = fncDeleteGestTableCallback;
+
+	m_nKonreiId = fnclibStringToInt(txtKonreiId.textContent);
 	m_sKonreiNo = txtKanriNo.value;
 
 	if(m_nKonreiId != 0){
@@ -361,30 +431,38 @@ function fncOnClickDelete()
 		fnclibAlert("婚礼が選択されていません");
 		return;
 	}
-	var sGestTableName = "ge"+m_sKonreiNo;
-	var sSql = "DROP TABLE "+sGestTableName; // テーブルの削除
-	var data = "sql="+sSql;
-	var fnc = fncDeleteGestTableCallback;
+	sGestTableName = "ge"+m_sKonreiNo;
+	sSql = "DROP TABLE "+sGestTableName; // テーブルの削除
+	data = "sql="+sSql;
 	sendRequest("POST","php/execsql.php",data,false,fnc);
 }
 function fncDeleteGestTableCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
-	var sGestTableName = "ge"+m_sKonreiNo;
+	var data = "";
+	var ary = new Array();
+	var sGestTableName = "";
+	var sSql = "";
+	var fnc = fncDeleteKonreiCallback;
+
+	data = xmlhttp.responseText;
+	ary = data.split(",");
+	sGestTableName = "ge"+m_sKonreiNo;
 	if(ary[0] == "0"){
 		fnclibAlert("招待者テーブル"+sGestTableName+"の削除に失敗しました");
 		return;
 	}
-	var sSql = "DELETE FROM "+m_szKonreiTable+" WHERE (id="+m_nKonreiId+") LIMIT 1;"
-	var data = "sql="+sSql;
-	var fnc = fncDeleteKonreiCallback;
+	sSql = "DELETE FROM "+m_szKonreiTable+" WHERE (id="+m_nKonreiId+") LIMIT 1;"
+	data = "sql="+sSql;
 	sendRequest("POST","php/execsql.php",data,false,fnc);
 }
 function fncDeleteKonreiCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
+	var data = "";
+	var ary = new Array();
+	var txtKonreiId = document.getElementById("txtKonreiId");
+
+	data = xmlhttp.responseText;
+	ary = data.split(",");
 	if(ary[0] == "0"){
 		fnclibAlert(m_szKonreiTable+"テーブルの婚礼管理番号"+m_sKonreiNo+"のレコードの削除に失敗しました");
 		return;
@@ -393,14 +471,15 @@ function fncDeleteKonreiCallback(xmlhttp)
 	{
 		fncInitKonreiListBox();	
 	}
-	var txtKonreiId = document.getElementById("txtKonreiId");
 	txtKonreiId.textContent = "";
 }
 function fncOnClickReturn()
 {
+	var url = "";
+
 	localStorage.setItem("KonreiId", m_nKonreiId);
 	localStorage.setItem("KonreiNo", m_sKonreiNo);
-	var url = "01menu.html";
+	url = "01menu.html";
 	window.location.href = url;
 }
 function fncOnClickRdoNoAsc()
@@ -437,22 +516,32 @@ function fncOnClickRdoDateDesc()
 }
 function fncSaveCsvData()
 {
-	var dbnm = m_szHotelDB;
-	var krtbl = m_szKonreiTable;
-	var recid = m_nKonreiId;
-	var krno = m_sKonreiNo;
+	var dbnm = "";
+	var krtbl = "";
+	var recid = 0;
+	var krno = "";
+	var data = "";
+	var fnc = fncSaveCsvCallBack;
+
+	dbnm = m_szHotelDB;
+	krtbl = m_szKonreiTable;
+	recid = m_nKonreiId;
+	krno = m_sKonreiNo;
 
 	if(m_nKonreiId == 0){
 		return;
 	}
-	var data = "dbnm="+dbnm+"&krtbl="+krtbl+"&recid="+recid+"&krno="+krno;
-	var fnc = fncSaveCsvCallBack;
+	data = "dbnm="+dbnm+"&krtbl="+krtbl+"&recid="+recid+"&krno="+krno;
 	sendRequest("POST","php/savecsv.php",data,false,fnc);
 }
 function fncSaveCsvCallBack(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(',');
+	var data = "";
+	var ary = new Array();
+	var aCsvSave = document.getElementById("aCsvSave");
+
+	data = xmlhttp.responseText;
+	ary = data.split(',');
 	if(m_strUserKind == "1")
 	{
 		fncInitKonreiListBox();	
@@ -460,7 +549,6 @@ function fncSaveCsvCallBack(xmlhttp)
 	if(ary[0] == "0"){
 		return;
 	}
-	var aCsvSave = document.getElementById("aCsvSave");
 	aCsvSave.href = "temp/download/ge"+m_sKonreiNo+".csv";
 }
 // 

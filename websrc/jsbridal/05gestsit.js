@@ -1,79 +1,71 @@
 
-var m_clsLayout;
-var m_szHotelDB;
-var m_szKonreiTable;
-var m_nKonreiId;
-var m_sKonreiNo;
+var m_clsLayout = new clsTableLayout();
+var m_szHotelDB = "";
+var m_szKonreiTable = "";
+var m_nKonreiId = 0;
+var m_sKonreiNo = "";
 
-var m_sTextSize;
-var m_sTakasagoKind;
-var m_sTableLayout;
-var m_sTablePosition;
-var m_aryGestSit;
-var m_cnvsWidth;
-var m_cnvsHeight;
+var m_sTextSize = "";
+var m_sTakasagoKind = "";
+var m_sTableLayout = "";
+var m_sTablePosition = "";
+var m_aryGestSit = new Array();
+var m_cnvsWidth = 0;
+var m_cnvsHeight = 0;
 
-var m_nSlctGestId;
+var m_nSlctGestId = 0;
 
-var m_strWhereSql;
-var m_strOderSql;
+var m_strWhereSql = "";
+var m_strOderSql = "";
 
-var m_nScrnLeft;
-var m_nScrnTop;
+var m_nScrnLeft = 0;
+var m_nScrnTop = 0;
 
-var m_aryTableArea;
-var m_taLeft;
-var m_taRight;
+var m_aryTableArea = new Array();
+var m_taLeft = null;
+var m_taRight = null;
 var m_cnvsPaper;
 var m_ctxPaper;
-var m_nFontSize;
+var m_nFontSize = 1.0;
 
 
 function fncInit()
 {
-	m_nScrnLeft = 0;
-	m_nScrnTop = 0;
-	m_taLeft = null;
-	m_taRight = null;
-	m_nSlctGestId = 0;
-	
+	var sId = "";
+	var url = "";
+	var btnSave = document.getElementById("btnSave");
+	var rdoAll = document.getElementById("rdoAll");
+	var rdoSinro = document.getElementById("rdoSinro");
+	var rdoSinpu = document.getElementById("rdoSinpu");
+	var rdoInput = document.getElementById("rdoInput");
+	var rdoKana = document.getElementById("rdoKana");
+	var lstGest = document.getElementById("lstGest");
+	var btnReturn = document.getElementById("btnReturn");
+
 	m_szHotelDB = localStorage.getItem("HotelDB");
 	m_szKonreiTable = localStorage.getItem("KonreiTable");
 	m_strUserKind = localStorage.getItem("UserKind");
-	var sId = localStorage.getItem("KonreiId");
+	sId = localStorage.getItem("KonreiId");
 	m_nKonreiId = fnclibStringToInt(sId);
 	m_sKonreiNo = localStorage.getItem("KonreiNo");
 	if(m_sKonreiNo == "0"){
 		fnclibAlert("婚礼が指定されていません");
-		var url = "02kihon.html";
+		url = "02kihon.html";
 		window.location.href = url;
 		return;
 	}
 
-	m_strWhereSql = "";
-	m_strOderSql = "";
-	m_clsLayout = new clsTableLayout();
-	m_aryGestSit = new Array();
-
-	var btnSave = document.getElementById("btnSave");
 	btnSave.style.visibility = 'hidden';
 
-	var rdoAll = document.getElementById("rdoAll");
 	rdoAll.onclick = fncOnClickAll;
-	var rdoSinro = document.getElementById("rdoSinro");
 	rdoSinro.onclick = fncOnClickSinro;
-	var rdoSinpu = document.getElementById("rdoSinpu");
 	rdoSinpu.onclick = fncOnClickSinpu;
 
-	var rdoInput = document.getElementById("rdoInput");
 	rdoInput.onclick = fncOnClickInput;
-	var rdoKana = document.getElementById("rdoKana");
 	rdoKana.onclick = fncOnClickKana;
 
-	var lstGest = document.getElementById("lstGest");
 	lstGest.onchange = fncOnChangeGestList;
 
-	var btnReturn = document.getElementById("btnReturn");
 	btnReturn.onclick = fncOnClickReturn;
 
 	fncTableTextSetFunction();
@@ -83,7 +75,9 @@ function fncInit()
 function fncOnChangeGestList()
 {
 	var lstGest = document.getElementById("lstGest");
-	var nIdx = lstGest.selectedIndex;
+	var nIdx = 0;
+
+	nIdx = lstGest.selectedIndex;
 	m_nSlctGestId = lstGest.options[nIdx].value;
 }
 function fncOnClickAll()
@@ -117,57 +111,69 @@ function fncOnClickReturn()
 }
 function fncUpdateKonreiElement()
 {
-	var max, idx;
-	var cntmax, cnt;
-	var x, y;
-
 	var cmbTextSize = document.getElementById("cmbTextSize");
-	m_sTextSize = fnclibSelectedText(cmbTextSize);
 	var cmbTakasagoKind = document.getElementById("cmbTakasagoKind");
+	var dbnm = "";
+	var sSql = "";
+	var data = "";
+	var fnc = fncUpdateKonreiCallback;
+
+	m_sTextSize = fnclibSelectedText(cmbTextSize);
 	m_sTakasagoKind = fnclibSelectedText(cmbTakasagoKind);
 
-	var dbnm = m_szHotelDB;
+	dbnm = m_szHotelDB;
 	sSql = "UPDATE "+m_szKonreiTable+" SET ";
 	sSql = sSql+"textsize='"+m_sTextSize+"',takasagokind='"+m_sTakasagoKind+"'";
 	sSql = sSql+" WHERE (id="+m_nKonreiId+");";
-	var data = "dbnm="+dbnm+"&sql="+sSql;
-	var fnc = fncUpdateKonreiCallback;
+	data = "dbnm="+dbnm+"&sql="+sSql;
 	sendRequest("POST","php/execsql.php",data,false,fnc);
 }
 function fncUpdateKonreiCallback(xmlhttp)
 {
-	var max, idx, setcnt;
+	var data = "";
+	var ary = new Array();
+	var url = "";
 
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
+	data = xmlhttp.responseText;
+	ary = data.split(",");
 	if(ary[0] == "0"){
 		fnclibAlert(m_szKonreiTable+"婚礼管理番号"+m_sKonreiNo+"の婚礼レコードの更新に失敗しました");
 		return;
 	}
-	var url = "01menu.html";
+	url = "01menu.html";
 	window.location.href = url;
 }
 function fncInitKonreiElement()
 {
-	var dbnm = m_szHotelDB;
-	var tble = m_szKonreiTable;
-	var fild = "id,username,sinroname1,sinpuname1,kyosiki";
-	fild = fild + ",textsize,takasagokind,tablelayout,tableposition";
-	var where = "WHERE (id="+m_nKonreiId+") LIMIT 1";
-	var data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&where="+where;
+	var dbnm = "";
+	var tble = "";
+	var fild = "";
+	var where = "";
+	var data = "";
 	var fnc = fncGetKonreiDataCallback;
+
+	dbnm = m_szHotelDB;
+	tble = m_szKonreiTable;
+	fild = "id,username,sinroname1,sinpuname1,kyosiki";
+	fild = fild + ",textsize,takasagokind,tablelayout,tableposition";
+	where = "WHERE (id="+m_nKonreiId+") LIMIT 1";
+	data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&where="+where;
 	sendRequest("POST","php/getdata.php",data,false,fnc);
 }
 function fncGetKonreiDataCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
+	var data = "";
+	var ary = new Array();
+	var sStr = "";
+	var txtKonrei = document.getElementById("txtKonrei");
+
+	data = xmlhttp.responseText;
+	ary = data.split(",");
 	if(ary[0] == "0"){
 		fnclibAlert("婚礼データを取得することが出来ませんでした");
 		return;
 	}
-	var sStr = "婚礼管理番号("+ary[1]+")　"+ary[2]+"家　"+ary[3]+"家　"+ary[4];
-	var txtKonrei = document.getElementById("txtKonrei");
+	sStr = "婚礼管理番号("+ary[1]+")　"+ary[2]+"家　"+ary[3]+"家　"+ary[4];
 	txtKonrei.innerText = sStr; // Microsoft
 	txtKonrei.textContent = sStr; //W3C
 	m_sTextSize = ary[5];
@@ -181,65 +187,103 @@ function fncGetKonreiDataCallback(xmlhttp)
 }
 function fncInitTextSizeComboBox()
 {
-	var data = "file=../list/textsize.txt";
+	var data = "";
 	var fnc = fncTextSizeCallback;
+
+	data = "file=../list/textsize.txt";
 	sendRequest("POST","php/readcanmafile.php",data,false,fnc);
 }
 function fncTextSizeCallback(xmlhttp)
 {
-	var idx;
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
-	if(ary[0] == "0"){
-		return;
-	}
-	var max = ary.length;
+	var data = "";
+	var ary = new Array();
 	var cmbTextSize = document.getElementById("cmbTextSize");
+	var max = 0;
+	var idx = 0;
+	var optidx = 0;
 	var opt = new Option("", 0);
-	cmbTextSize.options[0] = opt;
-	for(idx = 0; idx < max; idx++){
-		opt = new Option(ary[idx], idx);
-		cmbTextSize.options[idx] = opt;
+
+	idx;
+	data = xmlhttp.responseText;
+	ary = data.split(",");
+	if(ary[0] == "0"){
+		cmbTextSize.options[0] = new Option("", 0);
+		cmbTextSize.options[1] = new Option("小", 1);
+		cmbTextSize.options[2] = new Option("中", 2);
+		cmbTextSize.options[3] = new Option("大", 3);
+	}else{
+		max = ary.length;
+		cmbTextSize.options[0] = new Option("", 0);
+		for(idx = 0; idx < max; idx++){
+			optidx = idx+1;
+			opt = new Option(ary[idx], optidx);
+			cmbTextSize.options[optidx] = opt;
+		}
 	}
 	fnclibSelectData(cmbTextSize, m_sTextSize);	
 }
 function fncInitTakasagoKindComboBox()
 {
-	var data = "file=../list/takasagokind.txt";
+	var data = "";
 	var fnc = fncTakasagoKindCallback;
+
+	data = "file=../list/takasagokind.txt";
 	sendRequest("POST","php/readfile.php",data,false,fnc);
 }
 function fncTakasagoKindCallback(xmlhttp)
 {
-	var idx;
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
-	if(ary[0] == "0"){
-		return;
-	}
-	var aryLine = data.split("\r\n");
-	var max = aryLine.length;
+	var data = "";
+	var ary = new Array();
+	var aryLine = new Array();
 	var cmbTakasagoKind = document.getElementById("cmbTakasagoKind");
+	var max = 0;
+	var idx = 0;
+	var optidx = 0;
 	var opt = new Option("", 0);
-	cmbTakasagoKind.options[0] = opt;
-	for(idx = 0; idx < max; idx++){
-		opt = new Option(aryLine[idx], idx);
-		cmbTakasagoKind.options[idx] = opt;
+
+	data = xmlhttp.responseText;
+	ary = data.split(",");
+	if(ary[0] == "0"){
+		cmbTakasagoKind.options[0] = new Option("", 0);
+		cmbTakasagoKind.options[1] = new Option("横書枠有", 1);
+		cmbTakasagoKind.options[2] = new Option("横書高砂上(高砂名無し)", 2);
+		cmbTakasagoKind.options[3] = new Option("横書高砂上(高砂名有)", 3);
+		cmbTakasagoKind.options[4] = new Option("縦書高砂上(高砂名無し)", 4);
+		cmbTakasagoKind.options[5] = new Option("縦書高砂上(高砂名有)", 5);
+		cmbTakasagoKind.options[6] = new Option("横書媒酌有枠有", 6);
+		cmbTakasagoKind.options[7] = new Option("横書媒酌有高砂上(高砂名無し)", 7);
+		cmbTakasagoKind.options[8] = new Option("横書媒酌有高砂上(高砂名有)", 8);
+		cmbTakasagoKind.options[9] = new Option("縦書媒酌有高砂上(高砂名無し)", 9);
+		cmbTakasagoKind.options[10] = new Option("縦書媒酌有高砂上(高砂名有)", 10);
+	}else{
+		aryLine = data.split("\r\n");
+		max = aryLine.length;
+		cmbTakasagoKind.options[0] = new Option("", 0);
+		for(idx = 0; idx < max; idx++){
+			optidx = idx+1;
+			opt = new Option(aryLine[idx], optidx);
+			cmbTakasagoKind.options[optidx] = opt;
+		}
 	}
 	fnclibSelectData(cmbTakasagoKind, m_sTakasagoKind);	
 }
 function fncInitAryTableName()
 {
-	var data = "file=../list/tablename.txt";
+	var data = "";
 	var fnc = fncTableNameCallback;
+
+	data = "file=../list/tablename.txt";
 	sendRequest("POST","php/readfile.php",data,false,fnc);
 }
 function fncTableNameCallback(xmlhttp)
 {
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
+	var data = "";
+	var ary = new Array();
+
+	data = xmlhttp.responseText;
+	ary = data.split(",");
 	if(ary[0] == "0"){
-		m_aryTableName = Array("Ａ","Ｂ","Ｃ","Ｄ","Ｅ","Ｆ","Ｇ","Ｈ","Ｉ","Ｊ","Ｋ","Ｌ","Ｍ","Ｎ","Ｏ","Ｐ","Ｑ","Ｒ","Ｓ","Ｔ","Ｕ","Ｖ","Ｗ","Ｘ","Ｙ","Ｚ","ａ","ｂ","ｃ","ｄ","ｅ","ｆ","ｇ","ｈ","ｉ","ｊ","ｋ","ｌ","ｍ","ｎ","ｏ","ｐ","ｑ","ｒ","ｓ","ｔ","ｕ","ｖ","ｗ","ｘ","ｙ","ｚ");
+		m_aryTableName = new Array("Ａ","Ｂ","Ｃ","Ｄ","Ｅ","Ｆ","Ｇ","Ｈ","Ｉ","Ｊ","Ｋ","Ｌ","Ｍ","Ｎ","Ｏ","Ｐ","Ｑ","Ｒ","Ｓ","Ｔ","Ｕ","Ｖ","Ｗ","Ｘ","Ｙ","Ｚ","ａ","ｂ","ｃ","ｄ","ｅ","ｆ","ｇ","ｈ","ｉ","ｊ","ｋ","ｌ","ｍ","ｎ","ｏ","ｐ","ｑ","ｒ","ｓ","ｔ","ｕ","ｖ","ｗ","ｘ","ｙ","ｚ");
 	}else{
 		m_aryTableName = data.split("\r\n");
 	}
@@ -249,25 +293,30 @@ function fncInitTableLayout()
 {
 	// tblcnts 3:3:0:0:0:0:
 	// tblposs 166x250:500x250:833x250:166x750:500x750:833x750
+	var arycnt = new Array(); 
+	var arypos = new Array();
+	var tblidx = 0;
+	var max = 0;
+	var idx = 0;
+	var cntmax = 0;
+	var cnt = 0;
+	var aryxy =  new Array();
+	var tbl = new clsTable();
 
-	var max, idx, tidx;
-	var cnt, cntmax;
-	var aryxy;
-
-	var arycnt = m_sTableLayout.split(":");
-	var arypos = m_sTablePosition.split(":");
-	tidx = 0;
+	arycnt = m_sTableLayout.split(":");
+	arypos = m_sTablePosition.split(":");
+	tblidx = 0;
 	max = m_clsLayout.tlines.length; // 6固定
 	for(idx = 0; idx < max; idx++){
 		cntmax = fnclibStringToInt(arycnt[idx]);
 		for(cnt = 0; cnt < cntmax; cnt++){
-			aryxy = arypos[tidx].split("x");
-			var tbl = new clsTable();
+			aryxy = arypos[tblidx].split("x");
+			tbl = new clsTable();
 			tbl.x = fnclibStringToInt(aryxy[0]);
 			tbl.y = fnclibStringToInt(aryxy[1]);
-			tbl.name = m_aryTableName[tidx];
+			tbl.name = m_aryTableName[tblidx];
 			m_clsLayout.tlines[idx].tables.push(tbl);
-			tidx++;
+			tblidx++;
 		}
 	}
 	fncInitGetSitArray();
@@ -275,18 +324,30 @@ function fncInitTableLayout()
 }
 function fncInitGetList()
 {
-	var dbnm = m_szHotelDB;
-	var tble = "ge"+m_sKonreiNo;
-	var fild = "id,name1,name2,kind";
-	var trmsql = m_strWhereSql + " " + m_strOderSql;
-	var data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&trmsql="+trmsql;
+	var dbnm = "";
+	var tble = "";
+	var fild = "";
+	var trmsql = "";
+	var data = "";
 	var fnc = fncGestListCallback;
+
+	dbnm = m_szHotelDB;
+	tble = "ge"+m_sKonreiNo;
+	fild = "id,name1,name2,kind";
+	trmsql = m_strWhereSql + " " + m_strOderSql;
+	data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&trmsql="+trmsql;
 	sendRequest("POST","php/getlist.php",data,false,fnc);
 }
 function fncGestListCallback(xmlhttp)
 {
-	var max, idx;
-	var name;
+	var data = "";
+	var ary = new Array();
+	var lstGest = document.getElementById("lstGest");
+	var aryRec = new Array();
+	var max = 0;
+	var idx = 0;
+	var lstidx = 0;
+	var name = "";
 
 	var data = xmlhttp.responseText;
 	var ary = data.split(",");
@@ -294,9 +355,8 @@ function fncGestListCallback(xmlhttp)
 		fnclibAlert("招待者リストを取得することが出来ませんでした");
 		return;
 	}
-	var lstGest = document.getElementById("lstGest");
 	lstGest.options.length = 0;
-	var aryRec = data.split(";");
+	aryRec = data.split(";");
 	max = aryRec.length;
 	lstidx = 0;
 	for(idx = 0; idx < max; idx++){
@@ -311,8 +371,11 @@ function fncGestListCallback(xmlhttp)
 }
 function checkArraGestSit(sId)
 {
-	var max, idx;
-	var nId = fnclibStringToInt(sId);
+	var max = 0;
+	var idx = 0;
+	var nId = 0;
+
+	nId = fnclibStringToInt(sId);
 	max = m_aryGestSit.length;
 	for(idx = 0; idx < max; idx++){
 		if(m_aryGestSit[idx].id == nId){
@@ -323,32 +386,40 @@ function checkArraGestSit(sId)
 }
 function fncInitGetSitArray()
 {
-	var dbnm = m_szHotelDB;
-	var tble = "ge"+m_sKonreiNo;
-	var fild = "id,name1,name2,kind,tno,sno";
+	var dbnm = "";
+	var tble = "";
+	var fild = "";
 	var trmsql = "";
-	var data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&trmsql="+trmsql;
+	var data = "";
 	var fnc = fncGestSitArrayCallback;
+
+	dbnm = m_szHotelDB;
+	tble = "ge"+m_sKonreiNo;
+	fild = "id,name1,name2,kind,tno,sno";
+	trmsql = "";
+	data = "dbnm="+dbnm+"&tble="+tble+"&fild="+fild+"&trmsql="+trmsql;
 	sendRequest("POST","php/getlist.php",data,false,fnc);
 }
 function fncGestSitArrayCallback(xmlhttp)
 {
-	var max, idx;
-	var lstidx, sitidx;
-	var clsGS;
-	var clsTbl;
+	var data = "";
+	var ary = new Array();
+	var aryRec = new Array();
+	var max = 0;
+	var idx = 0;
+	var clsGS = new clsGestSit();
+	var clsTbl = new clsTable();
+	var sitidx = 0;
 
-	var data = xmlhttp.responseText;
-	var ary = data.split(",");
+	data = xmlhttp.responseText;
+	ary = data.split(",");
 	if(ary[0] == "0"){
 		fnclibAlert("招待者リストを取得することが出来ませんでした");
 		return;
 	}
 	m_aryGestSit.length = 0;
-
-	var aryRec = data.split(";");
+	aryRec = data.split(";");
 	max = aryRec.length;
-	lstidx = 0;
 	for(idx = 0; idx < max; idx++){
 		ary = aryRec[idx].split(",");
 		if(ary.length >= 6 && ary[1] != ""){
@@ -377,12 +448,15 @@ function fncGestSitArrayCallback(xmlhttp)
 }
 function fncInitGestList()
 {
-	var max, idx;
-
 	var lstGest = document.getElementById("lstGest");
+	var lstidx = 0;
+	var max = 0;
+	var idx = 0;
+	var clsGS = new clsGestSit();
+
 	lstGest.options.length = 0;
 	max = m_aryGestSit.length;
-	var lstidx = 0;
+	lstidx = 0;
 	for(idx = 0; idx < max; idx++){
 		clsGS = m_aryGestSit[idx];
 		if(clsGS.tno == 0 && clsGS.sno == 0){
@@ -393,30 +467,34 @@ function fncInitGestList()
 }
 function fncGetTable(tno)
 {
-	var idx, max;
-	var cnt, cntmax;
-	var tidx;
-	var clsTbl;
+	var tblidx = 0;
+	var max = 0;
+	var idx = 0;
+	var cntmax = 0;
+	var cnt = 0;
+	var clsTbl = new clsTable();
 
-	tidx = 1;
+	tblidx = 1;
 	max = m_clsLayout.tlines.length; // 6固定
 	for(idx = 0; idx < max; idx++){
 		cntmax = m_clsLayout.tlines[idx].tables.length;
 		for(cnt = 0; cnt < cntmax; cnt++){
-			if(tidx == tno){
+			if(tblidx == tno){
 				clsTbl = m_clsLayout.tlines[idx].tables[cnt];
 				return(clsTbl);
 			}
-			tidx++;
+			tblidx++;
 		}
 	}
 	return(null);
 }
 function fncGetTNo(clsTbl)
 {
-	var idx, max;
-	var cnt, cntmax;
-	var tno;
+	var max = 0;
+	var idx = 0;
+	var cntmax = 0;
+	var cnt = 0;
+	var tno = 0;
 
 	tno = 1;
 	max = m_clsLayout.tlines.length; // 6固定
@@ -433,12 +511,16 @@ function fncGetTNo(clsTbl)
 }
 function fncDrawPaperCanvas()
 {
-	var timex, timey;
-	var idx, max;
-	var cnt, cntmax;
-	var x, y;
-	var name;
-	var clsTA;
+	var timex = 1.0;
+	var timey = 1.0;
+	var max = 0;
+	var idx = 0;
+	var cntmax = 0;
+	var cnt = 0;
+	var x = 0.0;
+	var y = 0.0;
+	var name = "";
+	var clsTA = new clsTableArea();
 	m_cnvsPaper = document.getElementById("cnvsPaper");
 	m_ctxPaper = m_cnvsPaper.getContext('2d');
 

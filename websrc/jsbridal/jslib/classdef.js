@@ -55,6 +55,7 @@ function clsGestSit()
 {
 	this.id = 0;
 	this.name = "";
+	this.sama = "";
 	this.tno = 0;
 	this.sno = 0;
 }

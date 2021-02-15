@@ -1,10 +1,14 @@
 
-var m_szHotelName;
-var m_szHotelDB;
-var m_szKonreiTable;
+var m_szHotelName = "";
+var m_szHotelDB = "";
+var m_szKonreiTable = "";
 
 function fncInit()
 {
+	var btnHotelNew;
+	var btnTableList;
+	var btnReturn;
+
 	fncInitHotelCombobox();
 	fncInitTableCombobox();
 
@@ -12,17 +16,19 @@ function fncInit()
 	m_szHotelDB = localStorage.getItem("HotelDB");
 	m_szKonreiTable = localStorage.getItem("KonreiTable");
 
-	var btnHotelNew = document.getElementById("btnHotelNew");
+	btnHotelNew = document.getElementById("btnHotelNew");
 	btnHotelNew.onclick = fncOnClickInitHotel;
-	var btnTableList = document.getElementById("btnTableList");
+	btnTableList = document.getElementById("btnTableList");
 	btnTableList.onclick = fncOnClickTableList;
-	var btnReturn = document.getElementById("btnReturn");
+	btnReturn = document.getElementById("btnReturn");
 	btnReturn.onclick = fncOnClickReturn;
 }
 function fncOnClickInitHotel()
 {
+	var idx = 0;
 	var cmbHotelName = document.getElementById("cmbHotelName");
-	var idx = cmbHotelName.selectedIndex;
+
+	idx = cmbHotelName.selectedIndex;
 	m_szHotelName = cmbHotelName.options[idx].text;
 	m_szHotelDB = cmbHotelName.options[idx].value;
 	fncCreateDB(m_szHotelDB);
@@ -30,31 +36,45 @@ function fncOnClickInitHotel()
 }
 function fncOnClickTableList()
 {
+	var idx = 0;
+	var szTableName = "";
+	var szTable = "";
 	var cmbTableName = document.getElementById("cmbTableName");
-	var idx = cmbTableName.selectedIndex;
+
+	idx = cmbTableName.selectedIndex;
 	szTableName = cmbTableName.options[idx].text;
 	szTable = cmbTableName.options[idx].value;
 	fncListTable(szTable);
 }
 function fncOnClickReturn()
 {
-	var url = "../01menu.html";
+	var url = "";
+
+	url = "../01menu.html";
 	window.location.href = url;
 }
 function fncInitHotelCombobox()
 {
-	var data = "com=../list/hotel.txt";
+	var data = "";
 	var fnc = fncInitHotelCallback; // hotel.js�Œ�'
+	
+	data = "com=../list/hotel.txt";
 	sendRequest("POST","../php/readfile.php",data,false,fnc);
 }
 function fncInitHotelCallback(xmlhttp)
 {
-	var idx, setidx;
-	var data = xmlhttp.responseText;
-	var aryLine = data.split("\r\n");
-	var max = aryLine.length;
-
+	var max = 0;
+	var idx = 0;
+	var setidx = 0;
+	var data = "";
+	var aryLine = new Array();
+	var ary = new Array();
+	var opt = new Option("","");
 	var cmbHotelName = document.getElementById("cmbHotelName");
+
+	data = xmlhttp.responseText;
+	aryLine = data.split("\r\n");
+	max = aryLine.length;
 	for(idx = 1, setidx = 0; idx < max; idx++){
 		ary = aryLine[idx].split(",");
 		if(2 <= ary.length){
@@ -87,7 +107,9 @@ function fncInitTableCombobox()
 }
 function fncListTable(szTable)
 {
-	var fild;
+	var fild = "";
+	var data = "";
+	var fnc = fncListTableCallback;
 
 	if(szTable == "kaijyou")
 	{
@@ -107,22 +129,26 @@ function fncListTable(szTable)
 	}
 	data = "dbnm="+m_szHotelDB;
 	data = data+"&tble="+szTable+"&fild="+fild;
-	var fnc = fncListTableCallback;
+
 	sendRequest("POST","getlist.php",data,false,fnc);
 }
 function fncListTableCallback(xmlhttp)
 {
-	var idx;
-	var retstr = xmlhttp.responseText;
-	var ary = retstr.split(",");
+	var max = 0;
+	var idx = 0;
+	var retstr = "";
+	var ary = new Array();
+	var lstTableData = document.getElementById("lstTableData");
+
+	retstr = xmlhttp.responseText;
+	ary = retstr.split(",");
 	if(ary[0] == "0"){
 		alert(szTable+"テーブルリストを取得することが出来ませんでした");
 		return;
 	}
-	var lstTableData = document.getElementById("lstTableData");
 	lstTableData.options.length = 0;
 	ary = retstr.split(";");
-	var max = ary.length;
+	max = ary.length;
 	for(idx = 0;idx < max; idx++){
 		lstTableData.options[idx] = new Option(ary[idx]);
 	}

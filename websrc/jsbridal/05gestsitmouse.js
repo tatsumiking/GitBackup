@@ -9,15 +9,15 @@ var UPMOVEEVENT=5;
 var ENDEVENT=9;
 
 var m_nMouseDown = 0;
-var m_nMouseCrtX;
-var m_nMouseCrtY;
+var m_nMouseCrtX = 0;
+var m_nMouseCrtY = 0;
 var m_nMouseAdjustX = 0; // 微調整用データ
 var m_nMouseAdjustY = -1;
-var m_dScrnRltvSX = 0;
-var m_dScrnRltvSY = 0;
-var m_dScrnBaseX = 0;
-var m_dScrnBaseY = 0;
-var m_dLimit = 3;
+var m_dScrnRltvSX = 0.0;
+var m_dScrnRltvSY = 0.0;
+var m_dScrnBaseX = 0.0;
+var m_dScrnBaseY = 0.0;
+var m_dLimit = 3.0;
 
 var userAgent = window.navigator.userAgent.toLowerCase();
 
@@ -40,8 +40,11 @@ if(userAgent.indexOf('msie') != -1 && window.navigator.msPointerEnabled){
 
 function fncTouchDown(event)
 {
-	var x = event.targetTouches[0].pageX-m_nScrnLeft;
-	var y = event.targetTouches[0].pageY-m_nScrnTop;
+	var x = 0;
+	var y = 0;
+
+	x = event.targetTouches[0].pageX-m_nScrnLeft;
+	y = event.targetTouches[0].pageY-m_nScrnTop;
 	if(fncCheckCanvasArea(x, y) == true){
 		//event.preventDefault();
 		fncMouseDownXY(x, y);
@@ -50,8 +53,11 @@ function fncTouchDown(event)
 
 function fncTouchMove(event)
 {
-	var x = event.targetTouches[0].pageX-m_nScrnLeft;
-	var y = event.targetTouches[0].pageY-m_nScrnTop;
+	var x = 0;
+	var y = 0;
+
+	x = event.targetTouches[0].pageX-m_nScrnLeft;
+	y = event.targetTouches[0].pageY-m_nScrnTop;
 	if(fncCheckCanvasArea(x, y) == true){
 		//event.preventDefault();
 		m_nMouseCrtX = x;
@@ -62,8 +68,11 @@ function fncTouchMove(event)
 
 function fncTouchUp(event)
 {
-	var x = m_nMouseCrtX;
-	var y = m_nMouseCrtY;
+	var x = 0;
+	var y = 0;
+
+	x = m_nMouseCrtX;
+	y = m_nMouseCrtY;
 	if(fncCheckCanvasArea(x, y) == true){
 		//event.preventDefault();
 		fncMouseUpXY(x, y);
@@ -74,6 +83,7 @@ function fncGetPointAdd()
 {
 	var pt = new Point();
 	var area = document.body.parentElement
+
 	if(area == null || area.scrollLeft == null){
 		pt.x = -m_nScrnLeft-m_nMouseAdjustX;
 	}else{
@@ -89,13 +99,18 @@ function fncGetPointAdd()
 function fncCheckCanvasArea(x, y)
 {
 	var area = document.getElementById("cnvsPaper");
+	var sx = 0;
+	var sy = 0;
+	var ex = 0;
+	var ey = 0;
+
 	if(area == null){
 		return(false);
 	}
-	var sx = 0;
-	var sy = 0;
-	var ex = area.offsetWidth;
-	var ey = area.offsetHeight;
+	sx = 0;
+	sy = 0;
+	ex = area.offsetWidth;
+	ey = area.offsetHeight;
 	if(sx < x && x < ex && sy < y && y < ey){
 		return(true);
 	}
@@ -105,8 +120,11 @@ function fncCheckCanvasArea(x, y)
 function fncMouseDown(event)
 {
 	var pt = fncGetPointAdd();
-	var x = event.clientX + pt.x;
-	var y = event.clientY + pt.y;
+	var x = 0;
+	var y = 0;
+
+	x = event.clientX + pt.x;
+	y = event.clientY + pt.y;
 	if(fncCheckCanvasArea(x, y) == true){
 		fncMouseDownXY(x, y);
 	}
@@ -116,8 +134,11 @@ function fncMouseDown(event)
 function fncMouseUp(event)
 {
 	var pt = fncGetPointAdd();
-	var x = event.clientX + pt.x;
-	var y = event.clientY + pt.y;
+	var x = 0;
+	var y = 0;
+
+	x = event.clientX + pt.x;
+	y = event.clientY + pt.y;
 	if(fncCheckCanvasArea(x, y) == true){
 		fncMouseUpXY(x, y);
 	}
@@ -127,8 +148,11 @@ function fncMouseUp(event)
 function fncMouseMove(event)
 {
 	var pt = fncGetPointAdd();
-	var x = event.clientX + pt.x;
-	var y = event.clientY + pt.y;
+	var x = 0;
+	var y = 0;
+
+	x = event.clientX + pt.x;
+	y = event.clientY + pt.y;
 	if(fncCheckCanvasArea(x, y) == true){
 		fncMouseMoveXY(x, y);
 	}
@@ -137,61 +161,77 @@ function fncMouseMove(event)
 
 function fncMouseDownXY(x, y)
 {
-	var event = SETEVENT;
+	var event = 0;
+	var nx = 0;
+	var ny = 0;
+
+	event = SETEVENT;
 	m_nMouseDown = 1;
-	var dx = fncScrnTrnsRMX(x);
-	var dy = fncScrnTrnsRMY(y);
-	//var tx = fncScrnTrnsMRX(dx);
-	//var ty = fncScrnTrnsMRY(dy);
-	dx = parseInt(dx);
-	dy = parseInt(dy);
-	fncCmdExec(event, dx, dy);
+	nx = fncScrnTrnsRMX(x);
+	ny = fncScrnTrnsRMY(y);
+	nx = parseInt(nx);
+	ny = parseInt(ny);
+	fncCmdExec(event, nx, ny);
 }
 
 function fncMouseUpXY(x, y)
 {
-	var event = UPSETEVENT;
+	var event = 0;
+	var nx = 0;
+	var ny = 0;
+
+	event = UPSETEVENT;
 	m_nMouseDown = 0;
-	var dx = fncScrnTrnsRMX(x);
-	var dy = fncScrnTrnsRMY(y);
-	dx = parseInt(dx);
-	dy = parseInt(dy);
-	fncCmdExec(event, dx, dy);
+	nx = fncScrnTrnsRMX(x);
+	ny = fncScrnTrnsRMY(y);
+	nx = parseInt(nx);
+	ny = parseInt(ny);
+	fncCmdExec(event, nx, ny);
 }
 
 function fncMouseMoveXY(x, y)
 {
-	var event;
+	var event = 0;
+	var nx = 0;
+	var ny = 0;
 
 	if(m_nMouseDown == 1){
 		event = MOVEEVENT;
 	}else{
 		event = UPMOVEEVENT;
 	}
-	var dx = fncScrnTrnsRMX(x);
-	var dy = fncScrnTrnsRMY(y);
-	dx = parseInt(dx);
-	dy = parseInt(dy);
-	fncCmdExec(event, dx, dy);
+	nx = fncScrnTrnsRMX(x);
+	ny = fncScrnTrnsRMY(y);
+	nx = parseInt(nx);
+	ny = parseInt(ny);
+	fncCmdExec(event, nx, ny);
 }
 function fncScrnTrnsRMX(rltvx)
 {
-	var absx = (rltvx - m_dScrnRltvSX);
+	var absx = 0;
+
+	absx = (rltvx - m_dScrnRltvSX);
 	return(absx);
 }
 function fncScrnTrnsRMY(rltvy)
 {
-	var absy = (rltvy - m_dScrnRltvSY);
+	var absy = 0;
+
+	absy = (rltvy - m_dScrnRltvSY);
 	return(absy);
 }
 function fncScrnTrnsMRX(absx)
 {
-	var rltvx = absx + m_dScrnRltvSX;
+	var rltvx = 0;
+
+	rltvx = absx + m_dScrnRltvSX;
 	return(rltvx);
 }
 function fncScrnTrnsMRY(absy)
 {
-	var rltvy = absy + m_dScrnRltvSY;
+	var rltvy = 0;
+
+	rltvy = absy + m_dScrnRltvSY;
 	return(rltvy);
 }
 

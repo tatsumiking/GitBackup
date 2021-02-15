@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bridal</title>
+<link rel="shortcut icon" href="img/Bridal.ico" />
+<meta charset="utf-8">
+<meta http-equiv='X-UA-Compatible' content='IE=11'>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="06layoutprint.css" rel="stylesheet" type="text/css" />
+<style>
+    .cScrnArea {
+        width:96vw;
+        height:68vw;
+    }
+</style>
+<script language="javascript" src="jslib/ajax.js"></script>
+<script language="javascript" src="jslib/fnclib.js"></script>
+<script language="javascript" src="06layoutprint.js"></script>
+</head>
+
+<body onload="fncInit()">
+<div class="cScrnArea">
+    <canvas id = "cnvsPaper" class="cScrnArea cClrFFF">
+    
+    </canvas>
+</div>
+</body>
+</html>

@@ -1,0 +1,456 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Printing;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Media;
+
+namespace sekiji
+{
+    public partial class MainWindow : Window
+    {
+        private double m_dXSize, m_dYSize;
+        private double m_dXTime, m_dYTime;
+
+        private void printOutMain()
+        {
+            PrintDialog dPrt;
+            PageImageableArea area;
+            Canvas canvas;
+            FixedPage page;
+            PageContent cont;
+            FixedDocument doc;
+
+            if (m_clsHaiseki.m_nTableBlockCount == 0)
+            {
+                MessageBox.Show("灰寄せ会場設定されていません。", "確認", MessageBoxButton.OK);
+                return;
+            }
+
+            LocalPrintServer lps = new LocalPrintServer();
+            PrintQueue queue = lps.DefaultPrintQueue;
+
+            PrintTicket ticket = queue.DefaultPrintTicket;
+            ticket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA3);
+            ticket.PageOrientation = PageOrientation.Landscape;
+
+            dPrt = new PrintDialog();
+            dPrt.PrintQueue = queue;
+            dPrt.PrintTicket = ticket;
+            if (dPrt.ShowDialog() == true)
+            {
+                area = dPrt.PrintQueue.GetPrintCapabilities().PageImageableArea;
+                m_dXSize = (area.OriginWidth + area.ExtentWidth);
+                m_dYSize = (area.OriginHeight + area.ExtentHeight);
+                m_dXTime = m_dXSize / 297.0;
+                m_dYTime = m_dYSize / 420.0;
+
+                doc = new FixedDocument();
+                canvas = new Canvas();
+                canvas.Width = area.OriginWidth + area.ExtentWidth;
+                canvas.Height = area.OriginHeight + area.ExtentHeight;
+
+                printOutCanvas(canvas);
+
+                page = new FixedPage();
+                page.Children.Add(canvas);
+                cont = new PageContent();
+                cont.Child = page;
+                doc.Pages.Add(cont);
+
+                dPrt.PrintDocument(doc.DocumentPaginator, "灰寄せ会場座席表");
+            }
+        }
+        private void printOutCanvas(Canvas canvas)
+        {
+            double topx, topy, endx, endy;
+            double pagex, pagey;
+            double wd, hi;
+            double numx, numy, time;
+            double space;
+            double dLineHeight, dTableWidth;
+            int nLineCount;
+            int nLineHeight;
+            int nSouryoWidth;
+            int nTableWidth;
+            int nHikidemonoWidth;
+            int nOtona, nKodomo;
+            int nSet;
+            Brush brush;
+            int max, tblblkmax, tblmax;
+            int clm, tblblk, tbl;
+            int line, no;
+            int hk, hkmax;
+            int sx, sy, cx, cy, ex, ey;
+            int tsx, tsy, tex, tey;
+            int sx1, tx1, ex1, sx2, tx2, ex2;
+            int fontsize;
+            string sName;
+            string str;
+            int len;
+            TextBox tb;
+            TextBlock tblk;
+            Canvas cnvs;
+
+            space = 10.0 * m_dXTime;
+            topx = (int)(space);
+            topy = (int)(space);
+            endx = m_dXSize - space;
+            endy = m_dYSize - space;
+            pagex = endx - topx;
+            pagey = endy - topy;
+            nLineCount = m_clsHaiseki.m_nSeetCount + 12;
+            nLineHeight = (int)((endy - topy) / (double)nLineCount);
+            tblmax = m_clsHaiseki.m_nTableBlockCount * 2;
+            nTableWidth = (int)((m_dXSize - (tblmax + 1) * space) / (double)tblmax);
+
+            dLineHeight = nLineHeight;
+            fontsize = (int)(dLineHeight * 1.4);
+            m_clsHaiseki.m_sSoukeName = txtSouke.Text;
+            str = m_clsHaiseki.m_sSoukeName + "家　" + txtTitle.Text;
+            len = str.Length * fontsize;
+            sx = (int)(topx + (pagex - len) / 2);
+            sy = (int)topy;
+            m_libCanvas.setFontSize(fontsize);
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
+
+            dTableWidth = nTableWidth;
+            numx = (int)(dTableWidth / 7);
+            numy = (int)(dLineHeight * 0.7);
+            if (numx < numy)
+            {
+                fontsize = (int)numx;
+            }
+            else
+            {
+                fontsize = (int)numy;
+            }
+            m_libCanvas.setFontSize(fontsize);
+            //tb = m_libCanvas.CreateTextBox(0, 0, dnum, dnum, " ");
+
+            m_clsHaiseki.m_sReizenText = txtRTStr.Text;
+            sx = (int)(topx + (pagex - (nTableWidth - nLineHeight)));
+            tsx = sx;
+            ex = (int)endx;
+            sy = (int)(topy + dLineHeight * 1.6);
+            tsy = sy;
+            ey = (int)(sy + nLineHeight);
+            tey = ey;
+            m_libCanvas.drawBoxs(cnvsLayout, sx, sy, ex - sx, ey - sy);
+            sx = ((sx + ex) / 2 - (m_clsHaiseki.m_sReizenText.Length * fontsize) / 2);
+            sy = sy + (nLineHeight - fontsize) / 2;
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, m_clsHaiseki.m_sReizenText);
+
+            sx = (int)(tsx - nLineHeight);
+            ex = (int)(sx + nLineHeight);
+            nSet = m_clsHaiseki.m_nReizenHikimonoType;
+            str = m_clsHaiseki.m_lstHikidemono[nSet].m_sName;
+            brush = m_clsHaiseki.m_lstHikidemono[nSet].getBrush();
+            m_libCanvas.setFillBrush(brush);
+            cnvs = m_libCanvas.drawCanvasSString(cnvsLayout, sx, tsy, nLineHeight, tey-tsy, str);
+            m_libCanvas.setFillBrush(null);
+            cnvs.MouseUp += cnvsMouseUp;
+            cnvs.Name = "RC_0_0";
+            m_clsHaiseki.setRzHkdmnCanvas(cnvs);
+            m_libCanvas.drawBoxs(cnvsLayout, sx, sy, ex - sx, ey - sy);
+
+            nOtona = 0;
+            nKodomo = 0;
+
+            // 僧侶席エリア
+            m_clsHaiseki.m_nSouryoCount = m_libCmn.StrToInt(txtTakasago.Text);
+            max = m_clsHaiseki.m_nSouryoCount;
+            if (pagex < (nTableWidth + nLineHeight) * max)
+            {
+                nSouryoWidth = (int)(pagex / max);
+            }
+            else
+            {
+                nSouryoWidth = nTableWidth + nLineHeight;
+            }
+            hi = nLineHeight;
+            sx = (int)(topx + (pagex - nSouryoWidth * max) / 2);
+            sy = (int)(topy + dLineHeight * 2.8);
+            for (clm = 0; clm < max; clm++)
+            {
+                tsx = sx + nSouryoWidth - fontsize;
+                ex = sx + nSouryoWidth;
+                ey = sy + nLineHeight;
+                tsy = sy + fontsize / 2;
+                //m_libCanvas.drawLine(cnvsLayout, tsx, sy, tsx, ey);
+                m_libCanvas.drawStrg(cnvsLayout, tsx, tsy, 0.0, 1.0, "様");
+
+                wd = nSouryoWidth - fontsize;
+                sName = m_clsHaiseki.m_lstSouryo[clm].m_sName;
+                tb = m_libCanvas.CreateTextBox(sx, sy, wd, hi, sName);
+                tb.PreviewMouseDown += tbMouseDown;
+                tb.PreviewMouseUp += tbMouseUp;
+                tb.GotFocus += new RoutedEventHandler(TextBox_GotFocus);
+                tb.Name = "SN_0_" + clm;
+                m_libCanvas.drawBoxs(cnvsLayout, sx, sy, ex - sx, ey - sy);
+                nSet = m_clsHaiseki.m_lstSouryo[clm].m_nRyouriType;
+                if (sName != "")
+                {
+                    if (nSet == 0)
+                    {
+                        nOtona++;
+                    }
+                    else if(nSet == 1)
+                    {
+                        nKodomo++;
+                    }
+                }
+                brush = m_clsHaiseki.m_lstRyouri[nSet].getBrush();
+                tb.Foreground = brush;
+                //brush = m_libCanvas.createAlfaBruch();
+                //tb.Background = brush;
+                cnvsLayout.Children.Add(tb);
+                m_clsHaiseki.m_lstSouryo[clm].setNameTextBox(tb);
+
+                nSet = m_clsHaiseki.m_lstSouryo[clm].m_nHikidemonoType;
+                str = m_clsHaiseki.m_lstHikidemono[nSet].m_sName;
+                brush = m_clsHaiseki.m_lstHikidemono[nSet].getBrush();
+                m_libCanvas.setFillBrush(brush);
+                cnvs = m_libCanvas.drawCanvasString(cnvsLayout, sx, sy, fontsize, nLineHeight, str);
+                m_libCanvas.setFillBrush(null);
+                cnvs.MouseDown += cnvsMouseDown;
+                cnvs.MouseUp += cnvsMouseUp;
+                cnvs.Name = "SC_0_" + clm;
+                m_clsHaiseki.m_lstSouryo[clm].setHkdmnCanvas(cnvs);
+                m_libCanvas.drawBoxs(cnvsLayout, sx, sy, ex - sx, ey - sy);
+
+                sx = ex;
+            }
+            tblblkmax = m_clsHaiseki.m_nTableBlockCount;
+            // テーブルエリア
+            for (tblblk = 0; tblblk < tblblkmax; tblblk++)
+            {
+                sy = (int)(topy + nLineHeight * 4);
+                sx1 = (int)(topx + (nTableWidth + space) * tblblk * 2);
+                cx = (int)(sx1 + nTableWidth);
+                sx2 = (int)(sx1 + nTableWidth + space);
+                tx1 = sx1 + nTableWidth - fontsize;
+                tx2 = sx2 + nTableWidth - fontsize;
+                ex1 = sx1 + nTableWidth;
+                ex2 = sx2 + nTableWidth;
+
+                tbl = tblblk * 2;
+                for (line = 0; line < m_clsHaiseki.m_nSeetCount; line++)
+                {
+                    tsy = sy + fontsize / 2;
+                    m_libCanvas.drawStrg(cnvsLayout, tx1, tsy, 0.0, 1.0, "様");
+
+                    ey = sy + nLineHeight;
+                    wd = nTableWidth - fontsize;
+                    sName = m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].m_sName;
+                    tb = m_libCanvas.CreateTextBox(sx1, sy, wd, hi, sName);
+                    tb.PreviewMouseDown += tbMouseDown;
+                    tb.PreviewMouseUp += tbMouseUp;
+                    tb.GotFocus += new RoutedEventHandler(TextBox_GotFocus);
+                    tb.Name = "TN_" + tbl + "_" + line;
+                    nSet = m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].m_nRyouriType;
+                    if (sName != "")
+                    {
+                        if (nSet == 0)
+                        {
+                            nOtona++;
+                        }
+                        else if (nSet == 1)
+                        {
+                            nKodomo++;
+                        }
+                    }
+                    brush = m_clsHaiseki.m_lstRyouri[nSet].getBrush();
+                    tb.Foreground = brush;
+                    cnvsLayout.Children.Add(tb);
+                    m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].setNameTextBox(tb);
+
+                    nSet = m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].m_nHikidemonoType;
+                    str = m_clsHaiseki.m_lstHikidemono[nSet].m_sName;
+                    brush = m_clsHaiseki.m_lstHikidemono[nSet].getBrush();
+                    m_libCanvas.setFillBrush(brush);
+                    cnvs = m_libCanvas.drawCanvasString(cnvsLayout, sx1, sy, fontsize, nLineHeight, str);
+                    m_libCanvas.setFillBrush(null);
+                    cnvs.MouseDown += cnvsMouseDown;
+                    cnvs.MouseUp += cnvsMouseUp;
+                    cnvs.Name = "TC_" + tbl + "_" + line;
+                    m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].setHkdmnCanvas(cnvs);
+
+                    sy = ey;
+                }
+                sy = (int)(topy + nLineHeight * 4);
+                tbl = tblblk * 2 + 1;
+                for (line = 0; line < m_clsHaiseki.m_nSeetCount; line++)
+                {
+                    tsy = sy + fontsize / 2;
+                    m_libCanvas.drawStrg(cnvsLayout, tx2, tsy, 0.0, 1.0, "様");
+
+                    ey = sy + nLineHeight;
+                    wd = nTableWidth - fontsize;
+                    sName = m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].m_sName;
+                    tb = m_libCanvas.CreateTextBox(sx2, sy, wd, hi, sName);
+                    tb.PreviewMouseDown += tbMouseDown;
+                    tb.PreviewMouseUp += tbMouseUp;
+                    tb.GotFocus += new RoutedEventHandler(TextBox_GotFocus);
+                    tb.Name = "TN_" + tbl + "_" + line;
+                    nSet = m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].m_nRyouriType;
+                    if (sName != "")
+                    {
+                        if (nSet == 0)
+                        {
+                            nOtona++;
+                        }
+                        else if (nSet == 1)
+                        {
+                            nKodomo++;
+                        }
+                    }
+                    brush = m_clsHaiseki.m_lstRyouri[nSet].getBrush();
+                    tb.Foreground = brush;
+                    cnvsLayout.Children.Add(tb);
+                    m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].setNameTextBox(tb);
+
+                    nSet = m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].m_nHikidemonoType;
+                    str = m_clsHaiseki.m_lstHikidemono[nSet].m_sName;
+                    brush = m_clsHaiseki.m_lstHikidemono[nSet].getBrush();
+                    m_libCanvas.setFillBrush(brush);
+                    cnvs = m_libCanvas.drawCanvasString(cnvsLayout, sx2, sy, fontsize, nLineHeight, str);
+                    m_libCanvas.setFillBrush(null);
+                    cnvs.MouseDown += cnvsMouseDown;
+                    cnvs.MouseUp += cnvsMouseUp;
+                    cnvs.Name = "TC_" + tbl + "_" + line;
+                    m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].setHkdmnCanvas(cnvs);
+
+                    sy = ey;
+                }
+                sy = (int)(topy + nLineHeight * 4);
+                m_libCanvas.drawLine(cnvsLayout, sx1, sy, ex2, sy);
+                for (line = 0; line < m_clsHaiseki.m_nSeetCount; line++)
+                {
+                    no = line + 1;
+                    ey = sy + nLineHeight;
+                    m_libCanvas.drawLine(cnvsLayout, sx1, sy, sx1, ey);
+                    m_libCanvas.drawLine(cnvsLayout, ex1, sy, ex1, ey);
+
+                    str = string.Format("{0, 2}", no);
+                    m_libCanvas.drawStrg(cnvsLayout, cx + 1, sy + 1, 0.0, 1.0, str);
+                    m_libCanvas.drawLine(cnvsLayout, sx2, sy, sx2, ey);
+                    m_libCanvas.drawLine(cnvsLayout, ex2, sy, ex2, ey);
+
+                    m_libCanvas.drawLine(cnvsLayout, sx1, ey, ex2, ey);
+                    sy = ey;
+                }
+            }
+
+            sx = (int)(topx);
+            sy = (int)(topy + nLineHeight * (4 + m_clsHaiseki.m_nSeetCount) + 2);
+
+            int num = 1 + nOtona + nKodomo;
+            str = "座席数＝" + num + "(" + txtRTStr.Text + "含め)";
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
+
+            sy = sy + nLineHeight;
+            str = "料理＝" + nOtona;
+            brush = m_clsHaiseki.m_lstRyouri[0].getBrush();
+            m_libCanvas.setTextBrush(brush);
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
+            sy = sy + fontsize;
+            m_clsHaiseki.m_sRyouri = txtRyori.Text;
+            str = m_clsHaiseki.m_sRyouri;
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
+
+            sy = sy + nLineHeight;
+            str = "お子様ランチ＝" + nKodomo;
+            brush = m_clsHaiseki.m_lstRyouri[1].getBrush();
+            m_libCanvas.setTextBrush(brush);
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
+
+            sy = sy + nLineHeight;
+            str = "供養膳＝1";
+            brush = m_clsHaiseki.m_lstRyouri[2].getBrush();
+            m_libCanvas.setTextBrush(brush);
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
+
+            sy = sy + nLineHeight;
+            m_clsHaiseki.m_nYudemasu = m_libCmn.StrToInt(txtYudemasu.Text);
+            str = "ゆでます＝" + m_clsHaiseki.m_nYudemasu;
+            brush = m_clsHaiseki.m_lstRyouri[3].getBrush();
+            m_libCanvas.setTextBrush(brush);
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
+
+            m_libCanvas.setTextBrush(Brushes.Black);
+            m_clsHaiseki.m_sRightBottomText = txtRBStr.Text;
+            str = m_clsHaiseki.m_sRightBottomText;
+            len = str.Length;
+            sx = (int)(m_dXSize - (fontsize * len + space));
+            sy = (int)(topy + nLineHeight * (4 + m_clsHaiseki.m_nSeetCount) + 2);
+            m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
+
+
+            nHikidemonoWidth = (int)((m_dXSize - space * (Constants.HIKIDEMONOSETMAX + 2)) / (Constants.HIKIDEMONOSETMAX + 1));
+
+            sx = (int)(topx + nHikidemonoWidth + (int)space);
+            ex = (int)(sx + nHikidemonoWidth);
+            sy = (int)(topy + nLineHeight * (4 + m_clsHaiseki.m_nSeetCount + 2));
+            ey = sy + (int)(nLineHeight * Constants.HIKIDEMONOMAX);
+            wd = ex - sx;
+            hi = ey - sy;
+            // テーブルエリア
+            hkmax = Constants.HIKIDEMONOSETMAX + 1;
+            for (hk = 1; hk < hkmax; hk++)
+            {
+                fontsize = (int)(dLineHeight * 1.0);
+                m_libCanvas.setFontSize(fontsize);
+                ex = sx + nHikidemonoWidth;
+
+                str = m_clsHaiseki.m_lstHikidemono[hk].m_sName + "セット";
+                cx = (int)(wd / 2.0);
+                tsx = sx + cx - (str.Length * fontsize) / 2;
+                tsy = (int)(sy - dLineHeight);
+                m_libCanvas.drawStrg(cnvsLayout, tsx, tsy, 0.0, 1.0, str);
+ 
+                cnvs = m_libCanvas.CreateCanvas(cnvsLayout, sx, sy, ex - sx, ey - sy);
+                cnvs.Background = m_clsHaiseki.m_lstHikidemono[hk].getBrush();
+                cnvs.Name = "HC_" + hk;
+                cnvs.MouseDown += cnvsHikimonoMouseDown;
+
+                fontsize = (int)(dLineHeight * 0.7);
+                m_libCanvas.setFontSize(fontsize);
+                tsx = nLineHeight / 4;
+                tsy = nLineHeight / 4;
+                tex = (int)(wd - nLineHeight / 4);
+                tey = (int)(hi - nLineHeight / 4);
+                m_libCanvas.drawLine(cnvs, tsx, 0, 0, tsy);
+                m_libCanvas.drawLine(cnvs, 0, tsy, 0, tey);
+                m_libCanvas.drawLine(cnvs, 0, tey, tsx, hi);
+
+                m_libCanvas.drawLine(cnvs, tex, 0, wd, tsy);
+                m_libCanvas.drawLine(cnvs, wd, tsy, wd, tey);
+                m_libCanvas.drawLine(cnvs, wd, tey, tex, hi);
+
+                cy = nLineHeight - (int)(space / 4);
+                for (line = 0; line < Constants.HIKIDEMONOMAX; line++)
+                {
+                    str = m_clsHaiseki.m_lstHikidemono[hk].m_lstSyouhin[line];
+                    if (9 <= str.Length)
+                    {
+                        str = str.Substring(0, 9);
+                    }
+                    tblk = m_libCanvas.CreateTextBlock(tsx, cy - fontsize, str);
+                    cnvs.Children.Add(tblk);
+                    m_clsHaiseki.m_lstHikidemono[hk].setTextBlock(line, tblk);
+                    m_libCanvas.drawLine(cnvs, tsx, cy, tex, cy);
+                    cy = cy + nLineHeight;
+                }
+                sx = sx + nHikidemonoWidth + (int)space;
+            }
+
+            m_libCanvas.drawBoxs(cnvsLayout, topx, topy, endx - topx, endy - topy);
+            m_libCanvas.drawBoxs(cnvsLayout, 1, 1, m_dXSize - 2, m_dYSize - 2);
+        }
+    }
+}

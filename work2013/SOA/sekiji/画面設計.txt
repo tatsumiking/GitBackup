@@ -1,0 +1,23 @@
+小林　勲
+1280x1024
+
+297x210
+420x297
+717x507
+
+
+660x924 
+
+txtTitle　m_sTitle
+txtSouke　m_sSoukeName
+済み　cmbLayout　m_nTableBlockCount　m_nSeetCount
+txtTakasago m_nSouryoCount
+txtRTStr m_sRightTopText
+txtRBStr m_sRightBottomText
+txtRyori
+txtYudemasu
+
+
+EPSON EW-M571T
+SHARP MX-2514FN
+

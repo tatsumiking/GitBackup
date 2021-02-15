@@ -19,9 +19,8 @@ clsDate.prototype.fncSetSimpleData = function(sSimpleDate)
 }
 clsDate.prototype.fncGetSimpleData = function()
 {
-	var sSimpleDate;
+	var sSimpleDate = "";
 
-	sSimpleDate = "";
 	sSimpleDate = sSimpleDate + this.yy + "/";
 	sSimpleDate = sSimpleDate + this.MM + "/";
 	sSimpleDate = sSimpleDate + this.dd + " ";
@@ -70,7 +69,7 @@ clsDate.prototype.fncGetData = function(sgg, syy, sMM, sdd, sHH, smm)
 }
 clsDate.prototype.fncGetFormatData = function(sgg)
 {
-	var sFrmatDate;
+	var sFrmatDate="";
 
 	if(sgg == "西暦")
 	{

@@ -22,9 +22,7 @@ function fnclibStringToInt(str)
 }
 function fnclibStrnumToStrnum00(str)
 {
-	var num;
-
-	num = parseInt(str);
+	var num = parseInt(str);
 	if(num <= 9){
 		str = "0"+num;
 	}
@@ -50,6 +48,9 @@ function fnclibPriceToTenprice(str)
 }
 function fnclibSelectData(cmb, key)
 {
+	var max = 0;
+	var idx = 0;
+
 	max = cmb.options.length;
 	for(idx = 0; idx < max; idx++){
 		if(cmb.options[idx].text == key){
@@ -62,22 +63,32 @@ function fnclibSelectData(cmb, key)
 }
 function fnclibSelectedText(cmb)
 {
-	var idx = cmb.selectedIndex;
-	var sRetStr = cmb.options[idx].text;
+	var idx = 0;
+	var sRetStr = "";
+
+	idx = cmb.selectedIndex;
+	sRetStr = cmb.options[idx].text;
 	return(sRetStr);
 }
 function fnclibSelectedValue(cmb)
 {
-	var idx = cmb.selectedIndex;
-	var sRetVal = cmb.options[idx].value;
+	var idx = 0;
+	var sRetVal = "";
+
+	idx = cmb.selectedIndex;
+	sRetVal = cmb.options[idx].value;
 	return(sRetVal);
 }
 function fnclinHanToZen(hanstr)
 {
-	var ch, retStr;
-	var idx, max;
-	var cidx, cmax;
-	var cc, ret;
+	var ch = "";
+	var retStr = "";
+	var idx = 0;
+	var max = 0;
+	var cidx = 0;
+	var cmax = 0;
+	var cc = "";
+	var ret = "";
 
 	retStr = "";
 	han = " !\"#$%&'()*+,-./0123456789;:<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
@@ -104,16 +115,19 @@ function fnclinHanToZen(hanstr)
 }
 function fnclibCheckTelNo(tel)
 {
-	var ary;
-	var max, idx, len;
+	var ary = new Array();
+	var max = 0;
+	var idx = 0;
+	var len = 0;
+	var rettel = "";
 
 	ary = tel.split('-');
 	max = ary.length;
-	tel = "";
+	rettel = "";
 	for(idx = 0; idx < max; idx++){
-		tel = tel + ary[idx];
+		rettel = rettel + ary[idx];
 	}
-	len = tel.length;
+	len = rettel.length;
 	if(len == 10 || len == 11){
 		return(true);
 	}
@@ -121,7 +135,9 @@ function fnclibCheckTelNo(tel)
 }
 function fnclibCheckEmailAddress(mail)
 {
-	var ary = mail.split('@');
+	var ary = new Array();
+
+	ary = mail.split('@');
 	if(ary.length == 2){
 		return(true);
 	}
@@ -129,7 +145,9 @@ function fnclibCheckEmailAddress(mail)
 }
 function fnclibCheckHankakuNum(str)
 {
-	var ret = str.match(/^[0-9-]+$/);
+	var ret = "";
+
+	ret = str.match(/^[0-9-]+$/);
 	if(ret == null){
 		return(false);
 	}
@@ -137,7 +155,9 @@ function fnclibCheckHankakuNum(str)
 }
 function fnclibCheckHankaku(str)
 {
-	var ret = str.match(/^[\x20-\x7E]+$/);
+	var ret = "";
+
+	ret = str.match(/^[\x20-\x7E]+$/);
 	if(ret == null){
 		return(false);
 	}
@@ -145,7 +165,8 @@ function fnclibCheckHankaku(str)
 }
 function fnclibCheckHankana(str)
 {
-	var ret = str.match(/[\uff61-\uff9f]/g);
+	var ret = "";
+	re = str.match(/[\uff61-\uff9f]/g);
 	if(ret == null){
 		return(false);
 	}
@@ -153,7 +174,7 @@ function fnclibCheckHankana(str)
 }
 function fnclibStrReplace(key1, key2, str)
 {
-	while ( str.indexOf(key1,0) != -1 )
+	while (str.indexOf(key1,0) != -1 )
 	{
 		str=str.replace(key1,key2);
 	}

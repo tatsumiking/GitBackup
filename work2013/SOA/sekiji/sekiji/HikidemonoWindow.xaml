@@ -1,0 +1,14 @@
+﻿<Window x:Class="sekiji.HikidemonoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="HikidemonoWindow" Height="400" Width="600" Loaded="Window_Loaded" Icon="sekiji.ico">
+    <Grid>
+        <ListBox x:Name="lstSource" Width="240" Height="300" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionMode="Multiple"/>
+        <Button x:Name="btnResetSelect" Content="選択解除" Width="75" Margin="10,320,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnResetSelect_Click"/>
+        <Image x:Name="imgTuika" Width="80" Height="45" Margin="255,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Pic/Tuika.png" PreviewMouseDown="imgTuika_PreviewMouseDown"/>
+        <Button x:Name="btnDelete" Content="削除" Width="75" Margin="507,114,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDelete_Click"/>
+        <ListBox x:Name="lstSelect" Width="240" Height="99" Margin="342,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionMode="Multiple"/>
+        <Button x:Name="btnCanCel" Content="キャンセル" Width="75" Margin="409,320,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnCanCel_Click"/>
+        <Button x:Name="btnRet" Content="決定" Width="75" Margin="507,320,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnRet_Click"/>
+    </Grid>
+</Window>
