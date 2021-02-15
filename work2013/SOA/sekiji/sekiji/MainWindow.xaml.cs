@@ -553,12 +553,6 @@ namespace sekiji
             txtSouke.Text = m_clsHaiseki.m_sSoukeName;
             txtTitle.Text = m_clsHaiseki.m_sTitle;
             txtTakasago.Text = m_clsHaiseki.m_nSouryoCount.ToString();
-            txtRTStr.Text = m_clsHaiseki.m_sReizenText;
-            txtRBStr.Text = m_clsHaiseki.m_sRightBottomText;
-            txtRyouriName.Text = m_clsHaiseki.m_lstRyouri[0].m_sName;
-            txtAddRyouri.Text = m_clsHaiseki.m_lstRyouri[6].m_sName;
-            txtKuyouButu.Text = m_clsHaiseki.m_lstRyouri[7].m_sName;
-            txtYudemasu.Text = m_clsHaiseki.m_nYudemasu.ToString();
             tblblk = m_clsHaiseki.m_nTableBlockCount;
             seet = m_clsHaiseki.m_nSeetCount;
             if ((tblblk == 1) && (seet == 13))
@@ -593,6 +587,12 @@ namespace sekiji
             { // "１２９名～１６８名"
                 cmbLayout.SelectedIndex = 7;
             }
+            txtRTStr.Text = m_clsHaiseki.m_sReizenText;
+            txtRBStr.Text = m_clsHaiseki.m_sRightBottomText;
+            txtRyouriName.Text = m_clsHaiseki.m_lstRyouri[0].m_sName;
+            txtAddRyouri.Text = m_clsHaiseki.m_lstRyouri[6].m_sName;
+            txtKuyouButu.Text = m_clsHaiseki.m_lstRyouri[7].m_sName;
+            txtYudemasu.Text = m_clsHaiseki.m_nYudemasu.ToString();
             drawTable();
         }
         private void saveItiran(string sFileName)

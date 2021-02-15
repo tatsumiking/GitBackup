@@ -35,3 +35,4 @@ D:\work\work2013\SOA\sekiji\sekiji\obj\Release\sekiji.Properties.Resources.resou
 D:\work\work2013\SOA\sekiji\sekiji\obj\Release\sekiji.csproj.GenerateResource.Cache
 D:\work\work2013\SOA\sekiji\sekiji\obj\Release\sekiji.exe
 D:\work\work2013\SOA\sekiji\sekiji\obj\Release\sekiji.pdb
+D:\work\work2013\SOA\sekiji\sekiji\obj\Release\sekiji.csprojResolveAssemblyReference.cache
