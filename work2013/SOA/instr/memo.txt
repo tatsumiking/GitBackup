@@ -1,0 +1,2 @@
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+keys[463]

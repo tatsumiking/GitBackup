@@ -91,10 +91,7 @@ namespace sekiji
             if (con != null)
             {
                 listRet = getRecordList(con, sSql);
-                if (listRet.Count != 0)
-                {
-                    strRet = listRet[0];
-                }
+                strRet = listRet[0];
                 closeMdb(con);
             }
             return (strRet);

@@ -1,0 +1,20 @@
+﻿<Window x:Class="instr.SelectWakuWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SelectWakuWin" Height="600" Width="600" Loaded="Window_Loaded" Icon="instr.ico" PreviewKeyDown="Window_PreviewKeyDown" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ScrollViewer x:Name="scrlCanvas" PreviewMouseLeftButtonDown="scrlCanvas_PreviewMouseLeftButtonDown" PreviewMouseDoubleClick="scrlCanvas_PreviewMouseDoubleClick" >
+                <Canvas x:Name="canvasWakuImage" Margin="10,10,10,10"/>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Button x:Name="btnSelect" Content="選択[Enter]" Margin="0,10,190,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150" Click="btnSelect_Click"/>
+            <Button x:Name="btnCancel" Content="キャンセル[Esc]" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150" Click="btnCancel_Click"/>
+        </Grid>
+    </Grid>
+</Window>

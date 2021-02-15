@@ -1,0 +1,12 @@
+﻿<Window x:Class="kden.CalWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CalWin" Height="300" Width="300" Icon="kden.ico" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid>
+        <Calendar x:Name="calMain" Width="180" Height="180" Margin="5,5,108,94" SelectedDatesChanged="calMain_SelectedDatesChanged">
+            <Calendar.RenderTransform>
+                <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.6" ScaleY="1.6" />
+            </Calendar.RenderTransform>
+        </Calendar>
+    </Grid>
+</Window>

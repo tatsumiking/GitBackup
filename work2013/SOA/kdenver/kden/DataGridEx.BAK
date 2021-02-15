@@ -1,0 +1,14 @@
+﻿using System.Windows.Controls;
+using System.Windows.Input;
+
+namespace kden
+{
+    class DataGridEx : DataGrid
+    {
+        public DataGridEx()
+            : base()
+        {
+        }
+
+    }
+}

@@ -1,0 +1,120 @@
+葬儀テーブル(sougi)
+	id AUTOINCREMENT PRIMARY KEY";
+	regdate VARCHAR(16)"; // 更新日
+	seikyuno VARCHAR(48)"; // 識別番号
+	souke VARCHAR(48)";  // 葬家
+	tuya_date VARCHAR(16)"; // 通夜日 2018/01/01
+	tuya_stime VARCHAR(16)"; // 通夜開始 18:30
+	tuya_etime VARCHAR(16)"; // 通夜終了 19:30
+	kokubetu_date VARCHAR(16)"; // 告別式日 2018/01/02
+	kokubetu_stime VARCHAR(16)"; // 告別式開始 10:30
+	kokubetu_etime VARCHAR(16)"; // 告別式終了 11:30
+	sekoubasyo VARCHAR(96)"; // 施行場所
+	tantou VARCHAR(24)"; // 担当者
+	bikou VARCHAR(96)";
+
+請求書テーブル(seikyu)
+	id AUTOINCREMENT PRIMARY KEY";
+	regdate VARCHAR(48)"; // 更新日
+	seikyuno VARCHAR(48)"; // 識別番号
+	seikyusakiid INT"; // 請求先ID
+	sasidasininid INT"; // 差出人ID
+	furikomisakiid INT"; // 振込先ID
+	nebiki INT"; // 値引額
+	tax INT"; // 税金
+	sumprice INT"; // 請求合計
+	nouhin VARCHAR(48)"; // 請求書発効日
+	seikyu VARCHAR(48)"; // 納品書発効日
+	bikou VARCHAR(96)";
+
+販売テーブル(hanbai)
+	id AUTOINCREMENT PRIMARY KEY";
+	regdate VARCHAR(48)"; // 更新日
+	orderdate VARCHAR(48)"; // 受注日
+	seikyuid INT"; // 請求書ID
+	sougiid INT"; // 葬儀ID
+	souke VARCHAR(48)"; // 葬家名
+	kokubetu VARCHAR(48)"; // 告別式
+	name VARCHAR(96)"; // 商品名
+	tanka INT"; // 単価
+	tani VARCHAR(12)"; // 単位
+	kosu INT"; // 個数
+	taxkind VARCHAR(12)"; // 税区分
+	tax INT"; // 消費税
+	price INT"; // 総額
+	seikyusaki VARCHAR(96)"; // 請求先名
+	seikyubusyo VARCHAR(96)"; // 請求部署
+	skskeisyou VARCHAR(16)"; // 請求書敬称
+	skakeisyou VARCHAR(16)"; // 宛名書敬称
+	seikyupost VARCHAR(24)"; // 請求先郵便番号
+	seikyuadrs1 VARCHAR(96)"; // 請求先住所１
+	seikyuadrs2 VARCHAR(96)"; // 請求先住所２
+	seikyutel VARCHAR(48)"; // 請求先電話
+	seikyufax VARCHAR(48)"; // 請求先FAX
+	seikyupay VARCHAR(96)"; // 振込名
+	seikyukubun VARCHAR(48)"; // 請求区分
+	receivedate VARCHAR(48)"; // 入金日
+	receivekind VARCHAR(48)"; // 入金種別
+	vendername VARCHAR(96)"; // 仕入先
+	nafuda1 VARCHAR(96)"; // 名札１
+	nafuda2 VARCHAR(96)"; // 名札２
+	nafuda3 VARCHAR(96)"; // 名札３
+	nafuda4 VARCHAR(96)"; // 名札４
+	nafuda5 VARCHAR(96)"; // 名札５
+	nafuda6 VARCHAR(96)"; // 名札６
+	nafuda7 VARCHAR(96)"; // 名札７
+	nafuda8 VARCHAR(96)"; // 名札８
+	bikou VARCHAR(96)"; // 備考
+
+商品テーブル(syouhin)
+	id AUTOINCREMENT PRIMARY KEY";
+	regdate VARCHAR(48)"; // 更新日
+	name VARCHAR(96)"; // 商品名
+	tanka INT"; // 単価
+	tani VARCHAR(12)"; // 単位
+	bunrui VARCHAR(12)"; // 分類
+	taxkind VARCHAR(12)"; // 税区分
+	sortno INT"; // 並び順
+	bikou VARCHAR(48)";
+
+請求先テーブル(seikyusaki)
+	id AUTOINCREMENT PRIMARY KEY";
+	regdate VARCHAR(48)"; // 更新日
+	name VARCHAR(96)"; // 請求先名
+	busyo VARCHAR(96)"; // 請求先部署
+	skeisyou VARCHAR(16)"; // 請求書敬称
+	akeisyou VARCHAR(16)"; // 宛名敬称
+	postno VARCHAR(24)"; // 請求先郵便番号
+	adrs1 VARCHAR(96)"; // 請求先住所１
+	adrs2 VARCHAR(96)"; // 請求先住所２
+	tel VARCHAR(48)"; // 請求先電話
+	fax VARCHAR(48)"; // 請求先FAX
+	payname VARCHAR(96)"; // 振込名
+	bikou VARCHAR(48)";
+
+差出人テーブル(sasidasinin)
+	id AUTOINCREMENT PRIMARY KEY";
+	name VARCHAR(96)"; // 会社名
+	sisetu VARCHAR(96)"; // 施設名
+	postno VARCHAR(24)"; // 郵便番号
+	adrs1 VARCHAR(96)"; // 住所１
+	adrs2 VARCHAR(96)"; // 住所２
+	tel VARCHAR(48)"; // 電話
+	fax VARCHAR(48)"; // FAX
+	bikou VARCHAR(48)";
+
+振込先テーブル(furikomisaki)
+	id AUTOINCREMENT PRIMARY KEY";
+	name VARCHAR(96)"; // 銀行名
+	siten VARCHAR(96)"; // 支店名
+	kind VARCHAR(16)"; // 預金種別
+	bankno VARCHAR(24)"; // 口座番号
+	kana VARCHAR(96)"; // カナ名義
+	hojyo VARCHAR(96)"; // 漢字名義
+	bikou VARCHAR(48)";
+
+請求区分テーブル(skkubun)
+	id AUTOINCREMENT PRIMARY KEY";
+	name VARCHAR(96)"; // 区分名
+	mark VARCHAR(12)"; // マーク
+	bikou VARCHAR(48)";

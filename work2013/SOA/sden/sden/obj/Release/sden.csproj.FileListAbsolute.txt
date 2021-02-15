@@ -30,3 +30,7 @@ D:\work\work2013\SOA\sden\sden\obj\Release\sden.csproj.GenerateResource.Cache
 D:\work\work2013\SOA\sden\sden\obj\Release\sden.exe
 D:\work\work2013\SOA\sden\sden\obj\Release\sden.pdb
 D:\work\work2013\SOA\sden\sden\obj\Release\sden.csprojResolveAssemblyReference.cache
+D:\work\work2013\SOA\sden20190424v1110\sden\bin\Release\sden.exe.config
+D:\work\work2013\SOA\sden20190424v1110\sden\obj\Release\sden.csproj.ResolveComReference.cache
+D:\work\work2013\SOA\sden20190424v1110\sden\obj\Release\sden.exe
+D:\work\work2013\SOA\sden20190424v1110\sden\obj\Release\sden.pdb

@@ -20,14 +20,12 @@ namespace sekiji
 
         private void drawTable()
         {
-            double dSumSpace;
             double xsize, ysize;
             double crtx, crty;
             double wd, hi;
             double numx, numy, time;
             double dLineCount;
             double dWidthSpace;
-            double dLineHeight;
             int nSekisu = 0;
             int[] nRType = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0};
             int nHikidemonoWidth;
@@ -42,10 +40,7 @@ namespace sekiji
             double sx, sy, cx, cy, ex, ey;
             double tsx, tsy, tex, tey;
             double sx1, tx1, ex1, sx2, tx2, ex2;
-            double titlefontsize;
-            double titlespace;
             double fontsize;
-            double hkfontsize;
             string sName;
             string str;
             double len;
@@ -84,42 +79,10 @@ namespace sekiji
             m_dPageX = m_dEndX - m_dTopX;
             m_dPageY = m_dEndY - m_dTopY;
 
-
             m_dNoSpace = 10.0 * time;
             m_dSpace = 2.0 * time;
-            hkfontsize = m_dPageX / (18 * 4);
-            if (m_clsHaiseki.m_nSouryoCount == 0)
-            {
-                dSumSpace = m_dSpace * 3.0;
-                dLineCount = m_clsHaiseki.m_nSeetCount + 3;
-            }else{
-                dSumSpace = m_dSpace * 4.0;
-                dLineCount = m_clsHaiseki.m_nSeetCount + 4;
-            }
-            dLineHeight = (m_dPageY - hkfontsize * 13 - dSumSpace) / dLineCount;
-            titlespace = dLineHeight * 2;
-            titlefontsize = m_dPageX / 20;
-            if (titlefontsize > (dLineHeight * 1.6))
-            {
-                titlefontsize = dLineHeight * 1.6;
-            }
-            else
-            {
-                titlespace = titlefontsize + m_dSpace * 2.0;
-                if (m_clsHaiseki.m_nSouryoCount == 0)
-                {
-                    dSumSpace = titlespace + m_dSpace * 3.0 + hkfontsize;
-                    dLineCount = m_clsHaiseki.m_nSeetCount + 1;
-                }
-                else
-                {
-                    dSumSpace = titlespace + m_dSpace * 4.0 + hkfontsize;
-                    dLineCount = m_clsHaiseki.m_nSeetCount + 2;
-                }
-                dLineHeight = ((m_dPageY - hkfontsize * 13 - dSumSpace) / dLineCount);
-            }
-            m_dLineHeight = dLineHeight;
-
+            dLineCount = m_clsHaiseki.m_nSeetCount + 12.5;
+            m_dLineHeight = (int)((m_dEndY - m_dTopY) / dLineCount);
             tblblkmax = m_clsHaiseki.m_nTableBlockCount;
             tblmax = tblblkmax * 2;
             dWidthSpace = (m_dNoSpace + m_dSpace) * tblblkmax - m_dSpace;
@@ -127,10 +90,6 @@ namespace sekiji
 
             m_clsHaiseki.m_nSouryoCount = m_libCmn.StrToInt(txtTakasago.Text);
             max = m_clsHaiseki.m_nSouryoCount;
-            if (max < 5)
-            {
-                max = 5; // サイズ算出時のため
-            }
             if (m_dPageX < (m_dTableWidth + m_dLineHeight) * max)
             {
                 m_dSouryoWidth = (int)(m_dPageX / max);
@@ -144,12 +103,17 @@ namespace sekiji
                 m_dSouryoWidth = m_dTableWidth + m_dLineHeight;
             }
 
+            fontsize = (int)(m_dLineHeight * 1.4);
             m_clsHaiseki.m_sSoukeName = txtSouke.Text;
             str = m_clsHaiseki.m_sSoukeName + "家　" + txtTitle.Text;
-            len = str.Length * titlefontsize;
+            if (m_dPageX < (str.Length+2) * fontsize)
+            {
+                fontsize = (int)(m_dPageX / (str.Length + 2));
+            }
+            len = str.Length * fontsize;
             sx = (m_dTopX + (m_dPageX - len) / 2);
             sy = m_dTopY;
-            m_libCanvas.setFontSize(titlefontsize);
+            m_libCanvas.setFontSize(fontsize);
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
             numx = (m_dTableWidth / 8.6);
@@ -177,7 +141,7 @@ namespace sekiji
                 sx = (m_dEndX - m_dTableWidth);
                 ex = m_dEndX;
             }
-            sy = (m_dTopY + titlespace);
+            sy = (m_dTopY + m_dLineHeight * 1.6);
             ey = (sy + m_dLineHeight);
             cnvsReizen = m_libCanvas.CreateCanvas(cnvsLayout, sx, sy, m_dTableWidth, m_dLineHeight);
             cnvsReizen.MouseUp += cnvsMouseUp;
@@ -216,7 +180,7 @@ namespace sekiji
             max = m_clsHaiseki.m_nSouryoCount;
             hi = m_dLineHeight;
             crtx = m_dTopX + (m_dPageX - m_dSouryoWidth * max) / 2;
-            crty = m_dTopY + titlespace + m_dLineHeight + m_dSpace;
+            crty = m_dTopY + m_dLineHeight * 2.8;
             for (clm = 0; clm < max; clm++)
             {
                 cnvsSekiji = m_libCanvas.CreateCanvas(cnvsLayout, crtx, crty, m_dSouryoWidth, m_dLineHeight);
@@ -225,8 +189,8 @@ namespace sekiji
                 cnvsSekiji.Name = "SC_0_" + clm;
                 m_clsHaiseki.m_lstSouryo[clm].setSekijiCanvas(cnvsSekiji);
 
-                sx = fontsize * 0.1;
-                sy = fontsize * 0.1;
+                sx = fontsize * 0.2;
+                sy = fontsize * 0.2;
                 ex = (sx + m_dSouryoWidth);
                 ey = (sy + m_dLineHeight);
 
@@ -281,19 +245,11 @@ namespace sekiji
             {
                 dTableTopX = m_dTopX;
             }
-
             // テーブルエリア
             for (tblblk = 0; tblblk < tblblkmax; tblblk++)
             {
                 crtx = dTableTopX + ((m_dTableWidth * 2) + (m_dNoSpace + m_dSpace)) * tblblk;
-                if (m_clsHaiseki.m_nSouryoCount == 0)
-                {
-                    crty = m_dTopY + titlespace + m_dLineHeight * 1 + m_dSpace;
-                }
-                else
-                {
-                    crty = m_dTopY + titlespace + m_dLineHeight * 2 + m_dSpace * 2.0;
-                }
+                crty = m_dTopY + m_dLineHeight * 4;
 
                 tbl = tblblk * 2;
                 for (line = 0; line < m_clsHaiseki.m_nSeetCount; line++)
@@ -304,8 +260,8 @@ namespace sekiji
                     cnvsSekiji.Name = "TC_" + tbl + "_" + line;
                     m_clsHaiseki.m_lstTable[tbl].m_lstSekiji[line].setSekijiCanvas(cnvsSekiji);
 
-                    sx = fontsize * 0.1;
-                    sy = fontsize * 0.1;
+                    sx = fontsize * 0.2;
+                    sy = fontsize * 0.2;
                     ex = (sx + m_dTableWidth);
                     ey = (sy + m_dLineHeight);
                     cx = (sx + m_dTableWidth);
@@ -351,14 +307,7 @@ namespace sekiji
                 }
 
                 crtx = crtx + (m_dTableWidth + m_dNoSpace);
-                if (m_clsHaiseki.m_nSouryoCount == 0)
-                {
-                    crty = m_dTopY + titlespace + m_dLineHeight * 1 + m_dSpace;
-                }
-                else
-                {
-                    crty = m_dTopY + titlespace + m_dLineHeight * 2 + m_dSpace * 2.0;
-                }
+                crty = m_dTopY + m_dLineHeight * 4;
                 tbl = tblblk * 2 + 1;
                 for (line = 0; line < m_clsHaiseki.m_nSeetCount; line++)
                 {
@@ -417,21 +366,12 @@ namespace sekiji
                 sx2 = sx1 + m_dTableWidth + m_dNoSpace;
                 ex1 = (sx1 + m_dTableWidth);
                 ex2 = (sx2 + m_dTableWidth);
-                if (m_clsHaiseki.m_nSouryoCount == 0)
-                {
-                    crty = m_dTopY + titlespace + m_dLineHeight * 1 + m_dSpace;
-                }
-                else
-                {
-                    crty = m_dTopY + titlespace + m_dLineHeight * 2 + m_dSpace * 2.0;
-                }
-                sy = (int)crty;
+                sy = (m_dTopY + m_dLineHeight * 4);
                 m_libCanvas.drawLine(cnvsLayout, sx1, sy, ex2, sy);
                 for (line = 0; line < m_clsHaiseki.m_nSeetCount; line++)
                 {
                     no = line + 1;
-                    sy = (int)crty;
-                    ey = (int)(crty + m_dLineHeight);
+                    ey = (int)(sy + m_dLineHeight);
                     m_libCanvas.drawLine(cnvsLayout, sx1, sy, sx1, ey);
                     m_libCanvas.drawLine(cnvsLayout, ex1, sy, ex1, ey);
 
@@ -441,71 +381,59 @@ namespace sekiji
                     m_libCanvas.drawLine(cnvsLayout, ex2, sy, ex2, ey);
 
                     m_libCanvas.drawLine(cnvsLayout, sx1, ey, ex2, ey);
-                    crty = crty + m_dLineHeight;
+                    sy = ey;
                 }
             }
 
-            m_libCanvas.setFontSize(hkfontsize);
             m_libCanvas.setTextBrush(Brushes.Black);
             m_clsHaiseki.m_sRightBottomText = txtRBStr.Text;
             str = m_clsHaiseki.m_sRightBottomText;
             len = str.Length;
-            sx = (xsize - (hkfontsize * len + m_dSpace));
-            if (m_clsHaiseki.m_nSouryoCount == 0)
-            {
-                sy = (m_dTopY + titlespace + m_dLineHeight * (1 + m_clsHaiseki.m_nSeetCount) + m_dSpace * 2.0);
-            }
-            else
-            {
-                sy = (m_dTopY + titlespace + m_dLineHeight * (2 + m_clsHaiseki.m_nSeetCount) + m_dSpace * 3.0);
-            }
+            sx = (xsize - (fontsize * len + m_dSpace));
+            sy = (m_dTopY + m_dLineHeight * (4 + m_clsHaiseki.m_nSeetCount));
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
+            //fontsize = (int)(fontsize * 0.7);
+            m_libCanvas.setFontSize(fontsize);
             sx = (m_dTopX);
-            if (m_clsHaiseki.m_nSouryoCount == 0)
-            {
-                sy = (m_dTopY + titlespace + m_dLineHeight * (1 + m_clsHaiseki.m_nSeetCount) + m_dSpace * 2.0);
-            }
-            else
-            {
-                sy = (m_dTopY + titlespace + m_dLineHeight * (2 + m_clsHaiseki.m_nSeetCount) + m_dSpace * 3.0);
-            }
-            sy = sy + hkfontsize + m_dSpace;
+            sy = (m_dTopY + m_dLineHeight * (4 + m_clsHaiseki.m_nSeetCount));
+            sy = sy + fontsize * 2;
+
             int num = 1 + nSekisu;
             str = "座席数＝" + num + "(" + txtRTStr.Text + "含め)";
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
-            sy = (sy + hkfontsize);
+            sy = (sy + fontsize);
             str = m_clsHaiseki.m_lstRyouri[0].m_sName + "＝" + nRType[0];
             brush = m_clsHaiseki.m_lstRyouri[0].getBrush();
             m_libCanvas.setTextBrush(brush);
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
-            sy = (sy + hkfontsize);
+            sy = (sy + fontsize);
             str = m_clsHaiseki.m_lstRyouri[1].m_sName + "＝" + nRType[1];
             brush = m_clsHaiseki.m_lstRyouri[1].getBrush();
             m_libCanvas.setTextBrush(brush);
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
-            sy = (sy + hkfontsize);
+            sy = (sy + fontsize);
             str = m_clsHaiseki.m_lstRyouri[2].m_sName + "＝" + nRType[2];
             brush = m_clsHaiseki.m_lstRyouri[2].getBrush();
             m_libCanvas.setTextBrush(brush);
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
-            sy = (sy + hkfontsize);
+            sy = (sy + fontsize);
             str = m_clsHaiseki.m_lstRyouri[3].m_sName + "＝" + nRType[3];
             brush = m_clsHaiseki.m_lstRyouri[3].getBrush();
             m_libCanvas.setTextBrush(brush);
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
-            sy = (sy + hkfontsize);
+            sy = (sy + fontsize);
             str = m_clsHaiseki.m_lstRyouri[4].m_sName + "＝" + nRType[4];
             brush = m_clsHaiseki.m_lstRyouri[4].getBrush();
             m_libCanvas.setTextBrush(brush);
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
-            sy = (sy + hkfontsize);
+            sy = (sy + fontsize);
             str = m_clsHaiseki.m_lstRyouri[5].m_sName + "＝" + nRType[5];
             brush = m_clsHaiseki.m_lstRyouri[5].getBrush();
             m_libCanvas.setTextBrush(brush);
@@ -513,20 +441,20 @@ namespace sekiji
 
             if (m_clsHaiseki.m_lstRyouri[6].m_sName != "")
             {
-                sy = (sy + hkfontsize);
+                sy = (sy + fontsize);
                 str = m_clsHaiseki.m_lstRyouri[6].m_sName + "＝" + nRType[6];
                 brush = m_clsHaiseki.m_lstRyouri[6].getBrush();
                 m_libCanvas.setTextBrush(brush);
                 m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
             }
 
-            sy = (sy + hkfontsize);
+            sy = (sy + fontsize);
             str = m_clsHaiseki.m_lstRyouri[7].m_sName + "＝1";
             brush = m_clsHaiseki.m_lstRyouri[7].getBrush();
             m_libCanvas.setTextBrush(brush);
             m_libCanvas.drawStrg(cnvsLayout, sx, sy, 0.0, 1.0, str);
 
-            sy = (sy + hkfontsize);
+            sy = (sy + fontsize);
             str =  m_clsHaiseki.m_lstRyouri[8].m_sName + "＝" + m_clsHaiseki.m_nYudemasu;
             brush = m_clsHaiseki.m_lstRyouri[8].getBrush();
             m_libCanvas.setTextBrush(brush);
@@ -537,16 +465,8 @@ namespace sekiji
 
             sx = (m_dTopX + nHikidemonoWidth);
             ex = (sx + nHikidemonoWidth);
-            if (m_clsHaiseki.m_nSouryoCount == 0)
-            {
-                sy = (m_dTopY + titlespace + m_dLineHeight * (1 + m_clsHaiseki.m_nSeetCount) + m_dSpace * 2.0);
-            }
-            else
-            {
-                sy = (m_dTopY + titlespace + m_dLineHeight * (2 + m_clsHaiseki.m_nSeetCount) + m_dSpace * 3.0);
-            }
-            sy = sy + hkfontsize * 2.0;
-            ey = sy + (hkfontsize * Constants.HIKIDEMONOMAX);
+            sy = (m_dTopY + m_dLineHeight * (4 + m_clsHaiseki.m_nSeetCount) + fontsize*2);
+            ey = sy + (fontsize * Constants.HIKIDEMONOMAX);
             wd = ex - sx;
             hi = ey - sy;
             // 引き出物エリア
@@ -556,16 +476,16 @@ namespace sekiji
                 if (hk == (Constants.HIKIDEMONOSETMAX / 2))
                 {
                     sx = (m_dTopX + nHikidemonoWidth);
-                    sy = (sy + hkfontsize * (Constants.HIKIDEMONOMAX) + hkfontsize);
-                    ey = sy + (hkfontsize * Constants.HIKIDEMONOMAX);
+                    sy = (sy + fontsize * (Constants.HIKIDEMONOMAX) + fontsize);
+                    ey = sy + (fontsize * Constants.HIKIDEMONOMAX);
                 }
-                m_libCanvas.setFontSize(hkfontsize);
+                m_libCanvas.setFontSize(fontsize);
                 ex = sx + nHikidemonoWidth;
 
                 str = m_clsHaiseki.m_lstHikidemono[hk].m_sName + "セット";
                 cx = (wd / 2.0);
-                tsx = sx + cx - (str.Length * hkfontsize) / 2;
-                tsy = (sy - hkfontsize);
+                tsx = sx + cx - (str.Length * fontsize) / 2;
+                tsy = (sy - fontsize);
                 m_libCanvas.drawStrg(cnvsLayout, tsx, tsy, 0.0, 1.0, str);
  
                 cnvs = m_libCanvas.CreateCanvas(cnvsLayout, sx, sy, ex - sx, ey - sy);
@@ -573,11 +493,11 @@ namespace sekiji
                 cnvs.Name = "HC_" + hk;
                 cnvs.MouseDown += cnvsHikimonoMouseDown;
 
-                m_libCanvas.setFontSize(hkfontsize);
-                tsx = (hkfontsize / 4);
-                tsy = (hkfontsize / 4);
-                tex = (wd - hkfontsize / 4);
-                tey = (hi - hkfontsize / 4);
+                m_libCanvas.setFontSize(fontsize);
+                tsx = (fontsize / 4);
+                tsy = (fontsize / 4);
+                tex = (wd - fontsize / 4);
+                tey = (hi - fontsize / 4);
                 m_libCanvas.drawLine(cnvs, tsx, 0, 0, tsy);
                 m_libCanvas.drawLine(cnvs, 0, tsy, 0, tey);
                 m_libCanvas.drawLine(cnvs, 0, tey, tsx, hi);
@@ -586,16 +506,16 @@ namespace sekiji
                 m_libCanvas.drawLine(cnvs, wd, tsy, wd, tey);
                 m_libCanvas.drawLine(cnvs, wd, tey, tex, hi);
 
-                cy = (hkfontsize);
+                cy = (fontsize);
                 for (line = 0; line < Constants.HIKIDEMONOMAX; line++)
                 {
                     str = m_clsHaiseki.m_lstHikidemono[hk].m_lstSyouhin[line];
                     str = m_libCmn.SubStringByte(str, 14);
-                    tblk = m_libCanvas.CreateTextBlock(tsx, cy - hkfontsize, str);
+                    tblk = m_libCanvas.CreateTextBlock(tsx, cy - fontsize, str);
                     cnvs.Children.Add(tblk);
                     m_clsHaiseki.m_lstHikidemono[hk].setTextBlock(line, tblk);
                     m_libCanvas.drawLine(cnvs, tsx, cy, tex, cy);
-                    cy = (cy + hkfontsize);
+                    cy = (cy + fontsize);
                 }
                 sx = sx + nHikidemonoWidth;
             }

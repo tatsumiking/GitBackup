@@ -1,0 +1,898 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Printing;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
+namespace Camera
+{
+    public partial class MainWindow : Window
+    {
+        private Canvas m_Canvas;
+        private double m_dBaseX, m_dBaseY;
+        private double m_dTime;
+        private int m_nTate;
+        private double m_dFS;
+        private double m_dFSOrg;
+
+        private void PrintMain()
+        {
+            int dotx, doty;
+            // 1.各種オブジェクトの生成
+            PrintQueue queue = GetSelectPrinterQueue();
+            PageImageableArea area = queue.GetPrintCapabilities().PageImageableArea;
+
+            Canvas canvas = new Canvas();
+
+            canvas.Width = area.ExtentWidth + area.OriginWidth*2;
+            canvas.Height = area.ExtentHeight + area.OriginHeight*2;
+
+            //m_libCanvas.DrawElement(canvas);
+            analysisReceipt(canvas);
+            canvas.Arrange(new Rect(0, 0, canvas.Width, canvas.Height));
+            dotx = (int)canvas.Width; doty = (int)canvas.Height;
+            RenderTargetBitmap render = new RenderTargetBitmap(dotx, doty, 96, 96, PixelFormats.Pbgra32);
+            render.Render(canvas);
+
+            BitmapImage bitmapImage = new BitmapImage();
+            PngBitmapEncoder bitmapEncoder = new PngBitmapEncoder();
+            bitmapEncoder.Frames.Add(BitmapFrame.Create(render));
+
+            MemoryStream stream = new MemoryStream();
+            bitmapEncoder.Save(stream);
+            stream.Seek(0, SeekOrigin.Begin);
+
+            System.Windows.Controls.Image Image = new System.Windows.Controls.Image();
+            Image.Source = BitmapFrame.Create(stream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+            stream.Close();
+
+            FixedPage page = new FixedPage();
+            page.Children.Add(Image);
+            var cont = new PageContent();
+            cont.Child = page;
+            var doc = new FixedDocument();
+            doc.Pages.Add(cont);
+
+            // 印刷の実行
+            var dPrt = new PrintDialog();
+            dPrt.PrintQueue = queue;
+            dPrt.PrintDocument(doc.DocumentPaginator, "Print1");
+        }
+        private void analysisReceipt(Canvas canvas)
+        {
+            double timex, timey;
+            string sFileName;
+            string sData;
+            string[] aryLine;
+            int max, idx;
+
+            m_Canvas = canvas;
+            timex = m_Canvas.Width / 148.0;
+            timey = m_Canvas.Height / 105.0;
+            if (timex < timey)
+            {
+                m_dTime = timex;
+            }
+            else
+            {
+                m_dTime = timey;
+            }
+            m_dBaseX = 0;
+            m_dBaseY = 0;
+            if (m_nClipDotX < m_nClipDotY)
+            {
+                sFileName = "Receipt縦.txt";
+            }else{
+                sFileName = "Receipt横.txt";
+            }
+            sData = m_libCmn.LoadFile(sFileName);
+            sData = sData.Replace("\r\n", "\n");
+            sData = sData.Replace("\r", "\n");
+            aryLine = sData.Split('\n');
+            m_libCanvas.setFontSize(24.0);
+            m_libCanvas.setFontName("ＭＳ ゴシック");
+            m_libCanvas.setFontNomal();
+            m_libCanvas.setBrushFill(-1,-1,-1);
+            m_libCanvas.setBrushStroke(0,0,0,1,0);
+            m_libCanvas.setBrushText(0,0,0);
+
+            max = aryLine.Length;
+            for (idx = 0; idx < max; idx++)
+            {
+                analysisLine(aryLine[idx]);
+            }
+        }
+        private void analysisLine(string sLine)
+        {
+            string[] aryColumn;
+            double sx, sy, ex, ey;
+            double wd, hi;
+            int r, g, b;
+            int nTate;
+            double thick;
+            string  sFileName;
+
+
+            aryColumn = sLine.Split(',');
+            if (aryColumn[0] == "BASE")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                setBase(sx, sy);
+            }
+            else if (aryColumn[0] == "FONT")
+            {
+                hi = m_libCmn.StrToDouble(aryColumn[1]);
+                wd = m_libCmn.StrToDouble(aryColumn[2]);
+                nTate = m_libCmn.StrToInt(aryColumn[4]);
+                setFont(hi, wd, aryColumn[3], nTate);
+            }
+            else if (aryColumn[0] == "BFONT")
+            {
+                hi = m_libCmn.StrToDouble(aryColumn[1]);
+                wd = m_libCmn.StrToDouble(aryColumn[2]);
+                nTate = m_libCmn.StrToInt(aryColumn[4]);
+                setBoldFont(hi, wd, aryColumn[3], nTate);
+            }
+            else if (aryColumn[0] == "BRUSH")
+            {
+                r = m_libCmn.StrToInt(aryColumn[1]);
+                g = m_libCmn.StrToInt(aryColumn[2]);
+                b = m_libCmn.StrToInt(aryColumn[3]);
+                setBrush(r, g, b);
+            }
+            else if (aryColumn[0] == "CPEN")
+            {
+                r = m_libCmn.StrToInt(aryColumn[1]);
+                g = m_libCmn.StrToInt(aryColumn[2]);
+                b = m_libCmn.StrToInt(aryColumn[3]);
+                thick = m_libCmn.StrToDouble(aryColumn[4]);
+                setCPen(r, g, b, thick, 0);
+            }
+            else if (aryColumn[0] == "CTEXT")
+            {
+                r = m_libCmn.StrToInt(aryColumn[1]);
+                g = m_libCmn.StrToInt(aryColumn[2]);
+                b = m_libCmn.StrToInt(aryColumn[3]);
+                setTextColor(r, g, b);
+            }
+            else if (aryColumn[0] == "IMGC")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                if (aryColumn.Length == 5)
+                {
+                    sFileName = "";
+                }
+                else
+                {
+                    sFileName = aryColumn[5];
+                }
+                setImgCDraw(sx, sy, ex, ey, sFileName);
+                //setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "IMGR")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                if (aryColumn.Length == 5)
+                {
+                    sFileName = "";
+                }
+                else
+                {
+                    sFileName = aryColumn[5];
+                }
+                setImgRDraw(sx, sy, ex, ey, sFileName);
+                //setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "IMG")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                if (aryColumn.Length == 5)
+                {
+                    sFileName = "";
+                }
+                else
+                {
+                    sFileName = aryColumn[5];
+                }
+                setImgDraw(sx, sy, ex, ey, sFileName);
+                //setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "LOGO")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                if (aryColumn.Length == 5)
+                {
+                    sFileName = "";
+                }
+                else
+                {
+                    sFileName = aryColumn[5];
+                }
+                setLogoDraw(sx, sy, ex, ey, sFileName);
+                //setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "STRG")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                setStrg(sx, sy, aryColumn[3]);
+                //setBoxs(sx, sy, sx + m_dFSOrg, sy + m_dFSOrg);
+            }
+            else if (aryColumn[0] == "RSTR")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                setRStrg(sx, sy, aryColumn[3]);
+                //setBoxs(sx, sy, sx + m_dFSOrg, sy + m_dFSOrg);
+            }
+            else if (aryColumn[0] == "CSTR")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                setCStrg(sx, sy, aryColumn[3]);
+                //setBoxs(sx, sy, sx + m_dFSOrg, sy + m_dFSOrg);
+            }
+            else if (aryColumn[0] == "SBOX")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                setBoxStrg(sx, sy, ex, ey, aryColumn[5]);
+                //setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "RSBX")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                setRBoxStrg(sx, sy, ex, ey, aryColumn[5]);
+                //setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "CSBX")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                setCBoxStrg(sx, sy, ex, ey, aryColumn[5]);
+                //setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "ESBX")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                setEBoxStrg(sx, sy, ex, ey, aryColumn[5]);
+                //setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "LINE")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                setLine(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "BOXS")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                setBoxs(sx, sy, ex, ey);
+            }
+            else if (aryColumn[0] == "SEAL")
+            {
+                sx = m_libCmn.StrToDouble(aryColumn[1]);
+                sy = m_libCmn.StrToDouble(aryColumn[2]);
+                ex = m_libCmn.StrToDouble(aryColumn[3]);
+                ey = m_libCmn.StrToDouble(aryColumn[4]);
+                setSeal(sx, sy, ex, ey, aryColumn[5]);
+            }
+        }
+        private void setBase(double sx, double sy)
+        {
+            m_dBaseX = sx * m_dTime;
+            m_dBaseY = sy * m_dTime;
+        }
+        private void setFont(double hi, double wd, string sFontName, int nTate) 
+        {
+            m_nTate = nTate;
+            m_libCanvas.setFontName(sFontName);
+            m_libCanvas.setFontNomal();
+            if (m_nTate == 0)
+            {
+                m_dFSOrg = hi;
+                hi = hi * m_dTime;
+                m_libCanvas.setFontSize(hi);
+                m_dFS = hi;
+            }
+            else
+            {
+                m_dFSOrg = wd;
+                wd = wd * m_dTime;
+                m_libCanvas.setFontSize(wd);
+                m_dFS = wd;
+            }
+        }
+        private void setBoldFont(double hi, double wd, string sFontName, int nTate)
+        {
+            m_nTate = nTate;
+            m_libCanvas.setFontName(sFontName);
+            m_libCanvas.setFontBold();
+            if (m_nTate == 0)
+            {
+                m_dFSOrg = hi;
+                hi = hi * m_dTime;
+                m_libCanvas.setFontSize(hi);
+                m_dFS = hi;
+            }
+            else
+            {
+                m_dFSOrg = wd;
+                wd = wd * m_dTime;
+                m_libCanvas.setFontSize(wd);
+                m_dFS = wd;
+            }
+        }
+        private void setBrush(int r, int g, int b)
+        {
+            m_libCanvas.setBrushFill(r, g, b);
+        }
+        private void setCPen(int r, int g, int b, double thick, int type)
+        {
+            thick = thick * m_dTime;
+            m_libCanvas.setBrushStroke(r, g, b, thick, type);
+        }
+        private void setTextColor(int r, int g, int b)
+        {
+            m_libCanvas.setBrushText(r, g, b);
+        }
+        // 縦長氏名領収書イメージ処理、横中央、縦下付
+        private void setImgCDraw(double sx, double sy, double ex, double ey, string sFileName)
+        {
+            double wd, hi, time;
+
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            if (sFileName == "")
+            {
+                sFileName = m_sEnvPath + "\\name.jpg";
+            }
+            else if(sFileName.Substring(1,1) != ":")
+            {
+                sFileName = m_sExecPath + "\\" + sFileName;
+            }
+            wd = ex - sx;
+            hi = ey - sy;
+            time = (ey - sy) / m_nClipDotY;
+            if (m_nClipDotX * time < wd)
+            {
+                sx += ((wd - m_nClipDotX * time) / 2);
+                wd = m_nClipDotX * time;
+            }
+            else
+            {
+                time = (ex - sx) / m_nClipDotX;
+                hi = m_nClipDotY * time;
+                sy = ey - hi;
+            }
+            m_libCanvas.drawImage(m_Canvas, sx, sy, wd, hi, sFileName);
+        }
+        // 横長氏名領収書イメージ処理、横左、縦下付
+        private void setImgRDraw(double sx, double sy, double ex, double ey, string sFileName)
+        {
+            double wd, hi, time;
+
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            if (sFileName == "")
+            {
+                sFileName = m_sEnvPath + "\\name.jpg";
+            }
+            else if (sFileName.Substring(1, 1) != ":")
+            {
+                sFileName = m_sExecPath + "\\" + sFileName;
+            }
+            wd = ex - sx;
+            hi = ey - sy;
+            time = (ey - sy) / m_nClipDotY;
+            if (m_nClipDotX * time < wd)
+            {
+                wd = m_nClipDotX * time;
+                sx = ex - wd;
+            }
+            else
+            {
+                time = (ex - sx) / m_nClipDotX;
+                hi = m_nClipDotY * time;
+                sy = ey - hi;
+            }
+            m_libCanvas.drawImage(m_Canvas, sx, sy, wd, hi, sFileName);
+        }
+        private void setImgDraw(double sx, double sy, double ex, double ey, string sFileName)
+        {
+            double wd, hi;
+            double timex, timey;
+
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            wd = ex - sx;
+            hi = ey - sy;
+            if (sFileName == "")
+            {
+                sFileName = m_sEnvPath + "\\name.jpg";
+                timex = (ex - sx) / m_nClipDotX;
+                timey = (ey - sy) / m_nClipDotY;
+                if (timex < timey)
+                {
+                    hi = m_nClipDotY * timex;
+                }
+                else
+                {
+                    wd = m_nClipDotX * timey;
+                }
+            }
+            else if (sFileName.Substring(1, 1) != ":")
+            {
+                sFileName = m_sExecPath + "\\" + sFileName;
+            }
+            m_libCanvas.drawImage(m_Canvas, sx, sy, wd, hi, sFileName);
+        }
+        private void setLogoDraw(double sx, double sy, double ex, double ey, string sFileName)
+        {
+            double wd, hi;
+
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            if (sFileName == "")
+            {
+                sFileName = m_sExecPath + "\\logo.jpg";
+            }
+            else if (sFileName.Substring(1, 1) != ":")
+            {
+                sFileName = m_sExecPath + "\\" + sFileName;
+            }
+            wd = ex - sx;
+            hi = ey - sy;
+            m_libCanvas.drawImage(m_Canvas, sx, sy, wd, hi, sFileName);
+        }
+        private void setStrg(double sx, double sy, string sStr)
+        {
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            sStr = analyzeString(sStr);
+            if (m_nTate == 0)
+            {
+                m_libCanvas.drawYokoStrg(m_Canvas, sx, sy, 0.0, 1.0, sStr);
+            }
+            else
+            {
+                m_libCanvas.drawTateStrg(m_Canvas, sx, sy, 0.0, 1.0, sStr);
+            }
+        }
+        private void setRStrg(double sx, double sy, string sStr)
+        {
+            double len;
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            sStr = analyzeString(sStr);
+            len = sStr.Length * m_dFS - m_dFS;
+            if (m_nTate == 0)
+            {
+                sx = sx - len;
+                m_libCanvas.drawYokoStrg(m_Canvas, sx, sy, 0.0, 1.0, sStr);
+            }
+            else
+            {
+                sy = sy - len;
+                m_libCanvas.drawTateStrg(m_Canvas, sx, sy, 0.0, 1.0, sStr);
+            }
+        }
+        private void setCStrg(double sx, double sy, string sStr)
+        {
+            double len;
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            sStr = analyzeString(sStr);
+            len = sStr.Length * m_dFS - m_dFS;
+            if (m_nTate == 0)
+            {
+                sx = sx - len / 2;
+                m_libCanvas.drawYokoStrg(m_Canvas, sx, sy, 0.0, 1.0, sStr);
+            }
+            else
+            {
+                sy = sy - len / 2;
+                m_libCanvas.drawTateStrg(m_Canvas, sx, sy, 0.0, 1.0, sStr);
+            }
+        }
+        private void setBoxStrg(double sx, double sy, double ex, double ey,string sStr)
+        {
+            double len, time;
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            sStr = analyzeString(sStr);
+            len = sStr.Length * m_dFS;
+            if (m_nTate == 0)
+            {
+                if(len < (ex-sx))
+                {
+                    time = 1.0;
+                }else{
+                    time = (ex - sx) / len;
+                }
+                m_libCanvas.drawYokoStrg(m_Canvas, sx, sy, 0.0, time, sStr);
+            }
+            else
+            {
+                if (len < (ey - sy))
+                {
+                    time = 1.0;
+                }
+                else
+                {
+                    time = (ey - sy) / len;
+                }
+                m_libCanvas.drawTateStrg(m_Canvas, sx, sy, 0.0, time, sStr);
+            }
+        }
+        private void setRBoxStrg(double sx, double sy, double ex, double ey, string sStr)
+        {
+            double len, time;
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            sStr = analyzeString(sStr);
+            len = sStr.Length * m_dFS;
+            if (m_nTate == 0)
+            {
+                if (len < (ex - sx))
+                {
+                    time = 1.0;
+                    sx = ex - len;
+                }
+                else
+                {
+                    time = (ex - sx) / len;
+                }
+                m_libCanvas.drawYokoStrg(m_Canvas, sx, sy, 0.0, time, sStr);
+            }
+            else
+            {
+                if (len < (ey - sy))
+                {
+                    time = 1.0;
+                    sy = ey - len;
+                }
+                else
+                {
+                    time = (ey - sy) / len;
+                }
+                m_libCanvas.drawTateStrg(m_Canvas, sx, sy, 0.0, time, sStr);
+            }
+        }
+        private void setCBoxStrg(double sx, double sy, double ex, double ey, string sStr)
+        {
+            double len, time;
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            sStr = analyzeString(sStr);
+            len = sStr.Length * m_dFS;
+            if (m_nTate == 0)
+            {
+                if (len < (ex - sx))
+                {
+                    time = 1.0;
+                    sx = ex - len/2;
+                }
+                else
+                {
+                    time = (ex - sx) / len;
+                }
+                m_libCanvas.drawYokoStrg(m_Canvas, sx, sy, 0.0, time, sStr);
+            }
+            else
+            {
+                if (len < (ey - sy))
+                {
+                    time = 1.0;
+                    sy = ey - len/2;
+                }
+                else
+                {
+                    time = (ey - sy) / len;
+                }
+                m_libCanvas.drawTateStrg(m_Canvas, sx, sy, 0.0, time, sStr);
+            }
+        }
+        private void setEBoxStrg(double sx, double sy, double ex, double ey, string sStr)
+        {
+            double len, space, time;
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            sStr = analyzeString(sStr);
+            len = sStr.Length * m_dFS;
+            if (m_nTate == 0)
+            {
+                if (len < (ex - sx))
+                {
+                    time = 1.0;
+                    space = (ex - sx) - len / (sStr.Length-1);
+                }
+                else
+                {
+                    time = (ex - sx) / len;
+                }
+                m_libCanvas.drawYokoStrg(m_Canvas, sx, sy, 0.0, time, sStr);
+            }
+            else
+            {
+                if (len < (ey - sy))
+                {
+                    time = 1.0;
+                    space = (ey - sy) - len / (sStr.Length - 1);
+                }
+                else
+                {
+                    time = (ey - sy) / len;
+                }
+                m_libCanvas.drawTateStrg(m_Canvas, sx, sy, 0.0, time, sStr);
+            }
+        }
+        private void setLine(double sx, double sy, double ex, double ey)
+        {
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            m_libCanvas.drawLine(m_Canvas, sx, sy, ex, ey);
+        }
+        private void setBoxs(double sx, double sy, double ex, double ey)
+        {
+            double wd, hi;
+
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            wd = ex - sx;
+            hi = ey - sy;
+            m_libCanvas.drawBoxs(m_Canvas, sx, sy, wd, hi);
+        }
+        private void setSeal(double sx, double sy, double ex, double ey, string sStr)
+        {
+            double sub;
+            double wd, hi;
+
+            sx = sx * m_dTime + m_dBaseX;
+            sy = sy * m_dTime + m_dBaseY;
+            ex = ex * m_dTime + m_dBaseX;
+            ey = ey * m_dTime + m_dBaseY;
+            sStr = analyzeString(sStr);
+            sub = (ex - sx) * 0.05;
+            wd = ex - sx;
+            hi = ey - sy;
+            m_libCanvas.drawEllipse(m_Canvas, sx, sy, wd, hi);
+            sx = sx + sub;
+            sy = sy + sub;
+            ex = ex - sub;
+            ey = ey - sub;
+            m_libCanvas.setFontSize(ex-sx);
+            if (m_nTate == 0)
+            {
+                m_libCanvas.drawYokoStrg(m_Canvas, sx, sy, 0.0, 0.5, sStr);
+            }
+            else
+            {
+                m_libCanvas.drawTateStrg(m_Canvas, sx, sy, 0.0, 0.5, sStr);
+            }
+        }
+        private string analyzeString(string sSrcStr)
+        {
+            string[] ary;
+            string sDstStr;
+            int max, idx;
+            string sStr;
+
+            ary = sSrcStr.Split('%');
+            sDstStr = "";
+            max = ary.Length;
+            for (idx = 0; idx < max; idx++)
+            {
+                if((idx % 2) == 1){
+                    sStr = analyzeCmdStr(ary[idx]);
+                    sDstStr = sDstStr + sStr;
+                }else{
+                    sDstStr = sDstStr + ary[idx];
+                }
+            }
+            return (sDstStr);
+        }
+        private string analyzeCmdStr(string sCmdStr)
+        {
+            string sDstStr;
+            string sStr;
+            string sNG, sLest;
+            string[] ary;
+            int year, gg, mm, dd;
+
+            sDstStr = "";
+            if (sCmdStr == "BSTITLE")
+            {
+                sDstStr = m_sKihonTitle;
+            }
+            else if(sCmdStr == "BSKPRICE")
+            {
+                if(m_nPrice == 0){
+                    sDstStr = "円";
+                }
+                else
+                {
+                    sStr = m_libCmn.NumToOldKan(m_nPrice);
+                    sDstStr = "金" + sStr + "円";
+                }
+            }
+            else if (sCmdStr == "BSK0PRICE")
+            {
+                if (m_nPrice == 0)
+                {
+                    sDstStr = "円";
+                }
+                else
+                {
+                    sStr = m_libCmn.NumToKan(m_nPrice);
+                    sDstStr = "金" + sStr + "円";
+                }
+            }
+            else if (sCmdStr == "BSPRICE")
+            {
+                if (m_nPrice == 0)
+                {
+                    sDstStr = "￥";
+                }
+                else
+                {
+                    sStr = m_libCmn.AddPriceKanma(m_nPrice);
+                    sStr = m_libCmn.HanToZen(sStr);
+                    sDstStr = "￥" + sStr;
+                }
+            }
+            else if (sCmdStr == "BSSTRG1")
+            {
+                sDstStr = m_sKihonString1;
+            }
+            else if (sCmdStr == "BSSTRG2")
+            {
+                sDstStr = m_sKihonString2;
+            }
+            else if (sCmdStr == "BSKANDATE")
+            {
+                if (m_sKihonDate == "")
+                {
+                    sDstStr = "　　　　年　　月　　日";
+                }
+                else
+                {
+                    sNG = m_sKihonDate.Substring(0,2);
+                    sLest = m_sKihonDate.Substring(2);
+                    ary = sLest.Split('年');
+                    gg = m_libCmn.StrToInt(ary[0]);
+                    sLest = ary[1];
+                    ary = sLest.Split('月');
+                    mm = m_libCmn.StrToInt(ary[0]);
+                    sLest = ary[1];
+                    ary = sLest.Split('日');
+                    dd = m_libCmn.StrToInt(ary[0]);
+                    sDstStr = sNG + m_libCmn.NumToKan(gg) + "年" + m_libCmn.NumToKan(mm) + "月" + m_libCmn.NumToKan(dd) + "日";
+                }
+            }
+            else if (sCmdStr == "BSDATE")
+            {
+                if (m_sKihonDate == "")
+                {
+                    sDstStr = "　　　　年　　月　　日";
+                }
+                else
+                {
+                    sDstStr = m_libCmn.HanToZen(m_sKihonDate);
+                }
+            }
+            else if (sCmdStr == "BSNAME1")
+            {
+                sDstStr = m_sKihonName1;
+            }
+            else if (sCmdStr == "BSNAME2")
+            {
+                sDstStr = m_sKihonName2;
+            }
+            else if (sCmdStr == "BSADRSNO")
+            {
+                sDstStr = m_sKihonPostNo;
+            }
+            else if (sCmdStr == "BSADRS1")
+            {
+                sDstStr = m_sKihonAddress1;
+            }
+            else if (sCmdStr == "BSADRS2")
+            {
+                sDstStr = m_sKihonAddress2;
+            }
+            else if (sCmdStr == "BSTELNO")
+            {
+                sDstStr = m_sKihonTelNo;
+            }
+            else if (sCmdStr == "BSSEAL")
+            {
+                sDstStr = m_sKihonSeal;
+            }
+            else if (sCmdStr == "CRTTIME")
+            {
+                DateTime dt = DateTime.Now;
+                sStr = m_libCmn.AnlizeNengou(dt.ToString("yyyy"));
+                sNG = sStr.Substring(0, 2);
+                gg = m_libCmn.StrToInt(sStr.Substring(2));
+                mm = m_libCmn.StrToInt(dt.ToString("MM"));
+                dd = m_libCmn.StrToInt(dt.ToString("DD"));
+                sDstStr = sNG + m_libCmn.NumToKan(gg) + "年" + m_libCmn.NumToKan(mm) + "月" + m_libCmn.NumToKan(dd) + "日";
+            }
+            else if (sCmdStr == "BSCOMPANY")
+            {
+                sDstStr = m_sKihonCompany;
+            }
+            else if (sCmdStr == "BSCOMMENT")
+            {
+                sDstStr = m_sKihonComment;
+            }
+            else if (sCmdStr == "BSBIKOU1")
+            {
+                sDstStr = m_sKihonBikou1;
+            }
+            else if (sCmdStr == "BSBIKOU2")
+            {
+                sDstStr = m_sKihonBikou2;
+            }
+            return (sDstStr);
+        }
+    }
+}

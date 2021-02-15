@@ -1,0 +1,8 @@
+﻿<Window x:Class="kden.MinSlctWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MinSlctWin" Height="300" Width="100" Loaded="Window_Loaded">
+    <Grid Background="LightGoldenrodYellow">
+        <ListBox x:Name="listSelect" Margin="10,10,10,10" PreviewMouseRightButtonDown="listSelect_PreviewMouseRightButtonDown" SelectionChanged="listSelect_SelectionChanged"/>
+    </Grid>
+</Window>

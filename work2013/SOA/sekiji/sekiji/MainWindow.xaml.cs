@@ -29,7 +29,6 @@ namespace sekiji
         public ClsHaiseki m_clsHaiseki;
         public string m_sExecPath;
         public string m_sEnvPath;
-        public string m_sItiranPath;
         public LibCommon m_libCmn;
         public LibCanvas m_libCanvas;
         public LibOdbc m_libOdbc;
@@ -462,13 +461,12 @@ namespace sekiji
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "保存ファイル(*.csv)|*.csv|すべてのファイル(*.*)|*.*||";
             sfd.Title = "保存ファイルを選択してください";
-            sfd.InitialDirectory = m_sItiranPath;
+            sfd.InitialDirectory = m_sEnvPath;
             sfd.DefaultExt = "*.csv";
             sfd.FileName = sSaveFileName;
             if (sfd.ShowDialog() == true)
             {
                 sSaveFileName = sfd.FileName;
-                m_sItiranPath = System.IO.Path.GetDirectoryName(sSaveFileName);
                 saveItiran(sSaveFileName);
             }
         }
@@ -559,7 +557,7 @@ namespace sekiji
             { // "～２６名"
                 cmbLayout.SelectedIndex = 0;
             }
-            else if ((tblblk == 2) && (seet == 13))
+            else if ((tblblk == 2) && (seet == 10))
             { // "４０名"
                 cmbLayout.SelectedIndex = 1;
             }
@@ -581,11 +579,11 @@ namespace sekiji
             }
             else if ((tblblk == 4) && (seet == 16))
             { //  "１１３名～１２８名"
-                cmbLayout.SelectedIndex = 6;
+                cmbLayout.SelectedIndex = 5;
             }
             else if ((tblblk == 4) && (seet == 21))
             { // "１２９名～１６８名"
-                cmbLayout.SelectedIndex = 7;
+                cmbLayout.SelectedIndex = 5;
             }
             txtRTStr.Text = m_clsHaiseki.m_sReizenText;
             txtRBStr.Text = m_clsHaiseki.m_sRightBottomText;
@@ -605,19 +603,6 @@ namespace sekiji
             int max, idx;
 
             lstName = new List<string>();
-            max = m_clsHaiseki.m_nSouryoCount;
-            for (idx = 0; idx < max; idx++)
-            {
-                sName = m_clsHaiseki.m_lstSouryo[idx].m_sName;
-                if (sName == "")
-                {
-                    continue;
-                }
-                ary = sName.Split('　');
-                sKey = m_libOdbc.searchNameKwy(ary[0]);
-                sSetStr = sKey + "," + sName;
-                setListName(lstName, sSetStr);
-            }
             tblblkmax = m_clsHaiseki.m_nTableBlockCount;
             linemax = m_clsHaiseki.m_nSeetCount;
             for (tblblk = 0; tblblk < tblblkmax; tblblk++)
@@ -631,10 +616,6 @@ namespace sekiji
                     }
                     ary = sName.Split('　');
                     sKey = m_libOdbc.searchNameKwy(ary[0]);
-                    if (sKey == "")
-                    {
-                        sKey = "0,無";
-                    }
                     sSetStr = sKey+","+sName;
                     setListName(lstName, sSetStr);
                 }
@@ -648,10 +629,6 @@ namespace sekiji
                     }
                     ary = sName.Split('　');
                     sKey = m_libOdbc.searchNameKwy(ary[0]);
-                    if (sKey == "")
-                    {
-                        sKey = "0,無";
-                    }
                     sSetStr = sKey + "," + sName;
                     setListName(lstName, sSetStr);
                 }
@@ -662,29 +639,14 @@ namespace sekiji
             for (idx = max-1; idx >= 0; idx--)
             {
                 ary = lstName[idx].Split(',');
-
                 if (sKey != ary[1].Substring(0, 1))
                 {
                     sKey = ary[1].Substring(0, 1);
-                    if (3 <= ary.Length)
-                    {
-                        sSetStr = sSetStr + sKey + "," + ary[2] + "\r\n";
-                    }
-                    else
-                    {
-                        sSetStr = sSetStr + sKey + "," + ary[1] + "\r\n";
-                    }
+                    sSetStr = sSetStr + sKey + "," + ary[2] + "\n";
                 }
                 else
                 {
-                    if (3 <= ary.Length)
-                    {
-                        sSetStr = sSetStr + "," + ary[2] + "\r\n";
-                    }
-                    else
-                    {
-                        sSetStr = sSetStr + "," + ary[1] + "\r\n";
-                    }
+                    sSetStr = sSetStr + "," + ary[2] + "\n";
                 }
             }
             m_libCmn.SaveFileSJIS(sFileName, sSetStr);
@@ -881,7 +843,7 @@ namespace sekiji
             {
                 if (ary[idx] != "")
                 {
-                    sRecs = sRecs + sHead + ",\"/" + ary[idx] + "\",\r\n";
+                    sRecs = sRecs + sHead + ",\"/" + ary[idx] + "\",\n";
                 }
             }
             saveOutCrct(sRecs);
@@ -947,7 +909,7 @@ namespace sekiji
                     set++;
                     if (m_nAnySekijiCount <= set)
                     {
-                        sRecs = sRecs + "\"\r\n";
+                        sRecs = sRecs+"\"\n";
                         set = 0;
                     }
                 }
@@ -958,19 +920,17 @@ namespace sekiji
                 {
                     sRecs = sRecs + "/";
                 }
-                sRecs = sRecs + "\"\r\n";
+                sRecs = sRecs + "\"\n";
             }
             return (sRecs);
         }
         private void saveSekijiEnv()
         {
-            string sData;
             string sFileName;
+            string sData;
 
-            sData = "//\r\n";
-            sData = sData + m_sFontFamilyNameCrt + "\r\n";
-            sData = sData + m_sItiranPath + "\r\n";
             sFileName = m_sEnvPath + "\\sekiji.txt";
+            sData = "//\n" + m_sFontFamilyNameCrt + "\n";
             m_libCmn.SaveFileSJIS(sFileName, sData);
         }
         private void loadSekijiEnv()
@@ -998,13 +958,11 @@ namespace sekiji
             if (!(System.IO.File.Exists(sFileName)))
             {
                 m_sFontFamilyNameCrt = "メイリオ";
-                m_sItiranPath = m_sEnvPath;
             }
             else
             {
                 aryLine = m_libCmn.LoadFileLineSJIS(sFileName);
                 m_sFontFamilyNameCrt = aryLine[1];
-                m_sItiranPath = aryLine[2];
 
             }
             sFileName = m_sEnvPath + "\\smsoutone.txt";

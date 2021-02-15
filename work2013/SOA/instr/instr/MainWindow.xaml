@@ -1,0 +1,44 @@
+﻿<Window x:Class="instr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ex ="clr-namespace:instr"
+        Title="MainWindow" Height="740" Width="1024" Loaded="Window_Loaded" PreviewKeyDown="Window_PreviewKeyDown" Icon="instr.ico" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="140"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Label Content="フォルダ名" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="77"/>
+                <Button x:Name="btnFolderSelect" Content="枠フォルダ" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="75" Click="btnFolderSelect_Click"/>
+                <Label x:Name="lblFolderName" Content="名札フォルダ" HorizontalAlignment="Left" Height="30" Margin="10,45,0,0" VerticalAlignment="Top" Width="180"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Canvas x:Name="canvasImage" Margin="10,10,10,10"  Background="#FFD1D1D1"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button x:Name="btnSave" Content="保存" HorizontalAlignment="Left" Margin="10,0,0,106" VerticalAlignment="Bottom" Width="75" Click="btnSave_Click"/>
+                <Button x:Name="btnLoad" Content="呼出" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLoad_Click"/>
+                <Button x:Name="btnList" Content="一覧印刷" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="75" Click="btnList_Click"/>
+                <Button x:Name="btnOut" Content="出力[F1]" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="75" Click="btnOut_Click"/>
+                <Button x:Name="btnExit" Content="終了[F12]" HorizontalAlignment="Left" Margin="115,100,0,0" VerticalAlignment="Top" Width="75" Click="btnExit_Click"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <ex:DataGridEx x:Name="dgNafuda" Margin="10,10,10,10" 
+                      DataContext="{Binding}" ItemsSource="{Binding}"
+                      CanUserSortColumns="False" 
+                      AutoGenerateColumns="False"
+                      CurrentCellChanged="dgNafuda_CurrentCellChanged" 
+                      BeginningEdit="dgNafuda_BeginningEdit" 
+                      CellEditEnding="dgNafuda_CellEditEnding"
+                      />
+        </Grid>
+    </Grid>
+</Window>

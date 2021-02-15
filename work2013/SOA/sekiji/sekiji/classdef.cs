@@ -18,7 +18,6 @@ namespace sekiji
         public const int SEETMAX = 25;
         public const int HIKIDEMONOSETMAX = 6;
         public const int HIKIDEMONOMAX = 5;
-        public const int RYOURISETMAX = 9;
         public const int NUMMAX = 10000;
     }
     public partial class ClsTable

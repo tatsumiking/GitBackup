@@ -1,0 +1,27 @@
+﻿<Window x:Class="kden.SyouhinSearchWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SyouhinSearchWin" Height="600" Width="500" Loaded="Window_Loaded" Icon="kden.ico">
+    <Grid Background="LightGoldenrodYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="検索文字列" VerticalAlignment="Top" Width="71"/>
+            <TextBlock HorizontalAlignment="Left" Margin="315,5,0,0" TextWrapping="Wrap" Text="分類" VerticalAlignment="Top" Width="80"/>
+            <TextBox x:Name="txtSearchName" HorizontalAlignment="Left" Height="23" Margin="10,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+            <ComboBox x:Name="cmbSearchKind" Margin="315,26,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80"/>
+            <Button x:Name="btnSearch" Content="検索" Margin="0,26,10,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="btnSearch_Click"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <DataGrid x:Name="dgSyouhin" Margin="10,10,0,10" DataContext="{Binding}" ItemsSource="{Binding}" AutoGenerateColumns="False" CurrentCellChanged="dgSyouhin_CurrentCellChanged" HorizontalAlignment="Left" Width="472" PreviewMouseDoubleClick="dgSyouhin_PreviewMouseDoubleClick"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button x:Name="btnOk" Content="確定" Margin="0,0,99,16" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="btnOk_Click"/>
+            <Button x:Name="btnCancel" Content="キャンセル" Margin="0,0,10,16" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="btnCancel_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
