@@ -32,78 +32,35 @@ namespace sden
 #if DEBUG
                     m_ExcelApp.Visible = true;
 #else
-                    m_ExcelApp.Visible = false;
-#endif
-                    
                     //Excelを見えなくする。
                     m_ExcelApp.Visible = false;
-                    //m_ExcelApp.Visible = true;
+#endif
                     //Excelのメッセージを強制的に表示しないようにする。
                     m_ExcelApp.DisplayAlerts = false;
                 }
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.ToString(), "InitExcelAppエラー");
-                ExcelCloseProcess();
                 return(false);
             }
-
-//            try
-//            {
-//#if DEBUG
-////                m_ExcelApp.Visible = true;
-//#else
-//                m_ExcelApp.Visible = false;
-//#endif
-//                m_ExcelApp.Visible = false;
-//            }
-//            catch (Exception ex)
-//            {
-//                m_ExcelApp = null;
-//                System.Windows.MessageBox.Show(ex.ToString(), "エラー");
-//                return (false);
-//            }
-//            try
-//            {
-//                m_ExcelApp.DisplayAlerts = false;
-//            }
-//            catch (Exception ex)
-//            {
-//                m_ExcelApp = null;
-//                System.Windows.MessageBox.Show(ex.ToString(), "エラー");
-//                return (false);
-//            }
             return (true);
         }
-
-        /// <summary>
-        /// Excelのプロセスを閉じて、
-        /// 変数をnullにする。
-        /// </summary>
-        public void ExcelCloseProcess()
-        {
-            m_ExcelApp.DisplayAlerts = true;
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(m_ExcelApp);
-            m_ExcelApp = null;
-        }
-
         public Boolean CloseExcelApp()
         {
             try
             {
-                ExcelCloseProcess();
+                m_ExcelApp.DisplayAlerts = true;
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(m_ExcelApp);
+                m_ExcelApp = null;
             }
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.ToString(), "CloseExcelAppエラー");
-                ExcelCloseProcess();
                 return (false);
             }
             return (true);
         }
-
-        public void InitExcelBook(string sExcelFilename)
+        public Boolean InitExcelBook(string sExcelFilename)
         {
             Excel.Workbooks xlsWBooks = null;
             Object non = Type.Missing;
@@ -111,15 +68,36 @@ namespace sden
             try
             {
                 xlsWBooks = m_ExcelApp.Workbooks;
-                m_xlsWBook = xlsWBooks.Open(sExcelFilename);
+                m_xlsWBook = xlsWBooks.Open(sExcelFilename, false);
             }
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.ToString(), "InitExcelBookエラー");
+                return (false);
             }
+            return (true);
         }
+        public Boolean CloseExcelBook()
+        {
+            Object non = Type.Missing;
 
-        public void InitDstExcelBook(string sExcelFilename)
+            if (m_xlsWBook == null)
+            {
+                return (false);
+            }
+            try
+            {
+                m_xlsWBook.Close();
+                m_xlsWBook = null;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.ToString(), "CloseExcelBookエラー");
+                return (false);
+            }
+            return (true);
+        }
+        public Boolean InitDstExcelBook(string sExcelFilename)
         {
             Excel.Workbooks xlsWBooks = null;
             Object non = Type.Missing;
@@ -132,10 +110,31 @@ namespace sden
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.ToString(), "InitDstExcelBookエラー");
+                return (false);
             }
+            return (true);
         }
+        public Boolean CloseDstExcelBook()
+        {
+            Object non = Type.Missing;
 
-        public void CreateDstExcelBook()
+            if (m_xlsDstWBook == null)
+            {
+                return (false);
+            }
+            try
+            {
+                m_xlsDstWBook.Close();
+                m_xlsDstWBook = null;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.ToString(), "CloseDstExcelBookエラー");
+                return (false);
+            }
+            return (true);
+        }
+        public Boolean CreateDstExcelBook()
         {
             Object non = Type.Missing;
             int max, i;
@@ -154,7 +153,9 @@ namespace sden
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.ToString(), "CreateDstExcelBookエラー");
+                return (false);
             }
+            return (true);
         }
 
         public Excel.Worksheet GetExcelSheet(int iSheetNo)
@@ -259,28 +260,44 @@ namespace sden
             }
             return (null);
         }
-        
-        public void DeleteDstExcelSheet(int iSheetNo)
+
+        public Boolean DeleteDstExcelSheet(int iSheetNo)
         {
             Excel.Worksheet xlsSheet = null;
-            xlsSheet = m_xlsDstWBook.Sheets[iSheetNo];
-            xlsSheet.Delete();
+            try
+            {
+                xlsSheet = m_xlsDstWBook.Sheets[iSheetNo];
+                xlsSheet.Delete();
+            }
+            catch (Exception ex)
+            {
+                return (false);
+            }
+            return (true);
         }
-
-        public void DeleteDstExcelSheetToName(string name)
+        public Boolean DeleteDstExcelSheetToName(string name)
         {
             int max, i;
             Excel.Worksheet xlsSheet = null;
 
-            max = m_xlsDstWBook.Sheets.Count;
-            for (i = max; i >= 1; i--)
+            try
             {
-                xlsSheet = m_xlsDstWBook.Sheets[i];
-                if (xlsSheet.Name == name)
+                max = m_xlsDstWBook.Sheets.Count;
+                for (i = max; i >= 1; i--)
                 {
-                    xlsSheet.Delete();
+                    xlsSheet = m_xlsDstWBook.Sheets[i];
+                    if (xlsSheet.Name == name)
+                    {
+                        xlsSheet.Delete();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                return (false);
+            }
+            return (true);
+
         }
 
         public int[] GetDstExcelPageList()
@@ -304,28 +321,48 @@ namespace sden
             return (iPageTbl);
         }
 
-        public void EndDstExcelSaveAs(string sExcelFilename)
+        public Boolean EndDstExcelSaveAs(string sExcelFilename)
         {
             Object non = Type.Missing;
-            m_xlsWBook.Close(false, non, non);
-            m_xlsDstWBook.SaveAs(sExcelFilename);
-            m_xlsDstWBook.Close(true, non, non);
-            m_ExcelApp.Quit();
+
+            try
+            {
+                m_xlsDstWBook.SaveAs(sExcelFilename);
+            }
+            catch (Exception ex)
+            {
+                return (false);
+            }
+            return (true);
         }
 
-        public void EndDstExcelSave()
+        public Boolean EndDstExcelSave()
         {
             Object non = Type.Missing;
-            m_xlsWBook.Close(false, non, non);
-            m_xlsDstWBook.Save();
-            m_xlsDstWBook.Close(true, non, non);
-            m_ExcelApp.Quit();
+
+            try
+            {
+                m_xlsDstWBook.Save();
+            }
+            catch (Exception ex)
+            {
+                return (false);
+            }
+            return (true);
         }
-         public void EndExcelApp()
+        public Boolean EndExcelApp()
         {
             Object non = Type.Missing;
-            m_xlsWBook.Close(true, non, non);
-            m_ExcelApp.Quit();
+
+            try
+            {
+                m_ExcelApp.Quit();
+            }
+            catch (Exception ex)
+            {
+                return (false);
+            }
+            return (true);
         }
         public string CnvNumToCellClum(int clum)
         {

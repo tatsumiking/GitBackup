@@ -29,10 +29,13 @@ namespace sden
         public LibCommon m_libCmn;
         public LibExcel m_libExcel;
         public String m_sExcelSavePath;
+        public String m_sCrctPath;
+        public int m_nWaitSecond;
 
         public MainWindow()
         {
             InitializeComponent();
+            m_nWaitSecond = 3;
             m_sExePath = InitExePath();
             m_sEnvPath = InitEnvPath();
             m_libCmn = new LibCommon();
@@ -44,36 +47,31 @@ namespace sden
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             String sDstXlsFile;
+            int idx, max;
 
             CreateExcelFile csCreateExcelFile = new CreateExcelFile();
             sDstXlsFile = csCreateExcelFile.SetWndClass(this);
             if (csCreateExcelFile.Create() == false)
             {
                 MessageBox.Show("Excelファイル作成に失敗しました。", "確認", MessageBoxButton.OK);
+                this.Close();
+                return;
             }
 
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(25);
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(25);
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(25);
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(25);
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(25);
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(25);
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(25);
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(25);
-            m_libCmn.DoDispatch();
+            if (System.IO.File.Exists(sDstXlsFile) == false)
+            {
+                this.Close();
+                return;
+            }
 
             Process.Start(sDstXlsFile);
 
-            m_libCmn.DoDispatch();
-            System.Threading.Thread.Sleep(100);
+            max = m_nWaitSecond;
+            for (idx = 0; idx < max; idx++)
+            {
+                m_libCmn.DoDispatch();
+                System.Threading.Thread.Sleep(1000);
+            }
 
             this.Close();
 
@@ -108,11 +106,22 @@ namespace sden
             string[] aryLine;
 
             m_sExcelSavePath = "c:\\sms";
+            m_sCrctPath = m_sExePath;
             envfile = m_sExePath + "\\sden.env";
             if (System.IO.File.Exists(envfile) == true)
             {
                 aryLine = m_libCmn.LoadFileLineSJIS(envfile);
                 m_sExcelSavePath = aryLine[1];
+                if (aryLine[2] != "")
+                {
+                    m_sCrctPath = aryLine[2];
+                }
+            }
+            envfile = m_sExePath + "\\sdenwait.txt";
+            if (System.IO.File.Exists(envfile) == true)
+            {
+                aryLine = m_libCmn.LoadFileLineSJIS(envfile);
+                m_nWaitSecond = m_libCmn.StrToInt(aryLine[1]);
             }
         }
     }
