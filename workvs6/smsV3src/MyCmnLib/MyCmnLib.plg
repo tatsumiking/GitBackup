@@ -1,0 +1,28 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: MyCmnLib - Win32 Debug--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+一時ﾌｧｲﾙ "C:\WINDOWS\TEMP\RSP31F1.BAT" を作成し、次の内容を記録します
+[
+@echo off
+Copy ..\bkmdblib\Debug\bkmdblib.dll Debug\bkmdblib.dll
+Copy ..\mycmnlib\Debug\mycmnlib.dll Debug\mycmnlib.dll
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "C:\WINDOWS\TEMP\RSP31F1.BAT" の作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｶｽﾀﾑ ﾋﾞﾙﾄﾞ ｽﾃｯﾌﾟを実行中 -  .\Debug\MyCmnLib.dll
+        1 個のファイルをコピーしました.
+そのファイル自体にコピーすることはできません.
+        0 個のファイルをコピーしました.
+
+
+
+<h3>結果</h3>
+MyCmnLib.dll - ｴﾗｰ 0、警告 0
+</pre>
+</body>
+</html>

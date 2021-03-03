@@ -1,0 +1,7 @@
+; Object.def : DLL 用のモジュール パラメータ宣言
+
+LIBRARY      "Object"
+DESCRIPTION  'Object Windows Dynamic Link Library'
+
+EXPORTS
+    ; 明示的なエクスポートはここへ記述できます

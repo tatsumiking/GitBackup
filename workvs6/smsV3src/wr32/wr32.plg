@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: wr32 - Win32 Debug--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+Creating command line "rc.exe /l 0x411 /fo"Debug/wr32.res" /d "_DEBUG" /d "_AFXDLL" "D:\work\smsV2src\wr32\wr32.rc"" 
+一時ﾌｧｲﾙ "C:\DOCUME~1\stan031\LOCALS~1\Temp\RSP39.tmp" を作成し、次の内容を記録します
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/wr32.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\work\smsV2src\wr32\wr32.cpp"
+"D:\work\smsV2src\wr32\wr32Dlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\stan031\LOCALS~1\Temp\RSP39.tmp" 
+一時ﾌｧｲﾙ "C:\DOCUME~1\stan031\LOCALS~1\Temp\RSP3A.tmp" を作成し、次の内容を記録します
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/wr32.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\work\smsV2src\wr32\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\stan031\LOCALS~1\Temp\RSP3A.tmp" 
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/wr32.pdb" /debug /machine:I386 /out:"Debug/wr32.exe" /pdbtype:sept  .\Debug\StdAfx.obj .\Debug\wr32.obj .\Debug\wr32Dlg.obj .\Debug\wr32.res " の作成中
+一時ﾌｧｲﾙ "C:\DOCUME~1\stan031\LOCALS~1\Temp\RSP3B.bat" を作成し、次の内容を記録します
+[
+@echo off
+copy ..\mycmnlib\Debug\mycmnlib.dll Debug\mycmnlib.dll
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "C:\DOCUME~1\stan031\LOCALS~1\Temp\RSP3B.bat" の作成中
+ﾘｿｰｽをｺﾝﾊﾟｲﾙ中...
+ｺﾝﾊﾟｲﾙ中...
+StdAfx.cpp
+ｺﾝﾊﾟｲﾙ中...
+wr32.cpp
+wr32Dlg.cpp
+D:\work\smsV2src\wr32\wr32Dlg.cpp(141) : warning C4101: 'pos' : ﾛｰｶﾙ変数は 1 度も使われません。
+D:\work\smsV2src\wr32\wr32Dlg.cpp(244) : warning C4553: '==' : 演算子にプログラム上の作用がありません。'=' を意図しましたか？
+D:\work\smsV2src\wr32\wr32Dlg.cpp(237) : warning C4101: 'fname' : ﾛｰｶﾙ変数は 1 度も使われません。
+D:\work\smsV2src\wr32\wr32Dlg.cpp(239) : warning C4101: 'buf' : ﾛｰｶﾙ変数は 1 度も使われません。
+D:\work\smsV2src\wr32\wr32Dlg.cpp(238) : warning C4101: 'fp' : ﾛｰｶﾙ変数は 1 度も使われません。
+ｺｰﾄﾞを生成中...
+ﾘﾝｸ中...
+   ﾗｲﾌﾞﾗﾘ Debug/wr32.lib とｵﾌﾞｼﾞｪｸﾄ Debug/wr32.exp を作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｶｽﾀﾑ ﾋﾞﾙﾄﾞ ｽﾃｯﾌﾟを実行中 -  .\Debug\wr32.exe
+指定されたファイルが見つかりません。
+c:\winnt\system32\cmd.exe の実行ｴﾗｰ
+
+
+
+<h3>結果</h3>
+wr32.exe - ｴﾗｰ 1、警告 5
+</pre>
+</body>
+</html>

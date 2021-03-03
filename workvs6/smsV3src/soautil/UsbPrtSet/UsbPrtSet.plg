@@ -1,0 +1,52 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: UsbPrtSet - Win32 Release--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+Creating command line "rc.exe /l 0x411 /fo"Release/UsbPrtSet.res" /d "NDEBUG" /d "_AFXDLL" "D:\work\workvs6\smsV3src\soautil\UsbPrtSet\UsbPrtSet.rc"" 
+一時ﾌｧｲﾙ "C:\Users\owner\AppData\Local\Temp\RSPE8C2.tmp" を作成し、次の内容を記録します
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/UsbPrtSet.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\work\workvs6\smsV3src\soautil\UsbPrtSet\DskInfo.cpp"
+"D:\work\workvs6\smsV3src\soautil\UsbPrtSet\UsbPrtSet.cpp"
+"D:\work\workvs6\smsV3src\soautil\UsbPrtSet\UsbPrtSetDlg.cpp"
+]
+Creating command line "cl.exe @C:\Users\owner\AppData\Local\Temp\RSPE8C2.tmp" 
+一時ﾌｧｲﾙ "C:\Users\owner\AppData\Local\Temp\RSPE8C3.tmp" を作成し、次の内容を記録します
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/UsbPrtSet.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\work\workvs6\smsV3src\soautil\UsbPrtSet\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\owner\AppData\Local\Temp\RSPE8C3.tmp" 
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe /nologo /subsystem:windows /incremental:no /pdb:"Release/UsbPrtSet.pdb" /machine:I386 /out:"Release/UsbPrtSet.exe"  .\Release\DskInfo.obj .\Release\StdAfx.obj .\Release\UsbPrtSet.obj .\Release\UsbPrtSetDlg.obj .\Release\UsbPrtSet.res " の作成中
+一時ﾌｧｲﾙ "C:\Users\owner\AppData\Local\Temp\RSPE8C4.bat" を作成し、次の内容を記録します
+[
+@echo off
+Copy ..\UsbPrt\Release\UsbPrt.dll Release\UsbPrt.dll
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "C:\Users\owner\AppData\Local\Temp\RSPE8C4.bat" の作成中
+ﾘｿｰｽをｺﾝﾊﾟｲﾙ中...
+ｺﾝﾊﾟｲﾙ中...
+StdAfx.cpp
+ｺﾝﾊﾟｲﾙ中...
+DskInfo.cpp
+UsbPrtSet.cpp
+UsbPrtSetDlg.cpp
+D:\work\workvs6\smsV3src\soautil\UsbPrtSet\UsbPrtSetDlg.cpp(287) : warning C4101: 'lpcsStr' : ﾛｰｶﾙ変数は 1 度も使われません。
+ｺｰﾄﾞを生成中...
+ﾘﾝｸ中...
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｶｽﾀﾑ ﾋﾞﾙﾄﾞ ｽﾃｯﾌﾟを実行中 -  .\Release\UsbPrtSet.exe
+指定されたパスが見つかりません。
+c:\windows\system32\cmd.exe の実行ｴﾗｰ
+
+
+
+<h3>結果</h3>
+UsbPrtSet.exe - ｴﾗｰ 1、警告 1
+</pre>
+</body>
+</html>

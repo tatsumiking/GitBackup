@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: prtct - Win32 Debug--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+一時ﾌｧｲﾙ "C:\DOCUME~1\stan01\LOCALS~1\Temp\RSP14C.tmp" を作成し、次の内容を記録します
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/prtct.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\work\workvs6\smsV3src\soautil\soafprtct\prtct.cpp"
+"D:\work\workvs6\smsV3src\soautil\soafprtct\prtctDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\stan01\LOCALS~1\Temp\RSP14C.tmp" 
+一時ﾌｧｲﾙ "C:\DOCUME~1\stan01\LOCALS~1\Temp\RSP14D.tmp" を作成し、次の内容を記録します
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/prtct.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\work\workvs6\smsV3src\soautil\soafprtct\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\stan01\LOCALS~1\Temp\RSP14D.tmp" 
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/prtct.pdb" /debug /machine:I386 /out:"Debug/prtct.exe" /pdbtype:sept  .\Debug\prtct.obj .\Debug\prtctDlg.obj .\Debug\StdAfx.obj .\Debug\prtct.res " の作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｺﾝﾊﾟｲﾙ中...
+StdAfx.cpp
+ｺﾝﾊﾟｲﾙ中...
+prtct.cpp
+prtctDlg.cpp
+D:\work\workvs6\smsV3src\soautil\soafprtct\prtctDlg.cpp(281) : warning C4101: 'ret' : ﾛｰｶﾙ変数は 1 度も使われません。
+ｺｰﾄﾞを生成中...
+ﾘﾝｸ中...
+
+
+
+<h3>結果</h3>
+prtct.exe - ｴﾗｰ 0、警告 1
+</pre>
+</body>
+</html>

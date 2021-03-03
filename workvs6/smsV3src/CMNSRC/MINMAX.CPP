@@ -1,0 +1,14 @@
+
+/////////////////////////////////////////////////////////////////////////////
+// CMinMax
+
+#include "stdafx.h"
+#include "math.h"
+
+extern "C" {
+}
+
+CMinMax::CMinMax()
+:CObject()
+{
+}

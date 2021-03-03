@@ -1,0 +1,38 @@
+.AUTODEPEND
+
+#		*Translator Definitions*
+#		*Implicit Rules*
+
+.c.fnc:
+	ffind $*.c $*.fnc
+
+objlib.dll : \
+baselib.fnc \
+curvelib.fnc \
+diza.fnc \
+epsflib.fnc \
+fdxflib.fnc \
+figuenv.fnc \
+fontlist.fnc \
+mathlib.fnc \
+mojienv.fnc \
+pdrwlib.fnc \
+plgnfill.fnc \
+plot.fnc \
+outlib.fnc \
+plotenv.fnc \
+pout.fnc \
+protect.fnc \
+scrnlib.fnc \
+senvlib.fnc \
+strcttrn.fnc \
+wakuenv.fnc \
+ptnenv.fnc \
+wincall.fnc \
+mdfylib.fnc \
+outlnlib.fnc \
+cmprlib.fnc \
+diblib.fnc \
+wkftbl.fnc
+	echo test
+

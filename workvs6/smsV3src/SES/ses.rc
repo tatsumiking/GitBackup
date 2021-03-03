@@ -1,0 +1,3628 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 17, 1\r\n"
+    "#pragma code_page(932)\r\n"
+    "#endif\r\n"
+    "#include ""res\\ses.rc2""  // Microsoft Visual C++ 以外のツールで編集されたリソース\r\n"
+    "#include ""l.jpn\\afxres.rc""          // 標準のコンポーネント\r\n"
+    "#include ""l.jpn\\afxprint.rc""        // 印刷/印刷プレビュー リソース\r\n"
+    "#include ""l.jpn\\afxolecl.rc""        // OLE コンテナ リソース\r\n"
+    "#include ""l.jpn\\afxolesv.rc""        // OLE サーバー リソース\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ses.ico"
+IDR_SESTYPE             ICON    DISCARDABLE     "res\\sesDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDR_SESTYPE_SRVR_IP     BITMAP  MOVEABLE PURE   "res\\IToolbar.bmp"
+IDR_CDRNTTOOLBAR        BITMAP  DISCARDABLE     "res\\cdrntool.bmp"
+IDR_OBJTOOLBAR1         BITMAP  DISCARDABLE     "res\\objtoolb.bmp"
+IDR_OBJTOOLBAR          BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDB_SIZESMALL3          BITMAP  DISCARDABLE     "res\\sizesml3.bmp"
+IDB_SIZESMALL2          BITMAP  DISCARDABLE     "res\\sizesml2.bmp"
+IDB_SIZESMALL1          BITMAP  DISCARDABLE     "res\\sizesml1.bmp"
+IDB_SIZEBIG3            BITMAP  DISCARDABLE     "res\\sizebig3.bmp"
+IDB_SIZEBIG2            BITMAP  DISCARDABLE     "res\\sizebig2.bmp"
+IDB_SIZEBIG1            BITMAP  DISCARDABLE     "res\\sizebig1.bmp"
+IDB_PREBTN              BITMAP  DISCARDABLE     "res\\prebtn.bmp"
+IDB_NONCLRBTN           BITMAP  DISCARDABLE     "res\\nonclrbtn.bmp"
+IDB_MOVEUP3             BITMAP  DISCARDABLE     "res\\moveup3.bmp"
+IDB_MOVEUP2             BITMAP  DISCARDABLE     "res\\moveup2.bmp"
+IDB_MOVEUP1             BITMAP  DISCARDABLE     "res\\moveup1.bmp"
+IDB_MOVERIGHT3          BITMAP  DISCARDABLE     "res\\movetgh3.bmp"
+IDB_MOVERIGHT2          BITMAP  DISCARDABLE     "res\\movetgh2.bmp"
+IDB_MOVERIGHT1          BITMAP  DISCARDABLE     "res\\movetgh1.bmp"
+IDB_MOVELEFT3           BITMAP  DISCARDABLE     "res\\movelft3.bmp"
+IDB_MOVELEFT2           BITMAP  DISCARDABLE     "res\\movelft2.bmp"
+IDB_MOVELEFT1           BITMAP  DISCARDABLE     "res\\movelft1.bmp"
+IDB_MOVEDOWN3           BITMAP  DISCARDABLE     "res\\movedwn3.bmp"
+IDB_MOVEDOWN2           BITMAP  DISCARDABLE     "res\\movedwn2.bmp"
+IDB_MOVEDOWN1           BITMAP  DISCARDABLE     "res\\movedwn1.bmp"
+IDB_GRABTN              BITMAP  DISCARDABLE     "res\\grabtn.bmp"
+IDR_LINETOOLBAR         BITMAP  DISCARDABLE     "RES\\LINETOOL.BMP"
+IDR_POINTTOOLBAR        BITMAP  DISCARDABLE     "RES\\POINTTOO.BMP"
+IDB_ORIGHTUP            BITMAP  DISCARDABLE     "res\\orightup.bmp"
+IDB_OLEFTDOWN           BITMAP  DISCARDABLE     "res\\oleftdow.bmp"
+IDB_OLEFTUP             BITMAP  DISCARDABLE     "res\\oleftup.bmp"
+IDB_ORIGHTDOWN          BITMAP  DISCARDABLE     "res\\orightdo.bmp"
+IDB_SIZEUDSMALL3        BITMAP  DISCARDABLE     "res\\sizeuds3.bmp"
+IDB_SIZEUDSMALL2        BITMAP  DISCARDABLE     "res\\sizeuds2.bmp"
+IDB_SIZEUDSMALL1        BITMAP  DISCARDABLE     "res\\sizeuds1.bmp"
+IDB_SIZEUDBIG3          BITMAP  DISCARDABLE     "res\\sizeudb3.bmp"
+IDB_SIZEUDBIG2          BITMAP  DISCARDABLE     "res\\sizeudb2.bmp"
+IDB_SIZEUDBIG1          BITMAP  DISCARDABLE     "res\\sizeudb1.bmp"
+IDB_SIZERLSMALL3        BITMAP  DISCARDABLE     "res\\sizerls3.bmp"
+IDB_SIZERLSMALL2        BITMAP  DISCARDABLE     "res\\sizerls2.bmp"
+IDB_SIZERLSMALL1        BITMAP  DISCARDABLE     "res\\sizerls1.bmp"
+IDB_SIZERLBIG3          BITMAP  DISCARDABLE     "res\\sizerlb3.bmp"
+IDB_SIZERLBIG2          BITMAP  DISCARDABLE     "res\\sizerlb2.bmp"
+IDB_SIZERLBIG1          BITMAP  DISCARDABLE     "res\\sizerlb1.bmp"
+IDB_NEXTBTN             BITMAP  DISCARDABLE     "res\\nextbtn.bmp"
+IDR_LEFTSIDE            BITMAP  DISCARDABLE     "res\\leftside.bmp"
+IDB_STRGYOKO            BITMAP  DISCARDABLE     "res\\strgyoko.bmp"
+IDB_STRGTATE            BITMAP  DISCARDABLE     "res\\strgtate.bmp"
+IDB_CONERCT             BITMAP  DISCARDABLE     "res\\conerct.bmp"
+IDB_CONERLB             BITMAP  DISCARDABLE     "res\\conerlb.bmp"
+IDB_CONERLT             BITMAP  DISCARDABLE     "res\\conerlt.bmp"
+IDB_CONERRB             BITMAP  DISCARDABLE     "res\\conerrb.bmp"
+IDB_CONERRT             BITMAP  DISCARDABLE     "res\\conerrt.bmp"
+IDB_STARTCT             BITMAP  DISCARDABLE     "res\\startct.bmp"
+IDB_STARTLB             BITMAP  DISCARDABLE     "res\\startlb.bmp"
+IDB_STARTLT             BITMAP  DISCARDABLE     "res\\startlt.bmp"
+IDB_STARTRB             BITMAP  DISCARDABLE     "res\\startrb.bmp"
+IDB_STARTRT             BITMAP  DISCARDABLE     "res\\startrt.bmp"
+IDB_STRGTYNON           BITMAP  DISCARDABLE     "res\\strgtyno.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_SESTYPE_SRVR_IP TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_CDRNTTOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_SORT_HEAD
+    BUTTON      ID_SORT_TAIL
+    BUTTON      ID_SORT_PREV
+    BUTTON      ID_SORT_NEXT
+    BUTTON      ID_GRUP_SET
+    BUTTON      ID_GRUP_RESET
+    BUTTON      ID_LIST_SET
+    BUTTON      ID_LIST_RESET
+END
+
+IDR_OBJTOOLBAR1 TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_MAIN_SLCT
+    BUTTON      ID_MAIN_ZOOM
+    SEPARATOR
+    BUTTON      ID_OBJ_FIGU
+    BUTTON      ID_STRG_INPUT
+    BUTTON      ID_OBJ_WAKU
+    BUTTON      ID_OBJ_BMP
+    BUTTON      ID_OBJ_RULE
+    BUTTON      ID_OBJ_MSUR
+    SEPARATOR
+    BUTTON      ID_SIZE_FREE
+    SEPARATOR
+    BUTTON      ID_POINT_MOVE
+    BUTTON      ID_LINE_MOVE
+    BUTTON      ID_CLR_GRADATION
+END
+
+IDR_OBJTOOLBAR TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_MAIN_SLCT
+    BUTTON      ID_MAIN_ZOOM
+    SEPARATOR
+    BUTTON      ID_OBJ_FIGU
+    BUTTON      ID_STRG_INPUT
+    BUTTON      ID_OBJ_WAKU
+    BUTTON      ID_OBJ_BMP
+    BUTTON      ID_OBJ_RULE
+    SEPARATOR
+    BUTTON      ID_EDIT_MOVE
+    SEPARATOR
+    BUTTON      ID_POINT_MOVE
+    BUTTON      ID_LINE_MOVE
+    BUTTON      ID_CLR_GRADATION
+END
+
+IDR_LINETOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_LINE_MOVE
+    BUTTON      ID_LINE_DEL
+    BUTTON      ID_LINE_CURVEING
+    BUTTON      ID_LINE_LINEING
+    BUTTON      ID_LINE_BEZE
+    BUTTON      ID_LINE_ARC
+    BUTTON      ID_LINE_CRCL
+    BUTTON      ID_LINE_HALFARC
+    BUTTON      ID_LINE_CUT
+    BUTTON      ID_LINE_JOIN
+    BUTTON      ID_LINE_CUTJOIN
+    BUTTON      ID_LINE_CONERARC
+    BUTTON      ID_LINE_CONERSET
+END
+
+IDR_POINTTOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_POINT_MOVE
+    BUTTON      ID_POINT_DEL
+    BUTTON      ID_POINT_ADD
+    BUTTON      ID_POINT_CHNGATR
+    BUTTON      ID_POINT_XLEGAL
+    BUTTON      ID_POINT_YLEGAL
+    BUTTON      ID_POINT_PICUP
+    BUTTON      ID_POINT_ANYMOVE
+    BUTTON      ID_POINT_ANYDEL
+    BUTTON      ID_POINT_2POINT
+END
+
+IDR_LEFTSIDE TOOLBAR DISCARDABLE  17, 17
+BEGIN
+    BUTTON      ID_CRDNT_TOP
+    BUTTON      ID_CRDNT_VCENTER
+    BUTTON      ID_CRDNT_BOTTOM
+    SEPARATOR
+    BUTTON      ID_CRDNT_LEFT
+    BUTTON      ID_CRDNT_HCENTER
+    BUTTON      ID_CRDNT_RIGHT
+    SEPARATOR
+    BUTTON      ID_MOVE_HCENTER
+    BUTTON      ID_MOVE_VCENTER
+    BUTTON      ID_MOVE_HVCENTER
+    SEPARATOR
+    BUTTON      ID_SIZE_HSAME
+    BUTTON      ID_SIZE_VSAME
+    BUTTON      ID_SIZE_HVSAME
+    SEPARATOR
+    BUTTON      ID_SPACE_HEQUAL
+    BUTTON      ID_SPACE_VEQUAL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "ﾌｧｲﾙ(&F)"
+    BEGIN
+        MENUITEM "新規作成(&N)\tCtrl+N",        ID_FILE_NEW
+        MENUITEM "開く(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "ﾌﾟﾘﾝﾀの設定(&R)...",          ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "最新のﾌｧｲﾙ",                  ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "ｱﾌﾟﾘｹｰｼｮﾝの終了(&X)",         ID_APP_EXIT
+    END
+    POPUP "表示(&V)"
+    BEGIN
+        MENUITEM "ﾂｰﾙ ﾊﾞｰ(&T)",                 ID_VIEW_TOOLBAR
+        MENUITEM "ｽﾃｰﾀｽ ﾊﾞｰ(&S)",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "ﾍﾙﾌﾟ(&H)"
+    BEGIN
+        MENUITEM "ﾊﾞｰｼﾞｮﾝ情報(ses)(&A)...",     ID_APP_ABOUT
+        MENUITEM "ユーザーキー設定",            ID_PROTECT_KEYSET
+    END
+END
+
+IDR_SESTYPE_CNTR_IP MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "ﾌｧｲﾙ(&F)"
+    BEGIN
+        MENUITEM "新規作成(&N)\tCtrl+N",        ID_FILE_NEW
+        MENUITEM "開く(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "閉じる(&C)",                  ID_FILE_CLOSE
+        MENUITEM "上書き保存(&S)\tCtrl+S",      ID_FILE_SAVE
+        MENUITEM "名前を付けて保存(&A)...",     ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "印刷(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "印刷ﾌﾟﾚﾋﾞｭｰ(&V)",             ID_FILE_PRINT_PREVIEW
+        MENUITEM "ﾌﾟﾘﾝﾀの設定(&R)...",          ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "最新のﾌｧｲﾙ",                  ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "OLEの終了(&X)",               ID_FILE_OLE_EXIT
+    END
+    MENUITEM SEPARATOR
+    MENUITEM SEPARATOR
+    POPUP "ｳｨﾝﾄﾞｳ(&W)"
+    BEGIN
+        MENUITEM "新しいｳｨﾝﾄﾞｳを開く(&N)",      ID_WINDOW_NEW
+        MENUITEM "重ねて表示(&C)",              ID_WINDOW_CASCADE
+        MENUITEM "並べて表示(&T)",              ID_WINDOW_TILE_HORZ
+        MENUITEM "ｱｲｺﾝの整列(&A)",              ID_WINDOW_ARRANGE
+    END
+END
+
+IDR_SESTYPE_SRVR_EMB MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "ﾌｧｲﾙ(&F)"
+    BEGIN
+        MENUITEM "新規作成(&N)\tCtrl+N",        ID_FILE_NEW
+        MENUITEM "開く(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "閉じる(&C)",                  ID_FILE_CLOSE
+        MENUITEM "更新(&U)\tCtrl+S",            ID_FILE_UPDATE
+        MENUITEM "ｺﾋﾟｰに名前を付けて保存(&A)...", ID_FILE_SAVE_COPY_AS
+        MENUITEM SEPARATOR
+        MENUITEM "印刷(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "印刷ﾌﾟﾚﾋﾞｭｰ(&V)",             ID_FILE_PRINT_PREVIEW
+        MENUITEM "ﾌﾟﾘﾝﾀの設定(&R)...",          ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "最新のﾌｧｲﾙ",                  ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "ｱﾌﾟﾘｹｰｼｮﾝの終了(&X)",         ID_APP_EXIT
+    END
+    POPUP "編集(&E)"
+    BEGIN
+        MENUITEM "元に戻す(&U)\tCtrl+Z",        ID_EDIT_UNDO
+        MENUITEM "やり直し(&R)",                ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "切り取り(&T)\tCtrl+X",        ID_EDIT_CUT
+        MENUITEM "ｺﾋﾟｰ(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",        ID_EDIT_PASTE
+        MENUITEM "形式を選択して貼り付け(&S)...", ID_EDIT_PASTE_SPECIAL
+        MENUITEM SEPARATOR
+        MENUITEM "ｵﾌﾞｼﾞｪｸﾄの作成と貼り付け(&N)...", ID_OLE_INSERT_NEW
+        MENUITEM "ﾘﾝｸの設定(&K)...",            ID_OLE_EDIT_LINKS
+        MENUITEM "<<OLE VERBS はここに表示されます>>", ID_OLE_VERB_FIRST
+    END
+    POPUP "表示(&V)"
+    BEGIN
+        MENUITEM "ﾂｰﾙ ﾊﾞｰ(&T)",                 ID_VIEW_TOOLBAR
+        MENUITEM "ｽﾃｰﾀｽ ﾊﾞｰ(&S)",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "ｳｨﾝﾄﾞｳ(&W)"
+    BEGIN
+        MENUITEM "新しいｳｨﾝﾄﾞｳを開く(&N)",      ID_WINDOW_NEW
+        MENUITEM "重ねて表示(&C)",              ID_WINDOW_CASCADE
+        MENUITEM "並べて表示(&T)",              ID_WINDOW_TILE_HORZ
+        MENUITEM "ｱｲｺﾝの整列(&A)",              ID_WINDOW_ARRANGE
+    END
+    POPUP "ﾍﾙﾌﾟ(&H)"
+    BEGIN
+        MENUITEM "ﾊﾞｰｼﾞｮﾝ情報(ses) (&A)...",    ID_APP_ABOUT
+    END
+END
+
+IDR_SESTYPE_SRVR_IP MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "編集(&E)"
+    BEGIN
+        MENUITEM "元に戻す(&U)\tCtrl+Z",        ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "切り取り(&T)\tCtrl+X",        ID_EDIT_CUT
+        MENUITEM "ｺﾋﾟｰ(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",        ID_EDIT_PASTE
+        MENUITEM "形式を選択して貼り付け(&S)...", ID_EDIT_PASTE_SPECIAL
+        MENUITEM SEPARATOR
+        MENUITEM "ｵﾌﾞｼﾞｪｸﾄの作成と貼り付け(&N)...", ID_OLE_INSERT_NEW
+        MENUITEM "ﾘﾝｸの設定(&K)...",            ID_OLE_EDIT_LINKS
+        MENUITEM "<<OLE VERBS はここに表示されます>>", ID_OLE_VERB_FIRST
+    END
+    POPUP "表示(&V)"
+    BEGIN
+        MENUITEM "ﾂｰﾙ ﾊﾞｰ(&T)",                 ID_VIEW_TOOLBAR
+    END
+    MENUITEM SEPARATOR
+    MENUITEM SEPARATOR
+    POPUP "ﾍﾙﾌﾟ(&H)"
+    BEGIN
+        MENUITEM "ﾊﾞｰｼﾞｮﾝ情報(ses) (&A)...",    ID_APP_ABOUT
+    END
+END
+
+IDR_ASSIST MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "ﾌｧｲﾙ(&F)"
+    BEGIN
+        MENUITEM "新規作成(&N)\tCtrl+N",        ID_FILE_NEW
+        MENUITEM "開く(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "追加読込",                    ID_FILE_ADDLOAD
+        MENUITEM "閉じる(&C)",                  ID_FILE_CLOSE
+        MENUITEM "上書き保存(&S)\tCtrl+S",      ID_FILE_SAVE
+        MENUITEM "名前を付けて保存(&A)...",     ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "BMP携帯印刷ファイル送信",     ID_FILE_MPRNSEND
+        MENUITEM "PRN携帯印刷ファイル送信",     ID_FILE_PRNSEND
+        MENUITEM "EPS携帯印刷ファイル送信",     ID_FILE_EPSSEND
+        POPUP "スキャナー"
+        BEGIN
+            MENUITEM "ＴＷＡＩＮ選択",              ID_SCAN_SLCT
+            MENUITEM "TWAIN入力",                   ID_SCAN_INPUT
+        END
+        MENUITEM SEPARATOR
+        POPUP "設定(&O)"
+        BEGIN
+            POPUP "色設定(&C)"
+            BEGIN
+                MENUITEM "線色設定",                    ID_CLR_LINE
+                MENUITEM "塗潰色設定",                  ID_CLR_SOLID
+            END
+            MENUITEM "カラーシート設定",            ID_CLR_SEET_SET
+            MENUITEM "支点設定",                    ID_ATR_CONER_KIND
+            MENUITEM "グリッド設定",                ID_SUB_GRID
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "最新のﾌｧｲﾙ",                  ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+    END
+    POPUP "編集(&E)"
+    BEGIN
+        MENUITEM "切り取り(&T)\tCtrl+X",        ID_EDIT_CUT
+        MENUITEM "ｺﾋﾟｰ(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",        ID_EDIT_PASTE
+        MENUITEM "形式を選択して貼り付け(&S)...", ID_EDIT_PASTE_SPECIAL
+        MENUITEM SEPARATOR
+        MENUITEM "ｵﾌﾞｼﾞｪｸﾄの作成と貼り付け(&N)...", ID_OLE_INSERT_NEW
+        MENUITEM "ﾘﾝｸの設定(&K)...",            ID_OLE_EDIT_LINKS
+        MENUITEM "<<OLE VERBS はここに表示されます>>", ID_OLE_VERB_FIRST
+    END
+    POPUP "枠(&B)"
+    BEGIN
+        MENUITEM "用紙設定",                    ID_WAKU_PAPER
+    END
+    POPUP "文字"
+    BEGIN
+        MENUITEM "文字列入力",                  ID_STRG_INPUT
+        POPUP "文字列編集"
+        BEGIN
+            MENUITEM "文字列修正",                  ID_STRG_EDIT
+            MENUITEM "文字列回転",                  ID_STRG_ROUND
+            MENUITEM "文字列斜形",                  ID_STRG_SLOP
+            MENUITEM "文字列揃え",                  ID_STRG_ORDER
+            MENUITEM "四角埋込",                    ID_STRG_BOXSIN
+            MENUITEM "線上配置",                    ID_SPCL_STRGSTRCT
+        END
+        POPUP "文字編集"
+        BEGIN
+            MENUITEM "文字移動",                    ID_MOJI_MOVE
+            MENUITEM "文字サイズ",                  ID_MOJI_SIZE
+            MENUITEM "文字回転",                    ID_MOJI_ROUND
+        END
+        MENUITEM "文字間調整",                  ID_MOJI_SPACE
+        MENUITEM "文字挿入",                    ID_MOJI_INSEART
+        MENUITEM "文字削除",                    ID_MOJI_DEL
+        MENUITEM "図形に変換",                  ID_MOJI_PLGNING
+        MENUITEM "連続入力",                    ID_TTTEXTINPUT
+    END
+    POPUP "部品(&B)"
+    BEGIN
+        POPUP "図形(&F)"
+        BEGIN
+            MENUITEM "点",                          ID_FIGU_POINT
+            MENUITEM "直線",                        ID_FIGU_LINE
+            MENUITEM "自由線",                      ID_FIGU_FREE
+        END
+        MENUITEM "罫線(&R)",                    ID_OBJ_RULE
+        MENUITEM "寸法線(&M)",                  ID_OBJ_MSUR
+    END
+    POPUP "加工(&T)"
+    BEGIN
+        MENUITEM "線抽出",                      ID_TOOL_TRACE
+        POPUP "変形"
+        BEGIN
+            POPUP "サイズ変形"
+            BEGIN
+                MENUITEM "寸法変形",                    ID_SIZE_XY
+                MENUITEM "横ミリ変形",                  ID_SIZE_X
+                MENUITEM "縦ミリ変形",                  ID_SIZE_Y
+                MENUITEM "倍率変形",                    ID_SIZE_TIME
+                MENUITEM "任意変形",                    ID_SIZE_FREE
+                MENUITEM "２点変形",                    ID_SIZE_2POINT
+            END
+            POPUP "回転"
+            BEGIN
+                MENUITEM "角度回転",                    ID_ROUND_RAG
+                MENUITEM "任意回転",                    ID_ROUND_FREE
+                MENUITEM "２点回転",                    ID_ROUND_2POINT
+            END
+            POPUP "斜形"
+            BEGIN
+                MENUITEM "角度斜形",                    ID_SLOP_RAG
+                MENUITEM "任意斜形",                    ID_SLOP_FREE
+            END
+            POPUP "鏡"
+            BEGIN
+                MENUITEM "鏡",                          ID_MIRROR_CNTR
+                MENUITEM "任意鏡",                      ID_MIRROR_FREE
+            END
+        END
+        POPUP "点操作"
+        BEGIN
+            MENUITEM "点移動",                      ID_POINT_MOVE
+            MENUITEM "点削除",                      ID_POINT_DEL
+            MENUITEM "点追加",                      ID_POINT_ADD
+            MENUITEM "(不)連続",                    ID_POINT_CHNGATR
+            MENUITEM "横揃え",                      ID_POINT_XLEGAL
+            MENUITEM "縦揃え",                      ID_POINT_YLEGAL
+            MENUITEM "斜め揃え",                    ID_POINT_SLOPLEGAL
+            MENUITEM "点拾出",                      ID_POINT_PICUP
+            MENUITEM "複移動",                      ID_POINT_ANYMOVE
+            MENUITEM "複削除",                      ID_POINT_ANYDEL
+            MENUITEM "２点調整",                    ID_POINT_2POINT
+            MENUITEM "線分割",                      ID_POINT_DIV
+        END
+        POPUP "線操作"
+        BEGIN
+            MENUITEM "線移動",                      ID_LINE_MOVE
+            MENUITEM "線削除",                      ID_LINE_DEL
+            MENUITEM "曲線化",                      ID_LINE_CURVEING
+            MENUITEM "直線化",                      ID_LINE_LINEING
+            MENUITEM "BEＺＥ化",                    ID_LINE_BEZE
+            MENUITEM "円弧化",                      ID_LINE_ARC
+            MENUITEM "真円化",                      ID_LINE_CRCL
+            MENUITEM "半円化",                      ID_LINE_HALFARC
+            MENUITEM "線切断",                      ID_LINE_CUT
+            MENUITEM "線接続",                      ID_LINE_JOIN
+            MENUITEM "切断接続",                    ID_LINE_CUTJOIN
+            MENUITEM "角Ｒ付け",                    ID_LINE_CONERARC
+            MENUITEM "角付け",                      ID_LINE_CONERSET
+            MENUITEM "平行線",                      ID_SPCL_PARALLEL
+            MENUITEM "垂直線",                      ID_SPCL_PREPEND
+        END
+        POPUP "特殊加工"
+        BEGIN
+            MENUITEM "影付け",                      ID_SPCL_SHADOW
+            MENUITEM "ふちどり",                    ID_SPCL_OUTLINE
+            MENUITEM "BMP化",                       ID_SPCL_BITMAPING
+            MENUITEM "グラデーション",              ID_CLR_GRADATION
+        END
+    END
+    POPUP "調整(C)"
+    BEGIN
+        MENUITEM "整列(&A)",                    ID_CRDNT_SORT
+        MENUITEM SEPARATOR
+        POPUP "結合(&C)"
+        BEGIN
+            MENUITEM "重なり",                      ID_JOIN_AND
+            MENUITEM "接合",                        ID_JOIN_OR
+            MENUITEM "抜き取り",                    ID_JOIN_NOT
+        END
+        POPUP "順位(&O)"
+        BEGIN
+            MENUITEM "いちばん上に移動",            ID_SORT_HEAD
+            MENUITEM "いちばん下に移動",            ID_SORT_TAIL
+            MENUITEM "ひとつ上に移動",              ID_SORT_PREV
+            MENUITEM "ひとつ下に移動",              ID_SORT_NEXT
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "グループ化",                  ID_GRUP_SET
+        MENUITEM "グループ解除",                ID_GRUP_RESET
+    END
+    POPUP "表示(&V)"
+    BEGIN
+        MENUITEM "塗りつぶし(&P)",              ID_VIEW_PREVIEW
+        MENUITEM "画像表示",                    ID_VIEW_BMP
+        MENUITEM "ﾛｺﾞｲﾒｰｼﾞ(&I)",                ID_VIEW_IMAGE
+        MENUITEM SEPARATOR
+        MENUITEM "グリッド",                    ID_VIEW_GRID
+        MENUITEM SEPARATOR
+        MENUITEM "ﾂｰﾙ ﾊﾞｰ(&T)",                 ID_VIEW_TOOLBAR, CHECKED
+        MENUITEM "ｽﾃｰﾀｽ ﾊﾞｰ(&S)",               ID_VIEW_STATUS_BAR, CHECKED
+        MENUITEM "枠設定１バー",                ID_VIEW_WAKUBAR1
+        MENUITEM "枠設定２バー",                ID_VIEW_WAKUBAR2
+        MENUITEM "枠設定３バー",                ID_VIEW_WAKUBAR3
+        MENUITEM "枠設定サイドバー",            ID_VIEW_WAKUSIDE
+        MENUITEM "整列サイドバー",              ID_VIEW_LEFTSIDEBAR
+        MENUITEM "カラーパレット",              ID_VIEW_CLRTOOLBAR
+        MENUITEM SEPARATOR
+        MENUITEM "全体表示(&V)",                ID_ZOOM_ALL
+        MENUITEM "拡大表示(&I)",                ID_ZOOM_IN
+        MENUITEM "縮小表示(&O)",                ID_ZOOM_OUT
+        MENUITEM "再表示(&R)\tF3",              ID_VIEW_REDISP
+    END
+    POPUP "外部"
+    BEGIN
+        MENUITEM "ＥＳＰ出力",                  ID_FILE_EPSOUT
+        MENUITEM "画像保存（自動）",            ID_BMP_SAVE
+    END
+    POPUP "ｳｨﾝﾄﾞｳ(&W)"
+    BEGIN
+        MENUITEM "新しいｳｨﾝﾄﾞｳを開く(&N)",      ID_WINDOW_NEW
+        MENUITEM "重ねて表示(&C)",              ID_WINDOW_CASCADE
+        MENUITEM "並べて表示(&T)",              ID_WINDOW_TILE_HORZ
+        MENUITEM "ｱｲｺﾝの整列(&A)",              ID_WINDOW_ARRANGE
+    END
+    POPUP "MAIN"
+    BEGIN
+        MENUITEM "ID_MAIN_FILE",                ID_MAIN_FILE
+        MENUITEM "ID_MAIN_SLCT",                ID_MAIN_SLCT
+        MENUITEM "ID_MAIN_EDIT",                ID_MAIN_EDIT
+        MENUITEM "ID_MAIN_ZOOM",                ID_MAIN_ZOOM
+        MENUITEM "ID_MAIN_TOOL",                ID_MAIN_TOOL
+        MENUITEM "ID_OBJ_STRG",                 ID_OBJ_STRG
+        MENUITEM "ID_OBJ_WAKU",                 ID_OBJ_WAKU
+        MENUITEM "ID_OBJ_KAMON",                ID_OBJ_KAMON
+        MENUITEM "ID_OBJ_FIGU",                 ID_OBJ_FIGU
+        MENUITEM "ID_OBJ_RULE",                 ID_OBJ_RULE
+        MENUITEM "ID_OBJ_BMP",                  ID_OBJ_BMP
+        MENUITEM "ID_OBJ_MSUR",                 ID_OBJ_MSUR
+        MENUITEM "ID_TOOL_TRACE",               ID_TOOL_TRACE
+        MENUITEM "ID_TOOL_POINT",               ID_TOOL_POINT
+        MENUITEM "ID_TOOL_LINE",                ID_TOOL_LINE
+        MENUITEM "ID_TOOL_SPCL",                ID_TOOL_SPCL
+        MENUITEM "ID_MAIN_CRDNT",               ID_MAIN_CRDNT
+        MENUITEM "ID_MAIN_ATR",                 ID_MAIN_ATR
+        MENUITEM "ID_MAIN_SUB",                 ID_MAIN_SUB
+        MENUITEM "ID_MAIN_MENTE",               ID_MAIN_MENTE
+        MENUITEM "ID_ATR_CLR",                  ID_ATR_CLR
+        MENUITEM "ID_MAIN_DBEDT",               ID_MAIN_DBEDT
+    END
+    POPUP "sub"
+    BEGIN
+        MENUITEM "ID_MAIN_SUB",                 ID_MAIN_SUB
+        MENUITEM "ID_POINT_LEGAL",              ID_POINT_LEGAL
+        MENUITEM "ID_FILE_ADDSAVE",             ID_FILE_ADDSAVE
+        MENUITEM "ID_FILE_CLRPRINT",            ID_FILE_CLRPRINT
+        MENUITEM "ID_SPCL_OMITOUTLINE",         ID_SPCL_OMITOUTLINE
+        MENUITEM "ID_BMP_ROUND",                ID_BMP_ROUND
+        MENUITEM "ID_FILE_DOTEDIT",             ID_FILE_DOTEDIT
+        MENUITEM "ID_SUB_WAKUDEL",              ID_SUB_WAKUDEL
+        MENUITEM "ID_WAKU_CNTRKIND",            ID_WAKU_CNTRKIND
+        MENUITEM "ID_VIEW_EDITTOOLBAR",         ID_VIEW_EDITTOOLBAR
+        MENUITEM "ID_VIEW_CLRBAR",              ID_VIEW_CLRBAR
+        MENUITEM "ID_VIEW_WAKUBAR2",            ID_VIEW_WAKUBAR2
+        MENUITEM "ID_VIEW_WAKUBAR1",            ID_VIEW_WAKUBAR1
+        MENUITEM "ID_BMP_SLCTDEL",              ID_BMP_SLCTDEL
+        MENUITEM "ID_BMP_ALLDEL",               ID_BMP_ALLDEL
+    END
+    POPUP "DBar用"
+    BEGIN
+        MENUITEM "ID_WAKU_TATEYOKO",            ID_WAKU_TATEYOKO
+        MENUITEM "ID_WAKU_STARTKIND",           ID_WAKU_STARTKIND
+        MENUITEM "ID_WAKU_CONERKIND",           ID_WAKU_CONERKIND
+        MENUITEM "ID_FILE_SLCTPRINT",           ID_FILE_SLCTPRINT
+        MENUITEM "ID_FILE_CENTERKIND",          ID_FILE_CENTERKIND
+        MENUITEM "ID_FILE_SAVEPAPER",           ID_FILE_SAVEPAPER
+        MENUITEM "ID_FILE_SETSPACE",            ID_FILE_SETSPACE
+        MENUITEM "ID_WAKU_APPLY",               ID_WAKU_APPLY
+    END
+    POPUP "LEFTSIDEBAR"
+    BEGIN
+        MENUITEM "ID_CRDNT_TOP",                ID_CRDNT_TOP
+        MENUITEM "ID_CRDNT_VCENTER",            ID_CRDNT_VCENTER
+        MENUITEM "ID_CRDNT_BOTTOM",             ID_CRDNT_BOTTOM
+        MENUITEM "ID_CRDNT_LEFT",               ID_CRDNT_LEFT
+        MENUITEM "ID_CRDNT_HCENTER",            ID_CRDNT_HCENTER
+        MENUITEM "ID_CRDNT_RIGHT",              ID_CRDNT_RIGHT
+        MENUITEM "ID_MOVE_HCENTER",             ID_MOVE_HCENTER
+        MENUITEM "ID_MOVE_VCENTER",             ID_MOVE_VCENTER
+        MENUITEM "ID_MOVE_HVCENTER",            ID_MOVE_HVCENTER
+        MENUITEM "ID_SIZE_HSAME",               ID_SIZE_HSAME
+        MENUITEM "ID_SIZE_VSAME",               ID_SIZE_VSAME
+        MENUITEM "ID_SIZE_HVSAME",              ID_SIZE_HVSAME
+        MENUITEM "ID_SPACE_HEQUAL",             ID_SPACE_HEQUAL
+        MENUITEM "ID_SPACE_VEQUAL",             ID_SPACE_VEQUAL
+    END
+END
+
+IDR_SESTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "ﾌｧｲﾙ(&F)"
+    BEGIN
+        MENUITEM "データ読込",                  ID_FILE_ADDENVLOAD
+        MENUITEM "データ保存",                  ID_FILE_ADDSAVE
+        MENUITEM "追加読込",                    ID_FILE_ADDLOAD
+        MENUITEM SEPARATOR
+        MENUITEM "入力データ呼出",              ID_FILE_CRCTLOAD
+        MENUITEM "入力データ保存",              ID_FILE_CRCTSAVE
+        MENUITEM "入力データ削除",              ID_FILE_CRCTDEL
+        MENUITEM SEPARATOR
+        MENUITEM "外部読込（ｲﾝﾎﾟｰﾄ）(&I)",      ID_TOOL_INPORT
+        MENUITEM "外部書込（ｴｸｽﾎﾟｰﾄ）(&E)",     ID_TOOL_EXPORT
+        MENUITEM "携帯印刷メイル送信",          ID_FILE_MPRNSEND
+        MENUITEM "携帯印刷FTP転送(ブラザー)",   ID_FILE_MLTPRNFTP
+        MENUITEM "携帯印刷FTP転送(エプソン)",   ID_FILE_EMLTPRNFTP
+        MENUITEM SEPARATOR
+        MENUITEM "スキャナ選択",                ID_SCAN_SLCT
+        MENUITEM "スキャナ入力",                ID_SCAN_INPUT
+        MENUITEM SEPARATOR
+        MENUITEM "出力（ﾌﾟﾛｯﾀｰ）(&D)",          ID_FILE_PLOTER
+        MENUITEM "印刷（ﾌﾟﾘﾝﾀｰ）(&P)...\tCtrl+P", ID_FILE_PRINT
+        MENUITEM "印刷ﾌﾟﾚﾋﾞｭｰ(&V)",             ID_FILE_PRINT_PREVIEW
+        MENUITEM "ﾌﾟﾘﾝﾀの設定(&R)...",          ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "環境設定(&W)",                ID_FILE_ENVSET
+        MENUITEM SEPARATOR
+        MENUITEM "データベース接続",            ID_DBEDT_LOAD
+        MENUITEM "データベース切断",            ID_DBEDT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "データ削除",                  ID_FILE_ADDDEL
+        MENUITEM "入力データ削除",              ID_FILE_CRCTDEL
+        MENUITEM SEPARATOR
+        MENUITEM "終了(&X)",                    ID_APP_EXIT
+    END
+    POPUP "枠(&B)"
+    BEGIN
+        MENUITEM "枠グループ",                  ID_WAKU_GRUP
+        MENUITEM SEPARATOR
+        MENUITEM "枠作成(&C)",                  ID_WAKU_CREATE
+        MENUITEM "枠呼出(&L)",                  ID_WAKU_LOAD
+        MENUITEM "枠保存(&S)",                  ID_WAKU_SAVE
+        MENUITEM "枠入力(&I)",                  ID_WAKU_INPUT
+        MENUITEM SEPARATOR
+        MENUITEM "枠入力順変更",                ID_WAKU_INSORT
+        MENUITEM "枠順変更",                    ID_WAKU_SORT
+        MENUITEM "一括変換",                    ID_WAKU_CHANGE
+        MENUITEM SEPARATOR
+        MENUITEM "枠文字修正",                  ID_MOJI_FITING
+        MENUITEM "文字書体変更",                ID_MOJI_FONTCHANGE
+        MENUITEM SEPARATOR
+        MENUITEM "枠削除(&D)",                  ID_WAKU_DELETE
+        MENUITEM "枠種類削除",                  ID_WAKU_PAPERDEL
+        MENUITEM SEPARATOR
+        MENUITEM "席次入力",                    ID_WAKU_INSEKIJI
+    END
+    POPUP "編集(&E)"
+    BEGIN
+        MENUITEM "元に戻す(&U)\tCtrl+Z",        ID_EDIT_UNDO
+        MENUITEM "やり直し(&R)",                ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "選択(&S)",                    ID_SLCT_OBJ
+        MENUITEM "逆選択(&C)",                  ID_SLCT_CHNG
+        MENUITEM "全選択(&A)",                  ID_SLCT_ALL
+        MENUITEM SEPARATOR
+        POPUP "移動"
+        BEGIN
+            MENUITEM "任意移動",                    ID_EDIT_MOVE
+            MENUITEM "相対移動",                    ID_MOVE_RLTV
+            MENUITEM "座標移動",                    ID_MOVE_COOD
+        END
+        POPUP "複写"
+        BEGIN
+            MENUITEM "任意複写",                    ID_EDIT_MVCOPY
+            MENUITEM "相対複写",                    ID_COPY_RLTV
+            MENUITEM "座標複写",                    ID_COPY_COOD
+            MENUITEM "ピッチ複写",                  ID_COPY_PICH
+        END
+        MENUITEM "削除",                        ID_EDIT_DELETE
+    END
+    POPUP "変形(&T)"
+    BEGIN
+        MENUITEM "枠変形",                      ID_SIZE_FREE
+        MENUITEM "寸法変形(&S)",                ID_SIZE_XY
+        MENUITEM "横ミリ変形",                  ID_SIZE_X
+        MENUITEM "縦ミリ変形",                  ID_SIZE_Y
+        MENUITEM "倍率変形",                    ID_SIZE_TIME
+        MENUITEM "任意変形",                    ID_SIZE_FREE
+        MENUITEM SEPARATOR
+        MENUITEM "回転(&R)",                    ID_ROUND_RAG
+        MENUITEM "鏡(&M)",                      ID_MIRROR_CNTR
+        POPUP "斜形(&L)"
+        BEGIN
+            MENUITEM "左右斜形",                    ID_SLOP_RL
+            MENUITEM "上下斜形",                    ID_SLOP_UD
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "四角変形",                    ID_TRNS_BOXS
+        MENUITEM "円弧変形",                    ID_TRNS_ARC
+    END
+    POPUP "色(&C)"
+    BEGIN
+        MENUITEM "色変更",                      ID_CLR_SET
+        MENUITEM "背景色設定",                  ID_CLR_BACKSET
+        MENUITEM "背景色解除",                  ID_CLR_BACKRESET
+    END
+    POPUP "図形(&P)"
+    BEGIN
+        MENUITEM "四角(&B)",                    ID_FIGU_BOXS
+        MENUITEM "円(&C)",                      ID_FIGU_CRCL
+        MENUITEM "多角形(&P)",                  ID_FIGU_FREE
+        MENUITEM SEPARATOR
+        MENUITEM "家紋集呼出(&K)",              ID_KAMON_LOAD
+        MENUITEM "家紋呼出",                    ID_ESKAMON_LOAD
+        MENUITEM "家紋保存",                    ID_ESKAMON_SAVE
+    END
+    POPUP "画像(&I)"
+    BEGIN
+        MENUITEM "背景読込",                    ID_BMP_BKLOAD
+        MENUITEM "背景解除",                    ID_BMP_BKRESET
+        MENUITEM SEPARATOR
+        MENUITEM "画像読込",                    ID_BMP_LOAD
+        MENUITEM "画像保存",                    ID_BMP_JPGSAVE
+        MENUITEM SEPARATOR
+        MENUITEM "寸法変形",                    ID_SIZE_XY
+        MENUITEM "任意変形",                    ID_SIZE_FREE
+        MENUITEM "回転・鏡",                    ID_BMP_ROUND
+        MENUITEM SEPARATOR
+        MENUITEM "クリッピング",                ID_BMP_CLIP
+    END
+    POPUP "思いでパネル(&Ｍ)"
+    BEGIN
+        MENUITEM "枠呼び出し",                  ID_MEMO_WAKU_LOAD
+        MENUITEM "画像編集",                    ID_MEMO_CALLPROG
+        MENUITEM "画像読込",                    ID_BMP_LOAD
+        MENUITEM "データ保存設定",              ID_MEMO_ENVSET
+    END
+    POPUP "調整(&D)"
+    BEGIN
+        POPUP "順位(&O)"
+        BEGIN
+            MENUITEM "いちばん上に移動",            ID_SORT_HEAD
+            MENUITEM "いちばん下に移動",            ID_SORT_TAIL
+            MENUITEM "ひとつ上に移動",              ID_SORT_PREV
+            MENUITEM "ひとつ下に移動",              ID_SORT_NEXT
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "グループ化",                  ID_GRUP_SET
+        MENUITEM "グループ解除",                ID_GRUP_RESET
+        MENUITEM SEPARATOR
+        MENUITEM "図形複合",                    ID_LIST_SET
+        MENUITEM "複合解除",                    ID_LIST_RESET
+    END
+    POPUP "表示(&V)"
+    BEGIN
+        MENUITEM "拡大縮小(&Z)",                ID_ZOOM_IN
+        MENUITEM "全体表示(&W)",                ID_ZOOM_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "グリッド(&G)",                ID_SUB_GRID
+        MENUITEM "グリッド有無",                ID_SUB_GRID_ONOFF
+        MENUITEM SEPARATOR
+        MENUITEM "表示切替(&P)",                ID_VIEW_PREVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "ﾂｰﾙ ﾊﾞｰ(&T)",                 ID_VIEW_TOOLBAR
+        MENUITEM "ｽﾃｰﾀｽ ﾊﾞｰ(&S)",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "メンテナンス(&M)"
+    BEGIN
+        MENUITEM "枠変形複写（フォルダ）",      ID_MENTE_CPTR_FOLDER
+        MENUITEM "枠変形複写（ファイル）",      ID_MENTE_CPTR_FILE
+        MENUITEM "枠バックアップ",              ID_MENTE_WAKU_BACKUP
+    END
+    POPUP "ﾍﾙﾌﾟ(&H)"
+    BEGIN
+        MENUITEM "ﾊﾞｰｼﾞｮﾝ情報(ses) (&A)...",    ID_APP_ABOUT
+        MENUITEM "ヘルプを表示する",            ID_HELP_MAIN
+    END
+END
+
+IDR_POPUPMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "ポップアップメニュー"
+    BEGIN
+        MENUITEM "表示切替",                    ID_VIEW_PREVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "選択(&S)",                    ID_SLCT_OBJ
+        MENUITEM "逆選択(&C)",                  ID_SLCT_CHNG
+        MENUITEM "全選択(&A)",                  ID_SLCT_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "削除",                        ID_EDIT_DELETE
+        MENUITEM "色変更",                      ID_CLR_SET
+        MENUITEM "元に戻す",                    ID_EDIT_UNDO
+        MENUITEM "支点設定",                    ID_ATR_CONER_KIND
+        POPUP "編集"
+        BEGIN
+            POPUP "移動"
+            BEGIN
+                MENUITEM "任意移動",                    ID_EDIT_MOVE
+                MENUITEM "相対移動",                    ID_MOVE_RLTV
+                MENUITEM "座標移動",                    ID_MOVE_COOD
+            END
+            POPUP "複写"
+            BEGIN
+                MENUITEM "任意複写",                    ID_EDIT_MVCOPY
+                MENUITEM "相対複写",                    ID_COPY_RLTV
+                MENUITEM "座標複写",                    ID_COPY_COOD
+                MENUITEM "ピッチ複写",                  ID_COPY_PICH
+            END
+        END
+        POPUP "変形"
+        BEGIN
+            MENUITEM "枠変形",                      ID_SIZE_FREE
+            MENUITEM "寸法変形(&S)",                ID_SIZE_XY
+            MENUITEM "横ミリ変形",                  ID_SIZE_X
+            MENUITEM "縦ミリ変形",                  ID_SIZE_Y
+            MENUITEM "倍率変形",                    ID_SIZE_TIME
+            MENUITEM "任意変形",                    ID_SIZE_FREE
+            MENUITEM "回転(&R)",                    ID_ROUND_RAG
+            MENUITEM "鏡(&M)",                      ID_MIRROR_CNTR
+            POPUP "斜形(&L)"
+            BEGIN
+                MENUITEM "左右斜形",                    ID_SLOP_RL
+                MENUITEM "上下斜形",                    ID_SLOP_UD
+            END
+            MENUITEM "四角変形",                    ID_TRNS_BOXS
+            MENUITEM "円弧変形",                    ID_TRNS_ARC
+        END
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "A",            ID_SLCT_ALL,            VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "D",            ID_EDIT_MVCOPY,         VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "G",            ID_GRUP_SET,            VIRTKEY, CONTROL, NOINVERT
+    "G",            ID_GRUP_RESET,          VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_DELETE,         VIRTKEY, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_ESCAPE,      ID_CANCEL_EDIT_CNTR,    VIRTKEY, NOINVERT
+    VK_F3,          ID_VIEW_REDISP,         VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_F8,          ID_ZOOM_ALL,            VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_SESTYPE_CNTR_IP ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_ESCAPE,      ID_CANCEL_EDIT_CNTR,    VIRTKEY, NOINVERT
+END
+
+IDR_SESTYPE_SRVR_IP ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_ESCAPE,      ID_CANCEL_EDIT_SRVR,    VIRTKEY, NOINVERT
+END
+
+IDR_SESTYPE_SRVR_EMB ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_UPDATE,         VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_ESCAPE,      ID_CANCEL_EDIT_CNTR,    VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾊﾞｰｼﾞｮﾝ情報（筆耕システム）"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "筆耕システム Version 3.6.2.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2016 SOA",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_2POINTSIZETRNS DIALOG DISCARDABLE  0, 0, 169, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "２点間隔設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,120,15,40,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,120,35,40,14
+    LTEXT           "横方向の距離",IDC_STATIC,5,10,45,10
+    EDITTEXT        IDC_EDXSIZE,55,5,36,12,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,95,10,10,10
+    LTEXT           "縦方向の距離",IDC_STATIC,5,25,45,10
+    EDITTEXT        IDC_EDYSIZE,55,20,36,12,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,95,25,10,10
+    LTEXT           "２点間の距離",IDC_STATIC,5,40,45,10
+    EDITTEXT        IDC_EDLENGTH,55,35,36,12,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,95,40,10,10
+END
+
+IDD_WAKU_SAVE DIALOG DISCARDABLE  0, 0, 319, 195
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠保存"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,6,6,50,14
+    PUSHBUTTON      "次ページ",IDC_NEXTPAGE,66,6,50,14
+    PUSHBUTTON      "前ページ",IDC_BEFORPAGE,126,6,50,14
+    LISTBOX         IDC_LSTWAKUNAME,5,25,55,160,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_WAKU_PAPER DIALOG DISCARDABLE  0, 0, 187, 99
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "用紙設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,57,50,14
+    LTEXT           "型名",IDC_STATIC,10,10,25,8
+    EDITTEXT        IDC_PAPERSIZEX,50,25,26,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PAPERSIZEY,96,26,26,12,ES_AUTOHSCROLL
+    LTEXT           "全体ｻｲｽﾞ",IDC_STATIC,7,29,32,8
+    EDITTEXT        IDC_PAPERSX,43,63,39,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PAPERSY,83,63,39,12,ES_AUTOHSCROLL
+    LTEXT           "開始位置",IDC_STATIC,7,65,33,8
+    EDITTEXT        IDC_PAPERWIDTH,43,80,39,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PAPERHIGHT,83,80,39,12,ES_AUTOHSCROLL
+    LTEXT           "出力領域",IDC_STATIC,7,83,33,8
+    COMBOBOX        IDC_PAPERNAME,39,7,83,95,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "幅",IDC_STATIC,38,29,10,8
+    LTEXT           "高さ",IDC_STATIC,81,30,15,8
+    DEFPUSHBUTTON   "登録",IDC_SAVE,130,7,50,14
+    DEFPUSHBUTTON   "削除",IDC_DELETE,130,32,50,14
+END
+
+IDD_WAKU_LOAD DIALOG DISCARDABLE  0, 0, 319, 195
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠呼出"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,5,5,50,14
+    PUSHBUTTON      "次ページ",IDC_NEXTPAGE,65,5,50,14
+    PUSHBUTTON      "前ページ",IDC_BEFORPAGE,125,5,50,14
+    LISTBOX         IDC_LSTWAKUNAME,5,25,55,160,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_WAKU_LINEUP DIALOG DISCARDABLE  0, 0, 141, 219
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠整列"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,95,195,35,14
+    CONTROL         224,IDC_MODE1,"Static",SS_BITMAP | SS_NOTIFY,5,5,73,85
+    CONTROL         225,IDC_MODE2,"Static",SS_BITMAP | SS_NOTIFY,50,5,37,43
+    CONTROL         226,IDC_MODE3,"Static",SS_BITMAP | SS_NOTIFY,95,5,37,43
+    CONTROL         227,IDC_MODE4,"Static",SS_BITMAP | SS_NOTIFY,5,60,37,43
+    CONTROL         229,IDC_MODE5,"Static",SS_BITMAP | SS_NOTIFY,50,60,37,43
+    CONTROL         228,IDC_MODE6,"Static",SS_BITMAP | SS_NOTIFY,95,60,37,43
+    CONTROL         230,IDC_MODE7,"Static",SS_BITMAP | SS_NOTIFY,5,115,37,43
+    CONTROL         231,IDC_MODE8,"Static",SS_BITMAP | SS_NOTIFY,50,115,37,
+                    43
+    CONTROL         232,IDC_MODE9,"Static",SS_BITMAP | SS_NOTIFY,95,115,37,
+                    43
+    CONTROL         233,IDC_MODE10,"Static",SS_BITMAP | SS_NOTIFY,5,170,37,
+                    43
+    CONTROL         234,IDC_MODE11,"Static",SS_BITMAP | SS_NOTIFY,50,170,37,
+                    43
+END
+
+IDD_WAKU_GRUP DIALOG DISCARDABLE  0, 0, 187, 57
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠グループ設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,24,50,14
+    EDITTEXT        IDC_EDIT2,50,24,77,12,ES_AUTOHSCROLL
+    LTEXT           "グループ名",IDC_STATIC,7,7,34,8
+    LTEXT           "グループ位置",IDC_STATIC,7,25,41,8
+    COMBOBOX        IDC_WKGRUPNAME,50,7,77,49,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_WAKU_DELETE DIALOG DISCARDABLE  0, 0, 319, 195
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠削除"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,5,5,50,14
+    PUSHBUTTON      "次ページ",IDC_NEXTPAGE,65,5,50,14
+    PUSHBUTTON      "前ページ",IDC_BEFORPAGE,125,5,50,14
+    LISTBOX         IDC_LSTWAKUNAME,5,25,55,160,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TTTEXT DIALOG DISCARDABLE  0, 0, 238, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文字入力"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,180,68,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,180,88,50,14
+    EDITTEXT        IDC_EDSTRG,4,4,228,12,ES_AUTOHSCROLL
+    LTEXT           "文字サイズ",IDC_STATIC,4,44,37,8
+    EDITTEXT        IDC_EDIT2,44,41,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPFONTSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    80,36,12,20
+    CONTROL         "縦書き",IDC_CHKTATEGAKI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,160,20,38,10
+    LTEXT           "偏平率",IDC_STATIC,4,68,37,8
+    EDITTEXT        IDC_EDIT3,44,65,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPFONTSIZE2,"msctls_updown32",UDS_ARROWKEYS,
+                    80,60,12,20
+    LTEXT           "％",IDC_STUNIT2,96,68,9,8
+    LTEXT           "文字ピッチ",IDC_STATIC,4,92,37,8
+    EDITTEXT        IDC_EDIT4,44,89,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPFONTSIZE3,"msctls_updown32",UDS_ARROWKEYS,
+                    80,84,10,20
+    LTEXT           "％",IDC_STUNIT3,96,92,9,8
+    COMBOBOX        IDC_CMBUNIT,92,44,40,48,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "書体",IDC_BUTTON1,4,20,44,12
+    EDITTEXT        IDC_EDIT1,52,20,104,12,ES_AUTOHSCROLL
+END
+
+IDD_TRACE_IMAGE DIALOGEX 0, 0, 135, 125
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION
+CAPTION "線抽出設定"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "線抽出",IDC_LINE_TRACE,100,55,30,15
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,100,75,30,15
+    CONTROL         "",IDC_STIMAGE_AREA,"Static",SS_BLACKFRAME,5,5,80,85
+    CONTROL         "",IDC_STSAMPLE_CLR,"Static",SS_BLACKFRAME,100,5,29,32
+    CONTROL         "",IDC_STAREA_TOP,"Static",SS_GRAYFRAME | NOT WS_VISIBLE,
+                    0,1,5,5,WS_EX_TRANSPARENT
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,0,100,90,15
+    EDITTEXT        IDC_EDIT1,100,100,30,15,ES_AUTOHSCROLL
+END
+
+IDD_TEXTINPUT DIALOG DISCARDABLE  0, 0, 187, 45
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠名入力"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    EDITTEXT        IDC_EDNAME,7,22,117,16,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,24,50,14
+    LTEXT           "枠名を入力してください",IDC_STTITLE,7,7,119,12
+END
+
+IDD_STRG_VSTRUCT DIALOG DISCARDABLE  0, 0, 106, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "線上配置"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "中断",IDC_RESET,56,44,42,14
+    CONTROL         193,IDC_STRGVSTRCT1,"Static",SS_BITMAP,4,4,84,28
+    CONTROL         194,IDC_STRGVSTRCT2,"Static",SS_BITMAP,4,24,41,12
+    CONTROL         195,IDC_STRGVSTRCT3,"Static",SS_BITMAP,4,44,41,12
+    CONTROL         "均等割付",IDC_CHK_EQUAL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,52,4,46,10
+    CONTROL         "",IDC_STTOP,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,0,0,
+                    4,4
+    CONTROL         "回転なし",IDC_CHK_NOROUND,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,52,16,48,16
+END
+
+IDD_STRG_LINEUP DIALOG DISCARDABLE  0, 0, 134, 129
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠編集"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,5,105,50,14
+    CONTROL         224,IDC_MODE1,"Static",SS_BITMAP | SS_NOTIFY,5,5,37,43
+    CONTROL         225,IDC_MODE2,"Static",SS_BITMAP | SS_NOTIFY,50,5,37,43
+    CONTROL         226,IDC_MODE3,"Static",SS_BITMAP | SS_NOTIFY,95,5,37,43
+    CONTROL         227,IDC_MODE4,"Static",SS_BITMAP | SS_NOTIFY,5,55,37,43
+    CONTROL         229,IDC_MODE5,"Static",SS_BITMAP | SS_NOTIFY,50,55,37,43
+    CONTROL         228,IDC_MODE6,"Static",SS_BITMAP | SS_NOTIFY,95,55,37,43
+END
+
+IDD_STRG_INSEART DIALOG DISCARDABLE  0, 0, 187, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文字列挿入"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,25,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,45,50,14
+    EDITTEXT        IDC_ED_INSSTRG,5,5,180,12,ES_AUTOHSCROLL
+    CONTROL         "文字列の前挿入",IDC_CHECK_INSMODE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,25,100,15
+END
+
+IDD_SIZE_CRCL DIALOG DISCARDABLE  0, 0, 170, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "寸法楕円設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,112,4,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,112,21,50,14
+    EDITTEXT        IDC_EDCX,44,4,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPCX,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,0,9,
+                    16
+    EDITTEXT        IDC_EDCY,44,24,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPCY,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,20,9,
+                    16
+    EDITTEXT        IDC_EDWIDTH,44,44,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPWIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,40,9,
+                    16
+    EDITTEXT        IDC_EDHIGHT,44,64,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPHIGHT,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,60,9,
+                    16
+    LTEXT           "中心横座標",IDC_STATIC,4,8,40,8
+    LTEXT           "中心縦座標",IDC_STATIC,4,28,40,8
+    LTEXT           "楕円幅",IDC_STATIC,4,48,40,8
+    LTEXT           "楕円高さ",IDC_STATIC,4,68,40,8
+    LTEXT           "mm",IDC_STATIC,96,4,12,8
+    LTEXT           "mm",IDC_STATIC,96,24,12,8
+    LTEXT           "mm",IDC_STATIC,96,44,12,8
+    LTEXT           "mm",IDC_STATIC,96,64,12,8
+END
+
+IDD_SIZE_BOXS DIALOG DISCARDABLE  0, 0, 170, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "寸法四角設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,112,4,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,112,21,50,14
+    EDITTEXT        IDC_EDCX,44,4,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPCX,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,0,9,
+                    16
+    EDITTEXT        IDC_EDCY,44,24,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPCY,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,20,9,
+                    16
+    EDITTEXT        IDC_EDWIDTH,44,44,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPWIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,40,9,
+                    16
+    EDITTEXT        IDC_EDHIGHT,44,64,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPHIGHT,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,60,9,
+                    16
+    LTEXT           "中心横座標",IDC_STATIC,4,8,40,8
+    LTEXT           "mm",IDC_STATIC,96,8,12,8
+    LTEXT           "中心縦座標",IDC_STATIC,4,28,40,8
+    LTEXT           "mm",IDC_STATIC,96,28,12,8
+    LTEXT           "四角幅",IDC_STATIC,4,48,40,8
+    LTEXT           "mm",IDC_STATIC,96,48,12,8
+    LTEXT           "四角高さ",IDC_STATIC,4,68,40,8
+    LTEXT           "mm",IDC_STATIC,96,68,12,8
+END
+
+IDD_SHADOW DIALOG DISCARDABLE  0, 0, 187, 125
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "影設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,105,24,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,160,105,24,14
+    COMBOBOX        IDC_CBSHADOWKIND,129,10,50,79,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "影付け種類",IDC_STATIC,130,0,40,10
+    LTEXT           "実体との距離",IDC_STATIC,129,25,50,10
+    EDITTEXT        IDC_EDDISTANCE,130,35,40,15,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPDISTANCE,"msctls_updown32",UDS_ARROWKEYS,
+                    170,35,9,15
+    CONTROL         "",IDC_STIMAGE,"Static",SS_BLACKFRAME,5,5,120,115
+    EDITTEXT        IDC_EDROUNDRAG,130,61,40,15,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPROUNDRAG,"msctls_updown32",UDS_ARROWKEYS,
+                    170,61,9,15
+    LTEXT           "影付け方向",IDC_STATIC,130,51,45,10
+    CONTROL         "",IDC_STTOP,"Static",SS_GRAYFRAME,0,0,5,5
+    CONTROL         "",IDC_STCLR,"Static",SS_GRAYFRAME | SS_NOTIFY,155,85,20,
+                    15
+    LTEXT           "影の色",IDC_STATIC,130,90,25,10
+END
+
+IDD_MSURATRSET DIALOG DISCARDABLE  0, 0, 187, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "寸法属性変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,128,24,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,128,44,50,14
+    LTEXT           "表示文字列",IDC_STATIC,4,0,40,8
+    EDITTEXT        IDC_MSUR_STRG,4,8,176,12,ES_AUTOHSCROLL
+    LTEXT           "文字サイズ",IDC_STATIC,4,28,36,8
+    EDITTEXT        IDC_MSUR_FONTSIZE,40,24,48,12,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,92,28,12,8
+END
+
+IDD_MOJISAVE DIALOG DISCARDABLE  0, 0, 187, 45
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文字保存"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,24,50,14
+    LTEXT           "書体名",IDC_STATIC,7,13,26,10
+    EDITTEXT        IDC_EDIT1,37,24,32,13,ES_AUTOHSCROLL
+    LTEXT           "JISコード",IDC_STATIC,7,28,30,8
+    COMBOBOX        IDC_COMBO1,37,7,88,97,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_MOJILOAD DIALOG DISCARDABLE  0, 0, 187, 45
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文字呼出"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,25,50,14
+    LTEXT           "書体名",IDC_STATIC,7,13,26,10
+    EDITTEXT        IDC_EDIT1,37,24,32,13,ES_AUTOHSCROLL
+    LTEXT           "JISコード",IDC_STATIC,7,28,30,8
+    COMBOBOX        IDC_COMBO1,37,7,88,97,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_MOJI_SIZE DIALOG DISCARDABLE  0, 0, 154, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文字サイズ変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    CONTROL         "拡大",IDC_BTN_SIZEBIG,"Button",BS_OWNERDRAW,44,4,36,36
+    CONTROL         "縮小",IDC_BTN_SIZESMALL,"Button",BS_OWNERDRAW,4,4,36,36
+    EDITTEXT        IDC_ED_STEP,100,5,35,12,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,135,10,15,10
+    LTEXT           "ｽﾃｯﾌﾟ",IDC_STATIC,80,5,20,10
+    PUSHBUTTON      "中断",IDC_DLGRESET,121,25,26,14
+    PUSHBUTTON      "確定",IDC_DLGSET,89,25,26,14
+END
+
+IDD_MOJI_MOVE DIALOG DISCARDABLE  0, 0, 151, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文字移動"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    CONTROL         "LEFT",IDC_BTN_MOVELEFT,"Button",BS_OWNERDRAW,5,30,25,25
+    CONTROL         "RIGHT",IDC_BTN_MOVERIGHT,"Button",BS_OWNERDRAW,55,30,25,
+                    25
+    EDITTEXT        IDC_ED_STEP,100,5,35,10,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,135,10,15,10
+    LTEXT           "ｽﾃｯﾌﾟ",IDC_STATIC,80,5,20,10
+    CONTROL         "UP",IDC_BTN_MOVEUP,"Button",BS_OWNERDRAW,30,5,25,25
+    CONTROL         "DOWN",IDC_BTN_MOVEDOWN,"Button",BS_OWNERDRAW,30,55,25,
+                    25
+    PUSHBUTTON      "中断",IDC_DLGRESET,98,60,46,14
+    PUSHBUTTON      "確定",IDC_DLGSET,97,37,46,14
+END
+
+IDD_KAMON_LOAD DIALOG DISCARDABLE  0, 0, 187, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "家紋集呼出"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "呼出",IDOK,130,5,50,14
+    PUSHBUTTON      "中断",IDCANCEL,130,25,50,14
+    LTEXT           "家紋サイズ",IDC_STATIC,5,10,35,8
+    EDITTEXT        IDC_KMNSIZE,40,5,45,15,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,95,15,10,10
+    CONTROL         "Spin1",IDC_SPKMNSIZE,"msctls_updown32",UDS_ARROWKEYS,85,
+                    5,9,15
+    LTEXT           "検索文字列",IDC_STATIC,5,30,35,10
+    EDITTEXT        IDC_SRCHCHAR,40,25,15,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SRCHSTRG,60,25,60,15,ES_AUTOHSCROLL
+    LISTBOX         IDC_NAMELIST,5,45,115,110,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_KMNVIEW,130,50,50,50,ES_AUTOHSCROLL
+END
+
+IDD_INNUM DIALOG DISCARDABLE  640, 0, 85, 49
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾀﾞｲｱﾛｸﾞ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    EDITTEXT        IDC_EDNUM,35,5,35,16,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,5,30,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,45,30,35,14
+    LTEXT           "縁取り量",IDC_STTITLE,5,10,30,10
+    LTEXT           "mm",IDC_STUNIT,70,10,15,10
+END
+
+IDD_GRADATION DIALOG DISCARDABLE  0, 0, 222, 139
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION
+CAPTION "グラデーション設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,165,100,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,165,120,50,14
+    CONTROL         "",IDC_STTOP,"Static",SS_GRAYFRAME | NOT WS_VISIBLE,0,0,
+                    5,5
+END
+
+IDD_EDITBAR DIALOG DISCARDABLE  0, 0, 401, 16
+STYLE WS_CHILD
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    EDITTEXT        IDC_EDITSTRG,0,0,401,16,ES_AUTOHSCROLL
+END
+
+IDD_DIRSLCT DIALOG DISCARDABLE  0, 0, 127, 131
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "フォルダ位置設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,14,110,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,70,110,50,14
+    LISTBOX         IDC_DIRLIST,7,19,110,87,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Static",IDC_STSLCTNAME,7,7,63,13
+END
+
+IDD_CONER_KIND DIALOG DISCARDABLE  0, 0, 123, 93
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "支点設定（変形etc）"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,83,7,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,84,29,35,14
+    COMBOBOX        IDC_CBCONER_KIND,35,7,46,79,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "支点設定",IDC_STATIC,0,8,32,10
+END
+
+IDD_CLRBAR DIALOG DISCARDABLE  0, 0, 557, 16
+STYLE WS_CHILD
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    COMBOBOX        IDC_PLTCOMBO,16,2,40,64,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "",IDC_PREBTN,"Button",BS_OWNERDRAW | WS_TABSTOP,88,2,11,
+                    12
+    CONTROL         "",IDC_NEXTBTN,"Button",BS_OWNERDRAW | WS_TABSTOP,100,2,
+                    11,12
+    EDITTEXT        IDC_THICK,56,2,21,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPTHICK,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,76,2,10,
+                    12
+    CONTROL         "",IDC_NONCLRBTN,"Button",BS_OWNERDRAW | WS_TABSTOP,114,
+                    2,11,12
+END
+
+IDD_WAKUADDATR DIALOG DISCARDABLE  0, 0, 211, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠拡張属性"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,154,7,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,154,24,50,14
+    EDITTEXT        IDC_INSTRG,48,43,156,14,ES_AUTOHSCROLL
+    LTEXT           "入力文字列",IDC_STATIC,7,45,37,8
+    EDITTEXT        IDC_MATCHING,48,61,156,14,ES_AUTOHSCROLL
+    LTEXT           "制御文字列",IDC_STATIC,7,63,37,8
+    EDITTEXT        IDC_TRNS,48,26,42,12,ES_AUTOHSCROLL
+    LTEXT           "最大平体率",IDC_STATIC,7,27,38,10
+    CONTROL         "固定文字列枠",IDC_CHKFIXED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,6,62,12
+END
+
+IDD_BMP_ROUND DIALOG DISCARDABLE  0, 0, 94, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ビットマップの回転"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,46,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,52,46,35,14
+    COMBOBOX        IDC_CBKIND,7,7,79,67,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_PLOTOUT DIALOG DISCARDABLE  0, 0, 126, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プロッタ出力確認"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "ﾌﾟﾛｯﾀｰ出力",IDOK,69,29,50,14
+    PUSHBUTTON      "出力中断",IDCANCEL,69,50,50,14
+    CONTROL         "出力後退避",IDC_CHK_HORS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,7,57,16
+    CONTROL         "直線出力",IDC_CHK_LORC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,27,57,16
+    CONTROL         "簡略出力",IDC_CHK_OORN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,47,57,16
+    COMBOBOX        IDC_CMBFILE,72,0,48,24,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CMBDATA,72,12,48,18,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_WAKUBAR1 DIALOG DISCARDABLE  0, 0, 577, 16
+STYLE WS_CHILD
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    RTEXT           "枠種類 ",IDC_STATIC,0,4,25,8
+    COMBOBOX        IDC_CMBPAPER,25,2,90,78,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "登録",ID_WAKU_PAPERADD,120,2,19,12
+    PUSHBUTTON      "枠作成",ID_WAKU_CREATE,145,2,29,12
+    PUSHBUTTON      "枠呼出",ID_WAKU_LOAD,175,2,29,12
+    PUSHBUTTON      "枠保存",ID_WAKU_SAVE,205,2,29,12
+    PUSHBUTTON      "文字入力",ID_WAKU_INPUT,235,2,35,12
+    PUSHBUTTON      "選択",ID_SLCT_OBJ,275,2,29,12
+    PUSHBUTTON      "複写",ID_EDIT_COPY,305,2,29,12
+    PUSHBUTTON      "削除",ID_EDIT_DELETE,365,2,29,12
+    PUSHBUTTON      "戻す",ID_EDIT_UNDO,400,2,29,12
+    PUSHBUTTON      "拡大縮小",ID_ZOOM_IN,464,2,35,12
+    PUSHBUTTON      "全体表示",ID_ZOOM_ALL,499,2,35,12
+    PUSHBUTTON      "終了",ID_APP_EXIT,544,2,29,12
+    PUSHBUTTON      "貼付",ID_EDIT_PASTE,335,2,29,12
+    PUSHBUTTON      "進む",ID_EDIT_REDO,429,2,29,12
+END
+
+IDD_WAKUBAR2 DIALOG DISCARDABLE  0, 0, 577, 16
+STYLE WS_CHILD
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    COMBOBOX        IDC_CMBFONT,15,0,80,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    RTEXT           "書体",IDC_STATIC,0,3,15,8
+    RTEXT           "扁平",IDC_STATIC,175,3,15,8
+    COMBOBOX        IDC_CMBFLATPAR,190,0,30,78,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    RTEXT           "字間 ",IDC_STATIC,265,3,15,8
+    COMBOBOX        IDC_CMBSPACEMM,280,0,30,78,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    RTEXT           "揃え ",IDC_STATIC,310,3,16,8
+    COMBOBOX        IDC_CMBODERKIND,325,0,30,78,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "固定",IDC_CHKFIXED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,495,0,25,15
+    RTEXT           "かな縮小 ",IDC_STATIC,395,3,30,8
+    COMBOBOX        IDC_CMBKANAPAR,425,0,30,78,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "数字横書",IDC_CHKYOKOGUMI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,455,0,40,15
+    RTEXT           "枠反転 ",IDC_STATIC,520,3,25,8
+    COMBOBOX        IDC_CMBHANTEN,545,0,30,78,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "字間データ",IDC_BTNSPACEKIND,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,220,0,45,15
+    RTEXT           "字数",IDC_STATIC,355,3,15,10
+    EDITTEXT        IDC_EDMOJICOUNT,370,0,25,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMBFILD,125,0,50,104,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    RTEXT           "ﾌｨｰﾙﾄﾞ名",IDC_STFILD,95,3,30,10
+END
+
+IDD_WAKU_EDIT DIALOG DISCARDABLE  0, 0, 147, 255
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION
+CAPTION "作成・修正"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    EDITTEXT        IDC_EDTEXT,30,211,111,13,ES_AUTOHSCROLL | ES_WANTRETURN
+    COMBOBOX        IDC_CMBPLOTER,43,7,97,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CMBPAPERNAME,43,40,97,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDWORKXSIZE,76,75,51,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDWORKYSIZE,76,90,51,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMBFONT,29,125,112,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDWIDTH,75,165,52,12,ES_AUTOHSCROLL | ES_WANTRETURN
+    EDITTEXT        IDC_EDHIGHT,75,181,52,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "縦書",IDC_BTNTATEGAKI,45,145,30,15
+    PUSHBUTTON      "OK",IDC_BTNSET,5,231,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDC_BTNRESET,55,231,35,14
+    PUSHBUTTON      "ｵﾌﾟｼｮﾝ",IDC_BTNOPTION,106,231,35,14
+    LTEXT           "文字列",IDC_STATIC,5,213,22,10
+    LTEXT           "出力機名",IDC_STATIC,9,11,29,8
+    PUSHBUTTON      "プリンタ",IDC_BTNPRINT,43,21,34,13
+    LTEXT           "用紙サイズ",IDC_STATIC,4,43,36,8
+    PUSHBUTTON      "登録",IDC_BTNPAPERSAVE,43,54,34,13
+    LTEXT           "全体横",IDC_STATIC,53,77,22,10
+    LTEXT           "全体縦",IDC_STATIC,53,92,22,10
+    LTEXT           "書　体",IDC_STATIC,7,129,20,8
+    LTEXT           "縦書・横書",IDC_STATIC,5,149,35,10
+    LTEXT           "横幅",IDC_STATIC,55,169,20,10
+    LTEXT           "縦長",IDC_STATIC,55,183,20,10
+    LTEXT           "ミリ",IDC_STATIC,131,171,10,8
+    LTEXT           "ミリ",IDC_STATIC,131,185,10,8
+    LTEXT           "ミリ",IDC_STATIC,130,79,10,8
+    LTEXT           "ミリ",IDC_STATIC,130,93,10,8
+    DEFPUSHBUTTON   "標準ボタン",IDC_BTNDEF,4,53,35,14,NOT WS_VISIBLE
+    CONTROL         "向き",IDC_CNTRKIND,"Button",BS_OWNERDRAW,76,105,15,15
+    LTEXT           "出力方向",IDC_STATIC,46,109,29,10
+    CONTROL         "文字間データ（枠）",IDC_CKMOJIDATA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,197,65,10
+    EDITTEXT        IDC_EDMOJISPACE,99,195,28,12,ES_AUTOHSCROLL
+    LTEXT           "ミリ",IDC_STATIC,130,199,10,8
+    LTEXT           "文字間",IDC_STATIC,75,197,25,8
+    CONTROL         "数字横書き",IDC_CHKYOKOMOJI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,150,50,8
+END
+
+IDD_SIZE_LIST DIALOG DISCARDABLE  0, 0, 170, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "寸法楕円設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    EDITTEXT        IDC_XSIZE,44,4,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPXSIZE,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,0,9,
+                    16
+    EDITTEXT        IDC_YSIZE,44,24,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPYSIZE,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,20,9,
+                    16
+    EDITTEXT        IDC_XCOUNT,44,44,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPXCOUNT,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,40,9,
+                    16
+    EDITTEXT        IDC_YCOUNT,44,64,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPYCOUNT,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,84,60,9,
+                    16
+    DEFPUSHBUTTON   "OK",IDOK,112,4,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,112,21,50,14
+    LTEXT           "横サイズ",IDC_STATIC,4,8,40,8
+    LTEXT           "縦サイズ",IDC_STATIC,4,28,40,8
+    LTEXT           "横個数",IDC_STATIC,4,48,40,8
+    LTEXT           "縦個数",IDC_STATIC,4,68,40,8
+    LTEXT           "mm",IDC_STATIC,96,4,12,8
+    LTEXT           "mm",IDC_STATIC,96,24,12,8
+    LTEXT           "mm",IDC_STATIC,96,44,12,8
+    LTEXT           "mm",IDC_STATIC,96,64,12,8
+END
+
+IDD_SCRNCLRSET DIALOG DISCARDABLE  0, 0, 134, 53
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "画面使用色変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,32,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,77,32,50,14
+    LTEXT           "グリッド設定色",IDC_STATIC,7,7,53,8
+    CONTROL         "",IDC_GRIDCLR,"Static",SS_BLACKFRAME,75,7,50,8
+    CONTROL         "",IDC_TOPRECT,"Static",SS_GRAYFRAME,0,0,6,6
+END
+
+IDD_WAKU_SORT DIALOG DISCARDABLE  0, 0, 319, 195
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠順変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,5,5,50,14
+    PUSHBUTTON      "次ページ",IDC_NEXTPAGE,65,5,50,14
+    PUSHBUTTON      "前ページ",IDC_BEFORPAGE,125,5,50,14
+    LISTBOX         IDC_LSTWAKUNAME,5,25,55,160,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_FONTCHNG DIALOG DISCARDABLE  0, 0, 187, 45
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "書体変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDC_DLGSET,130,7,50,14
+    PUSHBUTTON      "中断",IDC_DLGRESET,130,24,50,14
+    LTEXT           "書体名",IDC_STATIC,7,13,26,10
+    COMBOBOX        IDC_COMBO1,37,7,88,97,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_WAKU_PAPERADD DIALOG DISCARDABLE  0, 0, 187, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠種類登録"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    COMBOBOX        IDC_PAPERNAME,39,23,83,95,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "登録",IDC_SAVE,130,24,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,45,50,14
+    LTEXT           "保存位置",IDC_STATIC,7,7,29,8
+    EDITTEXT        IDC_PATH,39,7,141,11,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "型名",IDC_STATIC,7,26,25,8
+END
+
+IDD_DIVPLOTER DIALOG DISCARDABLE  0, 0, 159, 93
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾀﾞｲｱﾛｸﾞ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    EDITTEXT        IDC_EDNORISIRO,36,8,38,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPNORISIRO,"msctls_updown32",UDS_ARROWKEYS,
+                    73,7,9,14
+    EDITTEXT        IDC_EDPLTXSIZE,36,27,38,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPPLTXSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    73,26,9,14
+    EDITTEXT        IDC_EDPLTYSIZE,36,46,38,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPPLTYSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    73,45,9,14
+    CONTROL         "外枠出力",IDC_CHKAREABOXS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,61,71,14
+    CONTROL         "確認出力",IDC_CHKSTOPCHK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,72,71,14
+    DEFPUSHBUTTON   "設定変更",ID_DLGRESET,102,51,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,102,72,50,14
+    LTEXT           "のりしろ",IDC_STATIC,8,11,27,8
+    LTEXT           "mm",IDC_STATIC,86,13,12,9
+    LTEXT           "横サイズ",IDC_STATIC,8,30,27,8
+    LTEXT           "mm",IDC_STATIC,85,32,12,9
+    LTEXT           "縦サイズ",IDC_STATIC,8,49,27,8
+    LTEXT           "mm",IDC_STATIC,85,51,12,9
+    DEFPUSHBUTTON   "出力開始",ID_DLGSET,102,29,50,14
+END
+
+IDD_INNUMPAIR DIALOG DISCARDABLE  0, 0, 91, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾀﾞｲｱﾛｸﾞ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,50,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,49,50,35,14
+    EDITTEXT        IDC_EDNUMX,35,5,35,16,ES_AUTOHSCROLL
+    LTEXT           "縁取り量",IDC_STTITLEX,5,11,30,10
+    EDITTEXT        IDC_EDNUMY,35,25,35,16,ES_AUTOHSCROLL
+    LTEXT           "縁取り量",IDC_STTITLEY,5,31,30,10
+    LTEXT           "mm",IDC_STUNITX,70,10,15,10
+    LTEXT           "mm",IDC_STUNITY,70,30,15,10
+END
+
+IDD_RULESTYLE DIALOG DISCARDABLE  1024, 0, 143, 57
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "罫線属性"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "中断",IDC_RESET,86,7,50,14
+    COMBOBOX        IDC_CBSTYLE,7,7,71,52,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_STRG_ARC DIALOG DISCARDABLE  0, 0, 110, 165
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "座標指定円弧"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,144,33,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,45,144,33,14
+    EDITTEXT        IDC_EDR,36,69,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPR,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,76,67,9,
+                    16
+    EDITTEXT        IDC_EDSRAG,36,89,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPSRAG,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,76,85,9,
+                    16
+    EDITTEXT        IDC_EDERAG,36,109,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPERAG,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,76,105,9,
+                    16
+    LTEXT           "円半径",IDC_STATIC,7,73,31,8
+    LTEXT           "開始角度",IDC_STATIC,7,93,31,8
+    LTEXT           "終了角度",IDC_STATIC,7,113,31,8
+    LTEXT           "mm",IDC_STATIC,88,73,12,8
+    LTEXT           "度",IDC_STATIC,88,93,12,8
+    LTEXT           "度",IDC_STATIC,88,113,12,8
+    CONTROL         193,IDC_STRGVSTRCT1,"Static",SS_BITMAP,7,7,46,15
+    CONTROL         194,IDC_STRGVSTRCT2,"Static",SS_BITMAP,7,27,46,15
+    CONTROL         195,IDC_STRGVSTRCT3,"Static",SS_BITMAP,7,47,46,15
+    CONTROL         "均等割付",IDC_CHK_EQUAL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,63,7,40,10
+    CONTROL         "回転なし",IDC_CHK_NOROUND,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,63,27,40,10
+    CONTROL         "",IDC_STTOP,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,0,0,
+                    7,7
+END
+
+IDD_ESKAMON DIALOG DISCARDABLE  0, 0, 187, 43
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "家紋登録名前設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,24,50,14
+    EDITTEXT        IDC_EDNAME,66,12,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDFULLNAME,27,27,96,12,ES_AUTOHSCROLL
+    LTEXT           "家紋",IDC_STATIC,6,30,15,9
+    LTEXT           "家紋省略名",IDC_STATIC,6,15,39,8
+END
+
+IDD_ESKMN_LOAD DIALOG DISCARDABLE  0, 0, 319, 281
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ES家紋呼出"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,260,31,50,14
+    PUSHBUTTON      "次ページ",IDC_NEXTPAGE,260,55,50,14
+    PUSHBUTTON      "前ページ",IDC_BEFORPAGE,260,79,50,14
+    EDITTEXT        IDC_EDKMNSIZE,262,7,37,12,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,298,13,12,8
+    LISTBOX         IDC_KMNLIST,261,102,48,174,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ESKMN_SAVE DIALOG DISCARDABLE  0, 0, 319, 281
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ＥＳ家紋保存"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,260,7,50,14
+    PUSHBUTTON      "次ページ",IDC_NEXTPAGE,260,31,50,14
+    PUSHBUTTON      "前ページ",IDC_BEFORPAGE,260,55,50,14
+    LISTBOX         IDC_KMNLIST,261,81,48,189,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_MOJI_FITING DIALOG DISCARDABLE  0, 0, 177, 109
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文字変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    CONTROL         "拡大",IDC_BTN_BIG,"Button",BS_OWNERDRAW,6,6,24,24
+    CONTROL         "縮小",IDC_BTN_SMALL,"Button",BS_OWNERDRAW,36,6,24,24
+    CONTROL         "横拡",IDC_BTN_RLBIG,"Button",BS_OWNERDRAW,6,33,24,24
+    CONTROL         "横縮",IDC_BTN_RLSMALL,"Button",BS_OWNERDRAW,36,33,24,24
+    CONTROL         "縦拡",IDC_BTN_UDBIG,"Button",BS_OWNERDRAW,6,60,24,24
+    CONTROL         "縦縮",IDC_BTN_UDSMALL,"Button",BS_OWNERDRAW,36,60,24,24
+    CONTROL         "上へ",IDC_BTN_UPMOVE,"Button",BS_OWNERDRAW,78,6,24,24
+    CONTROL         "下へ",IDC_BTN_DOWNMOVE,"Button",BS_OWNERDRAW,78,54,24,
+                    24
+    CONTROL         "左へ",IDC_BTN_LEFTMOVE,"Button",BS_OWNERDRAW,66,30,24,
+                    24
+    CONTROL         "右へ",IDC_BTN_RIGHTMOVE,"Button",BS_OWNERDRAW,90,30,24,
+                    24
+    EDITTEXT        IDC_EDSTEP,126,15,21,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPSTEP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,147,12,9,
+                    18
+    EDITTEXT        IDC_EDXSIZE,123,54,33,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDYSIZE,123,69,33,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "元に戻す",IDC_RESET,9,90,33,14
+    DEFPUSHBUTTON   "確定",IDC_SET,72,90,33,14
+    PUSHBUTTON      "中断",IDCANCEL,135,90,33,14
+    LTEXT           "ｽﾃｯﾌﾟ",IDC_STATIC,108,18,18,9
+    LTEXT           "横",IDC_STATIC,114,57,8,9
+    LTEXT           "縦",IDC_STATIC,114,72,8,9
+    LTEXT           "mm",IDC_STATIC,159,19,12,8
+    LTEXT           "mm",IDC_STATIC,159,57,12,8
+    LTEXT           "mm",IDC_STATIC,159,72,12,8
+END
+
+IDD_EPSKAMON_LOAD DIALOG DISCARDABLE  0, 0, 187, 223
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾀﾞｲｱﾛｸﾞ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "呼出",IDOK,130,5,50,14
+    PUSHBUTTON      "中断",IDCANCEL,130,25,50,14
+    LTEXT           "家紋サイズ",IDC_STATIC,5,10,35,8
+    EDITTEXT        IDC_KMNSIZE,40,5,45,15,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,95,15,10,10
+    CONTROL         "Spin1",IDC_SPKMNSIZE,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,85,5,9,
+                    15
+    LTEXT           "検索文字列",IDC_STATIC,5,30,35,10
+    EDITTEXT        IDC_SRCHCHAR,40,25,15,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SRCHSTRG,60,25,60,15,ES_AUTOHSCROLL
+    LISTBOX         IDC_NAMELIST,5,45,115,174,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_KMNVIEW,123,45,60,75,ES_AUTOHSCROLL
+END
+
+IDD_OUTLINE DIALOG DISCARDABLE  0, 0, 90, 85
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "縁取り設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,6,66,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,45,66,35,14
+    EDITTEXT        IDC_ED_OUTLINEMM,35,5,35,16,ES_AUTOHSCROLL
+    LTEXT           "縁取り量",IDC_STATIC,5,10,30,10
+    LTEXT           "mm",IDC_STATIC,70,10,15,10
+    CONTROL         "角付け",IDC_RBTN_KADO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,6,27,36,12
+    CONTROL         "角切り",IDC_RBTN_KCUT,"Button",BS_AUTORADIOBUTTON,6,39,
+                    36,12
+    CONTROL         "角丸め",IDC_RBTN_ROUND,"Button",BS_AUTORADIOBUTTON,6,51,
+                    36,12
+END
+
+IDD_WAKUATRCHANGE DIALOG DISCARDABLE  0, 0, 147, 49
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠一括変換"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,15,30,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,80,30,50,14
+    COMBOBOX        IDC_CMBFONT,29,6,112,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "書　体",IDC_STATIC,7,10,20,8
+END
+
+IDD_GAIJI DIALOG DISCARDABLE  0, 0, 169, 125
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "外字"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "中断",IDOK,110,5,50,14
+    COMBOBOX        IDC_COMBO1,5,5,57,86,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STTOP,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,0,0,
+                    5,5
+END
+
+IDD_WAKU_EDIY DIALOG DISCARDABLE  0, 0, 350, 79
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION
+CAPTION "作成・修正"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    EDITTEXT        IDC_EDTEXT,160,65,136,13,ES_AUTOHSCROLL | ES_WANTRETURN
+    COMBOBOX        IDC_CMBPLOTER,40,5,89,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CMBPAPERNAME,40,35,89,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDWORKXSIZE,160,20,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDWORKYSIZE,160,35,48,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMBFONT,160,5,112,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDWIDTH,240,20,48,12,ES_AUTOHSCROLL | ES_WANTRETURN
+    EDITTEXT        IDC_EDHIGHT,240,35,48,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "縦書",IDC_BTNTATEGAKI,312,8,30,15
+    PUSHBUTTON      "OK",IDC_BTNSET,308,44,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDC_BTNRESET,308,60,35,14
+    PUSHBUTTON      "ｵﾌﾟｼｮﾝ",IDC_BTNOPTION,308,28,35,14
+    LTEXT           "文字列",IDC_STATIC,136,66,22,10
+    LTEXT           "出力機名",IDC_STATIC,5,8,29,8
+    PUSHBUTTON      "プリンタ",IDC_BTNPRINT,40,20,34,13
+    LTEXT           "用紙サイズ",IDC_STATIC,5,35,36,8
+    PUSHBUTTON      "登録",IDC_BTNPAPERSAVE,40,50,34,13
+    LTEXT           "全体横",IDC_STATIC,135,22,22,10
+    LTEXT           "全体縦",IDC_STATIC,135,37,22,10
+    LTEXT           "書　体",IDC_STATIC,135,10,20,8
+    LTEXT           "縦書・横書",IDC_STATIC,280,12,35,10
+    LTEXT           "横幅",IDC_STATIC,220,22,20,10
+    LTEXT           "縦長",IDC_STATIC,220,37,20,10
+    LTEXT           "ミリ",IDC_STATIC,290,25,10,8
+    LTEXT           "ミリ",IDC_STATIC,290,40,10,8
+    LTEXT           "ミリ",IDC_STATIC,210,25,10,8
+    LTEXT           "ミリ",IDC_STATIC,210,40,10,8
+    DEFPUSHBUTTON   "標準ボタン",IDC_BTNDEF,5,50,35,14,NOT WS_VISIBLE
+    CONTROL         "向き",IDC_CNTRKIND,"Button",BS_OWNERDRAW,115,50,15,15
+    LTEXT           "出力方向",IDC_STATIC,85,52,29,10
+    CONTROL         "文字間データ（枠）",IDC_CKMOJIDATA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,160,50,65,10
+    EDITTEXT        IDC_EDMOJISPACE,260,50,28,12,ES_AUTOHSCROLL
+    LTEXT           "ミリ",IDC_STATIC,290,54,10,8
+    LTEXT           "文字間",IDC_STATIC,231,52,25,8
+    CONTROL         "数字横書き",IDC_CHKYOKOMOJI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,68,50,8
+END
+
+IDD_WAKU_INPUT DIALOGEX 640, 32, 165, 169
+STYLE DS_SYSMODAL | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION | WS_THICKFRAME
+EXSTYLE WS_EX_NOPARENTNOTIFY
+CAPTION "入力"
+FONT 12, "ＭＳ ゴシック", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "貯込",IDC_CRCT,5,125,36,13
+    PUSHBUTTON      "貯込出力",IDC_OUT,45,125,36,13
+    PUSHBUTTON      "出力",IDC_PLOTOUT,85,125,36,13
+    PUSHBUTTON      "呼出",IDC_LOAD,45,140,36,13
+    PUSHBUTTON      "外字",IDC_GAIJI,85,140,36,13
+    PUSHBUTTON      "中断",IDC_EXIT,125,140,36,13
+    DEFPUSHBUTTON   "貯込呼出",IDC_CRCTLOAD,5,155,36,13
+    DEFPUSHBUTTON   "貯込変更",IDC_CRCTSAVE,45,155,36,13
+    LTEXT           "Static",IDC_STCRCTCNT,125,125,40,8
+    DEFPUSHBUTTON   "表示",IDC_DISP,5,140,36,13
+    EDITTEXT        IDC_EDIT1,12,0,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,12,12,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,12,24,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,12,36,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,12,48,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,12,60,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,12,72,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,12,84,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,12,96,148,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,12,108,148,12,ES_AUTOHSCROLL
+    LTEXT           "001",IDC_STATIC1,0,2,12,8
+    LTEXT           "002",IDC_STATIC2,0,14,12,8
+    LTEXT           "003",IDC_STATIC3,0,26,12,8
+    LTEXT           "004",IDC_STATIC4,0,38,12,8
+    LTEXT           "005",IDC_STATIC5,0,50,12,8
+    LTEXT           "006",IDC_STATIC6,0,62,12,8
+    LTEXT           "007",IDC_STATIC7,0,74,12,8
+    LTEXT           "008",IDC_STATIC8,0,86,12,8
+    LTEXT           "009",IDC_STATIC9,0,98,12,8
+    LTEXT           "010",IDC_STATIC10,0,110,12,8
+    CONTROL         "",IDC_COMBOBOXEX1,"ComboBoxEx32",CBS_DROPDOWN | 
+                    CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP,85,
+                    155,75,30
+END
+
+IDD_VIEW_FILE DIALOG DISCARDABLE  0, 0, 287, 195
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "",stc32,0,0,284,124,NOT WS_VISIBLE
+    COMBOBOX        IDC_CMBGYOUSYA,40,124,180,66,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMBKOUJI,40,140,180,72,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDCOMENT1,40,156,180,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDCOMENT2,40,168,180,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDCOMENT3,40,180,180,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STIMG,"Static",SS_BLACKFRAME,224,124,60,68
+    LTEXT           "業者名",-1,4,128,24,8
+    LTEXT           "工事名",-1,4,144,24,8
+    LTEXT           "コメント",-1,4,160,24,8
+    CONTROL         "",IDC_STTOP,"Static",SS_ETCHEDFRAME | NOT WS_VISIBLE,0,
+                    0,4,4
+END
+
+IDD_CRCTLOAD DIALOG DISCARDABLE  0, 0, 215, 145
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "貯込データー呼出"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,96,129,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,159,129,50,14
+    LISTBOX         IDC_LST_CRCT,3,3,205,117,WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_STRG_INPUT DIALOGEX 640, 0, 238, 213
+STYLE DS_SYSMODAL | DS_SETFOREGROUND | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_THICKFRAME
+EXSTYLE WS_EX_NOPARENTNOTIFY
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_AREA,"Static",SS_BLACKFRAME,2,6,127,116
+    EDITTEXT        IDC_EDSTARTX,162,18,26,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPSTARTX,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,186,18,9,
+                    14
+    EDITTEXT        IDC_EDSTARTY,197,18,26,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPSTARTY,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,223,18,9,
+                    14
+    EDITTEXT        IDC_EDWIDTH,182,33,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPWIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,223,33,9,
+                    14
+    EDITTEXT        IDC_EDHIGHT,182,48,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPHIGHT,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,223,48,9,
+                    14
+    EDITTEXT        IDC_EDMOJISPACE,182,63,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPMOJISPACE,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,223,63,9,14
+    EDITTEXT        IDC_EDSTRGSPACE,182,78,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPSTRGSPACE,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,223,78,9,14
+    COMBOBOX        IDC_CBSTRGORDER,192,126,40,50,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDSTRGLEN,182,159,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPSTRGLEN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,223,159,
+                    9,14
+    EDITTEXT        IDC_EDSTRGSLOP,182,173,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPSTRGSLOP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,223,173,
+                    9,14
+    COMBOBOX        IDC_CBFONTNAME,26,126,104,134,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDSMPLTEXT,29,157,52,12
+    DEFPUSHBUTTON   "入力確定",IDC_CREATE,147,192,38,14
+    DEFPUSHBUTTON   "入力終了",IDC_INPEND,195,192,38,14
+    DEFPUSHBUTTON   "",IDC_CANCEL,6,0,6,6,BS_FLAT | NOT WS_VISIBLE
+    CONTROL         "縦書",IDC_CKTATEGAKI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,150,3,31,10
+    CONTROL         "逆方向",IDC_CKGYAKU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,184,3,43,10
+    CONTROL         "文字間隔文字データ（枠）",IDC_CKMOJIDATA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,147,96,85,10
+    CONTROL         "",IDC_STSMPLE,"Static",SS_BLACKFRAME,3,178,130,30
+    LTEXT           "開始",IDC_STATIC,147,22,15,8
+    LTEXT           "文字列並び",IDC_STATIC,147,130,40,8
+    LTEXT           "横サイズ",IDC_STATIC,147,37,28,8
+    LTEXT           "縦サイズ",IDC_STATIC,147,52,28,8
+    LTEXT           "文字間隔",IDC_STATIC,147,67,28,8
+    LTEXT           "行間隔",IDC_STATIC,147,82,28,8
+    LTEXT           "均等全長",IDC_STATIC,147,163,31,8
+    LTEXT           "斜形角度",IDC_STATIC,147,177,28,8
+    LTEXT           "サンプル",IDC_STATIC,3,161,27,8
+    LTEXT           "書体",IDC_STATIC,3,130,20,8
+    CONTROL         "",IDC_STTOP,"Static",SS_GRAYFRAME | NOT WS_VISIBLE,0,0,
+                    1,1
+    LTEXT           "",IDC_STSTRGSIZE,147,143,85,8
+    LTEXT           "扁平率",IDC_STATIC,82,161,22,8
+    EDITTEXT        IDC_EDTRNSLIMIT,104,159,18,10,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPTRNSLIMIT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,123,158,9,14
+    CONTROL         "斜形",IDC_CHKITRIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,69,143,28,9
+    CONTROL         "太字",IDC_CHKBOLD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    106,143,26,9
+    LTEXT           "スタイル",IDC_STATIC,26,143,34,9
+END
+
+IDD_SCRNCLRSET1 DIALOG DISCARDABLE  0, 0, 219, 219
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "画面使用色変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    CONTROL         "",IDC_BKCLR,"Static",SS_BLACKFRAME,78,6,50,8
+    CONTROL         "",IDC_FRCLR,"Static",SS_BLACKFRAME,78,18,50,8
+    CONTROL         "",IDC_LINECLR,"Static",SS_BLACKFRAME,78,30,50,8
+    CONTROL         "",IDC_CURVCLR,"Static",SS_BLACKFRAME,78,42,50,8
+    CONTROL         "",IDC_ATNCLR,"Static",SS_BLACKFRAME,78,66,50,8
+    CONTROL         "",IDC_SLCTCLR,"Static",SS_BLACKFRAME,78,78,50,8
+    CONTROL         "",IDC_NOSLCTCLR,"Static",SS_BLACKFRAME,78,90,50,8
+    CONTROL         "",IDC_IMAGECLR,"Static",SS_BLACKFRAME,78,102,50,8
+    CONTROL         "",IDC_LSLCTCLR,"Static",SS_BLACKFRAME,78,114,50,8
+    CONTROL         "",IDC_SUBLCLR,"Static",SS_BLACKFRAME,78,126,50,8
+    CONTROL         "",IDC_AREACLR,"Static",SS_BLACKFRAME,78,138,50,8
+    CONTROL         "",IDC_GRIDCLR,"Static",SS_BLACKFRAME,78,150,50,8
+    CONTROL         "",IDC_SCALCLR,"Static",SS_BLACKFRAME,78,162,50,8
+    CONTROL         "",IDC_CNTRCLR,"Static",SS_BLACKFRAME,78,174,50,8
+    CONTROL         "",IDC_ASSTCLR,"Static",SS_BLACKFRAME,78,186,50,8
+    EDITTEXT        IDC_EDDOTSIZE,180,5,30,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "基本色反転",IDC_BTN_CLRCHANGE,160,104,50,14
+    PUSHBUTTON      "標準値に戻す",IDC_BTNDEFSET,160,124,50,15
+    DEFPUSHBUTTON   "OK",IDOK,160,145,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,160,164,50,14
+    LTEXT           "バックの色",IDC_STATIC,6,6,67,8
+    LTEXT           "ｵﾌﾞｼﾞｪｸﾄの色",IDC_STATIC,6,18,67,8
+    LTEXT           "直線の色",IDC_STATIC,6,30,67,8
+    LTEXT           "BEZE曲線の色",IDC_STATIC,6,54,67,8
+    LTEXT           "注目選択色",IDC_STATIC,6,66,67,8
+    LTEXT           "選択ｵﾌﾞｼﾞｪｸﾄの色",IDC_STATIC,6,78,67,8
+    LTEXT           "非選択ｵﾌﾞｼﾞｪｸﾄの色",IDC_STATIC,6,90,67,8
+    LTEXT           "ロゴイメージの色",IDC_STATIC,6,102,67,8
+    LTEXT           "線表示選択データ色",IDC_STATIC,6,114,67,8
+    LTEXT           "コントロールの色",IDC_STATIC,6,126,67,8
+    LTEXT           "エリア矩形の色",IDC_STATIC,6,138,67,8
+    LTEXT           "グリッドの色",IDC_STATIC,6,150,67,8
+    LTEXT           "定規の色",IDC_STATIC,6,162,67,8
+    LTEXT           "中心線の色",IDC_STATIC,6,174,67,8
+    LTEXT           "補助線の色",IDC_STATIC,6,186,67,8
+    LTEXT           "点の大きさ",IDC_STATIC,136,5,36,9
+    CONTROL         "",IDC_TOPRECT,"Static",SS_GRAYFRAME,0,1,7,6
+    CONTROL         "",IDC_BEZECLR,"Static",SS_BLACKFRAME,78,54,50,8
+    LTEXT           "曲線の色",IDC_STATIC,6,42,67,8
+END
+
+IDD_PROTECT DIALOG DISCARDABLE  0, 0, 91, 45
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プロテクトチェック"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,34,7,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,34,24,50,14
+    CONTROL         "",IDC_PRTCTL,"{13B51CE3-BFD9-11D1-BB52-00E0290EA3C9}",
+                    WS_TABSTOP,7,7,18,21
+END
+
+IDD_SETPROTECT DIALOG DISCARDABLE  0, 0, 224, 125
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プロテクト 解除キー設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,70,105,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,105,50,14
+    EDITTEXT        IDC_EDPCID,5,55,210,12,ES_AUTOHSCROLL
+    LTEXT           "プロテクト Ｎｏ",IDC_STATIC,5,45,210,8
+    EDITTEXT        IDC_EDSETKEY,5,85,210,12,ES_AUTOHSCROLL
+    LTEXT           "プロテクト 解除キー",IDC_STATIC,5,75,210,8
+    LTEXT           "プロテクト 解除キーを設定しない状態での保存はできません",
+                    IDC_STMSG,5,5,210,8
+    LTEXT           "解除キーをご購入ください",IDC_STMSG2,5,15,210,8
+END
+
+IDD_WAKUBAR3 DIALOG DISCARDABLE  0, 0, 577, 16
+STYLE WS_CHILD
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    CONTROL         "始",ID_WAKU_STARTKIND,"Button",BS_OWNERDRAW,485,2,15,12
+    CONTROL         "角",ID_WAKU_CONERKIND,"Button",BS_OWNERDRAW,520,2,15,12
+    RTEXT           "横位置",IDC_STATIC,365,4,24,10
+    EDITTEXT        IDC_EDSTARTX,390,2,21,12,ES_AUTOHSCROLL
+    RTEXT           "縦位置",IDC_STATIC,421,4,24,10
+    EDITTEXT        IDC_EDSTARTY,445,2,20,12,ES_AUTOHSCROLL
+    RTEXT           "横幅",IDC_STATIC,285,4,15,10
+    EDITTEXT        IDC_EDSIZEX,300,2,21,12,ES_AUTOHSCROLL
+    RTEXT           "縦幅",IDC_STATIC,325,4,14,10
+    EDITTEXT        IDC_EDSIZEY,341,2,20,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "縦書",ID_WAKU_TATEYOKO,250,0,30,15,NOT WS_TABSTOP
+    RTEXT           "文字列 ",IDC_STATIC,0,4,25,8
+    EDITTEXT        IDC_EDINTEXT,25,2,220,12,ES_AUTOHSCROLL
+    LTEXT           "原点",IDC_STATIC,470,4,15,8
+    LTEXT           "支点",IDC_STATIC,505,4,15,8
+    CONTROL         "影付け",IDC_CHK_SHADOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,540,4,35,8
+END
+
+IDD_WAKUSIDE DIALOG DISCARDABLE  0, 0, 62, 216
+STYLE DS_SYSMODAL | DS_SETFOREGROUND | WS_CHILD
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    COMBOBOX        IDC_CMBPLOTER,5,15,50,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CMBPAPERNAME,5,80,50,112,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDWORKXSIZE,5,120,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDWORKYSIZE,5,146,35,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "余白設定",ID_FILE_SETSPACE,5,165,35,14
+    LTEXT           "出力機名",IDC_STATIC,5,5,29,8
+    PUSHBUTTON      "プリンタ",ID_FILE_SLCTPRINT,5,30,34,13
+    PUSHBUTTON      "登録",ID_FILE_SAVEPAPER,5,95,34,13
+    LTEXT           "用紙ｻｲｽﾞ横",IDC_STATIC,5,110,40,10
+    LTEXT           "用紙ｻｲｽﾞ縦",IDC_STATIC,5,136,40,10
+    LTEXT           "mm",IDC_STATIC,40,126,10,8
+    CONTROL         "向き",ID_FILE_CENTERKIND,"Button",BS_OWNERDRAW,35,45,15,
+                    15
+    LTEXT           "出力方向",IDC_STATIC,5,49,29,10
+    LTEXT           "mm",IDC_STATIC,40,150,10,8
+    LTEXT           "用紙サイズ",IDC_STATIC,5,70,40,8
+END
+
+IDD_SETSPACE DIALOG DISCARDABLE  0, 0, 74, 110
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "余白設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    EDITTEXT        IDC_EDTOPSPACE,35,5,20,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDBOTTOMSPACE,35,20,20,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDLEFSPACE,35,35,20,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDRIGHTSPACE,35,50,20,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,5,90,30,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,40,90,30,14
+    LTEXT           "上余白",IDC_STATIC,10,5,25,10
+    LTEXT           "mm",IDC_STATIC,55,10,15,8
+    LTEXT           "下余白",IDC_STATIC,10,20,25,10
+    LTEXT           "mm",IDC_STATIC,55,25,15,8
+    LTEXT           "左余白",IDC_STATIC,10,35,25,10
+    LTEXT           "mm",IDC_STATIC,55,40,15,8
+    LTEXT           "右余白",IDC_STATIC,10,50,25,10
+    LTEXT           "mm",IDC_STATIC,55,55,15,8
+    CONTROL         "トンボ表示",IDC_CHKTONNBO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,70,55,10
+END
+
+IDD_WAKU_PAPERDEL DIALOG DISCARDABLE  0, 0, 187, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠種類削除"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    COMBOBOX        IDC_PAPERNAME,39,23,83,95,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "削除",IDC_DELETE,130,24,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,45,50,14
+    LTEXT           "保存位置",IDC_STATIC,7,7,29,8
+    EDITTEXT        IDC_PATH,39,7,141,11,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "型名",IDC_STATIC,7,26,25,8
+END
+
+IDD_SCRNENV DIALOG DISCARDABLE  0, 0, 243, 187
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "環境設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,145,170,40,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,195,170,40,14
+    LTEXT           "作図横",IDC_STATIC,5,8,25,10
+    LTEXT           "ミリ",IDC_STATIC,65,10,15,10
+    LTEXT           "縦",IDC_STATIC,80,8,11,10
+    LTEXT           "ミリ",IDC_STATIC,120,10,15,10
+    CONTROL         "出力機ｻｲｽﾞ",IDC_PLOTSIZE,"Button",BS_AUTORADIOBUTTON,
+                    185,5,51,10
+    LTEXT           "原点位置",IDC_STATIC,5,39,30,10
+    LTEXT           "ポート",IDC_STATIC,88,38,20,10
+    LTEXT           "出力機名",IDC_STATIC,5,53,30,10
+    LTEXT           "ｻｲｽﾞ横",IDC_STATIC,5,69,25,10
+    LTEXT           "ミリ",IDC_STATIC,66,73,15,8
+    LTEXT           "縦",IDC_STATIC,85,69,11,10
+    LTEXT           "ミリ",IDC_STATIC,127,73,14,8
+    LTEXT           "始点横",IDC_STATIC,5,83,25,10
+    LTEXT           "ミリ",IDC_STATIC,65,87,15,8
+    LTEXT           "縦",IDC_STATIC,85,83,11,10
+    LTEXT           "ミリ",IDC_STATIC,127,87,15,10
+    LTEXT           "ｽﾃｯﾌﾟ値",IDC_STATIC,145,69,30,10
+    LTEXT           "ﾃﾞｰﾀ位置",IDC_STATIC,5,102,30,10
+    LTEXT           "枠位置",IDC_STATIC,125,102,30,10
+    LTEXT           "書体位置",IDC_STATIC,5,117,30,10
+    LTEXT           "家紋位置",IDC_STATIC,120,117,35,10
+    LTEXT           "保管位置",IDC_STATIC,5,132,30,10
+    LTEXT           "TBMP位置",IDC_STATIC,120,147,35,10
+    LTEXT           "作業位置",IDC_STATIC,5,147,30,10
+    EDITTEXT        IDC_WORKXSIZE,35,5,30,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WORKYSIZE,90,5,30,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CNTRKIND,35,35,50,60,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_PORTNAME,109,35,129,70,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PLOTNAME,35,51,75,100,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_PLOTXSIZE,35,65,30,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PLOTYSIZE,97,65,30,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PLOTSX,35,81,30,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PLOTSY,97,81,30,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PLOTSTEP,175,65,30,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DATAPATH,35,100,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WAKUPATH,155,100,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FONTPATH,35,115,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_KMONPATH,155,115,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTDPATH,35,130,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TBMPPATH,155,145,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TEMPPATH,35,145,60,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "参照",IDC_BTN_DATA,95,101,20,13
+    PUSHBUTTON      "参照",IDC_BTN_FONT,95,116,20,13
+    PUSHBUTTON      "参照",IDC_BTN_OUT,95,132,20,13
+    PUSHBUTTON      "参照",IDC_BTN_TEMP,95,147,20,13
+    PUSHBUTTON      "参照",IDC_BTN_WAKU,215,100,20,13
+    PUSHBUTTON      "参照",IDC_BTN_KMN,215,115,20,13
+    PUSHBUTTON      "参照",IDC_BTN_BTMP,215,145,20,13
+    COMBOBOX        IDC_PAPERSIZE,135,5,45,88,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "切込み量",IDC_STATIC,145,83,30,8
+    EDITTEXT        IDC_EDDEEPCUT,175,81,30,12,ES_AUTOHSCROLL
+    LTEXT           "ミリ",IDC_STATIC,205,87,15,8
+    LTEXT           "領域点",IDC_STATIC,5,22,30,8
+    EDITTEXT        IDC_EDAREADOT,35,20,30,12,ES_AUTOHSCROLL
+    LTEXT           "ドット",IDC_STATIC,67,25,20,8
+    LTEXT           "点表示",IDC_STATIC,105,22,30,8
+    EDITTEXT        IDC_EDPOINTDOT,135,20,30,12,ES_AUTOHSCROLL
+    LTEXT           "ドット",IDC_STATIC,167,25,20,8
+    LTEXT           "部品位置",IDC_STATIC,120,132,35,10
+    EDITTEXT        IDC_PARTPATH,155,130,60,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "参照",IDC_BTN_PART,215,130,20,13
+END
+
+IDD_IMAGESAVE DIALOG DISCARDABLE  0, 0, 287, 176
+STYLE WS_CHILD | WS_CLIPSIBLINGS
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "",stc32,0,0,280,145,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDXSIZE,35,155,25,12,ES_AUTOHSCROLL
+    LTEXT           "横サイズ",IDC_STATIC,5,157,30,8
+    CONTROL         "Spin1",IDC_SPNXSIZE,"msctls_updown32",UDS_ARROWKEYS,60,
+                    153,10,15
+    EDITTEXT        IDC_EDYSIZE,110,155,25,12,ES_AUTOHSCROLL
+    LTEXT           "縦サイズ",IDC_STATIC,80,157,30,8
+    CONTROL         "Spin1",IDC_SPNYSIZE,"msctls_updown32",UDS_ARROWKEYS,135,
+                    153,10,15
+    EDITTEXT        IDC_EDQUALITY,175,157,25,12,ES_AUTOHSCROLL
+    LTEXT           "品質",IDC_STATIC,155,159,20,8
+    CONTROL         "Spin1",IDC_SPNQUALITY,"msctls_updown32",UDS_ARROWKEYS,
+                    200,154,10,15
+    COMBOBOX        IDC_CMBROUND,220,155,60,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_CPTR_FOLDER DIALOG DISCARDABLE  0, 0, 189, 115
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠変形複写"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,70,95,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,130,95,50,14
+    LTEXT           "コピー元枠フォルダー",IDC_STATIC,5,5,70,10
+    EDITTEXT        IDC_EDSRCFOLDER,5,15,155,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "選択",IDC_BTNSRCFOLDER,160,15,25,15
+    LTEXT           "枠サイズ",IDC_STATIC,5,32,30,8
+    LTEXT           "新規作成枠フォルダー",IDC_STATIC,5,45,70,10
+    EDITTEXT        IDC_EDDSTFOLDER,5,55,155,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "選択",IDC_BTNDSTFOLDER,160,55,25,15
+    LTEXT           "枠サイズ",IDC_STATIC,5,72,30,8
+    EDITTEXT        IDC_EDDSTXSIZE,40,71,40,10,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPNDSTXSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    80,70,10,14
+    EDITTEXT        IDC_EDDSTYSIZE,100,71,40,10,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPNDSTYSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    140,70,10,14
+    EDITTEXT        IDC_EDSRCXSIZE,40,31,40,10,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPNSRCXSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    80,30,10,14
+    EDITTEXT        IDC_EDSRCYSIZE,100,31,40,10,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPNSRCYSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    140,30,10,14
+END
+
+IDD_WAKU_CPTR DIALOG DISCARDABLE  0, 0, 439, 196
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "枠複写変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,5,25,50,14
+    PUSHBUTTON      "次ページ",IDC_NEXTPAGE,65,25,50,14
+    PUSHBUTTON      "前ページ",IDC_BEFORPAGE,125,25,50,14
+    LISTBOX         IDC_LSTWAKUNAME,5,50,55,135,LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "新規作成枠フォルダー",IDC_STATIC,5,5,70,10
+    EDITTEXT        IDC_EDDSTFOLDER,80,5,155,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "選択",IDC_BTNDSTFOLDER,235,5,25,15
+    LTEXT           "枠サイズ",IDC_STATIC,265,7,30,8
+    EDITTEXT        IDC_EDDSTXSIZE,301,6,30,10,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPNDSTXSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    330,5,10,14
+    EDITTEXT        IDC_EDDSTYSIZE,345,5,30,10,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPNDSTYSIZE,"msctls_updown32",UDS_ARROWKEYS,
+                    375,5,10,14
+    PUSHBUTTON      "変形複写実行",IDOK,185,25,50,14
+END
+
+IDD_SLCTSTRG DIALOG DISCARDABLE  0, 0, 164, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文字列候補"
+FONT 12, "ＭＳ ゴシック"
+BEGIN
+    LISTBOX         IDC_LSTSTRG1,5,5,75,90,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_LSTSTRG2,85,5,75,90,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DBEDIT DIALOGEX 0, 0, 186, 92
+STYLE WS_VISIBLE | WS_CAPTION | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "データーベース"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LSTITEM,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | WS_BORDER | 
+                    WS_TABSTOP,4,5,175,80
+    LTEXT           "",IDC_STTOP,0,0,8,8,NOT WS_VISIBLE
+END
+
+IDD_XLSSLCT DIALOG DISCARDABLE  100, 100, 94, 120
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾀﾞｲｱﾛｸﾞ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LTEXT           "接続先：",IDC_STATIC,5,5,30,10
+    LISTBOX         IDC_LSTNAME,5,15,80,80,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,5,100,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,50,100,35,14
+END
+
+IDD_MDBSLCT DIALOG DISCARDABLE  100, 100, 154, 120
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾀﾞｲｱﾛｸﾞ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "種類",IDC_STATIC,5,5,55,45
+    CONTROL         "テーブル",IDC_RDTABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,10,20,45,8
+    CONTROL         "クエリー",IDC_RDQUERY,"Button",BS_AUTORADIOBUTTON,10,35,
+                    45,8
+    LTEXT           "接続先：",IDC_STATIC,65,5,30,10
+    LISTBOX         IDC_LSTNAME,65,15,80,80,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,65,100,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,110,100,35,14
+END
+
+IDD_GAIJI_SLCT DIALOG DISCARDABLE  0, 0, 319, 240
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "外字呼出"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,265,5,50,14
+    PUSHBUTTON      "次ページ",IDC_NEXTPAGE,5,5,50,14
+    PUSHBUTTON      "前ページ",IDC_BEFORPAGE,60,5,50,14
+    CONTROL         "",IDC_STTOP,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,0,0,
+                    5,5
+    CONTROL         "",IDC_STIMG,"Static",SS_BLACKFRAME,55,45,260,190
+    CONTROL         "コード順",IDC_RDOCODESORT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,115,5,40,15
+    CONTROL         "部首順",IDC_RDOBUSYUSORT,"Button",BS_AUTORADIOBUTTON,
+                    160,5,40,15
+    CONTROL         "画数順",IDC_RDOKAKUSUSORT,"Button",BS_AUTORADIOBUTTON,
+                    205,5,40,15
+    RTEXT           "JISコード",IDC_STATIC,150,27,30,8
+    EDITTEXT        IDC_EDCODE,185,25,35,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "呼出",IDC_BTNLOAD,220,25,35,15
+    LISTBOX         IDC_LSTIMG,5,45,45,190,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_LSTCODE,265,25,50,15,LBS_NOINTEGRALHEIGHT | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SLCTADRS DIALOG DISCARDABLE  0, 0, 134, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "送信先設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,70,30,15
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,95,70,30,16
+    LTEXT           "送信先メールアドレス",IDC_STATIC,5,5,105,8
+    COMBOBOX        IDC_CMBMAILADRS,5,14,125,71,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "メール題名",IDC_STATIC,5,35,105,8
+    EDITTEXT        IDC_EDSUBJECT,5,45,125,12,ES_AUTOHSCROLL
+END
+
+IDD_SLCTFTPADRS DIALOG DISCARDABLE  0, 0, 134, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FTP転送設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,70,30,15
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,95,70,30,16
+    LTEXT           "転送先FTPフォルダー",IDC_STATIC,5,5,105,8
+    COMBOBOX        IDC_CMBFTPFOLDER,5,14,125,71,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "転送ファイル名",IDC_STATIC,5,35,105,8
+    EDITTEXT        IDC_EDFILENAME,5,45,125,12,ES_AUTOHSCROLL
+END
+
+IDD_SETMACKEY DIALOG DISCARDABLE  0, 0, 126, 109
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "解除キー設定"
+FONT 14, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,55,90,30,15
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,90,90,30,15
+    EDITTEXT        IDC_EDSUBKEY,45,30,75,15,ES_AUTOHSCROLL
+    LTEXT           "Ｉｔｉｂａｎキー",IDC_STATIC,5,32,40,8
+    EDITTEXT        IDC_EDCHKKEY,45,70,75,15,ES_AUTOHSCROLL
+    LTEXT           "解除キー",IDC_STATIC,5,74,40,8
+    LTEXT           "上記のキーをメールか電話でお知らせください。",
+                    IDC_STATIC,5,50,115,20
+    LTEXT           "Static",IDC_STMSG,5,5,115,20
+END
+
+IDD_MEMOENVSET DIALOG DISCARDABLE  0, 0, 187, 91
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "思い出パネル設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,100,70,35,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,145,70,35,14
+    LTEXT           "背景読込場所",IDC_STATIC,5,7,42,8
+    EDITTEXT        IDC_EDMEMOBACKPATH,50,5,110,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "参照",IDC_BTNMEMOBACKPATH,160,5,20,16
+    LTEXT           "写真読込場所",IDC_STATIC,5,27,42,8
+    EDITTEXT        IDC_EDMEMOPHOTOPATH,50,25,110,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "参照",IDC_BTNMEMOPHOTOPATH,160,25,20,16
+    LTEXT           "保存場所",IDC_STATIC,5,47,28,8
+    EDITTEXT        IDC_EDMEMOTEMPPATH,50,45,110,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "参照",IDC_BTNMEMOTEMPPATH,160,45,20,16
+END
+
+IDD_WAKU_INSEKIJI DIALOGEX 640, 32, 165, 183
+STYLE DS_SYSMODAL | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION | WS_THICKFRAME
+EXSTYLE WS_EX_NOPARENTNOTIFY
+CAPTION "席次入力"
+FONT 12, "ＭＳ ゴシック"
+BEGIN
+    PUSHBUTTON      "席札出力",IDC_OUT,5,150,36,13
+    PUSHBUTTON      "外字",IDC_GAIJI,45,150,36,13
+    PUSHBUTTON      "中断",IDC_EXIT,125,165,36,13
+    DEFPUSHBUTTON   "表示",IDC_DISP,85,150,36,13
+    EDITTEXT        IDC_EDIT1,25,0,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,95,0,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,145,0,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,25,15,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,95,15,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,145,15,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,25,30,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,95,30,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,145,30,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,25,45,70,12,ES_AUTOHSCROLL
+    LTEXT           "001",IDC_STATIC1,0,2,12,8
+    LTEXT           "002",IDC_STATIC2,0,17,12,8
+    LTEXT           "003",IDC_STATIC3,0,32,12,8
+    LTEXT           "004",IDC_STATIC4,0,47,12,8
+    LTEXT           "005",IDC_STATIC5,0,62,12,8
+    LTEXT           "006",IDC_STATIC6,0,77,12,8
+    LTEXT           "007",IDC_STATIC7,0,92,12,8
+    LTEXT           "008",IDC_STATIC8,0,107,12,8
+    LTEXT           "009",IDC_STATIC9,0,122,12,8
+    LTEXT           "010",IDC_STATIC10,0,137,12,8
+    CONTROL         "",IDC_COMBOBOXEX1,"ComboBoxEx32",CBS_DROPDOWN | 
+                    CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP,140,
+                    150,20,30
+    EDITTEXT        IDC_EDIT11,95,45,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,145,45,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT13,25,60,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT14,95,60,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT15,145,60,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT16,25,75,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT17,95,75,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT18,145,75,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT19,25,90,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT20,95,90,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT21,145,90,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT22,25,105,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT23,95,105,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT24,145,105,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT25,25,120,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT26,95,120,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT27,145,120,15,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT28,25,135,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT29,95,135,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT30,145,135,15,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_CHKKTGK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    1,8,10
+    CONTROL         "",IDC_CHKKTGK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    16,8,10
+    CONTROL         "",IDC_CHKKTGK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    31,8,10
+    CONTROL         "",IDC_CHKKTGK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    46,8,10
+    CONTROL         "",IDC_CHKKTGK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    61,8,10
+    CONTROL         "",IDC_CHKKTGK6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    76,8,10
+    CONTROL         "",IDC_CHKKTGK7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    91,8,10
+    CONTROL         "",IDC_CHKKTGK8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    106,8,10
+    CONTROL         "",IDC_CHKKTGK9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    121,8,10
+    CONTROL         "",IDC_CHKKTGK10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    15,136,8,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,6,2,0
+ PRODUCTVERSION 3,6,2,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041104b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "枠作成 ｱﾌﾟﾘｹｰｼｮﾝ\0"
+            VALUE "FileVersion", "3, 6, 2, 0\0"
+            VALUE "InternalName", "ses\0"
+            VALUE "LegalCopyright", "Copyright (C) 2009 SOA\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ses.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "枠作成  ｱﾌﾟﾘｹｰｼｮﾝ\0"
+            VALUE "ProductVersion", "3, 6, 2, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_2POINTSIZETRNS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_WAKU_SAVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 189
+    END
+
+    IDD_WAKU_PAPER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_WAKU_LOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+
+    IDD_WAKU_LINEUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 133
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 211
+    END
+
+    IDD_WAKU_GRUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_WAKU_DELETE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_TTTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_TRACE_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 128
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_TEXTINPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        VERTGUIDE, 110
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_STRG_VSTRUCT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 99
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+
+    IDD_STRG_LINEUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 126
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 121
+    END
+
+    IDD_STRG_INSEART, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_SIZE_CRCL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_SIZE_BOXS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_SHADOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_MSURATRSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_MOJISAVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_MOJILOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_MOJI_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_MOJI_MOVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 144
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+
+    IDD_KAMON_LOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_INNUM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 78
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_GRADATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_DIRSLCT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_CONER_KIND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_CLRBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 190
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 14
+    END
+
+    IDD_WAKUADDATR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_BMP_ROUND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 87
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_PLOTOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 119
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_WAKUBAR1, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 571
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 14
+    END
+
+    IDD_WAKUBAR2, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 570
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 14
+    END
+
+    IDD_WAKU_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_SIZE_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_SCRNCLRSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 127
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_WAKU_SORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+
+    IDD_FONTCHNG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_WAKU_PAPERADD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+
+    IDD_DIVPLOTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_INNUMPAIR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 84
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_RULESTYLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_STRG_ARC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 103
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_ESKAMON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 36
+    END
+
+    IDD_ESKMN_LOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 271
+    END
+
+    IDD_ESKMN_SAVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 271
+    END
+
+    IDD_MOJI_FITING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 170
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_EPSKAMON_LOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_OUTLINE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 83
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_WAKUATRCHANGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_GAIJI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_WAKU_EDIY, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 343
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_WAKU_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 155
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_VIEW_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+
+    IDD_CRCTLOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_PROTECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 84
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_SETPROTECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_WAKUBAR3, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 570
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 14
+    END
+
+    IDD_WAKUSIDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 55
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_SETSPACE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 67
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_WAKU_PAPERDEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+
+    IDD_IMAGESAVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_CPTR_FOLDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_WAKU_CPTR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_SLCTSTRG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 157
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_DBEDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 85
+    END
+
+    IDD_XLSSLCT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 87
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_MDBSLCT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_GAIJI_SLCT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 233
+    END
+
+    IDD_SLCTADRS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 127
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+
+    IDD_SLCTFTPADRS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 127
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+
+    IDD_SETMACKEY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 119
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_MEMOENVSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 84
+    END
+
+    IDD_WAKU_INSEKIJI, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 155
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CUS_ZOOMOUT         CURSOR  DISCARDABLE     "res\\cursor3.cur"
+IDC_CUS_ZOOMIN          CURSOR  DISCARDABLE     "res\\cur_zoom.cur"
+IDC_CUS_HAND            CURSOR  DISCARDABLE     "res\\cus_hand.cur"
+IDC_CUS_ARROWPLUS       CURSOR  DISCARDABLE     "res\\cursor2.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROTECT DLGINIT
+BEGIN
+    IDC_PRTCTL, 0x376, 330, 0
+0x002b, 0x0000, 0x0050, 0x0072, 0x006f, 0x0074, 0x0065, 0x0063, 0x0074, 
+0x004b, 0x0069, 0x0074, 0x0020, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 
+0x0069, 0x0067, 0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 
+0x0031, 0x0039, 0x0039, 0x0038, 0x0020, 0x004e, 0x0065, 0x0077, 0x0074, 
+0x006f, 0x006e, 0x0065, 0x0020, 0x0043, 0x006f, 0x0072, 0x0070, 0x002e, 
+0x0300, 0x0000, 0x034f, 0x0000, 0x034f, 0x0000, 0x0002, 0x0002, 0x0008, 
+0x001a, 0x0000, 0x004a, 0x0053, 0x0054, 0x0053, 0x004f, 0x0041, 0x004b, 
+0x004f, 0x004b, 0x0055, 0x0042, 0x004f, 0x0000, 0x0003, 0x0000, 0x0000, 
+0x0002, 0x000e, 0x0003, 0x0000, 0x0000, 0x0008, 0x0002, 0x0000, 0x0000, 
+0x0008, 0x0002, 0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0008, 0x003e, 0x0000, 0x0043, 0x006f, 0x006e, 0x0074, 
+0x0072, 0x006f, 0x006c, 0x0020, 0x0050, 0x0061, 0x006e, 0x0065, 0x006c, 
+0x005c, 0x0053, 0x004f, 0x0041, 0x004c, 0x0074, 0x0064, 0x0049, 0x0054, 
+0x0049, 0x0042, 0x0041, 0x004e, 0x0056, 0x0065, 0x0072, 0x0031, 0x0000, 
+0x0008, 0x000e, 0x0000, 0x0049, 0x0054, 0x0049, 0x0042, 0x0041, 0x004e, 
+0x0000, 0x0008, 0x000a, 0x0000, 0x0056, 0x0065, 0x0072, 0x0031, 0x0000, 
+0x0008, 0x000e, 0x0000, 0x0073, 0x0079, 0x0073, 0x0074, 0x0065, 0x006d, 
+0x0000, 0x0008, 0x0010, 0x0000, 0x0070, 0x0072, 0x006f, 0x0067, 0x0072, 
+0x0061, 0x006d, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE の初期化に失敗しました。OLE ﾗｲﾌﾞﾗﾘが正しいﾊﾞｰｼﾞｮﾝのものか確認してください。"
+    IDP_FAILED_TO_CREATE    "ｵﾌﾞｼﾞｪｸﾄの作成に失敗しました。ｼｽﾃﾑ ﾚｼﾞｽﾄﾘにｵﾌﾞｼﾞｪｸﾄが登録されているか確認してください。"
+    IDR_MAINFRAME           "枠作成"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_SESTYPE             "\nSes\nSes\n\n\nSes.Document\nSes Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ses"
+    AFX_IDS_IDLEMESSAGE     "ﾚﾃﾞｨ"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "上書"
+    ID_INDICATOR_REC        "記録"
+    ID_INDICATOR_KANA       "ｶﾅ"
+    ID_INDICATOR_TEXT1      "         　　　　　　　　　　　　　　　　　"
+    ID_INDICATOR_TEXT2      "0123456789"
+    ID_INDICATOR_TEXT3      "0123456789"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "新規にﾌｧｲﾙを作成\n新規ﾌｧｲﾙ"
+    ID_FILE_OPEN            "既存のﾌｧｲﾙを開く\n開く"
+    ID_FILE_CLOSE           "作業中のﾌｧｲﾙを閉じる\n閉じる"
+    ID_FILE_SAVE            "作業中のﾌｧｲﾙを保存\n保存"
+    ID_FILE_SAVE_AS         "作業中のﾌｧｲﾙに名前を付けて保存\n名前をつけて保存"
+    ID_FILE_PAGE_SETUP      "印刷設定の変更\n印刷設定"
+    ID_FILE_PRINT_SETUP     "ﾌﾟﾘﾝﾀ/印刷設定の変更\nﾌﾟﾘﾝﾀの設定"
+    ID_FILE_PRINT           "作業中のﾌｧｲﾙを印刷\n印刷"
+    ID_FILE_PRINT_PREVIEW   "ﾌﾙｽｸﾘｰﾝで表示\n印刷ﾌﾟﾚﾋﾞｭｰ"
+    ID_FILE_UPDATE          "すべての変更を表示するためにｺﾝﾃﾅを更新\nｱｯﾌﾟﾃﾞｰﾄ"
+    ID_FILE_SAVE_COPY_AS    "作業中のﾌｧｲﾙのｺﾋﾟｰに名前を付けて保存\nｺﾋﾟｰの保存"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "ﾌﾟﾛｸﾞﾗﾑの情報、ﾊﾞｰｼﾞｮﾝそして著作権を表示\nﾊﾞｰｼﾞｮﾝ情報"
+    ID_APP_EXIT             "ｱﾌﾟﾘｹｰｼｮﾝを終了し、ﾌｧｲﾙの保存を指示\n終了"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE2       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE3       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE4       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE5       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE6       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE7       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE8       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE9       "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE10      "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE11      "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE12      "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE13      "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE14      "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE15      "指定のﾌｧｲﾙを開く"
+    ID_FILE_MRU_FILE16      "指定のﾌｧｲﾙを開く"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "次のｳｨﾝﾄﾞｳに切り替える\n次ﾍﾟｰｼﾞ"
+    ID_PREV_PANE            "前のｳｨﾝﾄﾞｳに切り替える\n前ﾍﾟｰｼﾞ"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "作業中のｳｨﾝﾄﾞｳを複写して表示\n新規ｳｨﾝﾄﾞｳ"
+    ID_WINDOW_ARRANGE       "ｳｨﾝﾄﾞｳの下部にｱｲｺﾝを整列\nｱｲｺﾝの整列"
+    ID_WINDOW_CASCADE       "ｳｨﾝﾄﾞｳを重ねて表示\n重ねて表示"
+    ID_WINDOW_TILE_HORZ     "ｳｨﾝﾄﾞｳを上下に並べて表示\n上下に並べて表示"
+    ID_WINDOW_TILE_VERT     "ｳｨﾝﾄﾞｳを左右に並べて表示\n左右に並べて表示"
+    ID_WINDOW_SPLIT         "作業中のｳｨﾝﾄﾞｳを分割\n分割"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "選択範囲を消去\n消去"
+    ID_EDIT_CLEAR_ALL       "すべて消去\nすべて消去"
+    ID_EDIT_CUT             "選択範囲を切り取ってｸﾘｯﾌﾟﾎﾞｰﾄﾞに保存\n切り取り"
+    ID_EDIT_FIND            "指定した文字列の検索\n検索"
+    ID_EDIT_PASTE           "ｸﾘｯﾌﾟﾎﾞｰﾄﾞの内容を貼り付け\n貼り付け"
+    ID_EDIT_PASTE_LINK      "ｸﾘｯﾌﾟﾎﾞｰﾄﾞの内容を貼り付け、作成元へﾘﾝｸ\nﾘﾝｸ貼り付け"
+    ID_EDIT_PASTE_SPECIAL   "ｵﾌﾟｼｮﾝを設定してｸﾘｯﾌﾟﾎﾞｰﾄﾞの内容の貼り付け\n形式を選択して貼り付け"
+    ID_EDIT_REPEAT          "直前に行った動作を繰り返す\nﾘﾋﾟｰﾄ"
+    ID_EDIT_REPLACE         "指定した文字列を他の文字列で置換\n置換"
+    ID_EDIT_SELECT_ALL      "ﾌｧｲﾙ全体を選択\nすべて選択"
+    ID_EDIT_UNDO            "直前に行った動作を元に戻す\n元に戻す"
+    ID_EDIT_REDO            "直前に行った動作を繰り返す\nやり直し"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "ﾂｰﾙ ﾊﾞｰの表示/非表示\nﾂｰﾙ ﾊﾞｰの表示/非表示"
+    ID_VIEW_STATUS_BAR      "ｽﾃｰﾀｽ ﾊﾞｰの表示/非表示\nｽﾃｰﾀｽ ﾊﾞｰの表示/非表示"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OLE_INSERT_NEW       "ｵﾌﾞｼﾞｪｸﾄの作成と貼り付け\n新規ｵﾌﾞｼﾞｪｸﾄ"
+    ID_OLE_EDIT_LINKS       "ｵﾌﾞｼﾞｪｸﾄの編集\nﾌﾞｼﾞｪｸﾄの編集"
+    ID_OLE_EDIT_CONVERT     "ｵﾌﾞｼﾞｪｸﾄの形式を変換\nｵﾌﾞｼﾞｪｸﾄの形式を変換"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OLE_VERB_FIRST       "埋め込みまたはﾘﾝｸしたｵﾌﾞｼﾞｪｸﾄの表示"
+    57873                   "埋め込みまたはﾘﾝｸしたｵﾌﾞｼﾞｪｸﾄの表示"
+    57874                   "埋め込みまたはﾘﾝｸしたｵﾌﾞｼﾞｪｸﾄの表示"
+    57875                   "埋め込みまたはﾘﾝｸしたｵﾌﾞｼﾞｪｸﾄの表示"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "ｳｨﾝﾄﾞｳのｻｲｽﾞを変更"
+    AFX_IDS_SCMOVE          "ｳｨﾝﾄﾞｳの位置を変更"
+    AFX_IDS_SCMINIMIZE      "ｳｨﾝﾄﾞｳをｱｲｺﾝ化する"
+    AFX_IDS_SCMAXIMIZE      "ｳｨﾝﾄﾞｳを最大表示にする"
+    AFX_IDS_SCNEXTWINDOW    "次のｳｨﾝﾄﾞｳに切り替える"
+    AFX_IDS_SCPREVWINDOW    "前のｳｨﾝﾄﾞｳに切り替える"
+    AFX_IDS_SCCLOSE         "作業中のｳｨﾝﾄﾞｳを閉じ、変更したﾌｧｲﾙの保存を指示"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "ｳｨﾝﾄﾞｳを通常のｻｲｽﾞに戻す"
+    AFX_IDS_SCTASKLIST      "ｱﾌﾟﾘｹｰｼｮﾝの切り替え"
+    AFX_IDS_MDICHILD        "指定のｳｨﾝﾄﾞｳを表示"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "印刷ﾌﾟﾚﾋﾞｭｰ ﾓｰﾄﾞを閉じる\nﾌﾟﾚﾋﾞｭｰのｷｬﾝｾﾙ"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MOJI_LOAD            "文字を呼び出します"
+    ID_MOJI_SAVE            "外字を登録します"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_ENVSET          "システム動作環境の設定"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ZOOM_IN              "データの拡大\n拡大"
+    ID_SLCT_AREA            "操作可能なOBJECTを領域で選択します"
+    ID_OBJ_FIGU             "図形の作成\n図形作成"
+    ID_SCAN_SLCT            "スキャナ選択\nスキャナ選択"
+    ID_SCAN_INPUT           "スキャナ入力\nスキャナ入力"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OBJ_STRG             "文字列の作成\n文字列作成"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OBJ_MSUR             "寸法の作成\n寸法"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SLCT_OBJ             "操作可能なOBJECTを選択します"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BMP_SAVE             "画面表示データをBMPファイルとして保存します"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PROTECT_KEYSET       "ユーザーキーを設定します\nユーザーキー設定"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CLR_BACKRESET        "背景色を無くし元の白い背景に戻します\n背景色解除"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SORT_HEAD            "いちばん上に移動\nいちばん上に移動"
+    ID_SORT_TAIL            "いちばん下に移動\nいちばん下に移動"
+    ID_SORT_NEXT            "ひとつ下に移動\nひとつ下に移動"
+    ID_SORT_PREV            "ひとつ上に移動\nひとつ上に移動"
+    ID_TOOL_INPORT          "外部ファイルの取り込み\n外部読込"
+    ID_TOOL_EXPORT          "外部ファイルに保存します\n外部保存"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CRDNT_TOP            "指定されたデータの上に他のデータの上を揃えます\n上揃え"
+    ID_CRDNT_VCENTER        "指定されたデータの上下中心に他のデータの上下中心を揃えます\n上下中心揃え"
+    ID_CRDNT_BOTTOM         "指定されたデータの下に他のデータの下を揃えます\n下揃え"
+    ID_CRDNT_LEFT           "指定されたデータの左に他のデータの左を揃えます\n左揃え"
+    ID_CRDNT_HCENTER        "指定されたデータの左右中心に他のデータの左右中心を揃えます\n左右中心揃え"
+    ID_CRDNT_RIGHT          "指定されたデータの右に他のデータの右を揃えます\n右揃え"
+    ID_MOVE_HCENTER         "データの中心が横方向の中央にくるように移動します\n用紙横中央移動"
+    ID_MOVE_VCENTER         "データの中心が縦方向の中央にくるように移動します\n用紙縦中央移動"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MOVE_HVCENTER        "データの中心が中央にくるように移動します\n用紙中央移動"
+    ID_SIZE_HSAME           "指定されたデータの横幅に他のデータの横幅を揃えます\n横サイズ揃え"
+    ID_SIZE_VSAME           "指定されたデータの縦長さに他のデータの縦長さを揃えます\n縦サイズ揃え"
+    ID_SIZE_HVSAME          "指定されたデータのサイズに他のデータのサイズを揃えます\nサイズ揃え"
+    ID_SPACE_HEQUAL         "データが均等に並ぶように横方向の間隔を揃えます\n横均等揃え"
+    ID_SPACE_VEQUAL         "データが均等に並ぶように縦方向の間隔を揃えます\n縦均等揃え"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BMP_CLIP             "画像と図形でクリッピングする"
+    ID_FILE_MEMOENVSET      "思いでパネル設定をおこないます"
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE 17, 1
+#pragma code_page(932)
+#endif
+#include "res\ses.rc2"  // Microsoft Visual C++ 以外のツールで編集されたリソース
+#include "l.jpn\afxres.rc"          // 標準のコンポーネント
+#include "l.jpn\afxprint.rc"        // 印刷/印刷プレビュー リソース
+#include "l.jpn\afxolecl.rc"        // OLE コンテナ リソース
+#include "l.jpn\afxolesv.rc"        // OLE サーバー リソース
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

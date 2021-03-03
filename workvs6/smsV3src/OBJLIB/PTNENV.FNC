@@ -1,0 +1,16 @@
+DllExport void ptnenvsetmode(int nunit, int noder, int nset);
+DllExport void ptnenvgetmode(LPINT nunit, LPINT noder, LPINT nset);
+DllExport void ptnenvgetpaperelement();
+DllExport void ptnenvsetpaperelement();
+DllExport void ptnenvfilebackup(LPSTR infname, LPSTR outfname);
+DllExport void ptnenvsetgrupname(LPSTR name);
+DllExport void ptnenvgetgrupname(LPSTR name);
+DllExport void ptnenvsetpapersize(DBL xsize, DBL ysize);
+DllExport void ptnenvgetpapersize(DBL *xsize, DBL *ysize);
+DllExport void ptnenvgetgruppath(LPSTR path);
+DllExport void ptnenvsetselectidx(int idx);
+DllExport void ptnenvgetselectidx(int *idx);
+DllExport void ptnenvlistaddname(int slctidx, LPSTR ptnfname);
+DllExport void ptnenvlistchkaddname(LPSTR ptnfname);
+DllExport void ptnenvlistdelname(int slctidx, LPSTR ptnfname);
+DllExport void ptnenvlistgetname(int slctidx, LPSTR ptnfname);

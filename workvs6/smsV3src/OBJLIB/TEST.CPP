@@ -1,0 +1,19 @@
+
+/////////////////////////////////////////////////////////////////////////////
+// CTest
+
+#include "test.h"
+
+extern "C" {
+}
+
+CTest::CTest()
+{
+}
+
+int	CTest::Func(int a, int b)
+{
+	return(a+b);
+}
+
+

@@ -1,0 +1,7 @@
+; MyCmnLib.def : DLL 用のモジュール パラメータ宣言
+
+LIBRARY      "MyCmnLib"
+DESCRIPTION  'MyCmnLib Windows Dynamic Link Library'
+
+EXPORTS
+    ; 明示的なエクスポートはここへ記述できます

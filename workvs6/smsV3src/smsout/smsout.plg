@@ -1,0 +1,75 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: smsout - Win32 Release--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+Creating command line "rc.exe /l 0x411 /fo"Release/smsout.res" /d "NDEBUG" /d "_AFXDLL" "D:\work\workvs6\smsV3src\smsout\smsout.rc"" 
+一時ﾌｧｲﾙ "C:\Users\owner\AppData\Local\Temp\RSP83EB.tmp" を作成し、次の内容を記録します
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/smsout.pdb" /map:"Release/smsout.map" /machine:I386 /out:"Release/smsout.exe" 
+.\Release\Bmpfile.obj
+.\Release\ChildFrm.obj
+.\Release\Cmd_base.obj
+.\Release\Cmd_ftp.obj
+.\Release\CMDBSBMP.OBJ
+.\Release\CmdEftp.obj
+.\Release\DlgChkOut.obj
+.\Release\DlgGSlct.obj
+.\Release\DlgImgDsp.obj
+.\Release\DlgImgSize.obj
+.\Release\Dlginnum.obj
+.\Release\DlgInput.obj
+.\Release\DlgLstDsp.obj
+.\Release\DlgMain.obj
+.\Release\DlgNumArea.obj
+.\Release\DlgOutput.obj
+.\Release\DlgWkSlct.obj
+.\Release\DSetJpgEle.obj
+.\Release\DSizeTrns.obj
+.\Release\DSlctFtpAdrs.obj
+.\Release\Fileeps.obj
+.\Release\Imehndl.obj
+.\Release\MainFrm.obj
+.\Release\RdsOutCrct.obj
+.\Release\smsout.obj
+.\Release\smsoutDoc.obj
+.\Release\smsoutView.obj
+.\Release\StdAfx.obj
+.\Release\Sysenv.obj
+.\Release\smsout.res
+..\imgkit\IMGCOM3.LIB
+..\imgkit\IMGCUT3.LIB
+..\imgkit\IMGDSP3.LIB
+..\imgkit\IMGETC3.LIB
+..\imgkit\IMGFILE3.LIB
+..\imgkit\IMGSCAN3.LIB
+..\imgkit\IMGTIFF3.LIB
+\work\workvs6\smsV3src\OBJECT\Release\Object.lib
+\work\workvs6\smsV3src\OBJLIB\Release\Objlib.lib
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe @C:\Users\owner\AppData\Local\Temp\RSP83EB.tmp" の作成中
+一時ﾌｧｲﾙ "C:\Users\owner\AppData\Local\Temp\RSP83EC.bat" を作成し、次の内容を記録します
+[
+@echo off
+copy ..\object\Release\object.dll Release
+copy ..\objlib\Release\objlib.dll Release
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "C:\Users\owner\AppData\Local\Temp\RSP83EC.bat" の作成中
+ﾘｿｰｽをｺﾝﾊﾟｲﾙ中...
+ﾘﾝｸ中...
+   ﾗｲﾌﾞﾗﾘ Release/smsout.lib とｵﾌﾞｼﾞｪｸﾄ Release/smsout.exp を作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｶｽﾀﾑ ﾋﾞﾙﾄﾞ ｽﾃｯﾌﾟを実行中 -  .\Release\smsout.exe
+        1 個のファイルをコピーしました。
+        1 個のファイルをコピーしました。
+
+
+
+<h3>結果</h3>
+smsout.exe - ｴﾗｰ 0、警告 0
+</pre>
+</body>
+</html>

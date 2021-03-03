@@ -1,0 +1,171 @@
+大矢といいます。昔作ったクラスですが、参考になると
+思います。長文になってしまい,ご迷惑おかけします。
+
+/*
+
+CImeAgent コンストラクタ
+~CImeAgent      デストラクタ
+ImeEnable IMEの使用を許可する
+ImeDisable IMEの使用を禁止する
+ImeOpen IMEを起動する
+ImeClose IMEを終了する
+IMEMode IMEの変換モードを変更する
+EnableRoman     ローマ字入力を許可=TRUE(デフォルト) / 禁止=FALSE
+
+void CIMETestView::OnSetfocusEdit1()
+{
+    // TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
+    CImeAgent ime(m_Edit1.m_hWnd);          //  オブジェクト生成
+    ime.ImeOpen();                          //　IMEオープン
+    ime.ImeMode("半角カナ");                //  変換モードを変更
+}
+
+*/
+
+#ifndef _CIMEAGENT_
+#define _CIMEAGENT_
+
+#include <WINCON.H>
+#include <IME.H>
+#include <WINNLS32.H>
+
+Class CImeAgent: Public CObject
+{
+public:
+    
+    //  コンストラクタ
+    CImeAgent(HWND hWnd)
+    {
+        //  対象となるウィンドウを保持
+        m_hTargetWnd = hWnd;
+        
+        //  SendIMEMessageExの為のグローバルメモリを確保
+        m_hIMESTRUCT = GlobalAlloc(GMEM_MOVEABLE|GMEM_SHARE,sizeof(IMESTRUCT) );
+        m_IME = (IMESTRUCT*)GlobalLock(m_hIMESTRUCT);
+        EnableRoman(TRUE);
+    }
+    
+    //　デストラクタ
+    ~CImeAgent()
+    {
+        //  グローバルメモリを解放
+        GlobalUnlock(m_hIMESTRUCT);
+        GlobalFree(m_hIMESTRUCT);
+    }
+
+    //  IMEの起動を許可
+    void ImeEnable()
+    {
+        WINNLSEnableIME(NULL,TRUE);
+    }
+
+    //  IMEの起動を禁止
+    void ImeDisable()
+    {
+        WINNLSEnableIME(NULL,FALSE);
+    }
+
+    //  IMEを起動
+    void ImeOpen()
+    {
+        m_IME->fnc = IME_SETOPEN;
+        m_IME->wParam = 1 ;
+        SendIMEMessage();
+    }
+
+    void EnableRoman(BOOL bMode)
+    {
+        if ( TRUE == bMode )
+            m_nRoman = IME_MODE_ROMAN;
+        Else
+            m_nRoman = IME_MODE_NOROMAN;
+    }
+
+    //  IMEを終了
+    void ImeClose()
+    {
+        m_IME->fnc = IME_SETOPEN;
+        m_IME->wParam = 0 ;
+        SendIMEMessage();
+    }
+
+    //  IMEの変換唹爪を設定
+    //  引数に　全角かな,全角カナ,全角英数,半角カナ,半角英数
+    void ImeMode(LPCSTR sMode)
+    {
+        CString str = sMode;
+        WPARAM wParam ;
+        m_IME->fnc = IME_SETCONVERSIONMODE;
+
+        if ( str == "全角かな" )
+        {
+            wParam = IME_MODE_DBCSCHAR | IME_MODE_HIRAGANA | m_nRoman ;
+        }
+        
+        if ( str == "全角カナ" )
+        {
+            wParam = IME_MODE_DBCSCHAR | IME_MODE_KATAKANA | m_nRoman;
+        }
+
+        if ( str == "全角英数" )
+        {
+            wParam = IME_MODE_DBCSCHAR | IME_MODE_ALPHANUMERIC ;
+        }
+        
+        if ( str == "半角カナ" )
+        {
+            wParam = IME_MODE_SBCSCHAR | IME_MODE_KATAKANA | m_nRoman;
+        }
+
+        if ( str == "半角英数" )
+        {
+            wParam = IME_MODE_SBCSCHAR | IME_MODE_ALPHANUMERIC ;
+        }
+
+        m_IME->wParam = wParam;
+        SendIMEMessage();
+    }
+
+private:
+    //  メッセージ出力関数
+    void SendIMEMessage()
+    {
+        ::SendIMEMessageEx(m_hTargetWnd,(LPARAM)m_hIMESTRUCT);
+    }
+
+protected:
+    HANDLE          m_hIMESTRUCT;       //  グローバルエリアに確保したメモリハンドル
+    IMESTRUCT*      m_IME;          //  メモリハンドルの内容物
+    HWND            m_hTargetWnd;       //  IME制御の対象になるウィンドウのウィンドウハンドル
+    long            m_nRoman;       //  ローマ字入力を許可するかどうか
+};
+
+#End If
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

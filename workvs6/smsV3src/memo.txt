@@ -1,0 +1,70 @@
+void CDialogWakuInSekiji::SaveCrtWaku(int crctno, LPSTR paperpath, LPSTR wakuname)
+{
+	char	filename[FNAMEMAX];
+
+	CTonDoc* pcDoc = (CTonDoc*)m_pcView->GetDocument();
+	sprintf(wakuname, "crct$%03d.wak", crctno);
+	sprintf(filename, "%s\\%s", paperpath, wakuname);
+	pcDoc->WakuSave(filename);
+	basechangesafix(filename, "env");
+	wakuenvsaveoutputenv(filename);
+	basechangesafix(filename, "bin");
+	((CTonView*)m_pcView)->PrintEnvSave(filename);
+}
+
+void CDialogWakuInSekiji::SaveRecString(int crctcnt, FILE *crctfp)
+{
+	char	exepath[FNAMEMAX];
+	char	textfname[FNAMEMAX];
+	FILE	*textfp;
+	char	grupname[RECMAX];
+	char	papername[RECMAX];
+	char	paperpath[FNAMEMAX];
+	char	wakufname[FNAMEMAX];
+	char	wakupath[FNAMEMAX];
+	char	buf[RECMAX];
+	char	strg[RECMAX];
+	int		slctidx;
+	int		idx;
+
+	senvgetexepath(exepath);
+	wakuenvgetgrupname(grupname);
+	wakuenvgetpapername(papername);
+	wakuenvgetfullpaperpath(paperpath);
+	// 必ず出力時枠サイズ変更のため一時ファイルを作成するように修正
+	//wakuenvgetselectwakuidx(&slctidx);
+	//if(slctidx != -1){
+	//	wakuenvlistgetwakuname(slctidx, wakufname);
+	//}
+	//else{
+		SaveCrtWaku(crctcnt, paperpath, wakufname);	
+	//}
+	sprintf(wakupath, "%s\\%s", paperpath, wakufname);
+
+	sprintf(buf, "未,%s,%s,%s,1,\"",
+		grupname, papername, wakupath);
+	fputs(buf, crctfp);
+
+	sprintf(textfname, "%s\\string.lst", exepath);
+	if((textfp = fopen(textfname, "r")) == NULL){
+		return;
+	}
+	idx = 0;
+	while(1){
+		if(m_nGrupMax <= idx){
+			break;
+		}
+		if(fread(buf, RECMAX, 1, textfp) != 1){
+			break;
+		}
+		strcpy(strg, buf);
+		sprintf(buf, "/%s", strg);
+		fputs(buf, crctfp);
+		idx++;
+	}
+	sprintf(buf, "\"\n");
+	fputs(buf, crctfp);
+
+	fclose(textfp);
+}
+

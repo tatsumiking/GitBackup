@@ -1,0 +1,49 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: mps - Win32 Release--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+Creating command line "rc.exe /l 0x411 /fo"Release/mps.res" /d "NDEBUG" /d "_AFXDLL" "D:\work\workvs6\smsV3src\mps\mps.rc"" 
+一時ﾌｧｲﾙ "C:\DOCUME~1\stan01\LOCALS~1\Temp\RSP53B.tmp" を作成し、次の内容を記録します
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/mps.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\work\workvs6\smsV3src\LEAD10\LEAD.CPP"
+"D:\work\workvs6\smsV3src\LEAD10\LTDLGCTL.CPP"
+"D:\work\workvs6\smsV3src\mps\mps.cpp"
+"D:\work\workvs6\smsV3src\mps\mpsDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\stan01\LOCALS~1\Temp\RSP53B.tmp" 
+一時ﾌｧｲﾙ "C:\DOCUME~1\stan01\LOCALS~1\Temp\RSP53C.tmp" を作成し、次の内容を記録します
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/mps.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\work\workvs6\smsV3src\mps\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\stan01\LOCALS~1\Temp\RSP53C.tmp" 
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe /nologo /subsystem:windows /incremental:no /pdb:"Release/mps.pdb" /machine:I386 /out:"Release/mps.exe"  .\Release\LEAD.OBJ .\Release\LTDLGCTL.OBJ .\Release\mps.obj .\Release\mpsDlg.obj .\Release\StdAfx.obj .\Release\mps.res " の作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ﾘｿｰｽをｺﾝﾊﾟｲﾙ中...
+ｺﾝﾊﾟｲﾙ中...
+StdAfx.cpp
+ｺﾝﾊﾟｲﾙ中...
+LEAD.CPP
+LTDLGCTL.CPP
+mps.cpp
+mpsDlg.cpp
+D:\work\workvs6\smsV3src\mps\mpsDlg.cpp(251) : warning C4244: '=' : 'int' から 'float' に変換しました。ﾃﾞｰﾀが失われているかもしれません。
+D:\work\workvs6\smsV3src\mps\mpsDlg.cpp(252) : warning C4244: '=' : 'int' から 'float' に変換しました。ﾃﾞｰﾀが失われているかもしれません。
+D:\work\workvs6\smsV3src\mps\mpsDlg.cpp(394) : warning C4101: 'len' : ﾛｰｶﾙ変数は 1 度も使われません。
+D:\work\workvs6\smsV3src\mps\mpsDlg.cpp(473) : warning C4101: 'x' : ﾛｰｶﾙ変数は 1 度も使われません。
+D:\work\workvs6\smsV3src\mps\mpsDlg.cpp(566) : warning C4101: 'x' : ﾛｰｶﾙ変数は 1 度も使われません。
+ｺｰﾄﾞを生成中...
+ﾘﾝｸ中...
+
+
+
+<h3>結果</h3>
+mps.exe - ｴﾗｰ 0、警告 5
+</pre>
+</body>
+</html>

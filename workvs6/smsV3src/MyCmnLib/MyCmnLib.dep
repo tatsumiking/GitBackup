@@ -1,0 +1,34 @@
+# Microsoft Developer Studio Generated Dependency File, included by MyCmnLib.mak
+
+.\MyCmbBox.cpp : \
+	".\MyCmnLib.h"\
+	
+
+.\MyCmnLib.cpp : \
+	".\MyCmnLib.h"\
+	
+
+.\MyCmnLib.rc : \
+	".\res\MyCmnLib.rc2"\
+	
+
+.\MyFileDl.cpp : \
+	".\MyFileDl.h"\
+	
+
+.\MyLstBox.cpp : \
+	".\MyCmnLib.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\stdef.h"\
+	".\Funclib.h"\
+	".\Imehndl.h"\
+	".\MyCmbBox.h"\
+	".\Mydialog.h"\
+	".\Myedit.h"\
+	".\MyLstBox.h"\
+	".\StdAfx.h"\
+	".\Sysenv.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	

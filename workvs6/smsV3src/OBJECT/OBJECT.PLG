@@ -1,0 +1,177 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: Object - Win32 Debug--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+一時ﾌｧｲﾙ "C:\WINDOWS\TEMP\RSP6343.TMP" を作成し、次の内容を記録します
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_USRDLL" /D "CPLUS" /Fp"Debug/Object.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"D:\src\winsrc\es98\cmnsrc\CrosVect.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP6343.TMP" 
+一時ﾌｧｲﾙ "C:\WINDOWS\TEMP\RSP6344.TMP" を作成し、次の内容を記録します
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/Object.pdb" /debug /machine:I386 /def:".\Object.def" /out:"Debug/Object.dll" /implib:"Debug/Object.lib" /pdbtype:sept 
+.\Debug\ARCfont.obj
+.\Debug\data.obj
+.\Debug\datafdib.obj
+.\Debug\datagrup.obj
+.\Debug\datalist.obj
+.\Debug\datalogo.obj
+.\Debug\dibcdata.obj
+.\Debug\Esf0font.obj
+.\Debug\Esf1font.obj
+.\Debug\Fsf1font.obj
+.\Debug\GradData.obj
+.\Debug\MojiText.obj
+.\Debug\mojivect.obj
+.\Debug\msurvect.obj
+.\Debug\Object.obj
+.\Debug\oldrvect.obj
+.\Debug\Pblock.obj
+.\Debug\Plist.obj
+.\Debug\rulevect.obj
+.\Debug\sptntext.obj
+.\Debug\sptnvect.obj
+.\Debug\StdAfx.obj
+.\Debug\strgtext.obj
+.\Debug\Strgvect.obj
+.\Debug\Swakvect.obj
+.\Debug\Vect.obj
+.\Debug\Wakuvect.obj
+.\Debug\Wnttfont.obj
+.\Debug\Object.res
+.\ImgCom3.lib
+.\ImgCut3.lib
+.\ImgDsp3.lib
+.\ImgEtc3.lib
+.\ImgFile3.lib
+.\ImgScan3.lib
+.\ImgTiff3.lib
+.\Debug\CrosVect.obj
+\src\winsrc\es98\objlib\Debug\Objlib.lib
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe @C:\WINDOWS\TEMP\RSP6344.TMP" の作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｺﾝﾊﾟｲﾙ中...
+CrosVect.cpp
+d:\src\winsrc\es98\cmnsrc\crosvect.h(10) : error C2143: 構文ｴﾗｰ : ';' が '*' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(10) : error C2501: 'CTonView' : 識別名を宣言するのに、型が指定されていません。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(10) : error C2501: 'm_pcView' : 識別名を宣言するのに、型が指定されていません。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(11) : error C2143: 構文ｴﾗｰ : ';' が '*' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(11) : error C2501: 'CTonDoc' : 識別名を宣言するのに、型が指定されていません。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(11) : error C2501: 'm_pcDoc' : 識別名を宣言するのに、型が指定されていません。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(13) : error C2143: 構文ｴﾗｰ : ';' が '*' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(13) : error C2501: 'CVect' : 識別名を宣言するのに、型が指定されていません。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(13) : error C2501: 'm_pcVect' : 識別名を宣言するのに、型が指定されていません。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(15) : error C2065: 'CData' : 定義されていない識別子です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(15) : error C2059: 構文ｴﾗｰ : '>'
+d:\src\winsrc\es98\cmnsrc\crosvect.h(18) : error C2059: 構文ｴﾗｰ : '>'
+d:\src\winsrc\es98\cmnsrc\crosvect.h(18) : error C2059: 構文ｴﾗｰ : ')'
+d:\src\winsrc\es98\cmnsrc\crosvect.h(19) : error C2065: 'dcrostype' : 定義されていない識別子です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(19) : error C2065: 'crs' : 定義されていない識別子です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(19) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'crsmax' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(19) : error C2065: 'crsmax' : 定義されていない識別子です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(19) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(20) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'crsmax' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(20) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(23) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'crsmax' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(23) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(24) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'crsmax' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(24) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\cmnsrc\crosvect.h(25) : error C2143: 構文ｴﾗｰ : ';' が '}' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(20) : error C2143: 構文ｴﾗｰ : ';' が '{' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(22) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pY' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(22) : error C2065: 'pY' : 定義されていない識別子です。
+d:\src\winsrc\es98\crosslib\cross.h(22) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT0' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(22) : error C2065: 'pT0' : 定義されていない識別子です。
+d:\src\winsrc\es98\crosslib\cross.h(22) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT1' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(22) : error C2065: 'pT1' : 定義されていない識別子です。
+d:\src\winsrc\es98\crosslib\cross.h(22) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(44) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pX' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(44) : error C2065: 'pX' : 定義されていない識別子です。
+d:\src\winsrc\es98\crosslib\cross.h(44) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pY' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(44) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT0' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(44) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT1' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(44) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(45) : error C2065: 'ac' : 定義されていない識別子です。
+d:\src\winsrc\es98\crosslib\cross.h(45) : error C2275: 'dbezetype' : typedef 識別子に、ｸﾗｽ ﾒﾝﾊﾞ ｱｸｾｽ演算子 (->) を使用しました。
+        d:\src\winsrc\es98\stdef.h(330) : 'dbezetype' の宣言を確認してください。
+d:\src\winsrc\es98\crosslib\cross.h(45) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pX' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(45) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pY' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(45) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT0' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(45) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT1' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(45) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(49) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pX' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(49) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pY' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(49) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT0' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(49) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT1' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(49) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(50) : error C2275: 'darctype' : typedef 識別子に、ｸﾗｽ ﾒﾝﾊﾞ ｱｸｾｽ演算子 (->) を使用しました。
+        d:\src\winsrc\es98\stdef.h(337) : 'darctype' の宣言を確認してください。
+d:\src\winsrc\es98\crosslib\cross.h(50) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pX' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(50) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pY' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(50) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT0' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(50) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT1' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(50) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(51) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pX' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(51) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pY' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(51) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT0' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(51) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'pT1' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(51) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+d:\src\winsrc\es98\crosslib\cross.h(58) : error C2143: 構文ｴﾗｰ : ';' が '}' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(11) : error C2143: 構文ｴﾗｰ : ';' が '{' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(12) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'x0' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(12) : error C2065: 'x0' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(12) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'y0' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(12) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(13) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'rag01' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(13) : error C2065: 'rag01' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(13) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'rag03' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(13) : error C2065: 'rag03' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(13) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'r' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(13) : error C2065: 'r' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(13) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(14) : error C2065: 'rag2' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(14) : error C2275: 'DBL' : typedef 識別子に、ｸﾗｽ ﾒﾝﾊﾞ ｱｸｾｽ演算子 (->) を使用しました。
+        d:\src\winsrc\es98\stdef.h(7) : 'DBL' の宣言を確認してください。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(14) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(16) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'xp' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(16) : error C2065: 'xp' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(16) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'yp' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(16) : error C2065: 'yp' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(16) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(17) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'x' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(17) : error C2065: 'x' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(17) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'y' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(17) : error C2065: 'y' : 定義されていない識別子です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(17) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(19) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'x' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(19) : error C2146: 構文ｴﾗｰ : ',' が、識別子 'y' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(19) : error C2143: 構文ｴﾗｰ : ',' が ')' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(25) : error C2143: 構文ｴﾗｰ : ';' が '}' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(27) : error C2027: 認識できない型 'CCrossVect' が使われています。
+        d:\src\winsrc\es98\cmnsrc\crosvect.h(6) : 'CCrossVect' の宣言を確認してください。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(28) : error C2143: 構文ｴﾗｰ : ';' が '{' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(32) : error C2143: 構文ｴﾗｰ : ';' が '}' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(34) : error C2027: 認識できない型 'CCrossVect' が使われています。
+        d:\src\winsrc\es98\cmnsrc\crosvect.h(6) : 'CCrossVect' の宣言を確認してください。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(35) : error C2143: 構文ｴﾗｰ : ';' が '{' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(37) : error C2143: 構文ｴﾗｰ : ';' が '}' の前に必要です。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(39) : error C2027: 認識できない型 'CCrossVect' が使われています。
+        d:\src\winsrc\es98\cmnsrc\crosvect.h(6) : 'CCrossVect' の宣言を確認してください。
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(39) : error C2059: 構文ｴﾗｰ : '>'
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(39) : error C2059: 構文ｴﾗｰ : ')'
+D:\src\winsrc\es98\cmnsrc\CrosVect.cpp(39) : fatal error C1003: ﾌﾟﾛｸﾞﾗﾑ内のｴﾗｰが 100 個を超えました。ｺﾝﾊﾟｲﾙは中断されます。
+cl.exe の実行ｴﾗｰ
+
+
+
+<h3>結果</h3>
+Object.dll - ｴﾗｰ 102、警告 0
+</pre>
+</body>
+</html>

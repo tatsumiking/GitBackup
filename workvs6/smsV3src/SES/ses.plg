@@ -1,0 +1,180 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: ses - Win32 Release--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+Creating command line "rc.exe /l 0x411 /fo"Release/ses.res" /d "NDEBUG" /d "_AFXDLL" "D:\work\workvs6\smsV3src\SES\ses.rc"" 
+一時ﾌｧｲﾙ "C:\Users\owner\AppData\Local\Temp\RSP4CC4.tmp" を作成し、次の内容を記録します
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/ses.pdb" /map:"Release/ses.map" /machine:I386 /out:"Release/ses.exe" 
+.\Release\bmpfile.obj
+.\Release\ChildFrm.obj
+.\Release\Cmd_atr.obj
+.\Release\Cmd_base.obj
+.\Release\Cmd_clr.obj
+.\Release\Cmd_dibc.obj
+.\Release\Cmd_edit.obj
+.\Release\Cmd_figu.obj
+.\Release\Cmd_file.obj
+.\Release\Cmd_ftp.obj
+.\Release\Cmd_line.obj
+.\Release\Cmd_moji.obj
+.\Release\Cmd_msur.obj
+.\Release\Cmd_pint.obj
+.\Release\Cmd_rule.obj
+.\Release\Cmd_send.obj
+.\Release\Cmd_slct.obj
+.\Release\Cmd_spcl.obj
+.\Release\Cmd_strg.obj
+.\Release\Cmd_sub.obj
+.\Release\Cmd_swak.obj
+.\Release\Cmd_trns.obj
+.\Release\cmd_waku.obj
+.\Release\Cmd_zoom.obj
+.\Release\CMDBSBMP.OBJ
+.\Release\Cmdcrdnt.obj
+.\Release\Cmddbedt.obj
+.\Release\CmdEftp.obj
+.\Release\cmdkamon.obj
+.\Release\cmdkcrct.obj
+.\Release\CmdMente.obj
+.\Release\Cmdplout.obj
+.\Release\Cmdsprop.obj
+.\Release\Cmdsstrg.obj
+.\Release\Cmdsystm.obj
+.\Release\CntrItem.obj
+.\Release\Command.obj
+.\Release\CrossLib.obj
+.\Release\DaoDBLib.obj
+.\Release\Dclrbar.obj
+.\Release\DCptrFolder.obj
+.\Release\DDBEdit.obj
+.\Release\DGjSlct.obj
+.\Release\Diblib.obj
+.\Release\DImgSave.obj
+.\Release\DlCrctLd.obj
+.\Release\Dldvpout.obj
+.\Release\DlEKmnLd.obj
+.\Release\DlEKmnSv.obj
+.\Release\dlepskld.obj
+.\Release\Dlgbmprd.obj
+.\Release\Dlgcnrkd.obj
+.\Release\Dlgdirst.obj
+.\Release\Dlgedbar.obj
+.\Release\DlgESKmn.obj
+.\Release\Dlgfchng.obj
+.\Release\DlgGaiji.obj
+.\Release\Dlggrdtn.obj
+.\Release\Dlginnum.obj
+.\Release\Dlgkmnld.obj
+.\Release\DlgMjFit.obj
+.\Release\Dlgmjld.obj
+.\Release\Dlgmjmov.obj
+.\Release\Dlgmjsiz.obj
+.\Release\Dlgmjsv.obj
+.\Release\Dlgmsatr.obj
+.\Release\Dlgoutln.obj
+.\Release\Dlgplout.obj
+.\Release\Dlgsboxs.obj
+.\Release\Dlgscrcl.obj
+.\Release\Dlgscrnc.obj
+.\Release\Dlgscrne.obj
+.\Release\Dlgshdw.obj
+.\Release\Dlgslist.obj
+.\Release\Dlgstlup.obj
+.\Release\Dlgstrin.obj
+.\Release\Dlgstrvs.obj
+.\Release\Dlgtrimg.obj
+.\Release\Dlgtwpnt.obj
+.\Release\Dlgtxtin.obj
+.\Release\Dlgwkatr.obj
+.\Release\Dlgwkdel.obj
+.\Release\dlgwkedt.obj
+.\Release\Dlgwkgrp.obj
+.\Release\Dlgwkinp.obj
+.\Release\Dlgwkld.obj
+.\Release\Dlgwkppr.obj
+.\Release\Dlgwksrt.obj
+.\Release\Dlgwksv.obj
+.\Release\Dlinpair.obj
+.\Release\dlrlstyl.obj
+.\Release\dlstrins.obj
+.\Release\DlWkAChg.obj
+.\Release\DMDBSlct.obj
+.\Release\DMmryEnvSet.obj
+.\Release\DSetSp.obj
+.\Release\DSlctFtpAdrs.obj
+.\Release\DSlctMAdrs.obj
+.\Release\dslctstrg.obj
+.\Release\DWKBAR1.OBJ
+.\Release\DWKBAR2.OBJ
+.\Release\DWKBAR3.OBJ
+.\Release\DWKBARSD.OBJ
+.\Release\Dwkcptr.obj
+.\Release\dwkinskj.obj
+.\Release\DWKPPAD.OBJ
+.\Release\DWkPpDel.obj
+.\Release\DXlsSlct.obj
+.\Release\Excel.obj
+.\Release\ExcelLib.obj
+.\Release\filearc.obj
+.\Release\filedxf.obj
+.\Release\Fileeps.obj
+.\Release\Filevect.obj
+.\Release\Fontcbox.obj
+.\Release\IpFrame.obj
+.\Release\MainFrm.obj
+.\Release\Mente.obj
+.\Release\minmax.obj
+.\Release\MyButton.obj
+.\Release\Mydialog.obj
+.\Release\Mydlgbar.obj
+.\Release\Myedit.obj
+.\Release\MyFileDl.obj
+.\Release\ses.obj
+.\Release\sesDoc.obj
+.\Release\sesView.obj
+.\Release\SrvrItem.obj
+.\Release\StdAfx.obj
+.\Release\Sysenv.obj
+.\Release\viewfdlg.obj
+.\Release\ses.res
+..\imgkit\IMGCOM3.LIB
+..\imgkit\IMGCUT3.LIB
+..\imgkit\IMGDSP3.LIB
+..\imgkit\IMGETC3.LIB
+..\imgkit\IMGFILE3.LIB
+..\imgkit\IMGSCAN3.LIB
+..\imgkit\IMGTIFF3.LIB
+\work\workvs6\smsV3src\object\Release\Object.lib
+\work\workvs6\smsV3src\objlib\Release\Objlib.lib
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe @C:\Users\owner\AppData\Local\Temp\RSP4CC4.tmp" の作成中
+一時ﾌｧｲﾙ "C:\Users\owner\AppData\Local\Temp\RSP4CC5.bat" を作成し、次の内容を記録します
+[
+@echo off
+copy ..\Object\Release\Object.dll Release\Object.dll
+copy ..\Object\Release\Object.map Release\Object.map
+copy ..\Objlib\Release\Objlib.dll Release\Objlib.dll
+copy ..\Objlib\Release\Objlib.map Release\Objlib.map
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "C:\Users\owner\AppData\Local\Temp\RSP4CC5.bat" の作成中
+ﾘｿｰｽをｺﾝﾊﾟｲﾙ中...
+ﾘﾝｸ中...
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｶｽﾀﾑ ﾋﾞﾙﾄﾞ ｽﾃｯﾌﾟを実行中 -  .\Release\ses.exe
+        1 個のファイルをコピーしました。
+        1 個のファイルをコピーしました。
+        1 個のファイルをコピーしました。
+        1 個のファイルをコピーしました。
+
+
+
+<h3>結果</h3>
+ses.exe - ｴﾗｰ 0、警告 0
+</pre>
+</body>
+</html>

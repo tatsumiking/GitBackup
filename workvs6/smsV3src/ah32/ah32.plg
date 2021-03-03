@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: ah32 - Win32 Debug--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+一時ﾌｧｲﾙ "C:\DOCUME~1\stan031\LOCALS~1\Temp\RSP106.bat" を作成し、次の内容を記録します
+[
+@echo off
+copy ..\MyCmnLib\debug\MyCmnLib.dll debug
+copy ..\Objlib\debug\Objlib.dll debug
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "C:\DOCUME~1\stan031\LOCALS~1\Temp\RSP106.bat" の作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｶｽﾀﾑ ﾋﾞﾙﾄﾞ ｽﾃｯﾌﾟを実行中 -  .\Debug\ah32.exe
+        1 個のファイルをコピーしました。
+        1 個のファイルをコピーしました。
+
+
+
+<h3>結果</h3>
+ah32.exe - ｴﾗｰ 0、警告 0
+</pre>
+</body>
+</html>

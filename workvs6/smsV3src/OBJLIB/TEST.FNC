@@ -1,0 +1,1 @@
+DllExport int testmain();
