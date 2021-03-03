@@ -1,0 +1,28 @@
+﻿<!--
+        Title="CsvExUtil"
+        Icon="csvex.ico"
+        Background="#FFF8CBAD"
+    
+        Title="CsvOutUtil"
+        Icon="csvout.ico"
+        Background="#FFADF8D6"
+-->
+<Window x:Class="CsvUtil.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CsvExUtil"
+        Icon="csvex.ico"
+        Background="#FFF8CBAD"
+        Height="200"
+        Width="440" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="UnisCSV" Width="60" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCsvFile"  Width="260" Height="20" Margin="70,15,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="lblbtnUnisCsv" Content="参照" Margin="335,14,0,0" Width="80" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0,0,2,2" BorderBrush="Black" Background="#DDD" MouseDown="lblbtnUnisCsv_MouseDown" MouseUp="lblbtnUnisCsv_MouseUp" Padding="25,2,0,0" MouseLeave="lblbtnUnisCsv_MouseLeave"/>
+        <Label Content="マージ先" Width="60" Margin="10,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTargetFile"  Width="260" Height="20" Margin="70,55,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="lblbtnTarget" Content="参照" Margin="335,54,0,0" Width="80" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0,0,2,2" BorderBrush="Black" Background="#DDD" MouseDown="lblbtnTarget_MouseDown" MouseUp="lblbtnTarget_MouseUp" Padding="25,2,0,0" MouseLeave="lblbtnTarget_MouseLeave"/>
+        <Label x:Name="lblbtnMerge" Content="マージ処理" Margin="335,89,0,0" Width="80" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0,0,2,2" BorderBrush="Black" Background="#DDD" MouseDown="lblbtnMerge_MouseDown" MouseUp="lblbtnMerge_MouseUp" Padding="7,2,0,0" MouseLeave="lblbtnMerge_MouseLeave"/>
+        <Label x:Name="lblbtnExit" Content="終了" Margin="335,129,0,0" Width="80" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0,0,2,2" BorderBrush="Black" Background="#DDD" MouseDown="lblbtnExit_MouseDown" MouseUp="lblbtnExit_MouseUp" Padding="25,2,0,0" MouseLeave="lblbtnExit_MouseLeave"/>
+    </Grid>
+</Window>

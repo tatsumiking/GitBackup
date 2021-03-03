@@ -1,0 +1,25 @@
+        private void OptFileLoad()
+        {
+            String sOptionFileName;
+            string sData;
+            string[] aryLine;
+
+            m_nCheckTimeLimit = 0; // àÆêÏà„ëÂégópéû 1
+            try
+            {
+                sOptionFileName = m_sExecPath + "\\option.env";
+                sData = m_libCmn.LoadFileSJIS(sOptionFileName);
+                if (sData != "")
+                {
+                    sData = sData.Replace("\r\n", "\n");
+                    aryLine = sData.Split('\n');
+                    m_nCheckTimeLimit = m_libCmn.StrToInt(aryLine[1]);
+                }
+            }
+            catch (Exception ex)
+            {
+                App.ErrorLogAppend("OptFileLoad");
+                App.LogOut(ex.ToString());
+            }
+
+        }
