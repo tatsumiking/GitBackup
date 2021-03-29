@@ -1,0 +1,21 @@
+
+MySQLでデータベースを作成してください
+テーブルはinitutil/tablecreate.phpを実行することによって作成できます
+「code.txt」
+１行目　1	//0or1or2を設定します通常は1になります
+0の時データベース使用コードがEUCの場合
+1の時データベース使用コードがutf-8の場合
+2の時データベース使用コードがutf-8でc-alfoサーバー特有
+
+「dbenv.txt」
+１行目　localhost	// サーバー名称
+２行目	root	// ID
+３行目　imts9876	// パスワード
+４行目	calender	// データベース名
+５行目	calenderuser	// テーブル名
+６行目	http://localhost/calender	// URL(未使用）
+
+PHP.iniの設定変更
+upload_max_filesize 8M
+post_max_size 8M
+に設定

@@ -2,7 +2,7 @@
 body,select,input,button,div{
 	font-size:1.50vw;
 }
-.imgbtn{
+.imgbtn,.cFileBtn{
 	font-size:1.50vw;
 }
 .cFileBtn{

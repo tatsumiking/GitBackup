@@ -15,7 +15,8 @@ var m_dBaseRectSX, m_dBaseRectSY;
 var m_dBaseRectEX, m_dBaseRectEY;
 var m_dRectSX, m_dRectSY;
 var m_dRectEX, m_dRectEY;
-var m_nMouseCount; 
+var m_nMouseCount;
+var m_nCommandTimer;
 var m_nCntrKind;
 var m_dMouseBaseX, m_dMouseBaseY;
 var m_dCntrX = 0, m_dCntrY = 0;
@@ -43,17 +44,11 @@ function fncCommandExec(event, nx, ny)
 	case CMDSELECTFIGURE:
 		ret = fncCommandSelectFigure(event, nx, ny)
 		break;
-	case CMDNEWTEXT:
-		ret = fncCommandNewText(event, nx, ny)
+	case CMDTEXT:
+		ret = fncCommandText(event, nx, ny)
 		break;
-	case CMDSELECTTEXT:
-		ret = fncCommandSelectText(event, nx, ny)
-		break;
-	case CMDNEWIMAGE:
-		ret = fncCommandNewImage(event, nx, ny)
-		break;
-	case CMDSELECTIMAGE:
-		ret = fncCommandSelectImage(event, nx, ny)
+	case CMDIMAGE:
+		ret = fncCommandImage(event, nx, ny)
 		break;
 	}
 	if(ret == ENDEVENT){
@@ -78,20 +73,18 @@ function fncCommandSelect(event, nx, ny)
 					fncCommandSetCrtObject(obj);
 					fncDrawMain();
 				}else{
-					if(m_CrtObject.lock == false){
-						m_nCntrKind = fncCommandSearchCntrKind(nx, ny);
-						//fncCommandInfoTextSet("m_nTrnsCommand " + m_nCntrKind);					
-						if(m_nCntrKind == CNTR_AREAOVER){
-							fncCommandSetCrtObject(null);
-							fncDrawMain();
-						}else{
-							m_dMouseBaseX = nx;
-							m_dMouseBaseY = ny;
-							m_dMoveX = 0; m_dMoveY = 0;
-							m_dTimeX = 1.0; m_dTimeY = 1.0;
-							m_nMouseCount = 1;
-							fncDrawMain();
-						}
+					m_nCntrKind = fncCommandSearchCntrKind(nx, ny);
+					//fncCommandInfoTextSet("m_nTrnsCommand " + m_nCntrKind);					
+					if(m_nCntrKind == CNTR_AREAOVER){
+						fncCommandSetCrtObject(null);
+						fncDrawMain();
+					}else{
+						m_dMouseBaseX = nx;
+						m_dMouseBaseY = ny;
+						m_dMoveX = 0; m_dMoveY = 0;
+						m_dTimeX = 1.0; m_dTimeY = 1.0;
+						m_nMouseCount = 1;
+						fncDrawMain();
 					}
 				}
 			}
@@ -122,6 +115,16 @@ function fncCommandSelect(event, nx, ny)
 					if(m_CrtObject.lock == false){
 						m_nCntrKind = fncCommandSearchCntrKind(nx, ny);
 						fncDrawRectLayer();
+					}
+				}
+			}
+			break;
+		case UPDATEEVENYT:
+			if(m_nMouseCount == 0){
+				if(m_CrtObject != null){
+					if(m_CrtObject.kind == OBJTEXT){
+						m_CrtObject.clrFill = m_nCrtFillClr;
+						fncDrawCrtObject();
 					}
 				}
 			}
@@ -159,7 +162,6 @@ function fncCommandNewFigure(event, nx, ny)
 	}
 	return(0);
 }
-
 function fncCommandSelectFigure(event, nx, ny)
 {
 	switch(event){
@@ -187,120 +189,92 @@ function fncCommandSelectFigure(event, nx, ny)
 	}
 	return(0);
 }
-function fncCommandNewText(event, nx, ny)
+function fncCommandText(event, nx, ny)
 {
-	var sx, sy, ex,ey;
-	var fs;
-
+	var obj;
 	switch(event){
 		case INITEVENT:
 			m_nMouseCount = 0;
+			if(m_CrtObject != null){
+				fncMouseDisableLayoutArea();
+				fncCommandGetCrtObjectElement();
+				fncCommandShowInputText();
+				m_nMouseCount = 1;
+			}
 			break;
 		case DOWNEVENT:
 			break;
 		case UPEVENT:
 			if(m_nMouseCount == 0){
-				fncMouseRemoveEventListener();
-				fs = m_nFontSize;
-				fs = fncScrnTrnsMRLen(fs);
-				fs = parseInt(fs);
-				if(fs < 15){
-					fs = 15;
+				fncMouseDisableLayoutArea();
+				obj = fncCommandSearchObject(nx, ny);
+				if(obj == null || obj.kind != OBJTEXT){
+					m_CrtObject = null;
+					m_dRectSX = nx;
+					m_dRectSY = ny;
+					m_dRectEX = m_dRectSX + m_nFontSize * 10;
+					m_dRectEY = m_dRectSY + m_nFontSize;
+				}else{
+					fncCommandSetCrtObject(obj);
+					fncCommandGetCrtObjectElement();
 				}
-				m_dRectSX = nx;
-				m_dRectSY = ny;
-				sx = m_dRectSX;
-				sy = m_dRectSY;
-				sx = fncScrnTrnsMRX(sx);
-				sy = fncScrnTrnsMRX(sy);
-				sx = sx + m_nInputBaseLeft;
-				sy = sy + m_nInputBaseTop;
-				divLayout = document.getElementById("divLayout");
-				m_inputText.style.visibility = "visible";
-				m_inputText.style.left = sx + "px";
-				m_inputText.style.top = sy + "px";
-				m_inputText.style.font = fs + "px '"+m_sFontFamily+"'";
-				m_inputText.cols = 20;
-				m_inputText.focus();
+				fncCommandShowInputText();
+				m_nMouseCount = 1;
 			}
 			break;
 		case KEYINEVENT:
-			if(m_keyeventCrt.keyCode == KEYCODE_ENTER){
-				var str = m_inputText.textContent;
-				var len = str.length;
-				if(m_nVHKind == YOKO){
-					m_dRectEX = m_dRectSX + m_nFontSize * len;
-					m_dRectEY = m_dRectSY + m_nFontSize;
-				}else{
-					m_dRectEX = m_dRectSX + m_nFontSize;
-					m_dRectEY = m_dRectSY + m_nFontSize * len;
+			// if(m_nMouseCount == 1){
+				if(m_keyeventCrt.keyCode == KEYCODE_ENTER){
+					fncCommandInfoTextSet("mousecount " + m_nMouseCount);
+					m_sTextStr = m_inputText.value;
+					if(m_CrtObject == null){
+						obj = new clsObjText();
+						obj.kind = OBJTEXT;
+						m_aryObject.push(obj);
+					}else{
+						obj = m_CrtObject;
+					}
+					fncCommandSetTextObject(obj);
+					fncCommandSetCrtObject(obj);
+					fncCommandHideInputText();
+					m_inputText.style.visibility = "hidden";
+					fncDrawMain();
+					fncMouseEnableLayoutArea();
+					fncCommandSetCrt(CMDSELECT);
+					m_nMouseCount = 0;
 				}
-				var obj = new clsObjText();
-				obj.fncSetAtrXY(0, 0, m_dRectSX, m_dRectSY);
-				obj.fncSetAtrXY(1, 1, m_dRectEX, m_dRectSY);
-				obj.fncSetAtrXY(2, 1, m_dRectEX, m_dRectEY);
-				obj.fncSetAtrXY(3, 1, m_dRectSX, m_dRectEY);
-				obj.fillStyle = m_aryClrTable[m_nCrtClrIdx];
-				obj.vhkind = m_nVHKind;
-				obj.sFontFamily = m_sFontFamily;
-				obj.nFontSize = m_nFontSize;
-				obj.text = str;
-				m_aryObject.push(obj);
-				m_inputText.style.visibility = "hidden";
-				fncCommandSetCrtObject(obj);
-				fncDrawMain();
-				fncMouseAddEventListener();
-			}
+			//}
 			break;
 		case MOVEEVENT:
-			if(m_nMouseCount == 1){
-			}
 			break;
 		case UPMOVEEVENT:
+			break;
+		case UPDATEEVENYT:
 			if(m_nMouseCount == 0){
+				if(m_CrtObject != null){
+					if(m_CrtObject.kind == OBJTEXT){
+						m_CrtObject.clrFill = m_nCrtFillClr;
+						fncDrawCrtObject();
+					}
+				}
+			}else if(m_nMouseCount == 1){
+				m_inputText.style.color = m_nCrtFillClr;
+				if(m_nCrtFillClr == "#fff"){
+					m_inputText.style.backgroundColor = "#888";
+				}else{
+					m_inputText.style.backgroundColor = "#fff";		
+				}
 			}
 			break;
 		case ENDEVENT:
+			if(m_nMouseCount == 1){
+				fncCommandHideInputText();
+				fncMouseEnableLayoutArea();
+			}
 			break;
 	}
 	return(0);
 }
-
-function fncCommandSelectText(event, nx, ny)
-{
-	switch(event){
-		case INITEVENT:
-			m_nMouseCount = 0;
-			break;
-		case DOWNEVENT:
-			if(m_nMouseCount == 0){
-				axy = new CAtrXY();
-				axy.x = nx;
-				axy.y = ny;
-				axy = fncDrawTrnsXYMMToRltv(axy);
-				m_inputText.style.left = divLayout_s.offsetLeft+"px";
-				m_inputText.style.top = divLayout_s.offsetTop+"px";
-											
-			}
-			break;
-		case UPEVENT:
-			if(m_nMouseCount == 1){
-			}
-			break;
-		case MOVEEVENT:
-			if(m_nMouseCount == 1){
-			}
-			break;
-		case UPMOVEEVENT:
-			if(m_nMouseCount == 0){
-			}
-			break;
-		case ENDEVENT:
-			break;
-	}
-	return(0);
-}
-
 function fncCommandNewImage(event, nx, ny)
 {
 	return(0);
@@ -340,17 +314,13 @@ function fncCommandInitSelectRect()
 	m_dRectEX = mimx.ex;
 	m_dRectEY = mimx.ey;
 }
-function fncCommandImageLoad()
-{
-	fncDrawMain();
-}
 function fncCommandSearchObject(x, y)
 {
 	var idx;
 	var mimx;
 
 	var max = m_aryObject.length;
-	for(idx = 0; idx < max; idx++){
+	for(idx = max-1; idx >= 0; idx--){
 		mimx = m_aryObject[idx].fncGetMiniMax();
 		if(mimx.sx < x && x < mimx.ex && mimx.sy < y && y < mimx.ey){
 			return(m_aryObject[idx]);
@@ -364,6 +334,9 @@ function fncCommandSearchCntrKind(x, y)
 	var len = 16;
 	len = fncScrnTrnsRMLen(len);
 
+	if(m_CrtObject.lock == true){
+		return(CNTR_AREAOVER);
+	}	
 	m_dMouseBaseX = x;
 	m_dMouseBaseY = y;
 	cx = (m_dRectSX + m_dRectEX) / 2;
@@ -470,6 +443,96 @@ function fncCommandTrnsXY(axy)
 		axy.y = (axy.y - m_dCntrY) * m_dTimeY + m_dCntrY;
 	}
 	return(axy);
+}
+function fncCommandGetCrtObjectElement()
+{
+	m_nCrtFillClr = m_CrtObject.clrFill;
+	m_nVHKind = m_CrtObject.vhkind;
+	if(m_nVHKind == YOKO){
+		m_nFontSize = m_dRectEY - m_dRectSY;
+	}else{
+		m_nFontSize = m_dRectEX - m_dRectSX;		
+	}
+	m_sFontFamily = m_CrtObject.sFontFamily;
+	m_sTextStr = m_CrtObject.text;
+}
+function fncCommandShowInputText()
+{
+	var fs;
+	var sx, sy, ex, ey;
+
+	fs = m_nFontSize;
+	fs = fncScrnTrnsMRLen(fs);
+	fs = parseInt(fs);
+	if(fs < 15){
+		fs = 15;
+	}
+
+	sx = m_dRectSX;
+	sy = m_dRectSY;
+	ex = m_dRectEX;
+	ey = m_dRectEY;
+	sx = fncScrnTrnsMRX(sx);
+	sy = fncScrnTrnsMRX(sy);
+	ex = fncScrnTrnsMRX(ex);
+	ey = fncScrnTrnsMRX(ey);
+	wd = ex - sx;
+	hi = ey - sy;
+	sx = sx + m_nInputBaseLeft;
+	sy = sy + m_nInputBaseTop;
+	divLayout = document.getElementById("divLayout");
+	m_inputText.style.visibility = "visible";
+	m_inputText.style.color = m_nCrtFillClr;
+	if(m_nCrtFillClr == "#fff"){
+		m_inputText.style.backgroundColor = "#888";
+	}else{
+		m_inputText.style.backgroundColor = "#fff";		
+	}
+	m_inputText.style.left = sx + "px";
+	m_inputText.style.top = sy + "px";
+	m_inputText.style.font = fs + "px '"+m_sFontFamily+"'";
+	if(m_sTextStr == ""){
+		m_inputText.cols =10;
+		m_inputText.value = "";
+	}else{
+		m_inputText.cols = (m_sTextStr.length + 2) * 2;
+		m_inputText.value = m_sTextStr;
+	}
+	m_nCommandTimer = setTimeout(fncCommandTimer, 500);
+}
+function fncCommandTimer()
+{
+	clearTimeout(m_nCommandTimer);
+	m_inputText.focus();
+	if(m_sTextStr != ""){
+		//m_inputText.select();
+	}
+}
+function fncCommandHideInputText()
+{
+	m_inputText.style.left = m_nInputBaseLeft + "px";
+	m_inputText.style.top = m_nInputBaseTop + "px";
+	m_inputText.style.visibility = "hidden";
+}
+function fncCommandSetTextObject(obj)
+{
+	var len = m_sTextStr.length;
+	if(m_nVHKind == YOKO){
+		m_dRectEX = m_dRectSX + m_nFontSize * len;
+		m_dRectEY = m_dRectSY + m_nFontSize;
+	}else{
+		m_dRectEX = m_dRectSX + m_nFontSize;
+		m_dRectEY = m_dRectSY + m_nFontSize * len;
+	}
+	obj.fncSetAtrXY(0, 0, m_dRectSX, m_dRectSY);
+	obj.fncSetAtrXY(1, 1, m_dRectEX, m_dRectSY);
+	obj.fncSetAtrXY(2, 1, m_dRectEX, m_dRectEY);
+	obj.fncSetAtrXY(3, 1, m_dRectSX, m_dRectEY);
+	obj.clrFill = m_nCrtFillClr;
+	obj.vhkind = m_nVHKind;
+	obj.sFontFamily = m_sFontFamily;
+	obj.text = m_sTextStr;
+	return(obj);
 }
 function fncCommandInfoTextSet(msg)
 {

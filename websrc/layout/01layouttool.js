@@ -1,7 +1,38 @@
 
-function fncColorTableDraw()
+function fncToolColorSelect(x,y)
 {
+    var area = document.getElementById("divColorArea");
+    // x = x - area.offsetLeft + area.scrollLeft;
+    var x = x - area.offsetLeft;
+    var idx = parseInt(x / (m_nWOneClr+2));
+    m_nCrtFillClr = m_aryClrTable[idx];
+    fncCommandExec(UPDATEEVENYT, 0, 0);
 
+}
+function fncToolColorTableDraw()
+{
+    var idx, max;
+
+    max = m_aryClrTable.length;
+    var divColor = document.getElementById("divColor");
+    var cnvsColor = document.getElementById("cnvsColor");
+    divColor.width = m_cnvsColorWidth;
+	divColor.height = m_cnvsColorHeight;
+	cnvsColor.width = m_cnvsColorWidth;
+	cnvsColor.height = m_cnvsColorHeight;
+
+	var ctx = cnvsColor.getContext('2d');
+
+	m_nWOneClr = parseInt((m_cnvsColorWidth-10) / max) - 2;
+	m_nHOneClr = m_cnvsColorHeight - 6;
+    max = m_aryClrTable.length;
+	var sx = 0;
+	var sy = 3;
+    for(idx = 0; idx < max; idx++){
+        ctx.fillStyle = m_aryClrTable[idx];
+        ctx.fillRect(sx, sy, m_nWOneClr, m_nHOneClr);
+        sx = sx + m_nWOneClr + 2;
+    }
 }
 function fncToolSampleSelect(x, y)
 {
@@ -20,7 +51,6 @@ function fncToolSampleSearch(y)
     var imgex;
 
     var area = document.getElementById("divSampleArea");
-    fncCommandInfoTextSet("y " + y + "area.offsetTop " + area.offsetTop + "area.scrollTop " + area.scrollTop);
     y = y - area.offsetTop + area.scrollTop;
  	max = m_arySampleImage.length;
     for(idx = 0; idx < max; idx++){
@@ -77,13 +107,16 @@ function fncToolSampleCreateObject(imgex)
     obj.fncSetAtrXY(1, 1, ex, sy);
     obj.fncSetAtrXY(2, 1, ex, ey);
     obj.fncSetAtrXY(3, 1, sx, ey);
-
-    fncCommandSetCrtObject(null);
-    m_aryObject.push(obj);
-    obj.image.src = filename;
-    obj.image.onload = fncCommandImageLoad;
     if(m_nSelectKind == PARTS){
         fncCommandSetCrtObject(obj);
+    }else{
+        fncCommandSetCrtObject(null);
+    }
+    m_aryObject.push(obj);
+    obj.image.src = filename;
+    obj.image.onload = function(){
+        obj.flag = 1;
+        fncDrawMain();
     }
 }
 function fncToolSampleDraw()

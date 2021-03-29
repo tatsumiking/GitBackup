@@ -26,8 +26,8 @@ function fncDrawMain()
 		case OBJTEXT:
 			fncDrawText(m_aryObject[idx]);
 			break;
-		case OBJPATH:
-			fncDrawPath(m_aryObject[idx]);
+		case OBJFIGU:
+			fncDrawFigu(m_aryObject[idx]);
 			break;
 		}
 		if(m_aryObject[idx] == m_CrtObject){
@@ -48,8 +48,8 @@ function fncDrawCrtObject()
 		case OBJTEXT:
 			fncDrawText(m_CrtObject);
 			break;
-		case OBJPATH:
-			fncDrawPath(m_CrtObject);
+		case OBJFIGU:
+			fncDrawFigu(m_CrtObject);
 			break;
 	}
 	fncDrawSelectRect();
@@ -94,7 +94,7 @@ function  fncDrawText(textobj)
 	var ctx;
 	var sx, sy;
 	var ex, ey;
-	var wd, hi;
+	var wd, hi, fs;
 	var max, idx;
 	var sCh;
 
@@ -114,27 +114,30 @@ function  fncDrawText(textobj)
 	exy = fncDrawTrnsXYMMToRltv(exy);
 	sx = sxy.x; sy = sxy.y; 
 	ex = exy.x; ey = exy.y;
-	wd = ex - sx;
-	hi = ey - sy;
+	wd = Math.round(ex - sx);
+	hi = Math.round(ey - sy);
 	ctx.fillStyle = textobj.clrFill;
 	ctx.strokeStyle = textobj.clrStroke;
 	ctx.lineWidth = textobj.thick;
-	if(textobj.yktt == YOKO){
-		ctx.font = hi+"px"+"'"+textobj.font+"'";	
+	if(textobj.vhkind == YOKO){
+		fs = hi;
 	}else{
-		ctx.font = wd+"px"+"'"+textobj.font+"'";	
+		fs = wd;
 	}
+	ctx.font = fs+"px '"+textobj.sFontFamily+"'";	
+	max = textobj.text.length;
 	for(idx = 0; idx < max; idx++){
-		sCh = textobj.text.substring(idx, 1);
-		ctx.fillText(sCh, sx, sy);
-		if(textobj.yktt == YOKO){
+		sCh = textobj.text.substr(idx, 1);
+		ctx.textBaseline = "bottom";
+		ctx.fillText(sCh, sx, ey);
+		if(textobj.vhkind == YOKO){
 			sx = sx + hi + sp;
 		}else{
-			sy = sy + wd + sp;
+			ey = ey + wd + sp;
 		}
 	}
 }
-function  fncDrawPath(pathobj)
+function  fncDrawFigu(pathobj)
 {
 	var ctx;
 	var max, idx;

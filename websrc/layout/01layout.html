@@ -17,8 +17,8 @@
 .cSizePaperH{ width:calc(29.7em * 1.9); }
 .cSizePaperV{ height:calc(21.0em * 1.9); }
 .cSizePaperV2{ height:29.0em; }
-.cSizeColorH{ width:14.0em; }
-.cSizeColorH{ height:1.0em; }
+.cSizeColorH{ width:40.0em; }
+.cSizeColorV{ height:2.0em; }
 .cImgAlpha{ background-image:url("img/alpha.bmp")}
 .cAbsPos{ position:absolute;}
 .cRltvPos{position:relative;}
@@ -33,6 +33,7 @@
 <script language="javascript" src="01layoutmouse.js"></script>
 <script language="javascript" src="01layoutscrn.js"></script>
 <script language="javascript" src="01layouttool.js"></script>
+<script language="javascript" src="01layoutfile.js"></script>
 </head>
 
 <body onload="fncInit()">
@@ -79,42 +80,37 @@
         <div class="cFlexVertical">
             <div class="cSpace"></div>
             <div class="cFlexHorizontal cFontSize">
+                <button class="cSize4" id="btnUNDO">UNDO</button>
                 <div class="cSpace"></div>
-                <button class="cSize6" id="btnUNDO">UNDO</button>
-                <div class="cSize1"></div>
-                <button class="cSize6" id="btnREDO">REDO</button>
-                <div class="cSize1"></div>
-                <select id="cmbFont" class="cSize15">
+                <button class="cSize4" id="btnREDO">REDO</button>
+                <div class="cSpace"></div>
+                <select id="cmbFont" class="cSize10">
                 </select>
-                <div class="cSize1"></div>
-				<input type="checkbox" id="chkArch" class="cSize1">アーチ</input>
-                <div class="cSize1"></div>
-				<input type="checkbox" id="chkShadow" class="cSize1">　影　</input>
-                <div class="cSize1"></div>
-                <div id="divColorArea" class="">
-                    <canvas id="cnvsColorArea" class="cSizeColorH cSizeColorV cClrAAF">
-                    </canvas>                
+                <div class="cSpace"></div>
+                <div id="divColorArea" class="cSizeColorH cSizeColorV cClrDFD">
+                    <div id="divColor" class="">
+                        <canvas id="cnvsColor" class="">
+                        </canvas>                
+                    </div>
                 </div>                
-               
             </div>
             <div class="cSpace"></div>
-            <div class="cFlexHorizontal">
+            <div class="cFlexHorizontal cFontSize">
+                <button class="cSize4" id="btnLayoutLoad">読込</button>
                 <div class="cSpace"></div>
-                <button class="cSize6" id="btnLayoutLoad">ﾃﾞｰﾀ読込</button>
-                <div class="cSize1"></div>
-                <button class="cSize6" id="btnLayoutSave">ﾃﾞｰﾀ保存</button>
-                <div class="cSize1"></div>
-                <label class="cSize5 cClrDDD cFileBtn">画像読込
+                <button class="cSize4" id="btnLayoutSave">保存</button>
+                <div class="cSpace"></div>
+                <label class="cSize3 cClrDDD cFileBtn">画像
                     <input type = "file" id="btnImageLoad" style="display:none"></input>
                 </label>
-                <div class="cSize1"></div>
-                <button class="cSize6" id="btnInputText">文字入力</button>
-                <div class="cSize1"></div>
-                <button class="cSize6" id="btnSelect">選択</button>
-                <div class="cSize1"></div>
-                <button class="cSize6" id="btnDelete">削除</button>
-                <div class="cSize15"></div>
-                <button class="cSize6" id="btnExit">終了</button>
+                <div class="cSpace"></div>
+                <button class="cSize4" id="btnInputText">文字</button>
+                <div class="cSpace"></div>
+                <button class="cSize4" id="btnSelect">選択</button>
+                <div class="cSpace"></div>
+                <button class="cSize4" id="btnDelete">削除</button>
+                <div class="cSize2"></div>
+                <button class="cSize4" id="btnExit">終了</button>
             </div>
             <div class="cSpace"></div>
             <div class="cFlexHorizontal">

@@ -1,0 +1,3 @@
+//,0,0,
+IMAGE,1,0,0,297,210,http://localhost/layout/ykframe/GuraduationC.png,
+TEXT,0,67,122,127,142,#000000,#000000,0,0,0,0,ÇlÇr ÉSÉVÉbÉN,Ç†Ç¢Ç§,

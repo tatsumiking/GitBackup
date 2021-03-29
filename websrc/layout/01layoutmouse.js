@@ -11,6 +11,7 @@ var m_nDivLayoutAreaTop = 0;
 var m_nCanvasLayoutAddLeft = 0;
 var m_nCanvasLayoutAddTop = 0;
 var m_dLimit = 3.0;
+var m_nMouseEventLayoutArea = true;
 
 var m_evntfuc;
 
@@ -19,8 +20,6 @@ const KEYCODE_DELETE=46;
 const KEYCODE_BACKSPACE=8;
 const KEYCODE_ENTER=13;
 
-function fncMouseAddEventListener()
-{
 	if(userAgent.indexOf('msie') != -1 && window.navigator.msPointerEnabled){
 		document.addEventListener("MSPointerDown",fncMouseDown);
 		document.addEventListener("MSPointerMove",fncMouseMove);
@@ -33,21 +32,15 @@ function fncMouseAddEventListener()
 		//document.addEventListener("touchmove",fncMopuseTouchMove);
 		//document.addEventListener("touchend",fncMouseTouchUp);
 	}
-}
-function fncMouseRemoveEventListener()
+	document.addEventListener('keydown', fncMouseKeyDown);
+
+function fncMouseEnableLayoutArea()
 {
-	if(userAgent.indexOf('msie') != -1 && window.navigator.msPointerEnabled){
-		document.removeEventListener("MSPointerDown",fncMouseDown);
-		document.removeEventListener("MSPointerMove",fncMouseMove);
-		document.removeEventListener("MSPointerUp",fncMouseUp);
-	}else if(document.addEventListener){
-		document.removeEventListener("mousedown",fncMouseDown);
-		document.removeEventListener("mousemove",fncMouseMove);
-		document.removeEventListener("mouseup",fncMouseUp);
-		//document.removeEventListener("touchstart",fncMouseTouchDown);
-		//document.removeEventListener("touchmove",fncMopuseTouchMove);
-		//document.removeEventListener("touchend",fncMouseTouchUp);
-	}
+	m_nMouseEventLayoutArea = true;
+}
+function fncMouseDisableLayoutArea()
+{
+	m_nMouseEventLayoutArea = false;
 }
 function fncMouseDivLayoutOffset(offsetLeft, offsetTop)
 {
@@ -78,6 +71,12 @@ function fncMouseTouchDown(event)
 	if(fncMouseCheckSampleArea(x, y) == true){
 		fncToolSampleSelect(x, y);
 	}
+	if(fncMouseCheckColorArea(x, y) == true){
+		fncToolColorSelect(x, y);
+	}
+	if(m_nMouseEventLayoutArea == false){
+		return;
+	}
 	if(fncMouseCheckLayoutArea(x, y) == true){
 		//event.preventDefault();
 		x = x - m_nDivLayoutAreaLeft - m_nCanvasLayoutAddLeft;
@@ -93,6 +92,9 @@ function fncMopuseTouchMove(event)
 
 	x = event.targetTouches[0].pageX;
 	y = event.targetTouches[0].pageY;
+	if(m_nMouseEventLayoutArea == false){
+		return;
+	}
 	if(fncMouseCheckLayoutArea(x, y) == true){
 		//event.preventDefault();
 		m_nMouseCrtX = x;
@@ -110,6 +112,9 @@ function fncMouseTouchUp(event)
 
 	x = m_nMouseCrtX;
 	y = m_nMouseCrtY;
+	if(m_nMouseEventLayoutArea == false){
+		return;
+	}
 	if(fncMouseCheckLayoutArea(x, y) == true){
 		//event.preventDefault();
 		x = x - m_nDivLayoutAreaLeft - m_nCanvasLayoutAddLeft;
@@ -138,24 +143,13 @@ function fncMouseGetPointAdd()
 function fncMouseCheckLayoutArea(x, y)
 {
 	var area = document.getElementById("divLayoutArea");
-	var sx = 0;
-	var sy = 0;
-	var ex = 0;
-	var ey = 0;
-
 	if(area == null){
 		return(false);
 	}
-	sx = area.offsetLeft;
-	sy = area.offsetTop;
-	ex = sx + area.offsetWidth;
-	ey = sy + area.offsetHeight;
-	/*
-	if(m_evntfuc == "fncMouseDown"){
-		m_lblInfo.textContent = "sxy("+sx+","+sy+") exy("+ex+","+ey
-			+") xy("+x+","+y+") divLayoutArea";
-	}
-	*/
+	var sx = area.offsetLeft;
+	var sy = area.offsetTop;
+	var ex = sx + area.offsetWidth;
+	var ey = sy + area.offsetHeight;
 	if(sx < x && x < ex && sy < y && y < ey){
 		return(true);
 	}
@@ -163,31 +157,34 @@ function fncMouseCheckLayoutArea(x, y)
 }
 function fncMouseCheckSampleArea(x, y)
 {
-	var area = document.getElementById("divSample");
-	var sx = 0;
-	var sy = 0;
-	var ex = 0;
-	var ey = 0;
-
+	var area = document.getElementById("divSampleArea");
 	if(area == null){
 		return(false);
 	}
-	sx = area.offsetLeft;
-	sy = area.offsetTop;
-	ex = sx + area.offsetWidth;
-	ey = sy + area.offsetHeight;
-	/*
-	if(m_evntfuc == "fncMouseDown"){
-		m_lblInfo.textContent = "sxy("+sx+","+sy+") exy("+ex+","+ey
-			+") xy("+x+","+y+") divSample";
-	}
-	*/
+	var sx = area.offsetLeft;
+	var sy = area.offsetTop;
+	var ex = sx + area.offsetWidth;
+	var ey = sy + area.offsetHeight;
 	if(sx < x && x < ex && sy < y && y < ey){
 		return(true);
 	}
 	return(false);
 }
-
+function fncMouseCheckColorArea(x, y)
+{
+	var area = document.getElementById("divColorArea");	
+	if(area == null){
+		return(false);
+	}
+	var sx = area.offsetLeft;
+	var sy = area.offsetTop;
+	var ex = sx + area.offsetWidth;
+	var ey = sy + area.offsetHeight;
+	if(sx < x && x < ex && sy < y && y < ey){
+		return(true);
+	}
+	return(false);
+}
 function fncMouseDown(event)
 {
 	var pt = fncMouseGetPointAdd();
@@ -199,6 +196,12 @@ function fncMouseDown(event)
 	y = event.clientY + pt.y;
 	if(fncMouseCheckSampleArea(x, y) == true){
 		fncToolSampleSelect(x, y); // 01layouttool
+	}
+	if(fncMouseCheckColorArea(x, y) == true){
+		fncToolColorSelect(x, y);
+	}
+	if(m_nMouseEventLayoutArea == false){
+		return;
 	}
 	if(fncMouseCheckLayoutArea(x, y) == true){
 		x = x - m_nDivLayoutAreaLeft - m_nCanvasLayoutAddLeft;
@@ -217,6 +220,9 @@ function fncMouseUp(event)
 	m_evntfuc = "fncMouseUp";
 	x = event.clientX + pt.x;
 	y = event.clientY + pt.y;
+	if(m_nMouseEventLayoutArea == false){
+		return;
+	}
 	if(fncMouseCheckLayoutArea(x, y) == true){
 		x = x - m_nDivLayoutAreaLeft - m_nCanvasLayoutAddLeft;
 		y = y - m_nDivLayoutAreaTop - m_nCanvasLayoutAddTop;
@@ -234,6 +240,9 @@ function fncMouseMove(event)
 	m_evntfuc = "fncMouseMove";
 	x = event.clientX + pt.x;
 	y = event.clientY + pt.y;
+	if(m_nMouseEventLayoutArea == false){
+		return;
+	}
 	if(fncMouseCheckLayoutArea(x, y) == true){
 		x = x - m_nDivLayoutAreaLeft - m_nCanvasLayoutAddLeft;
 		y = y - m_nDivLayoutAreaTop - m_nCanvasLayoutAddTop;
