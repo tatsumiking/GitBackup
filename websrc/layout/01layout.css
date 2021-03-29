@@ -1,0 +1,13 @@
+/**/
+body,select,input,button,div{
+	font-size:1.50vw;
+}
+.imgbtn{
+	font-size:1.50vw;
+}
+.cFileBtn{
+	padding: 0.05em 0.5em 0.05em 0.5em;
+	border: 2px #000 solid;
+	border-radius: 0.25em;
+	text-align:center;
+}

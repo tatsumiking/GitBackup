@@ -1,0 +1,6 @@
+window.getComputedStyle(node, null).fontFamily
+
+<script language="javascript" src="02layout.js"></script>
+<script language="javascript" src="02layoutmouse.js"></script>
+<script language="javascript" src="02layoutcmd.js"></script>
+

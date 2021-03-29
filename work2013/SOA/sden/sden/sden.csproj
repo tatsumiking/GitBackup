@@ -36,6 +36,9 @@
   <PropertyGroup>
     <ApplicationIcon>sden.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>sden.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel">
       <HintPath>C:\Program Files\Microsoft Office\OFFICE11\Microsoft.Office.Interop.Excel.dll</HintPath>

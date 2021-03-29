@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Layout</title>
+<link rel="shortcut icon" href="img/Layout.ico" />
+<meta charset="utf-8">
+<meta http-equiv='X-UA-Compatible' content='IE=11'>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="layout.css" rel="stylesheet" type="text/css" />
+<link href="01layout.css" rel="stylesheet" type="text/css" />
+<style>
+.cSpace{width:0.5em;height:0.5em;}
+.cFontSize{font-size:1.0vw;}
+.cSizePaperH{ width:calc(29.7em * 1.9); }
+.cSizePaperV{ height:calc(21.0em * 1.9); }
+.cSizePaperV2{ height:29.0em; }
+.cSizeColorH{ width:14.0em; }
+.cSizeColorH{ height:1.0em; }
+.cImgAlpha{ background-image:url("img/alpha.bmp")}
+.cAbsPos{ position:absolute;}
+.cRltvPos{position:relative;}
+
+</style>
+<script language="javascript" src="jslib/ajax.js"></script>
+<script language="javascript" src="jslib/fnclib.js"></script>
+<script language="javascript" src="classObject.js"></script>
+<script language="javascript" src="01layout.js"></script>
+<script language="javascript" src="01layoutcommand.js"></script>
+<script language="javascript" src="01layoutdraw.js"></script>
+<script language="javascript" src="01layoutmouse.js"></script>
+<script language="javascript" src="01layoutscrn.js"></script>
+<script language="javascript" src="01layouttool.js"></script>
+</head>
+
+<body onload="fncInit()">
+<div id="divScrnArea" class="cScrnArea cFlexVertical">
+    <div class="cSpace"></div>
+    <div class="cFlexHorizontal">
+        <div class="cSpace"></div>
+        <div class="cSize8 cSizePaperV cFlexVertical">
+            <div>
+                <select id="cmbSample" class="cSize8">
+                </select>    
+            </div>
+            <div id="divSampleArea" class="cImgAlpha">
+                <div id="divSample" class="">
+                    <canvas id="cnvsSample" class=""></canvas>
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        <div class="cSpace"></div>
+        <div id="divLayoutArea" class="cClrFDD">
+            <div id="divLayout" class="cSizePaperH cSizePaperV">
+                <div id="divLayout_b" class="cAbsPos cSizePaperH cSizePaperV">
+                    <canvas id="cnvsLayout_b" class="cLrtvPos">
+                    </canvas>
+                </div>                
+                <div id="divLayout_c" class="cAbsPos cSizePaperH cSizePaperV">
+                    <canvas id="cnvsLayout_c" class="">
+                    </canvas>
+                </div>                
+                <div id="divLayout_f" class="cAbsPos cSizePaperH cSizePaperV">
+                    <canvas id="cnvsLayout_f" class="">
+                    </canvas>
+                </div>                
+                <div id="divLayout_s" class="cAbsPos cSizePaperH cSizePaperV">
+                    <canvas id="cnvsLayout_s" class="">
+                    </canvas>
+                </div>
+            </div>                
+        </div>                
+    </div>
+    <div class="cFlexHorizontal cFontSize">
+        <div class="cSpace"></div>
+        <div class="cFlexVertical">
+            <div class="cSpace"></div>
+            <div class="cFlexHorizontal cFontSize">
+                <div class="cSpace"></div>
+                <button class="cSize6" id="btnUNDO">UNDO</button>
+                <div class="cSize1"></div>
+                <button class="cSize6" id="btnREDO">REDO</button>
+                <div class="cSize1"></div>
+                <select id="cmbFont" class="cSize15">
+                </select>
+                <div class="cSize1"></div>
+				<input type="checkbox" id="chkArch" class="cSize1">アーチ</input>
+                <div class="cSize1"></div>
+				<input type="checkbox" id="chkShadow" class="cSize1">　影　</input>
+                <div class="cSize1"></div>
+                <div id="divColorArea" class="">
+                    <canvas id="cnvsColorArea" class="cSizeColorH cSizeColorV cClrAAF">
+                    </canvas>                
+                </div>                
+               
+            </div>
+            <div class="cSpace"></div>
+            <div class="cFlexHorizontal">
+                <div class="cSpace"></div>
+                <button class="cSize6" id="btnLayoutLoad">ﾃﾞｰﾀ読込</button>
+                <div class="cSize1"></div>
+                <button class="cSize6" id="btnLayoutSave">ﾃﾞｰﾀ保存</button>
+                <div class="cSize1"></div>
+                <label class="cSize5 cClrDDD cFileBtn">画像読込
+                    <input type = "file" id="btnImageLoad" style="display:none"></input>
+                </label>
+                <div class="cSize1"></div>
+                <button class="cSize6" id="btnInputText">文字入力</button>
+                <div class="cSize1"></div>
+                <button class="cSize6" id="btnSelect">選択</button>
+                <div class="cSize1"></div>
+                <button class="cSize6" id="btnDelete">削除</button>
+                <div class="cSize15"></div>
+                <button class="cSize6" id="btnExit">終了</button>
+            </div>
+            <div class="cSpace"></div>
+            <div class="cFlexHorizontal">
+                <label id="lblInfo" class="cSize50 cClrAAF">test</label>
+            </div>
+        </div>
+     </div>
+</div>
+</body>
+</html>
